@@ -51,7 +51,7 @@
         {
             "source": "EZB",
             "target": "ZDB",
-            "processes"
+            "processes":
             [
                 {
 					"name": "EZB-ZDB-Datendienst",
@@ -69,6 +69,6 @@
 					}
                 }
             ]
-        },
+        }
     ]
 }

@@ -164,14 +164,18 @@
   // Initialize the visualization
   function init(data) {
 
-    var links = data["links"],
-        nodes = data["nodes"],
+    let dataExchanges = data["dataExchange"],
+        systems = data["systems"],
         //groups = Array.from(new Set(links.map(d => d["group"]))),
-        groups = Array.from(new Set([].concat(...links.map(d => d["group"])))),
+        groups = Array.from(new Set([].concat(...dataExchanges.map(d => d["group"])))),
         color = d3.scaleOrdinal(groups, ["#D67AB1", "#00A6ED", "#41E2BA", "#F15152", "#700548", "#FFD166", "#358600", "#1E3888"]);
 
-    const simulation = d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => d.id).distance(function(d) {return d.linklength * 40;}))
+    //d3 Simulation search for id. Check if another tag can be defined as identifier
+    systems.forEach(d => {d["id"] = d["shortName"]});
+
+
+    const simulation = d3.forceSimulation(systems)
+        .force("link", d3.forceLink(dataExchanges).id(d => d.id).distance(40))
         .force("charge", d3.forceManyBody().strength(-1000))
         .force("x", d3.forceX())
         .force("y", d3.forceY());
@@ -179,11 +183,11 @@
     svg.select("g")
     .append("defs")
     .selectAll("marker")
-    .data(links)
+    .data(dataExchanges)
     .join("marker")
       .attr("id", function(d) {return "arrow-link-" + d.index;})
       .attr("viewBox", "0 -5 10 10")
-      .attr("refX", function(d) {return 9 + 1.5 + (d.target.size * 1.5);})
+      .attr("refX", 12)
       .attr("refY", -0.5)
       .attr("markerWidth", 9)
       .attr("markerHeight", 9)
@@ -193,35 +197,35 @@
       .attr("fill", function(d) {return color(d.group);})
       .attr("d", "M0,-5L10,0L0,5");
 
-    const link = svg.select("g")
+    const dataExchange = svg.select("g")
     .append("g")
       .attr("fill", "none")
     .selectAll("path")
-    .data(links)
+    .data(dataExchanges)
     .join("path")
       .attr("group-id", d => d.group)
       .attr("stroke", d => color(d.group))
       .attr("stroke-width", d => d.mass * 0.4)
       .attr("marker-end", function(d, i) { return "url(#arrow-link-" + d.index + ")"; });
 
-    const node = svg.select("g")
+    const system = svg.select("g")
     .append("g")
       .attr("fill", "currentColor")
       .attr("stroke-linecap", "round")
       .attr("stroke-linejoin", "round")
     .selectAll("g")
-    .data(nodes)
+    .data(systems)
     .join("g")
       .attr("group-id", d => d.group)
       .attr("fill", "#4A6E82")
       .call(drag(simulation));
 
-    node.append("circle")
+    system.append("circle")
       .attr("stroke", "white")
       .attr("stroke-width", 1.5)
-      .attr("r", d => d.size * 1.5);
+      .attr("r", 3);
 
-    node.append("text")
+    system.append("text")
       .attr("x", 16)
       .attr("y", "0.61em")
       .text(d => d.id)
@@ -231,13 +235,13 @@
       .attr("stroke-width", 3);
 
     simulation.on("tick", () => {
-      link.attr("d", linkArc);
-      node.attr("transform", d => `translate(${d.x},${d.y})`);
+      dataExchange.attr("d", linkArc);
+      system.attr("transform", d => `translate(${d.x},${d.y})`);
     });
 
     d3.select(".infoText")
       .selectAll("span")
-      .data([{"id" : "startupText", "info" :"Diese Visualisierung zeigt Importdatenflüsse auf Basis von Echtdaten der ersten Fragerunde. Für die erste prototypische Visualisierung wurde nur ein Bruchteil der vorhandenen Daten ausgewertet. Aufgrund der High-Level-Darstellung gibt die Visualisierung aktuell keine Auskunft über potentielle Doppellieferungen. Die Umsetzung des im AG-Kontext erarbeiteten Visualisierungskonzepts ist aktuell noch in Arbeit.", "group": ""}].concat(nodes))
+      .data([{"id" : "startupText", "info" :"Diese Visualisierung zeigt Importdatenflüsse auf Basis von Echtdaten der ersten Fragerunde. Für die erste prototypische Visualisierung wurde nur ein Bruchteil der vorhandenen Daten ausgewertet. Aufgrund der High-Level-Darstellung gibt die Visualisierung aktuell keine Auskunft über potentielle Doppellieferungen. Die Umsetzung des im AG-Kontext erarbeiteten Visualisierungskonzepts ist aktuell noch in Arbeit.", "group": ""}].concat(systems))
       .enter()
       .append("span")
         .attr("class", "infoTextSpan")
