@@ -124,12 +124,16 @@ function init(data) {
 
     d3.select(".infoText")
         .selectAll("span")
-        .data(dataExchanges.flatMap(dataExchange => dataExchange["processes"]).concat([{"id" : "startupText", "description" :"Diese Visualisierung zeigt Importdatenflüsse auf Basis von Echtdaten der ersten Fragerunde. Für die erste prototypische Visualisierung wurde nur ein Bruchteil der vorhandenen Daten ausgewertet. Aufgrund der High-Level-Darstellung gibt die Visualisierung aktuell keine Auskunft über potentielle Doppellieferungen. Die Umsetzung des im AG-Kontext erarbeiteten Visualisierungskonzepts ist aktuell noch in Arbeit.", "group": ""}]).concat(systems))
+        .data([{"id" : "startupText", "description" :"Diese Visualisierung zeigt Importdatenflüsse auf Basis von Echtdaten der ersten Fragerunde. Für die erste prototypische Visualisierung wurde nur ein Bruchteil der vorhandenen Daten ausgewertet. Aufgrund der High-Level-Darstellung gibt die Visualisierung aktuell keine Auskunft über potentielle Doppellieferungen. Die Umsetzung des im AG-Kontext erarbeiteten Visualisierungskonzepts ist aktuell noch in Arbeit.", "group": ""}].concat(systems).concat(dataExchanges.flatMap(dataExchange => dataExchange["processes"])))
         .enter()
         .append("span")
         .attr("class", "infoTextSpan")
         .attr("info-id", d => d.id === undefined ? d.name : d.id)
         .html(function(d) { return d.description });
+
+    let infoTexts = document.querySelectorAll(".infoTextSpan");
+    infoTexts.forEach(span => span.style.display = "none");
+    document.querySelector(".infoTextSpan[info-id='startupText']").style.display = "initial";
 
     setListeners();
     setFilters(filters);
