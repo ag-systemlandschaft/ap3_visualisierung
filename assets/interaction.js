@@ -8,7 +8,6 @@ function initZoomAndPan(svg) {
     svg.call(zoom);
 }
 
-// Enable draggin
 const drag = simulation => {
 
     function dragstarted(event, d) {
