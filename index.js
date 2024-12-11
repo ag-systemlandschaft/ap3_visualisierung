@@ -1,11 +1,8 @@
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height"),
-    activeFilters = [];
+let svg = d3.select("svg");
 
 // Enable zoom & pan
-var g = svg.append("g");
-var zoom = d3.zoom()
+let g = svg.append("g");
+let zoom = d3.zoom()
     .scaleExtent([0.2, 5])
     .on('zoom', function(event) {
         g.attr('transform', event.transform);
@@ -92,7 +89,7 @@ function init(data) {
         .join("path")
         .attr("group-id", d => d.group)
         .attr("stroke", "#D67AB1")
-        .attr("marker-end", function(d, i) { return "url(#arrow-link-" + d.index + ")"; });
+        .attr("marker-end", function(d) { return "url(#arrow-link-" + d.index + ")"; });
 
     const system = svg.select("g")
         .append("g")
@@ -139,8 +136,8 @@ function init(data) {
 }
 
 function setListeners() {
-    var systems = document.querySelectorAll("svg g circle, svg g text");
-    var dataExchanges = document.querySelectorAll("svg g path");
+    let systems = document.querySelectorAll("svg g circle, svg g text");
+    let dataExchanges = document.querySelectorAll("svg g path");
 
     systems.forEach(system => system.addEventListener("click", function(e) {
         console.log("Clicked element:", e.target);
