@@ -163,6 +163,7 @@ function setListeners() {
 }
 
 function setFilters(filters) {
+    //Filters without effect
     let filterContainer = document.querySelector(".filters");
     filters.forEach(filter => filterContainer.innerHTML +=
         "<label>"+filter.name+"</label><br>"+
