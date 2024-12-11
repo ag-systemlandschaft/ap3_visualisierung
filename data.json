@@ -76,6 +76,21 @@
           "transmissionType": ["OAI-PMH"],
           "transmissionFormat": ["XML"]
         }
+      },
+      {
+        "name": "Test-Datendienst",
+        "description": "Der Test-Datendienst ...",
+        "link": "https://zeitschriftendatenbank.de/services/datendienste",
+        "interfaceLink": "Link zum Dienst",
+        "properties": {
+          "resourceType": ["E-Zeitschriften","Datenbanken"],
+          "dataType": ["Bibliographische Daten","Lizenzinformationen: Lizenzzeitraum"],
+          "identifier": ["ISSN", "EZB-BIBID","ZDB-ID"],
+          "frequency": ["Echtzeit"],
+          "automation": ["automatisiert"],
+          "transmissionType": ["OAI-PMH"],
+          "transmissionFormat": ["XML"]
+        }
       }
     ]
     }
