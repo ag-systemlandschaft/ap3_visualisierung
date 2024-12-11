@@ -1,0 +1,74 @@
+{
+	"propertyCategories": [
+		{
+			"name": "Übermittelte Informationen",
+			"options": ["E-Zeitschriften","E-Books","Datenbanken","Enthaltene Teilwerke"],
+			"id": "resourceType" 
+		},
+		{
+			"name": "Übermittelte Datenarten",
+			"options": ["Bibliographische Daten","Bestandsinformationen: Zugangsinformationen", "Bestandsinformationen: Fernleihinformationen", "Lizenzinformationen: Lizenzzeitraum","Lizenzinformationen: Lizenzbedingungen","Teilnehmerdaten: beschreibende Daten","Teilnehmerdaten: Lizenzteilnehmerliste","Paketinformationen: beschreibende Daten","Paketinformationen: Titellisten","Paketart","OA-Informationen: freie Zugänglichkeit","OA-Informationen: OA-Publikationskonditionen","OA-Informationen: OA-Rechte zur Zweitveröffentlichung","Nutzungsstatistiken"],
+			"id": "dataType" 
+		},
+		{
+			"name": "Genutzte Identifier",
+			"options": ["ISSN","ISBN","ZDB-ID","DOI","URN/Handle","Produkt/Paket-ISIL","ROR-ID","EZB-BIBID","ID eines Bibliothekssystems","ID des Anbieters/Verlags"],
+			"id": "identifier" 
+		},
+		{
+			"name": "Austauschfrequenz",
+			"options": ["jährlich","monatlich","wöchentlich","täglich","unregelmäßig","Echtzeit"],
+			"id": "frequency" 
+		},
+		{
+			"name": "Datenflussart",
+			"options": ["automatisiert","teilautomatisiert","manuell"],
+			"id": "automation" 
+		},
+		{
+			"name": "Übermittlungsart",
+			"options": ["Download per FileShare/SFTP","Download per HTTPS","OAI-PMH","Z39.50","SRU","Representational State Transfer (REST)","E-Mail"],
+			"id": "transmissionType" 
+		},
+		{
+			"name": "Übermittlungsformat",
+			"options": ["XML", "JSON","KBART","MARC 21","RDF","PICA","ONIX","Dublin Core"],
+			"id": "transmissionFormat" 
+		}	
+	],
+    "systems":  [
+		{
+			"shortName": "EZB",
+			"name": "Elektronische Zeitschriftenbibliothek",
+			"description": "Die elektronische Zeitschriftenbibliothek ...",
+			"link": "https://ezb.ur.de",
+			"numberProcesses": 6,
+			"provider": "Universitätsbibliothek Regensburg",
+			"group": ["Gruppe"]
+		}
+    ],
+    "dataExchange":  [
+        {
+            "source": "EZB",
+            "target": "ZDB",
+            "processes"
+            [
+                {
+					"name": "EZB-ZDB-Datendienst",
+					"description": "Der EZB-ZDB-Datendienst ...",
+					"link": "https://zeitschriftendatenbank.de/services/datendienste",
+					"interfaceLink": "Link zum Dienst",
+					"properties": {
+						"resourceType": ["E-Zeitschriften","Datenbanken"],
+						"dataType": ["Bibliographische Daten","Lizenzinformationen: Lizenzzeitraum"],
+						"identifier": ["ISSN", "EZB-BIBID","ZDB-ID"],
+						"frequency": ["Echtzeit"],
+						"automation": ["automatisiert"],
+						"transmissionType": ["OAI-PMH"],
+						"transmissionFormat": ["XML"]
+					}
+                }
+            ]
+        },
+    ]
+}
