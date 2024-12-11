@@ -92,7 +92,6 @@ function init(data) {
         .join("path")
         .attr("group-id", d => d.group)
         .attr("stroke", "#D67AB1")
-        .attr("stroke-width", d => d.mass * 0.4)
         .attr("marker-end", function(d, i) { return "url(#arrow-link-" + d.index + ")"; });
 
     const system = svg.select("g")
@@ -128,22 +127,22 @@ function init(data) {
 
     d3.select(".infoText")
         .selectAll("span")
-        .data([{"id" : "startupText", "info" :"Diese Visualisierung zeigt Importdatenflüsse auf Basis von Echtdaten der ersten Fragerunde. Für die erste prototypische Visualisierung wurde nur ein Bruchteil der vorhandenen Daten ausgewertet. Aufgrund der High-Level-Darstellung gibt die Visualisierung aktuell keine Auskunft über potentielle Doppellieferungen. Die Umsetzung des im AG-Kontext erarbeiteten Visualisierungskonzepts ist aktuell noch in Arbeit.", "group": ""}].concat(systems))
+        .data([{"id" : "startupText", "description" :"Diese Visualisierung zeigt Importdatenflüsse auf Basis von Echtdaten der ersten Fragerunde. Für die erste prototypische Visualisierung wurde nur ein Bruchteil der vorhandenen Daten ausgewertet. Aufgrund der High-Level-Darstellung gibt die Visualisierung aktuell keine Auskunft über potentielle Doppellieferungen. Die Umsetzung des im AG-Kontext erarbeiteten Visualisierungskonzepts ist aktuell noch in Arbeit.", "group": ""}].concat(systems))
         .enter()
         .append("span")
         .attr("class", "infoTextSpan")
         .attr("info-id", d => d.id)
-        .html(function(d) { return d.info + "<br><br>" + d.group; });
+        .html(function(d) { return d.description });
 
     setListeners();
     setFilters(filters);
 }
 
 function setListeners() {
-    var nodes = document.querySelectorAll("svg g circle, svg g text");
-    var links = document.querySelectorAll("svg g path");
+    var systems = document.querySelectorAll("svg g circle, svg g text");
+    var dataExchanges = document.querySelectorAll("svg g path");
 
-    nodes.forEach(node => node.addEventListener("click", function(e) {
+    systems.forEach(system => system.addEventListener("click", function(e) {
         console.log("Clicked element:", e.target);
         let infoTexts = document.querySelectorAll(".infoTextSpan");
         infoTexts.forEach(span => span.style.display = "none");
@@ -151,7 +150,7 @@ function setListeners() {
         document.querySelector(".infoTextSpan[info-id='" + e.target.parentElement.querySelector("text").innerHTML + "']").style.display = "initial";
     }));
 
-    links.forEach(node => node.addEventListener("click", function(e) {
+    dataExchanges.forEach(dataExchange => dataExchange.addEventListener("click", function(e) {
         console.log("Clicked element:", e.target);
         const linkData = e.target.__data__; // Hier wird das Datenobjekt des Link-Elements abgerufen
         const linkid = linkData.id;
