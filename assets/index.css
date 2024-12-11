@@ -1,0 +1,17 @@
+div.vis {
+    width: 100%;
+    text-align: center;
+}
+
+svg g text {
+    padding: 1em;
+}
+
+svg g:hover {
+    cursor: pointer;
+}
+
+img.logo {
+    height: 4em;
+    width: auto;
+}

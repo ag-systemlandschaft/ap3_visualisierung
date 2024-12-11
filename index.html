@@ -5,28 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>AG Systemlandschaft E-Ressourcen</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-
-  <style>
-    div.vis {
-      width: 100%;
-      text-align: center;
-    }
-
-    svg g text {
-      padding: 1em;
-    }
-
-    svg g:hover {
-      cursor: pointer;
-    }
-
-    img.logo {
-      height: 4em;
-      width: auto;
-    }
-
-  </style>
+  <link rel="stylesheet" href="assets/external/bulma.min.css">
+  <link rel="stylesheet" href="assets/index.css">
 </head>
 
 <body>
@@ -75,15 +55,9 @@
                 <i class="fa-solid fa-paint-roller pr-2"></i><strong>Farbe</strong>
                 <br>Farbe der Kategorie
               </li>
-              <!--
-              <li class="pb-2">
-                <i class="fa-solid fa-ruler pr-2"></i><strong>Länge</strong>
-                <br>Frequenz des Austauchs. Je kürzer, desto häufiger.
-              </li>
-              -->
               <li class="pb-2">
                 <i class="fa-solid fa-arrows-left-right pr-2"></i><strong>Breite</strong>
-                <br>Frequenz des Austauchs. Je breiter, desto häufiger.
+                <br>Frequenz des Austausch. Je breiter, desto häufiger.
               </li>
             </ul>
           </div>
@@ -98,7 +72,12 @@
 
 </body>
 
-<script src="https://kit.fontawesome.com/f2bca01125.js" crossorigin="anonymous"></script>
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="index.js"></script>
+<script src="assets/external/fontawesome.min.js"></script>
+<script src="assets/external/d3.min.js"></script>
+
+<script src="assets/interaction.js"></script>
+<script src="assets/graph.js"></script>
+<script src="assets/filter.js"></script>
+<script src="assets/infoText.js"></script>
+<script src="assets/index.js"></script>
 </html>
