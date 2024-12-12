@@ -60,7 +60,7 @@ function initGraph(svg, systems, dataExchanges) {
         .clone(true).lower()
         .attr("fill", "none")
         .attr("stroke", "white")
-        .attr("stroke-width", 3);
+        .attr("stroke-width", 7);
 
     simulation.on("tick", () => {
         dataExchange.attr("d", linkArc);
@@ -68,6 +68,7 @@ function initGraph(svg, systems, dataExchanges) {
     });
 
     addTooltip(svg, system, dataExchange);
+    addClickHandler(svg, system, dataExchange);
 }
 
 // Calculate link arcs
@@ -121,4 +122,34 @@ function addTooltip(svg, system, dataExchange) {
         .on("mouseout", () => {
             d3.select("#hoverText").remove();
         });
+}
+
+function addClickHandler(svg, system, dataExchange) {
+    system.on("click", (event, d) => {
+        const infoTexts = document.querySelectorAll(".infoTextSpan");
+        infoTexts.forEach(span => span.style.display = "none");
+        document.querySelector(".infoTextSpan[info-id='" + d.shortName + "']").style.display = "initial";
+
+        system.attr("fill", systemColor);
+        d3.select(event.currentTarget)
+            .attr("fill", actualSystemColor);
+
+        const transform = event.target.parentElement.getAttribute('transform');
+        const translateMatch = transform.match(/translate\(([^,]+),([^)]+)\)/);
+        if (translateMatch) {
+            const translateX = parseFloat(translateMatch[1]);
+            const translateY = parseFloat(translateMatch[2]);
+
+            g.transition()
+                .duration(500)
+                .attr("transform", `translate(${-translateX},${-translateY})`);
+        }
+    })
+
+    dataExchange.on("click", (event, d) => {
+        const linkids = d.processes.map(d => d.name);
+        const infoTexts = document.querySelectorAll(".infoTextSpan");
+        infoTexts.forEach(span => span.style.display = "none");
+        linkids.forEach(id => document.querySelector(".infoTextSpan[info-id='" + id + "']").style.display = "initial");
+    })
 }

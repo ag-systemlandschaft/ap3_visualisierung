@@ -2,6 +2,7 @@
 d3.json("/data/data.json").then(init);
 
 const systemColor = "black";
+const actualSystemColor = "darkviolet";
 const dataExchangeColor = "#6667ab";
 
 // Initialize the visualization
@@ -19,7 +20,6 @@ function init(data) {
     }].concat(systems).concat(dataExchanges.flatMap(dataExchange => dataExchange["processes"]))
 
     const svg = d3.select("svg");
-    initZoomAndPan(svg)
     initGraph(svg, systems, dataExchanges);
     initInfoText(infoTexts)
 
