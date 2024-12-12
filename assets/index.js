@@ -1,7 +1,7 @@
 // Load data
 d3.json("/data/data.json").then(init);
 
-const systemsColor = "#4A6E82";
+const systemColor = "#4A6E82";
 const dataExchangeColor = "#D67AB1";
 
 // Initialize the visualization

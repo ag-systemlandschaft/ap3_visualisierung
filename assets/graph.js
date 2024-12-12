@@ -45,7 +45,7 @@ function initGraph(svg, systems, dataExchanges) {
         .data(systems)
         .join("g")
         .attr("group-id", d => d.group)
-        .attr("fill", systemsColor)
+        .attr("fill", systemColor)
         .call(drag(simulation));
 
     system.append("circle")
@@ -86,7 +86,7 @@ function addTooltip(svg, system, dataExchange) {
             .attr("x", x)
             .attr("y", y)
             .attr("id", "hoverText")
-            .attr("fill", systemsColor)
+            .attr("fill", systemColor)
             .attr("stroke", "white")
             .attr("stroke-width", 5)
             .attr("paint-order", "stroke")
