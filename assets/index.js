@@ -2,7 +2,7 @@
 d3.json("/data/data.json").then(init);
 
 const systemColor = "black";
-const actualSystemColor = "darkviolet";
+const selectedColor = "darkviolet";
 const dataExchangeColor = "#6667ab";
 
 // Initialize the visualization
