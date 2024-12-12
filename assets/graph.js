@@ -51,10 +51,10 @@ function initGraph (svg, systems, dataExchanges) {
     system.append("circle")
         .attr("stroke", "white")
         .attr("stroke-width", 1.5)
-        .attr("r", 3);
+        .attr("r", d => 1.5 * d.numberProcesses);
 
     system.append("text")
-        .attr("x", 16)
+        .attr("x", d => 1.5 * d.numberProcesses + 14)
         .attr("y", "0.61em")
         .text(d => d.id)
         .clone(true).lower()
