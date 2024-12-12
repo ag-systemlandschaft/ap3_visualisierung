@@ -68,6 +68,7 @@ function initGraph(svg, systems, dataExchanges) {
     });
 
     addTooltip(svg, system, dataExchange);
+    addClickHandler(svg, system, dataExchange);
 }
 
 // Calculate link arcs
@@ -121,4 +122,19 @@ function addTooltip(svg, system, dataExchange) {
         .on("mouseout", () => {
             d3.select("#hoverText").remove();
         });
+}
+
+function addClickHandler(svg, system, dataExchange) {
+    system.on("click", (event, d) => {
+        const infoTexts = document.querySelectorAll(".infoTextSpan");
+        infoTexts.forEach(span => span.style.display = "none");
+        document.querySelector(".infoTextSpan[info-id='" + d.shortName + "']").style.display = "initial";
+    })
+
+    dataExchange.on("click", (event, d) => {
+        const linkids = d.processes.map(d => d.name);
+        const infoTexts = document.querySelectorAll(".infoTextSpan");
+        infoTexts.forEach(span => span.style.display = "none");
+        linkids.forEach(id => document.querySelector(".infoTextSpan[info-id='" + id + "']").style.display = "initial");
+    })
 }
