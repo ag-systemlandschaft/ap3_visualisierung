@@ -10,7 +10,7 @@ function initInfoText(infoText) {
             return "<div>" + addTitle(d) +
                 d.description + "<br>" +
                 addLink(d) +
-                addGroup(d) +
+                addGroup(d) + "<br>" +
             "</div>";
         });
 
@@ -25,12 +25,13 @@ function addTitle(d) {
     }
     const mainHeader = d.name + (d.shortName !== undefined ? " (" + d.shortName + ")" : "");
     const subHeader = d.provider !== undefined ? "Betreiber: " + d.provider + "<br>" : "";
-    return "<h1 style='font-size: larger'>" + mainHeader + "</h1>" +
-        "<b>" + subHeader + "</b>";
+    return "<b style='color: " + actualSystemColor + "'>" + mainHeader + "</b>" +
+        "<p style='color: " + actualSystemColor + "'>" + subHeader + "</p>" +
+        "<hr style='margin: 0'/>";
 }
 
 function addLink(d) {
-    if(d.link === undefined) {
+    if (d.link === undefined) {
         return "";
     }
     return "<a>" + d.link + "</a>" + "<br>";
