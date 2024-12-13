@@ -25,8 +25,8 @@ function addTitle(d) {
     }
     const mainHeader = d.name + (d.shortName !== undefined ? " (" + d.shortName + ")" : "");
     const subHeader = d.provider !== undefined ? "Betreiber: " + d.provider + "<br>" : "";
-    return "<b style='color: " + actualSystemColor + "'>" + mainHeader + "</b>" +
-        "<p style='color: " + actualSystemColor + "'>" + subHeader + "</p>" +
+    return "<b style='color: " + systemColor + "'>" + mainHeader + "</b>" +
+        "<p style='color: " + systemColor + "'>" + subHeader + "</p>" +
         "<hr style='margin: 0'/>";
 }
 
