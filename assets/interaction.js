@@ -1,12 +1,12 @@
-function initZoomAndPan(svg) {
-    let g = svg.append("g");
-    let zoom = d3.zoom()
-        .scaleExtent([0.2, 5])
-        .on('zoom', function(event) {
-            g.attr('transform', event.transform);
-        });
-    svg.call(zoom);
-}
+const svg = d3.select("svg");
+let g = svg.append("g");
+let zoom = d3.zoom()
+    .scaleExtent([0.2, 5])
+    .on('zoom', function(event) {
+        g.attr('transform', event.transform);
+    });
+svg.call(zoom);
+
 
 const drag = simulation => {
 

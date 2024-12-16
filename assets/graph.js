@@ -60,7 +60,7 @@ function initGraph(svg, systems, dataExchanges) {
         .clone(true).lower()
         .attr("fill", "none")
         .attr("stroke", "white")
-        .attr("stroke-width", 3);
+        .attr("stroke-width", 7);
 
     simulation.on("tick", () => {
         dataExchange.attr("d", linkArc);
@@ -68,6 +68,7 @@ function initGraph(svg, systems, dataExchanges) {
     });
 
     addTooltip(svg, system, dataExchange);
+    addClickHandler(svg, system, dataExchange);
 }
 
 // Calculate link arcs
@@ -80,8 +81,10 @@ function linkArc(d) {
 }
 
 function addTooltip(svg, system, dataExchange) {
+    let hoverTimeout;
     system.on("mouseover", (event, d) => {
         const [x, y] = d3.pointer(event, svg.node());
+        clearTimeout(hoverTimeout);
         svg.append("text")
             .attr("x", x)
             .attr("y", y)
@@ -93,7 +96,9 @@ function addTooltip(svg, system, dataExchange) {
             .text(d.name);
     })
         .on("mouseout", () => {
-            d3.select("#hoverText").remove();
+            hoverTimeout = setTimeout(() => {
+                d3.select("#hoverText").remove();
+            }, 5);
         });
 
     dataExchange.on("mouseover", (event, d) => {
@@ -121,4 +126,43 @@ function addTooltip(svg, system, dataExchange) {
         .on("mouseout", () => {
             d3.select("#hoverText").remove();
         });
+}
+
+function addClickHandler(svg, system, dataExchange) {
+    function resetColors() {
+        dataExchange.attr("stroke", dataExchangeColor);
+        system.attr("fill", systemColor);
+    }
+
+    system.on("click", (event, d) => {
+        const infoTexts = document.querySelectorAll(".infoTextSpan");
+        infoTexts.forEach(span => span.style.display = "none");
+        document.querySelector(".infoTextSpan[info-id='" + d.shortName + "']").style.display = "initial";
+
+        resetColors();
+        d3.select(event.currentTarget)
+            .attr("fill", selectedColor);
+
+        const transform = event.target.parentElement.getAttribute('transform');
+        const translateMatch = transform.match(/translate\(([^,]+),([^)]+)\)/);
+        if (translateMatch) {
+            const translateX = parseFloat(translateMatch[1]);
+            const translateY = parseFloat(translateMatch[2]);
+
+            g.transition()
+                .duration(500)
+                .attr("transform", `translate(${-translateX},${-translateY})`);
+        }
+    })
+
+    dataExchange.on("click", (event, d) => {
+        const linkids = d.processes.map(d => d.name);
+        const infoTexts = document.querySelectorAll(".infoTextSpan");
+        infoTexts.forEach(span => span.style.display = "none");
+        linkids.forEach(id => document.querySelector(".infoTextSpan[info-id='" + id + "']").style.display = "initial");
+
+        resetColors();
+        d3.select(event.currentTarget)
+            .attr("stroke", selectedColor);
+    })
 }
