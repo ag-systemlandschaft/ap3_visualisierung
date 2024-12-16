@@ -1,98 +1,3528 @@
 {
-  "propertyCategories": [
+	"propertyCategories": [
+		{
+			"name": "Übermittelte Informationen",
+			"options": ["E-Zeitschriften","E-Books","Datenbanken","Enthaltene Teilwerke", "Andere"],
+			"id": "resourceType" 
+		},
+		{
+			"name": "Übermittelte Datenarten",
+			"options": ["Bibliographische Daten","Bestandsinformationen: Zugangsinformationen", "Bestandsinformationen: Fernleihinformationen", "Lizenzinformationen: Lizenzzeitraum","Lizenzinformationen: Lizenzbedingungen","Teilnehmerdaten: beschreibende Daten","Teilnehmerdaten: Lizenzteilnehmerliste","Paketinformationen: beschreibende Daten","Paketinformationen: Titellisten","Paketart","OA-Informationen: freie Zugänglichkeit","OA-Informationen: OA-Publikationskonditionen","OA-Informationen: OA-Rechte zur Zweitveröffentlichung","Nutzungsstatistiken", "Andere"],
+			"id": "dataType" 
+		},
+		{
+			"name": "Genutzte Identifier",
+			"options": ["ISSN","ISBN","ZDB-ID","DOI","URN/Handle","Sigel/ISIL","ROR-ID","EZB-BIBID","ID eines Bibliothekssystems","ID des Anbieters/Verlags", "Andere"],
+			"id": "identifier" 
+		},
+		{
+			"name": "Austauschfrequenz",
+			"options": ["jährlich","monatlich","wöchentlich","täglich","unregelmäßig","Echtzeit", "Andere"],
+			"id": "frequency" 
+		},
+		{
+			"name": "Datenflussart",
+			"options": ["automatisiert","teilautomatisiert","manuell"],
+			"id": "automation" 
+		},
+		{
+			"name": "Übermittlungsart",
+			"options": ["Download per FileShare/SFTP","Download per HTTPS","OAI-PMH","Z39.50","SRU","Representational State Transfer (REST)","E-Mail", "Andere"],
+			"id": "transmissionType" 
+		},
+		{
+			"name": "Übermittlungsformat",
+			"options": ["proprietäres XML", "proprietäres JSON","KBART","MARC 21 (beliebige Variante)","RDF (beliebige Variante)","PICA (beliebige Variante)","ONIX for Books","Dublin Core", "Andere"],
+			"id": "transmissionFormat" 
+		}	
+	],
+  "systems": [
     {
-      "name": "Übermittelte Informationen",
-      "options": ["E-Zeitschriften","E-Books","Datenbanken","Enthaltene Teilwerke"],
-      "id": "resourceType"
+      "shortName": "Aleph",
+      "name": "Aleph",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "description": "keine Angabe"
     },
     {
-      "name": "Übermittelte Datenarten",
-      "options": ["Bibliographische Daten","Bestandsinformationen: Zugangsinformationen", "Bestandsinformationen: Fernleihinformationen", "Lizenzinformationen: Lizenzzeitraum","Lizenzinformationen: Lizenzbedingungen","Teilnehmerdaten: beschreibende Daten","Teilnehmerdaten: Lizenzteilnehmerliste","Paketinformationen: beschreibende Daten","Paketinformationen: Titellisten","Paketart","OA-Informationen: freie Zugänglichkeit","OA-Informationen: OA-Publikationskonditionen","OA-Informationen: OA-Rechte zur Zweitveröffentlichung","Nutzungsstatistiken"],
-      "id": "dataType"
+      "shortName": "Alma",
+      "name": "Alma",
+      "provider": "keine Angabe",
+      "numberProcesses": 2,
+      "description": "keine Angabe"
     },
     {
-      "name": "Genutzte Identifier",
-      "options": ["ISSN","ISBN","ZDB-ID","DOI","URN/Handle","Produkt/Paket-ISIL","ROR-ID","EZB-BIBID","ID eines Bibliothekssystems","ID des Anbieters/Verlags"],
-      "id": "identifier"
+      "shortName": "Alma (Exlibris-KB)",
+      "name": "Alma Community Zone | SFX Knowledge Base",
+      "provider": "keine Angabe",
+      "numberProcesses": 1,
+      "description": "keine Angabe"
     },
     {
-      "name": "Austauschfrequenz",
-      "options": ["jährlich","monatlich","wöchentlich","täglich","unregelmäßig","Echtzeit"],
-      "id": "frequency"
+      "shortName": "Alma (OBSGV)",
+      "name": "Alma Österreichische Bibliothekenverbund und Service GmbH (OBVSG)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 2,
+      "link": "keine Angabe",
+      "description": "keine Angabe"
     },
     {
-      "name": "Datenflussart",
-      "options": ["automatisiert","teilautomatisiert","manuell"],
-      "id": "automation"
+      "shortName": "Anbieter",
+      "name": "Firma, Institution mit Vertrieb von Metadaten",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung1",
+        "Gruppierung2"
+      ],
+      "numberProcesses": 1,
+      "link": "keine Angabe",
+      "description": "keine Angabe"
     },
     {
-      "name": "Übermittlungsart",
-      "options": ["Download per FileShare/SFTP","Download per HTTPS","OAI-PMH","Z39.50","SRU","Representational State Transfer (REST)","E-Mail"],
-      "id": "transmissionType"
+      "shortName": "B3Kat",
+      "name": "Gemeinsamer Verbundkatalog von BVB und KOBV",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 5,
+      "link": "https://bvbat01.bib-bvb.de/TP61/start.do",
+      "description": "Der B3Kat ist die gemeinsame Katalogisierungsplattform der Bibliotheksverbünde BVB und KOBV. Katalogisierende Institutionen sind die Universitäts- und Hochschulbibliotheken der drei Bundesländer Bayern, Berlin und Brandenburg, die Bayerische Staatsbibliothek sowie zahlreiche wissenschaftliche Spezialbibliotheken."
     },
     {
-      "name": "Übermittlungsformat",
-      "options": ["XML", "JSON","KBART","MARC 21","RDF","PICA","ONIX","Dublin Core"],
-      "id": "transmissionFormat"
-    }
-  ],
-  "systems":  [
+      "shortName": "BASE",
+      "name": "Bielefeld Academic Search Engine (BASE)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://www.base-search.net/",
+      "description": "BASE ist eine Suchmaschine, die weltweit wissenschaftliche Dokumentenserver aggregiert und für die Suche zur Verfügung stellt."
+    },
+    {
+      "shortName": "Bibliotheksverbünde (D)",
+      "name": "Bibliotheksverbünde in Deutschland",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://bibliotheksportal.de/informationen/bibliothekslandschaft/bibliotheksverbuende/",
+      "description": "Bibliotheksverbünde sind Zusammenschlüsse von mehreren Bibliotheken in Form eines Verbundes."
+    },
+    {
+      "shortName": "BVB",
+      "name": "Bibliotheksverbund Bayern (BVB)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 4,
+      "link": "https://www.bib-bvb.de/home",
+      "description": "Der Bibliotheksverbund Bayern (BVB) ist der regionale Zusammenschluss von über 150 Bibliotheken unterschiedlicher Größenordnung und Fachorientierungen in Bayern. Zum Verbund gehören die Bayerische Staatsbibliothek, die Universitäts- und Fachhochschulbibliotheken, die regionalen staatlichen Bibliotheken sowie eine Vielzahl weiterer bedeutender Bibliotheken."
+    },
+    {
+      "shortName": "CrossRef",
+      "name": "CrossRef",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 2,
+      "link": "https://www.crossref.org/",
+      "description": "Crossref betreibt offene Infrastruktur, um Forschungsobjekte, Entitäten und Handlungen zu verknüpfen, wodurch eine dauerhafte und wiederverwendbare wissenschaftliche Aufzeichnung entsteht."
+    },
+    {
+      "shortName": "DBIS",
+      "name": "Datenbank-Infosystem (DBIS)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 2,
+      "link": "https://dbis.ur.de",
+      "description": "Das Datenbank-Infosystem (DBIS) ist eines der umfangreichsten Verzeichnisse an wissenschaftlichen Datenbanken. Mehrere Hundert Bibliotheken und Forschungseinrichtungen nutzen die DBIS zur Verwaltung von Zugangs- und Lizenzinformationen von Datenbanken. Für Nutzende ist DBIS ein Recherchetool für Datenbanken."
+    },
+    {
+      "shortName": "DFG-Nationallizenzen",
+      "name": "Nationallizenzen der Deutschen Forschungsgemeinschaft (DFG)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 3,
+      "link": "https://www.nationallizenzen.de/",
+      "description": "Zugang zu digitalen Publikationen im DFG-System der überregionalen Literaturversorgung und im Kontext der Schwerpunktinitiative Digitale Information der Allianz der deutschen Wissenschaftsorganisationen."
+    },
+    {
+      "shortName": "Divibib",
+      "name": "digitale virtuelle Bibliotheken (Divibib)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://www.divibib.com/",
+      "description": "Die divibib vertreibt das Onleihe-Portal und entsprechend lizenzierte Medien an öffentliche Bibliotheken."
+    },
+    {
+      "shortName": "DNB",
+      "name": "Deutsche Nationalbibliothek (DNB)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://www.dnb.de/",
+      "description": "Die Deutsche Nationalbibliothek (DNB) ist die zentrale Archivbibliothek Deutschlands und mit dem Deutschen Buch- und Schriftmuseum, dem Deutschen Exilarchiv 1933–1945 und dem Deutschen Musikarchiv zugleich Archiv und Museum."
+    },
+    {
+      "shortName": "DOAJ",
+      "name": "Directory of Open Access Journals (DOAJ)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 3,
+      "link": "https://doaj.org/",
+      "description": "DOAJ (Directory of Open Access Journals) ist ein Verzeichnis von qualitätsgeprüften Fachzeitschriften, die bei der Auswahl ihrer Beiträge ein peer review Verfahren einsetzen und open access zur Verfügung stehen."
+    },
+    {
+      "shortName": "EBP",
+      "name": "E-Book-Pool (EBP)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://ebooks.k10plus.de/",
+      "description": "Der E-Book-Pool dient im K10plus als Referenzdatenbank für alle durch Verlage gelieferten bibliografischen Metadaten für E-Books. In den E-Book-Pool werden Daten durch die beiden Verbundzentralen VZG und BSZ maschinell eingespielt. Die Pflege obliegt allein den Verbundzentralen."
+    },
+    {
+      "shortName": "EBSCO",
+      "name": "EBSCO",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "keine Angabe",
+      "description": "keine Angabe"
+    },
+    {
+      "shortName": "EconStor",
+      "name": "EconStor",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://www.econstor.eu/",
+      "description": "EconStor ist ein Publikationsserver für wirtschaftswissenschaftliche Fachliteratur."
+    },
+    {
+      "shortName": "EDS",
+      "name": "EBSCO Discovery Service (EDS)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "keine Angabe",
+      "description": "EBSCO Discovery Service ist eine umfassende Suchlösung, die eine einfache und tiefgreifende Recherche ermöglicht."
+    },
+    {
+      "shortName": "E-Pflicht-Portal",
+      "name": "E-Pflicht-Portal",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "keine Angabe",
+      "description": "keine Angabe"
+    },
     {
       "shortName": "EZB",
-      "name": "Elektronische Zeitschriftenbibliothek",
-      "description": "Die elektronische Zeitschriftenbibliothek ...",
+      "name": "Elektronische Zeitschriftenbibliothek (EZB)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 23,
       "link": "https://ezb.ur.de",
+      "description": "Die Elektronische Zeitschriftenbibliothek (EZB) ist eines der größten Verzeichnisse wissenschaftlicher elektronischer Zeitschriften und bietet vielfältige Services für die effiziente Nutzung wissenschaftlicher Volltexte im Internet. Seit vielen Jahren tragen mehrere Hundert Bibliotheken und Forschungseinrichtungen weltweit zur Sammlung und Pflege der hochwertigen Zeitschriftendaten bei. Darüber hinaus nutzen diese Institutionen die EZB zur Verwaltung von Zugangs- und Lizenzinformationen ihrer Zeitschriften. Zudem stellt die EZB zahlreiche Schnittstellen und Dienste zur freien Nachnutzung bereit."
+    },
+    {
+      "shortName": "FIDELIO",
+      "name": "FIDELIO - Zentraler Nachweis für FID-Lizenzen",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://kxp.k10plus.de/DB=1.84/",
+      "description": "FIDELIO (FID-Lizenzen-OPAC) wird als Zentraler Nachweis für FID-Lizenzen vom Kompetenzzentrum für Lizenzierung zusammengestellt und enthält Nachweise der elektronischen Ressourcen, für die im Rahmen der Fachinformationsdienste für die Wissenschaft eine FID-Lizenz verhandelt wurde."
+    },
+    {
+      "shortName": "FOLIO (UB Regensburg)",
+      "name": "The Future of Libraries is Open (FOLIO) UB Regensburg",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 4,
+      "link": "keine Angabe",
+      "description": "keine Angabe"
+    },
+    {
+      "shortName": "FOLIO (UB TUM)",
+      "name": "The Future of Libraries is Open (FOLIO) UB Technische Universität München",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 4,
+      "link": "keine Angabe",
+      "description": "keine Angabe"
+    },
+    {
+      "shortName": "FOLIO (VZG|GBV)",
+      "name": "The Future of Libraries is Open (FOLIO)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung1, Gruppierung2"
+      ],
+      "numberProcesses": 1,
+      "link": "keine Angabe",
+      "description": "keine Angabe"
+    },
+    {
+      "shortName": "GBV",
+      "name": "Gemeinsamer Bibliotheksverbund (GBV)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 3,
+      "link": "https://www.gbv.de/",
+      "description": "Gemeinsamen Bibliotheksverbundes (GBV) der Länder Bremen, Hamburg, Mecklenburg-Vorpommern, Niedersachsen, Sachsen-Anhalt, Schleswig-Holstein, Thüringen und der Stiftung Preußischer Kulturbesitz"
+    },
+    {
+      "shortName": "GBV / BSZ",
+      "name": "Kooperation des Bibliotheksservice-Zentrums Baden-Württemberg (BSZ) und des Gemeinsamen Bibliotheksverbundes (GBV)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 2,
+      "link": "https://www.bszgbv.de/",
+      "description": "keine Angabe"
+    },
+    {
+      "shortName": "GND",
+      "name": "Gemeinsame Normdatei (GND)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://gnd.network/",
+      "description": "Die GND (Gemeinsame Normdatei) ist die größte Normdatensammlung für Kultur- und Forschungsdaten im deutschsprachigen Raum."
+    },
+    {
+      "shortName": "GOKb",
+      "name": "Global Open Knowledgebase (GOKb)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
       "numberProcesses": 6,
-      "provider": "Universitätsbibliothek Regensburg",
-      "group": ["Gruppe"]
+      "link": "https://gokb.org",
+      "description": "Die GOKb ist eine globale Austauschplattform für Metadaten von elektronischen Ressourcen. Die elektronischen Ressourcen sind in der GOKb in Paketen organisiert. Die Inhalte werden von einer Community kooperativ verwaltet. Die ZDB übernimmt dabei die Redaktion und unterstützt teilnehmende Einrichtungen bei der Pflege der Inhalte. Die Verbundzentrale des Gemeinsamen Bibliotheksverbundes (VZG) betreibt das System, ihr obliegt die technische Leitung. Das Hochschulbibliothekszentrum NRW (hbz) agiert als Product Owner."
+    },
+    {
+      "shortName": "GVI",
+      "name": "Gemeinsamer-Verbünde-Index (GVI)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 3,
+      "link": "https://www.agv-gvi.de/",
+      "description": "Der Gemeinsame Verbündeindex (GVI) ist ein uniformer Suchindex über die Bestände der sechs deutschen Verbundsysteme sowie der DNB und der ZDB."
+    },
+    {
+      "shortName": "hbz",
+      "name": "hbz-Verbund beim Hochschulbibliothekszentrum des Landes Nordrhein-Westfalen (hbz)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "http://okeanos-www.hbz-nrw.de/F/",
+      "description": "Das Hochschulbibliothekszentrum des Landes Nordrhein-Westfalen (hbz) ist eine zentrale Dienstleistungs- und Entwicklungseinrichtung für die Hochschulbibliotheken in Nordrhein-Westfalen und Rheinland-Pfalz."
+    },
+    {
+      "shortName": "HDS",
+      "name": "HeBIS Discovery System (HDS)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "http://hds.hebis.de",
+      "description": "Das hebis Discovery System (HDS) basiert auf der OpenSource-​Software  VuFind und bietet als Service für Mitgliedsbibliotheken des hebis-​Verbundes eine gemeinsame Oberfläche für den Online-​Bibliothekskatalog (Web-​OPAC) und den EBSCO Discovery Service (EDS)."
+    },
+    {
+      "shortName": "hebis",
+      "name": "Hessisches Bibliotheks-Informationssystem (hebis)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 2,
+      "link": "http://cbsopac.rz.uni-frankfurt.de/LNG=DU/DB=2.1/",
+      "description": "Das Hessische Bibliotheksinformationssystem hebis ist der Informations-​ und Dienstleistungsverbund der rund 60 vorwiegend wissenschaftlichen Bibliotheken aus Hessen und Teilen von Rheinland-​​​Pfalz."
+    },
+    {
+      "shortName": "hebis Zentralsystem",
+      "name": "hebis Zentralsystem",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 4,
+      "link": "keine Angabe",
+      "description": "keine Angabe"
+    },
+    {
+      "shortName": "ISIL-Agentur",
+      "name": "Deutsche ISIL-Agentur und Sigelstelle",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://sigel.staatsbibliothek-berlin.de/suche",
+      "description": "In der ISIL-Agentur sind Informationen zu Einrichtungen im deutschsprachigen Raum verzeichnet, für die ein international standardisierten Identifier, das ISIL,vergeben wurde."
+    },
+    {
+      "shortName": "JournalTOCs",
+      "name": "JournalTOCs",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "keine Angabe",
+      "description": "keine Angabe"
+    },
+    {
+      "shortName": "K10plus",
+      "name": "Katalog für zehn Bundesländer, die Stiftung Preußischer Kulturbesitz und weitere Einrichtungen (K10plus)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 2,
+      "link": "https://wiki.k10plus.de/",
+      "description": "Unter dem Namen K10plus betreiben BSZ und VZG eine gemeinsame Datenbank mit etwa 200 Millionen Bestandsnachweisen. Hinter K10plus stehen die Bibliotheksdaten der Mehrzahl der deutschen staatlichen Universitäten und Hochschulen. Hinzu kommen renommierte Forschungseinrichtungen wie Leibniz-Institute, Helmholtz-Zentren, Max-Planck-Institute etc. Seit Produktionsstart am 25.03.2019 katalogisieren die angeschlossenen Bibliotheken ihre Bestände in diesem Datenpool und beziehen von dort Metadaten für ihre Systeme."
+    },
+    {
+      "shortName": "Katalogdaten Schweizer Bibliotheken",
+      "name": "Katalogdaten Schweizer Bibliotheken",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "keine Angabe",
+      "description": "keine Angabe"
+    },
+    {
+      "shortName": "KOBV",
+      "name": "Kooperativer Bibliotheksverbund Berlin-Brandenburg (KOBV)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 7,
+      "link": "https://www.kobv.de/",
+      "description": "Der Kooperative Bibliotheksverbund Berlin-Brandenburg ist der Zusammenschluss aller Hochschulbibliotheken und öffentlichen Bibliotheken sowie zahlreicher Spezialbibliotheken in Berlin und Brandenburg mit dem Zweck, Services für Teilnehmer zu entwickeln."
+    },
+    {
+      "shortName": "LAS:eR",
+      "name": "Lizenz Administrationssystem für eRessourcen (LAS:eR)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 2,
+      "link": "https://laser.hbz.nrw.de",
+      "description": "LAS:eR ist ein System zur Verwaltung von elektronischen Ressourcen auf lokaler, regionaler und nationaler Ebene. Es handelt sich hierbei primär um ein Arbeitsinstrument, bei dem Pakete als Verkaufseinheit mit ihrer Historie im Mittelpunkt stehen. Als Datenbasis nutzt LAS:eR die we:kb."
+    },
+    {
+      "shortName": "LINA",
+      "name": "Lizenzen Allianz und National (LINA)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 4,
+      "link": "http://linatest.hebis-services.de/",
+      "description": "Der Archivserver LINA (Lizenzen Allianz und National), betrieben von der hebis-Verbundzentrale, stellt lizenzierte Materialien mit Archivrechten für Bibliotheken und ihre Nutzer bereit. Gehostet werden National- und Allianzlizenzen, konsortiale Lizenzen des hebis Konsortiums sowie lokale Lizenzen der hebis-Bibliotheken und den jeweils berechtigten Nutzern zur Verfügung gestellt."
+    },
+    {
+      "shortName": "Lokalsystem (UB Erlangen-Nürnberg)",
+      "name": "Lokalsystem (UB Erlangen-Nürnberg)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "keine Angabe",
+      "description": "keine Angabe"
+    },
+    {
+      "shortName": "Nationallizenzen-CMS",
+      "name": "Nationallizenzen Content-Management-System",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://www.nationallizenzen.de/",
+      "description": "Zugang zu digitalen Publikationen im DFG-System der überregionalen Literaturversorgung und im Kontext der Schwerpunktinitiative „Digitale Information“ der Allianz der deutschen Wissenschaftsorganisationen."
+    },
+    {
+      "shortName": "NatStat",
+      "name": "Nationaler Statistikserver (NatStat)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 11,
+      "link": "https://statistik.hebis.de",
+      "description": "Mit dem Statistikserver werden die beteiligten Einrichtungen beim Prozess der Lizenzierung und Nutzung von National-, Allianz- und Konsortiallizenzen durch die zentrale Bereitstellung von Nutzungsdaten unterstützt."
+    },
+    {
+      "shortName": "OBV",
+      "name": "Österreichischer Bibliothekenverbund",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "keine Angabe",
+      "description": "keine Angabe"
+    },
+    {
+      "shortName": "OCLC LBS (VZG|GBV)",
+      "name": "OCLC Lokales Bibliotheksverwaltungssystem",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://www.oclc.org/de/lbs.html",
+      "description": "Das OCLC LBS (ursprünglich: Lokaal Bibliotheek Systeem) ist ein bewährtes, webbasiertes Bibliotheksverwaltungssystem, mit dem die Informationen für über 200 Hochschulbibliotheken in Deutschland und den Niederlanden flexibel verwaltet werden."
+    },
+    {
+      "shortName": "Primo (SGBN)",
+      "name": "St. Galler Bibliotheksnetz (SGBN)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "www.recherche.sg.ch",
+      "description": "Das St.Galler Bibliotheksnetz ist ein Bibliothekenverbund von über 30 Bibliotheken, die gemeinsam eine Verbunddatenbank mit dem Bibliothekssystem Aleph betreiben und dem Publikum den Katalog des St.Galler Bibliotheksnetzes für bibliographische Recherchen und Dokumenten- und Buchbestellungen anbieten."
+    },
+    {
+      "shortName": "RVK",
+      "name": "Regensburger Verbundklassifikation (RVK)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://rvk.ur.de",
+      "description": "Die Regensburger Verbundklassifikation ist eine Verbundklassifikation für Wissenschaftliche Bibliotheken. Der Regensburger Klassifikationsverbund ist der größte Klassifikationsverbund im deutschsprachigen Raum."
+    },
+    {
+      "shortName": "Sherpa Romeo",
+      "name": "Jisc Open policy finder (ehemals Sherpa Romeo)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://openpolicyfinder.jisc.ac.uk/",
+      "description": "Open Policy Finder ist eine Plattform, die die Open-Access-Richtlinien von Verlagen aus der ganzen Welt sammelt und analysiert und Zusammenfassungen der Urheberrechts- und Open-Access-Archivierungsrichtlinien von Verlagen auf der Basis einzelner Zeitschriften bereitstellt."
+    },
+    {
+      "shortName": "Unpaywall",
+      "name": "Unpaywall",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://unpaywall.org/",
+      "description": "keine Angabe"
+    },
+    {
+      "shortName": "VZG",
+      "name": "Verbundzentrale des GBV (VZG)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "keine Angabe",
+      "description": "Die Verbundzentrale des GBV (VZG) ist Katalogisierungs- und Dienstleistungszentrum für wissenschaftliche und öffentliche Bibliotheken und für Forschungseinrichtungen auf dem Gebiet der beteiligten Länder und der Stiftung Preußischer Kulturbesitz."
+    },
+    {
+      "shortName": "we:kb",
+      "name": "we:kb",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://wekb.hbz-nrw.de",
+      "description": "Die we:kb ist eine offene Datenbank, die Informationen zu Anbietern, ihren Plattformen sowie den auf diesen Plattformen verfügbaren Inhalten enthält. Die Inhalte der we:kb werden durch die Anbieter selbst aktuell gehalten."
+    },
+    {
+      "shortName": "WorldCat",
+      "name": "Weltgrößte bibliografische Nachweisdatenbank (WorldCat)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 6,
+      "link": "https://search.worldcat.org/",
+      "description": "keine Angabe"
     },
     {
       "shortName": "ZDB",
-      "name": "",
-      "description": "",
-      "link": "",
-      "numberProcesses": 6,
-      "provider": "",
-      "group": ["Gruppe"]
+      "name": "Zeitschriftendatenbank (ZDB)",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 12,
+      "link": "https://zeitschriftendatenbank.de",
+      "description": "Die Zeitschriftendatenbank (ZDB) dient im deutschsprachigen Raum als Erschließungsinstrument für periodisch erscheinende – gedruckte oder elektronische – Publikationen. Die ZDB ist ein kooperatives Verbundsystem, an dem sich rund 3.700 Institutionen beteiligen. Neben Bibliotheken aus Deutschland und Österreich beteiligen sich auch Archive und Museen an der ZDB. Die ZDB ist zudem eine Datenbanken für den Nachweis von Zeitschriften, Zeitungen, Schriftenreihen und anderen periodisch erscheinenden Veröffentlichungen."
+    },
+    {
+      "shortName": "Bibliotheksverbünde (DACH)",
+      "name": "Bibliotheksverbünde in Deutschland, Österreich und Schweiz",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 1,
+      "link": "https://bibliotheksportal.de/informationen/bibliothekslandschaft/bibliotheksverbuende/",
+      "description": "Bibliotheksverbünde sind Zusammenschlüsse von mehreren Bibliotheken in Form eines Verbundes. "
+    },
+    {
+      "shortName": "OpenAPC",
+      "name": "OpenAPC",
+      "provider": "keine Angabe",
+      "group": [
+        "Gruppierung"
+      ],
+      "numberProcesses": 2,
+      "link": "keine Angabe",
+      "description": "keine Angabe"
     }
   ],
-  "dataExchange":  [
-    {
-      "source": "EZB",
-      "target": "ZDB",
-      "processes":
-    [
-      {
-        "name": "EZB-ZDB-Datendienst",
-        "description": "Der EZB-ZDB-Datendienst ...",
-        "link": "https://zeitschriftendatenbank.de/services/datendienste",
-        "interfaceLink": "Link zum Dienst",
-        "properties": {
-          "resourceType": ["E-Zeitschriften","Datenbanken"],
-          "dataType": ["Bibliographische Daten","Lizenzinformationen: Lizenzzeitraum"],
-          "identifier": ["ISSN", "EZB-BIBID","ZDB-ID"],
-          "frequency": ["Echtzeit"],
-          "automation": ["automatisiert"],
-          "transmissionType": ["OAI-PMH"],
-          "transmissionFormat": ["XML"]
+     "dataExchange": [
+        {
+            "source": "Katalogdaten Schweizer Bibliotheken",
+            "target": "Alma",
+            "processes": [
+                {
+                    "name": "External datasources in Primo VE (Swisscovery)",
+                    "description": "Some libraries have local repositories that are added as external resources into our Primo VE (Swisscovery)<p/>The data is only avaiable in our Discovery System (not part of the Alma database)",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN"
+                    ],
+                    "transmissionType": [
+                        "OAI-PMH"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML",
+                        "MARC 21 (beliebige Variante)",
+                        "Dublin Core"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Anbieter",
+            "target": "Alma (OBSGV)",
+            "processes": [
+                {
+                    "name": "Alma Import",
+                    "description": "generische Beschreibung",
+                    "mass": "7",
+                    "frequency": [
+                        "jährlich",
+                        "monatlich",
+                        "wöchentlich",
+                        "täglich",
+                        "unregelmäßig",
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Andere",
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Paketart Anbieter, Konsortial, Lokal",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "automatisiert",
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (MMSID, AC-Nr.)",
+                        "DOI",
+                        "URN/Handle",
+                        "ID eines Bibliothekssystems"
+                    ],
+                    "transmissionType": [
+                        "OAI-PMH",
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Alma",
+            "target": "Alma (OBSGV)",
+            "processes": [
+                {
+                    "name": "VL Import",
+                    "description": "generische Beschreibung",
+                    "mass": "7",
+                    "frequency": [
+                        "täglich",
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Andere",
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Paketart Anbieter, Konsortial, Lokal",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "automatisiert",
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (VLID, AC-Nr. MMSID)",
+                        "URN/Handle",
+                        "ID eines Bibliothekssystems"
+                    ],
+                    "transmissionType": [
+                        "OAI-PMH",
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "WorldCat",
+            "target": "B3Kat",
+            "processes": [
+                {
+                    "name": "MARC-Importe über SRU-/Z39.50-Schnittstelle",
+                    "description": "Schnittstelle zur Datenübernahme bei der manuellen Katalogisierung in Aleph",
+                    "mass": "1",
+                    "frequency": [
+                        "Andere"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert",
+                        "manuell"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (Manuelle Übernahme durch Katalogisierung)"
+                    ],
+                    "transmissionType": [
+                        "Z39.50",
+                        "SRU"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Anbieter",
+            "target": "B3Kat",
+            "processes": [
+                {
+                    "name": "E-Book-Importe",
+                    "description": "Metadaten zu lizenzierten E-Book-Paketen werden nach Bedarf für die BVB-Bibliotheken in die Titeldatenbank B3Kat importiert",
+                    "mass": "5",
+                    "frequency": [
+                        "Andere",
+                        "jährlich",
+                        "monatlich",
+                        "wöchentlich",
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Books"
+                    ],
+                    "identifier": [
+                        "DOI",
+                        "Sigel/ISIL"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per FileShare/FTP/SFTP",
+                        "Bereitstellung als Download per HTTP(S)"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Bibliotheksverbünde (DACH)",
+            "target": "B3Kat",
+            "processes": [
+                {
+                    "name": "MARC-Importe über SRU-/Z39.50-Schnittstelle",
+                    "description": "Schnittstelle zur Datenübernahme bei der manuellen Katalogisierung in Aleph",
+                    "mass": "1",
+                    "frequency": [
+                        "Andere"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert",
+                        "manuell"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (Manuelle Übernahme durch Katalogisierung)"
+                    ],
+                    "transmissionType": [
+                        "Z39.50",
+                        "SRU"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Alma (Exlibris-KB)",
+            "target": "BVB",
+            "processes": [
+                {
+                    "name": "SFX Lizenzimporte",
+                    "description": "Einspielen der Lizenzinformationen aus EZB und B3Kat",
+                    "mass": "4",
+                    "frequency": [
+                        "monatlich",
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Lizenzinformationen Lizenzzeitraum",
+                        "Lizenzinformationen Lizenzbedingungen",
+                        "Paketinformationen Titellisten",
+                        "Paketart Anbieter, Konsortial, Lokal",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID",
+                        "DOI",
+                        "URN/Handle",
+                        "Sigel/ISIL"
+                    ],
+                    "transmissionType": [
+                        "Andere",
+                        "E-Mail"
+                    ],
+                    "transmissionFormat": [
+                        "Andere",
+                        "KBART"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Anbieter",
+            "target": "BVB",
+            "processes": [
+                {
+                    "name": "E-Book-Importe in lokale OPAC-Indexe",
+                    "description": "Direktnachweis von E-Book-Paketen in den lokalen Endnutzersystemen ohne Umweg über die Einspielung in den B3Kat",
+                    "mass": "2",
+                    "frequency": [
+                        "Andere",
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Books"
+                    ],
+                    "identifier": [
+                        "ISBN",
+                        "Sigel/ISIL",
+                        "ID des Anbieters/Verlags"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per FileShare/FTP/SFTP",
+                        "Bereitstellung als Download per HTTP(S)"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "B3Kat",
+            "target": "BVB",
+            "processes": [
+                {
+                    "name": "SFX Lizenzimporte",
+                    "description": "Einspielen der Lizenzinformationen aus EZB und B3Kat",
+                    "mass": "4",
+                    "frequency": [
+                        "monatlich",
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Lizenzinformationen Lizenzzeitraum",
+                        "Lizenzinformationen Lizenzbedingungen",
+                        "Paketinformationen Titellisten",
+                        "Paketart Anbieter, Konsortial, Lokal",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "automation": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID",
+                        "DOI",
+                        "URN/Handle",
+                        "Sigel/ISIL"
+                    ],
+                    "transmissionType": [
+                        "Andere",
+                        "E-Mail"
+                    ],
+                    "transmissionFormat": [
+                        "Andere",
+                        "KBART"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "EZB",
+            "target": "BVB",
+            "processes": [
+                {
+                    "name": "SFX Lizenzimporte",
+                    "description": "Einspielen der Lizenzinformationen aus EZB und B3Kat",
+                    "mass": "4",
+                    "frequency": [
+                        "monatlich",
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Lizenzinformationen Lizenzzeitraum",
+                        "Lizenzinformationen Lizenzbedingungen",
+                        "Paketinformationen Titellisten",
+                        "Paketart Anbieter, Konsortial, Lokal",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "automation": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID",
+                        "DOI",
+                        "URN/Handle",
+                        "Sigel/ISIL"
+                    ],
+                    "transmissionType": [
+                        "Andere",
+                        "E-Mail"
+                    ],
+                    "transmissionFormat": [
+                        "Andere",
+                        "KBART"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "GBV",
+            "target": "EZB",
+            "processes": [
+                {
+                    "name": "Nationallizenz-CMS",
+                    "description": "Die Liste der teilnehmenden Einrichtungen an Nationallizenzen wird aus dem Nationallizenz-CMS exportiert und in die EZB importiert.",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "dataType": [
+                        "Teilnehmerdaten Lizenzteilnehmerliste"
+                    ],
+                    "automation": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "EZB-BIBID"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per HTTP(S)"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "ISIL-Agentur",
+            "target": "EZB",
+            "processes": [
+                {
+                    "name": "Einrichtungsdaten der ISIL-Agentur ",
+                    "description": "Neue, geänderte oder deaktivierte ISIL-Daten werden abgerufen und in der EZB für Export-Schnittstellen genutzt",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "dataType": [
+                        "Teilnehmerdaten beschreibende Daten"
+                    ],
+                    "automation": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere"
+                    ],
+                    "identifier": [
+                        "Sigel/ISIL",
+                        "EZB-BIBID"
+                    ],
+                    "transmissionType": [
+                        "SRU"
+                    ],
+                    "transmissionFormat": [
+                        "PICA (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "ZDB",
+            "target": "EZB",
+            "processes": [
+                {
+                    "name": "Übernahme von ZDB-Einträgen",
+                    "description": "Fortlaufende Online-Ressourcen, die in der ZDB erfasst sind, können über die WinIBW per vorausgefülltem Datenformular in der EZB als Titel angelegt werden.",
+                    "mass": "1",
+                    "frequency": [
+                        "Andere"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten"
+                    ],
+                    "automation": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ZDB-ID",
+                        "EZB-BIBID"
+                    ],
+                    "transmissionType": [
+                        "Andere"
+                    ],
+                    "transmissionFormat": [
+                        "Andere"
+                    ]
+                },
+                {
+                    "name": "JOP-Printverfügbarkeit",
+                    "description": "Die Printverfügbarkeit einer E-Zeitschrift in einer Einrichtung wird in der EZB für die Nutzer angezeigt.",
+                    "mass": "7",
+					"link": "https://zeitschriftendatenbank.de/services/journals-online-print",
+					"interfaceLink": "https://services.dnb.de/fize-service/gvr/html-service.htm",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Andere",
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "ZDB-ID",
+                        "EZB-BIBID"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per HTTP(S)"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                },
+                {
+                    "name": "ZDB-SRU Schnittstelle",
+                    "description": "Die ZDB-SRU Schnittstelle wird unregelmäßig genutzt, um EZB-Daten mit ZDB-Daten zur Qualitätssicherung abzugleichen, z.B. ZDB-ID anhand ISSN ermitteln.",
+                    "mass": "2",
+					"link": "https://zeitschriftendatenbank.de/services/schnittstellen/sru",
+					"interfaceLink": "https://services.dnb.de/sru/zdb",
+                    "frequency": [
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ZDB-ID"
+                    ],
+                    "transmissionType": [
+                        "SRU"
+                    ],
+                    "transmissionFormat": [
+                        "PICA (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Anbieter",
+            "target": "EZB",
+            "processes": [
+                {
+                    "name": "Titellisten von Verlagen/Plattformen",
+                    "description": "Verschiedene Titellisten werden von Anbietern wie EBSCO oder ProQuest regelmäßig bereitgestellt und in die EZB importiert.",
+                    "mass": "4",
+                    "frequency": [
+                        "Andere",
+                        "jährlich",
+                        "monatlich"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Lizenzinformationen Lizenzzeitraum"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ID des Anbieters/Verlags"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per FileShare/FTP/SFTP"
+                    ],
+                    "transmissionFormat": [
+                        "KBART"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "DOAJ",
+            "target": "EZB",
+            "processes": [
+                {
+                    "name": "DOAJ",
+                    "description": "Es wird ermittelt, ob Zeitschriften im DOAJ verzeichnet sind",
+                    "mass": "6",
+                    "frequency": [
+                        "täglich"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per FileShare/FTP/SFTP"
+                    ],
+                    "transmissionFormat": [
+                        "Andere"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Unpaywall",
+            "target": "EZB",
+            "processes": [
+                {
+                    "name": "Unpaywall",
+                    "description": "Es wird ermittelt, ob eine frei verfügbare Version eines Aufsatzes vorhanden ist",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres JSON"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "CrossRef",
+            "target": "EZB",
+            "processes": [
+                {
+                    "name": "Crossref",
+                    "description": "Es wird die DOI einer Ressource anhand der Metdaten ermittelt und andersrum",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "OpenAPC",
+            "target": "EZB",
+            "processes": [
+                {
+                    "name": "BASE",
+                    "description": "Es wird ermittelt, ob eine frei verfügbare Version eines Aufsatzes vorhanden ist",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                },
+                {
+                    "name": "openAPC",
+                    "description": "Es werden die Kosteninformationen aus openAPC für Zeitschriften abgerufen",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "OA-Informationen OA-Publikationskonditionen"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ROR-ID"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres JSON"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Sherpa Romeo",
+            "target": "EZB",
+            "processes": [
+                {
+                    "name": "Sherpa Romeo",
+                    "description": "Es wird ermittelt, ob OA-Poilicies eines Verlags/Anbieters vorhanden sind",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "OA-Informationen OA-Rechte zur Zweitveröffentlichung"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "JournalTOCs",
+            "target": "EZB",
+            "processes": [
+                {
+                    "name": "JournalTOCs",
+                    "description": "Es wird ermittelt, ob eine Zeitschrift hybrid-OA ist und der Link zum RSS-Feed der letzten Ausgabe abgerufen",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "VZG",
+            "target": "FIDELIO",
+            "processes": [
+                {
+                    "name": "Import-Datenfluss 1: Einspielroutine FIDELIO",
+                    "description": "Nach Abholung der Metadaten beim Verlag erfolgt eine Konversion der Daten durch das KfL in das MARC 21 Datenformat und dieses wird anschließend durch die VZG in das PICA Format konvertiert. E-Books und Datenbankinhalte werden manuell durch die VZG in den NL-Pool und den E-Book-Pool gespielt und gelangen von dort automatisiert über eine Schnittstelle in den K10plus und anschließend nach FIDELIO. Artikelmetadaten werden direkt durch die VZG in FIDELIO eingespielt. Paketaufnahmen, Titelaufnahmen und E-Books (bei Paketen mit weniger als 50 Titeln), werden manuell durch das KfL in der ZDB und dem K10plus katalogisiert und gelangen über Schnittstellen automatisiert nach FIDELIO. ",
+                    "mass": "7",
+                    "frequency": [
+                        "unregelmäßig",
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Lizenzinformationen Lizenzzeitraum",
+                        "Teilnehmerdaten beschreibende Daten"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID",
+                        "DOI",
+                        "Sigel/ISIL",
+                        "ID des Anbieters/Verlags"
+                    ],
+                    "transmissionType": [
+                        "Andere"
+                    ],
+                    "transmissionFormat": [
+                        "PICA (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "GOKb",
+            "target": "FOLIO (UB TUM)",
+            "processes": [
+                {
+                    "name": "GOKb-OAI-PMH-Schnittstellenimport",
+                    "description": "Aus der GOKb werden in regelmäßigen Abständen Titel-und Paketinformationen importiert.<p/>Produktivbetrieb im Laufe von 2023 vorgesehen",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Paketinformationen beschreibende Daten",
+                        "Paketinformationen Titellisten",
+                        "Paketart Anbieter, Konsortial, Lokal"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "OAI-PMH"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Anbieter",
+            "target": "FOLIO (UB TUM)",
+            "processes": [
+                {
+                    "name": "Import COUNTER-Statistiken via SUSHI",
+                    "description": "Via SUSHI werden COUNTER-Nutzungsstatistiken von den Plattformen der Anbieter/Verlage abgeholt.",
+                    "mass": "4",
+                    "frequency": [
+                        "monatlich"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Nutzungsstatistiken"
+                    ],
+                    "datenflussart": [
+                        "automatisiert",
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres JSON"
+                    ]
+                },
+                {
+                    "name": "Manueller Import von COUNTER-Statistiken",
+                    "description": "Manuell werden COUNTER-Nutzungsstatistiken von den Plattformen der Anbieter/Verlage abgeholt.",
+                    "mass": "2",
+                    "frequency": [
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Nutzungsstatistiken"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert",
+                        "manuell"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Andere",
+                        "Bereitstellung als Download per HTTP(S)",
+                        "E-Mail"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres JSON"
+                    ]
+                },
+                {
+                    "name": "Manueller Import von Nutzungsstatistiken proprietären Formaten",
+                    "description": "Manuell werden Nutzungsstatistiken in proprietären Formaten von den Verlagen bezogen.",
+                    "mass": "2",
+                    "frequency": [
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Nutzungsstatistiken"
+                    ],
+                    "datenflussart": [
+                        "manuell"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (kein Matchen möglich)"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per HTTP(S)",
+                        "E-Mail"
+                    ],
+                    "transmissionFormat": [
+                        "Andere"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "GOKb",
+            "target": "FOLIO (UB Regensburg)",
+            "processes": [
+                {
+                    "name": "GOKb-OAI-PMH-Schnittstellenimport",
+                    "description": "Aus der GOKb werden in regelmäßigen Abständen Titel-und Paketinformationen importiert.<p/>Produktivbetrieb im Laufe von 2023 vorgesehen",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Paketinformationen beschreibende Daten",
+                        "Paketinformationen Titellisten",
+                        "Paketart Anbieter, Konsortial, Lokal"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "OAI-PMH"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Anbieter",
+            "target": "FOLIO (UB Regensburg)",
+            "processes": [
+                {
+                    "name": "Import COUNTER-Statistiken via SUSHI",
+                    "description": "Via SUSHI werden COUNTER-Nutzungsstatistiken von den Plattformen der Anbieter/Verlage abgeholt.",
+                    "mass": "4",
+                    "frequency": [
+                        "monatlich"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Nutzungsstatistiken"
+                    ],
+                    "datenflussart": [
+                        "automatisiert",
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres JSON"
+                    ]
+                },
+                {
+                    "name": "Manueller Import von COUNTER-Statistiken",
+                    "description": "Manuell werden COUNTER-Nutzungsstatistiken von den Plattformen der Anbieter/Verlage abgeholt.",
+                    "mass": "2",
+                    "frequency": [
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Nutzungsstatistiken"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert",
+                        "manuell"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Andere",
+                        "Bereitstellung als Download per HTTP(S)",
+                        "E-Mail"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres JSON"
+                    ]
+                },
+                {
+                    "name": "Manueller Import von Nutzungsstatistiken proprietären Formaten",
+                    "description": "Manuell werden Nutzungsstatistiken in proprietären Formaten von den Verlagen bezogen.",
+                    "mass": "2",
+                    "frequency": [
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Nutzungsstatistiken"
+                    ],
+                    "datenflussart": [
+                        "manuell"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (kein Matchen möglich)"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per HTTP(S)",
+                        "E-Mail"
+                    ],
+                    "transmissionFormat": [
+                        "Andere"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "ZDB",
+            "target": "GOKb",
+            "processes": [
+                {
+                    "name": "ZDB-Abgleich",
+                    "description": "Für neu generierte Journal-Titel, bzw. importierte Journals ohne ZDB-ID wird ein passender Datensatz in der ZDB gesucht, und dessen ZDB-ID sowie evtl. der Sachtitel und Erscheinungsdaten in die GOKb übertragen.",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ZDB-ID"
+                    ],
+                    "transmissionType": [
+                        "SRU"
+                    ],
+                    "transmissionFormat": [
+                        "PICA (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "EZB",
+            "target": "GOKb",
+            "processes": [
+                {
+                    "name": "EZB-Abgleich",
+                    "description": "Für Journal-Titel ohne bestehende EZB-ID wird diese von der EZB angefragt ",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                },
+                {
+                    "name": "EZB-KBART-Import",
+                    "description": "Basierend auf der Liste von öffentlichen Kollektionen werden Pakete in der GOKb erzeugt/geupdatet.",
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Paketinformationen beschreibende Daten",
+                        "Paketinformationen Titellisten",
+                        "Paketart Anbieter, Konsortial, Lokal",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "transmissionFormat": [
+                        "KBART"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Bibliotheksverbünde (D)",
+            "target": "GVI",
+            "processes": [
+                {
+                    "name": "Gemeinsamer Verbündeindex (GVI)",
+                    "description": "Daten der deutschen Verbünde, ÖBV und ZDB werden zusammengeführt und als SOLR-Index zur Verfügung gestellt.",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Bestandsinformationen Fernleihinformationen",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (Identifier werden zur Clusterung verwendet)",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "ZDB",
+            "target": "GVI",
+            "processes": [
+                {
+                    "name": "Gemeinsamer Verbündeindex (GVI)",
+                    "description": "Daten der deutschen Verbünde, ÖBV und ZDB werden zusammengeführt und als SOLR-Index zur Verfügung gestellt.",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Bestandsinformationen Fernleihinformationen",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (Identifier werden zur Clusterung verwendet)",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "OBV",
+            "target": "GVI",
+            "processes": [
+                {
+                    "name": "Gemeinsamer Verbündeindex (GVI)",
+                    "description": "Daten der deutschen Verbünde, ÖBV und ZDB werden zusammengeführt und als SOLR-Index zur Verfügung gestellt.",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Bestandsinformationen Fernleihinformationen",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (Identifier werden zur Clusterung verwendet)",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "EBSCO",
+            "target": "HDS",
+            "processes": [
+                {
+                    "name": "HDS Schnittstellenabfrage für EDS",
+                    "description": "Bei einer Suchanfrage im Suchportal HDS wird auch der EBSCO Discovery Service über deren API abgefragt und das Ergebnis als Trefferliste/ Einzeltreffer in die HDS Oberfläche eingebunden",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (Matching siehe auch ReDi)",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML",
+                        "proprietäres JSON"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "E-Pflicht-Portal",
+            "target": "hebis Zentralsystem",
+            "processes": [
+                {
+                    "name": "hebis Zentralsystem: Datenlieferung: Metadaten für elektronische Pflichtstücke",
+                    "description": "Weitergabe der Metadaten für elektronische Pflichtstücke aus dem E-Pflicht-Repositorium",
+                    "mass": "5",
+                    "frequency": [
+                        "Andere",
+                        "monatlich",
+                        "wöchentlich",
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Paketinformationen beschreibende Daten",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Books"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (Matching.Identifier variiert von Paket zu Paket)",
+                        "ISBN",
+                        "DOI",
+                        "ID des Anbieters/Verlags"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per FileShare/FTP/SFTP",
+                        "Bereitstellung als Download per HTTP(S)",
+                        "E-Mail"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Anbieter",
+            "target": "hebis Zentralsystem",
+            "processes": [
+                {
+                    "name": "hebis Zentralsystem: Datenlieferung Verlagsmetadaten",
+                    "description": "Import von Verlagsmetadaten zu E-Book-Paketen",
+                    "mass": "4",
+                    "frequency": [
+                        "monatlich"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books"
+                    ],
+                    "identifier": [
+                        "ID eines Bibliothekssystems"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per HTTP(S)"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "DNB",
+            "target": "hebis Zentralsystem",
+            "processes": [
+                {
+                    "name": "hebis Zentralsystem: Datenlieferung DNB Reihe O",
+                    "description": "Import der monatlichen Metadaten für Er in Reihe O<p/>Importiert wird stark selektiert: nur lizenzfreie Ressourcen und Ressourcen, die in Hessen erscheinen",
+                    "mass": "2",
+                    "frequency": [
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Paketinformationen beschreibende Daten",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Books"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (Matching.Identifier variiert von Paket zu Paket)",
+                        "ISBN",
+                        "DOI",
+                        "ID des Anbieters/Verlags"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "GBV / BSZ",
+            "target": "hebis Zentralsystem",
+            "processes": [
+                {
+                    "name": "hebis Zentralsystem: Datenlieferung Metadaten aus dem E-Book-Pool des K10+",
+                    "description": "Für bestimmte E-Book-Pakete werden die Metadaten inkl. Aktualisierungen aus dem E-Book-Pool bezogen und in die Verbunddatenbank eingespielt.",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (Matching siehe auch ReDi)",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML",
+                        "proprietäres JSON"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Anbieter",
+            "target": "EBP",
+            "processes": [
+                {
+                    "name": "MARC-Import, Onix-Import, Pica-Import",
+                    "description": "Pro Datenlieferant werden regelmäßig oder unregelmäßig abgelieferte MARC- bzw. ONIX-Daten in das Pica-Format konvertiert und in den E-Book-Pool eingespielt<p/>Wenn andere Formate als MARC, ONIX oder Pica geliefert werden (z. B. JSON) wird zuerst nach MARC und im zweiten Schritt ins Pica-Format konvertiert, siehe https://wiki.k10plus.de/display/K10PLUS/Informationen+zu+Datenlieferanten+und+Plattformen",
+                    "mass": "6",
+                    "frequency": [
+                        "jährlich",
+                        "monatlich",
+                        "wöchentlich",
+                        "täglich",
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Paketinformationen Titellisten",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "automatisiert",
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Books",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "Anmerkungen (Die URL ist als Identifier möglich, da im E-Book-Pool plattformspezifische Aufnahmen geführt werden)",
+                        "DOI",
+                        "URN/Handle",
+                        "ID eines Bibliothekssystems",
+                        "ID des Anbieters/Verlags"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per FileShare/FTP/SFTP",
+                        "Bereitstellung als Download per HTTP(S)",
+                        "OAI-PMH",
+                        "SRU",
+                        "Rest",
+                        "E-Mail"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres JSON",
+                        "MARC 21 (beliebige Variante)",
+                        "PICA (beliebige Variante)",
+                        "ONIX for Books",
+                        "Dublin Core"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "EZB",
+            "target": "K10plus",
+            "processes": [
+                {
+                    "name": "VZG-EZB-Dienst",
+                    "description": "Übernahme der Lizenzdaten aus der EZB für GBV-Einrichtungen",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "dataType": [
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Bestandsinformationen Fernleihinformationen",
+                        "Lizenzinformationen Lizenzzeitraum",
+                        "Lizenzinformationen Lizenzbedingungen",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "ZDB-ID",
+                        "EZB-BIBID"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per FileShare/FTP/SFTP"
+                    ],
+                    "transmissionFormat": [
+                        "Andere"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "GBV / BSZ",
+            "target": "KOBV",
+            "processes": [
+                {
+                    "name": "Aritkel",
+                    "description": "Anreicherung ALBERT ZSS Daten mit Bestandsinfo",
+                    "mass": "7",
+                    "frequency": [
+                        "monatlich",
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Lizenzinformationen Lizenzzeitraum",
+                        "Lizenzinformationen Lizenzbedingungen",
+                        "Teilnehmerdaten beschreibende Daten",
+                        "Teilnehmerdaten Lizenzteilnehmerliste",
+                        "Paketinformationen beschreibende Daten",
+                        "Paketinformationen Titellisten",
+                        "Paketart Anbieter, Konsortial, Lokal",
+                        "OA-Informationen freie Zugänglichkeit",
+                        "OA-Informationen OA-Publikationskonditionen",
+                        "OA-Informationen OA-Rechte zur Zweitveröffentlichung"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ZDB-ID",
+                        "DOI",
+                        "ROR-ID"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per FileShare/FTP/SFTP",
+                        "SRU"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "EZB",
+            "target": "KOBV",
+            "processes": [
+                {
+                    "name": "EZB-Teilnehme-r listen (DeepGreen)",
+                    "description": "Teinehmerlisten für Konsortialverträge",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich",
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Lizenzinformationen Lizenzzeitraum",
+                        "Teilnehmerdaten beschreibende Daten",
+                        "Teilnehmerdaten Lizenzteilnehmerliste",
+                        "OA-Informationen freie Zugänglichkeit",
+                        "OA-Informationen OA-Publikationskonditionen",
+                        "OA-Informationen OA-Rechte zur Zweitveröffentlichung"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "EZB-BIBID"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML",
+                        "proprietäres JSON"
+                    ]
+                },
+                {
+                    "name": "ZSS-Listen (DeepGreen)",
+                    "mass": "2",
+                    "frequency": [
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Paketinformationen Titellisten",
+                        "OA-Informationen OA-Rechte zur Zweitveröffentlichung"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "EZB-BIBID"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "ZDB",
+            "target": "KOBV",
+            "processes": [
+                {
+                    "name": "ZDB Infos für Availability Proxy",
+                    "description": "Verfügbarkeitsinfo im KOBV Portal",
+                    "mass": "6",
+                    "frequency": [
+                        "täglich"
+                    ],
+                    "dataType": [
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Bestandsinformationen Fernleihinformationen",
+                        "Lizenzinformationen Lizenzzeitraum",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID"
+                    ],
+                    "transmissionType": [
+                        "OAI-PMH",
+                        "SRU",
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "EconStor",
+            "target": "KOBV",
+            "processes": [
+                {
+                    "name": "ECONSTOR Infos für ALBERT",
+                    "description": "Bibliograpische Daten für Alberts",
+                    "mass": "2",
+                    "frequency": [
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Bestandsinformationen Fernleihinformationen",
+                        "Lizenzinformationen Lizenzzeitraum",
+                        "Lizenzinformationen Lizenzbedingungen",
+                        "OA-Informationen freie Zugänglichkeit",
+                        "OA-Informationen OA-Publikationskonditionen"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "GBV",
+            "target": "KOBV",
+            "processes": [
+                {
+                    "name": "National- lizenzen für ALBERTs",
+                    "description": "Bibliograpische Daten für Alberts",
+                    "mass": "2",
+                    "frequency": [
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Bestandsinformationen Fernleihinformationen",
+                        "Lizenzinformationen Lizenzzeitraum",
+                        "Lizenzinformationen Lizenzbedingungen",
+                        "OA-Informationen freie Zugänglichkeit",
+                        "OA-Informationen OA-Publikationskonditionen"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "DOAJ",
+            "target": "KOBV",
+            "processes": [
+                {
+                    "name": "DOAJ für ALBERTs",
+                    "description": "Bibliograpische Daten für Alberts",
+                    "mass": "2",
+                    "frequency": [
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "OA-Informationen freie Zugänglichkeit",
+                        "OA-Informationen OA-Publikationskonditionen",
+                        "OA-Informationen OA-Rechte zur Zweitveröffentlichung"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML",
+                        "proprietäres JSON"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "we:kb",
+            "target": "LAS:eR",
+            "processes": [
+                {
+                    "name": "we:kb - LAS:eR Synchronisierung",
+                    "description": "Aus der we:kb werden in regelmäßigen Abständen Titel-und Paketinformationen importiert.<p/>Produktivbetrieb seit 2019",
+                    "mass": "7",
+                    "frequency": [
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Paketinformationen beschreibende Daten",
+                        "Paketinformationen Titellisten",
+                        "Paketart Anbieter, Konsortial, Lokal"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID",
+                        "DOI",
+                        "ID des Anbieters/Verlags"
+                    ],
+                    "transmissionFormat": [
+                        "KBART"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "CrossRef",
+            "target": "LINA",
+            "processes": [
+                {
+                    "name": "LINA",
+                    "description": "Import von Titel-Metadaten",
+                    "mass": "2",
+                    "frequency": [
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Paketinformationen Titellisten",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "Anmerkungen (Identifier werden zur Clusterung verwendet)",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID",
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Anbieter",
+            "target": "LINA",
+            "processes": [
+                {
+                    "name": "LINA",
+                    "description": "Import von Volltexten<p/>FTP-Lieferung von Verlagen",
+                    "mass": "2",
+                    "frequency": [
+                        "unregelmäßig"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "DOI"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Nationallizenzen-CMS",
+            "target": "LINA",
+            "processes": [
+                {
+                    "name": "LINA",
+                    "description": "Aktualiserung von IP-Adressen",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "dataType": [
+                        "Teilnehmerdaten Lizenzteilnehmerliste"
+                    ],
+                    "datenflussart": [
+                        "manuell"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books"
+                    ],
+                    "identifier": [
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Andere"
+                    ],
+                    "transmissionFormat": [
+                        "Andere"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "LAS:eR",
+            "target": "LINA",
+            "processes": [
+                {
+                    "name": "LINA",
+                    "description": "Aktualiserung von IP-Adressen",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "dataType": [
+                        "Teilnehmerdaten Lizenzteilnehmerliste"
+                    ],
+                    "datenflussart": [
+                        "manuell"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books"
+                    ],
+                    "identifier": [
+                        "DOI"
+                    ],
+                    "transmissionType": [
+                        "Andere"
+                    ],
+                    "transmissionFormat": [
+                        "Andere"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Anbieter",
+            "target": "NatStat",
+            "processes": [
+                {
+                    "name": "COUNTER Release 4 Harvesting",
+                    "description": "Automatisierter Abruf von Statistiken nach COUNTER Release 4<p/>Plattformen sind teilweise in der COUNTER Registry verzeichnet: https://registry.projectcounter.org/",
+                    "mass": "7",
+                    "frequency": [
+                        "monatlich",
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "DOI",
+                        "ID des Anbieters/Verlags"
+                    ],
+                    "transmissionType": [
+                        "Andere"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                },
+                {
+                    "name": "COUNTER Release 5 Harvesting",
+                    "description": "Automatisierter Abruf von Statistiken nach COUNTER Release 5<p/>Plattformen sind teilweise in der COUNTER Registry verzeichnet: https://registry.projectcounter.org/",
+                    "mass": "7",
+                    "frequency": [
+                        "monatlich",
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken",
+                        "Enthaltene Teilwerke, z.B. Aufsätze"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "DOI",
+                        "ID des Anbieters/Verlags"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres JSON"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "DFG-Nationallizenzen",
+            "target": "NatStat",
+            "processes": [
+                {
+                    "name": "Import der Teilnehmerdaten der National- und Allianzlizenzen",
+                    "description": "Aktualisierung der Einrichtungsdaten im NatStat anhand der Teilnehmerdaten der National- und Allianzlizenzen",
+                    "mass": "2",
+                    "frequency": [
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Teilnehmerdaten beschreibende Daten"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "Anmerkungen (WIB-ID)"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                },
+                {
+                    "name": "Schnittstellenabfrage Lizenzliste",
+                    "description": "Abfrage von Lizenzinformationenu. a. zum Anreichern von Paketidentifiern ",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "dataType": [
+                        "Andere"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "Anmerkungen (LM-UID)"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres JSON"
+                    ]
+                },
+                {
+                    "name": "SchnittstellenabfrageLizenzteilnehmer",
+                    "description": "Abfrage von Teilnehmernfür ein lizenziertes Paket",
+                    "mass": "1",
+                    "frequency": [
+                        "Andere"
+                    ],
+                    "dataType": [
+                        "Teilnehmerdaten Lizenzteilnehmerliste"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "Anmerkungen (LM-UID, WIB-ID)"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "DBIS",
+            "target": "NatStat",
+            "processes": [
+                {
+                    "name": "SchnittstellenabfrageTitelliste",
+                    "description": "Abfrage von gesamter Titelliste zum Anlegen neuer Titel & Paketwrapper",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "dataType": [
+                        "Paketinformationen beschreibende Daten",
+                        "Paketinformationen Titellisten"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "Anmerkungen (DBIS-ID)"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                },
+                {
+                    "name": "SchnittstellenabfrageKlassifikation",
+                    "description": "Abfrage von Klassifikationsdatenfür einzelne Titel",
+                    "mass": "1",
+                    "frequency": [
+                        "Andere"
+                    ],
+                    "dataType": [
+                        "Andere"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "Anmerkungen (DBIS-ID)"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "EZB",
+            "target": "NatStat",
+            "processes": [
+                {
+                    "name": "SchnittstellenabfragePaketliste + Aggregatoren",
+                    "description": "Abfrage von Paket- & Aggregatordatenzum Anlegen neuer Pakete, Anreichern von Paketidentifiern",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "dataType": [
+                        "Paketinformationen beschreibende Daten",
+                        "Paketart Anbieter, Konsortial, Lokal"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "identifier": [
+                        "EZB-BIBID"
+                    ],
+                    "transmissionType": [
+                        "Andere"
+                    ],
+                    "transmissionFormat": [
+                        "Andere"
+                    ]
+                },
+                {
+                    "name": "SchnittstellenabfrageTiteldaten",
+                    "description": "Abfrage von Titeldaten zum Anlegen von Titeln innerhalb eines bestimmtes Pakets",
+                    "mass": "1",
+                    "frequency": [
+                        "Andere"
+                    ],
+                    "dataType": [
+                        "Andere",
+                        "Paketinformationen Titellisten"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "EZB-BIBID"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "ZDB",
+            "target": "NatStat",
+            "processes": [
+                {
+                    "name": "DatenimportTiteldaten",
+                    "description": "Abfrage von Titeldatenzum Anreichern vorhandener Titel innerhalb eines Pakets",
+                    "mass": "4",
+                    "frequency": [
+                        "monatlich",
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Andere",
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "Anmerkungen (Normalisierter TitelMaterial_code)",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ZDB-ID"
+                    ],
+                    "transmissionType": [
+                        "Rest"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "GOKb",
+            "target": "NatStat",
+            "processes": [
+                {
+                    "name": "SchnittstellenabfrageTiteldaten + Organisationen + Plattformen",
+                    "description": "Abfrage von Titeldaten, Organisationen & Plattformen für Globale Titelliste<p/>in Entwicklung",
+                    "mass": "6",
+                    "frequency": [
+                        "täglich"
+                    ],
+                    "dataType": [
+                        "Andere",
+                        "Bibliographische Daten",
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "Anmerkungen (GOKB-UUIDNormalisierter TitelMedium)",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN",
+                        "ZDB-ID",
+                        "DOI",
+                        "ID des Anbieters/Verlags"
+                    ],
+                    "transmissionType": [
+                        "OAI-PMH"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "Divibib",
+            "target": "Primo (SGBN)",
+            "processes": [
+                {
+                    "name": "Import Bibliographische Daten für Dibiost in Primo",
+                    "description": "Import Bibliographische Daten für Dibiost (Digitale Bibliothek Ostschweiz) in Primo, bereitgestellt durch Divibib ",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Books"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per FileShare/FTP/SFTP"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres XML"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "GND",
+            "target": "RVK",
+            "processes": [
+                {
+                    "name": "Registerbegriffe aus GND",
+                    "description": "Die Registerbegriffe in der RVK sind mit der GND verknüpft und werden per GND-ID direkt aus der GND geholt.",
+                    "mass": "6",
+                    "frequency": [
+                        "täglich"
+                    ],
+                    "dataType": [
+                        "Andere"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "K10plus",
+            "target": "WorldCat",
+            "processes": [
+                {
+                    "name": "X",
+                    "description": "Die deutschen Verbunddatenbanken werden in den WorldCat geladen, dort enthaltene Nachweise von eMedien werden dann auch in WorldCat nachgewiesen.<p/>Zwischen den Verbünden gibt es Unterschiede, was die verwendeten Schnittstellen anbelangt, auch die Frequenz der Datenlieferungen unterscheidet sich, allerdings nicht gravierend. Auf einige Unterschiede wird an entsprechender Stelle hingewiesen.",
+                    "mass": "7",
+                    "frequency": [
+                        "Andere",
+                        "wöchentlich",
+                        "täglich",
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten"
+                    ],
+                    "datenflussart": [
+                        "automatisiert",
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN"
+                    ],
+                    "transmissionType": [
+                        "Andere",
+                        "Bereitstellung als Download per FileShare/FTP/SFTP"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "ZDB",
+            "target": "WorldCat",
+            "processes": [
+                {
+                    "name": "Nachweis der ZDB in WorldCat",
+                    "description": "Die ZDB-Daten werden direkt aus der ZDB in den WorldCat geladen.<p/>Die ZDB-Daten haben in WorldCat dann auche einen besonderen Status und können nicht (wie andere WorldCat-Daten) kooperativ geändert werden.",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ZDB-ID"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "B3Kat",
+            "target": "WorldCat",
+            "processes": [
+                {
+                    "name": "Nachweis der Verbunddatenbanken in WorldCat",
+                    "description": "Die deutschen Verbunddatenbanken werden in den WorldCat geladen, dort enthaltene Nachweise von eMedien werden dann auch in WorldCat nachgewiesen.<p/>Zwischen den Verbünden gibt es Unterschiede, was die verwendeten Schnittstellen anbelangt, auch die Frequenz der Datenlieferungen unterscheidet sich, allerdings nicht gravierend. Auf einige Unterschiede wird an entsprechender Stelle hingewiesen.",
+                    "mass": "7",
+                    "frequency": [
+                        "Andere",
+                        "wöchentlich",
+                        "täglich",
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten"
+                    ],
+                    "datenflussart": [
+                        "automatisiert",
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN"
+                    ],
+                    "transmissionType": [
+                        "Andere",
+                        "Bereitstellung als Download per FileShare/FTP/SFTP"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "hebis",
+            "target": "WorldCat",
+            "processes": [
+                {
+                    "name": "Nachweis der Verbunddatenbanken in WorldCat",
+                    "description": "Die deutschen Verbunddatenbanken werden in den WorldCat geladen, dort enthaltene Nachweise von eMedien werden dann auch in WorldCat nachgewiesen.<p/>Zwischen den Verbünden gibt es Unterschiede, was die verwendeten Schnittstellen anbelangt, auch die Frequenz der Datenlieferungen unterscheidet sich, allerdings nicht gravierend. Auf einige Unterschiede wird an entsprechender Stelle hingewiesen.",
+                    "mass": "7",
+                    "frequency": [
+                        "Andere",
+                        "wöchentlich",
+                        "täglich",
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten"
+                    ],
+                    "datenflussart": [
+                        "automatisiert",
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN"
+                    ],
+                    "transmissionType": [
+                        "Andere",
+                        "Bereitstellung als Download per FileShare/FTP/SFTP"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "hbz",
+            "target": "WorldCat",
+            "processes": [
+                {
+                    "name": "Nachweis der Verbunddatenbanken in WorldCat",
+                    "description": "Die deutschen Verbunddatenbanken werden in den WorldCat geladen, dort enthaltene Nachweise von eMedien werden dann auch in WorldCat nachgewiesen.<p/>Zwischen den Verbünden gibt es Unterschiede, was die verwendeten Schnittstellen anbelangt, auch die Frequenz der Datenlieferungen unterscheidet sich, allerdings nicht gravierend. Auf einige Unterschiede wird an entsprechender Stelle hingewiesen.",
+                    "mass": "7",
+                    "frequency": [
+                        "Andere",
+                        "wöchentlich",
+                        "täglich",
+                        "in quasi Echtzeit"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten"
+                    ],
+                    "datenflussart": [
+                        "automatisiert",
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften",
+                        "E-Books",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "ISBN"
+                    ],
+                    "transmissionType": [
+                        "Andere",
+                        "Bereitstellung als Download per FileShare/FTP/SFTP"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "EZB",
+            "target": "ZDB",
+            "processes": [
+                {
+                    "name": "EZB-ZDB-Datendienst",
+                    "description": "Lizenzdaten von EZB-Teilnehmern, die sich für den EZB-ZDB-Datendienst haben freischalten lassen",
+                    "link": "https://zeitschriftendatenbank.de/services/datendienste#c94539",
+					"mass": "6",
+                    "frequency": [
+                        "täglich"
+                    ],
+                    "dataType": [
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Lizenzinformationen Lizenzzeitraum",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "automatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "ZDB-ID",
+                        "EZB-BIBID"
+                    ],
+                    "transmissionType": [
+                        "OAI-PMH"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "GBV",
+            "target": "ZDB",
+            "processes": [
+                {
+                    "name": "Bestandsdatenlieferung",
+                    "description": "Primäre Erfassung der Bestandsinformation im Lokalsysten und Export in die ZDB",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "dataType": [
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Bestandsinformationen Fernleihinformationen",
+                        "Lizenzinformationen Lizenzzeitraum",
+                        "Lizenzinformationen Lizenzbedingungen",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "ZDB-ID"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per FileShare/FTP/SFTP"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "DOAJ",
+            "target": "ZDB",
+            "processes": [
+                {
+                    "name": "DOAJ-Import",
+                    "description": "Jährlicher Ableich mit dem DOAJ",
+                    "mass": "3",
+                    "frequency": [
+                        "jährlich",
+                        "unregelmäßig"
+                    ],
+                    "dataType": [
+                        "Bibliographische Daten",
+                        "Lizenzinformationen Lizenzbedingungen",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "E-Zeitschriften"
+                    ],
+                    "identifier": [
+                        "ISSN (E-ISSN, P-ISSN)",
+                        "URN/Handle"
+                    ],
+                    "transmissionType": [
+                        "E-Mail"
+                    ],
+                    "transmissionFormat": [
+                        "proprietäres JSON"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "hebis",
+            "target": "ZDB",
+            "processes": [
+                {
+                    "name": "Bestandsdatenlieferung",
+                    "description": "Primäre Erfassung der Bestandsinformation im Lokalsysten und Export in die ZDB",
+                    "mass": "5",
+                    "frequency": [
+                        "wöchentlich"
+                    ],
+                    "dataType": [
+                        "Bestandsinformationen Zugangsinformationen (Link, Zeitraum)",
+                        "Bestandsinformationen Fernleihinformationen",
+                        "Lizenzinformationen Lizenzzeitraum",
+                        "Lizenzinformationen Lizenzbedingungen",
+                        "OA-Informationen freie Zugänglichkeit"
+                    ],
+                    "datenflussart": [
+                        "teilautomatisiert"
+                    ],
+                    "resourceType": [
+                        "Andere",
+                        "E-Zeitschriften",
+                        "Datenbanken"
+                    ],
+                    "identifier": [
+                        "Andere",
+                        "ZDB-ID"
+                    ],
+                    "transmissionType": [
+                        "Bereitstellung als Download per FileShare/FTP/SFTP"
+                    ],
+                    "transmissionFormat": [
+                        "MARC 21 (beliebige Variante)"
+                    ]
+                }
+            ]
         }
-      },
-      {
-        "name": "Test-Datendienst",
-        "description": "Der Test-Datendienst ...",
-        "link": "https://zeitschriftendatenbank.de/services/datendienste",
-        "interfaceLink": "Link zum Dienst",
-        "properties": {
-          "resourceType": ["E-Zeitschriften","Datenbanken"],
-          "dataType": ["Bibliographische Daten","Lizenzinformationen: Lizenzzeitraum"],
-          "identifier": ["ISSN", "EZB-BIBID","ZDB-ID"],
-          "frequency": ["Echtzeit"],
-          "automation": ["automatisiert"],
-          "transmissionType": ["OAI-PMH"],
-          "transmissionFormat": ["XML"]
-        }
-      }
     ]
-    }
-  ]
 }
