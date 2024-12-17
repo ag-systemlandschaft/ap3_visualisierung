@@ -115,3 +115,7 @@ function createSystem(svg, systems, simulation) {
         .text(d => d.name);
     return system;
 }
+
+function filterDateExchange(dataExchanges) {
+    svg.select("g").select("g").selectAll("path").data(dataExchanges).attr("display", d => d.processes.some(process => process.active) ? "inital" : "none");
+}
