@@ -1,3 +1,41 @@
+body {
+    background-color: #ffffff;
+    color: #434343;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+h1 {
+    color: #000000;
+}
+
+.subtitle {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.button {
+    background-color: #6667AB;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.navbar {
+    background-color: #F7F8F9;
+    color: #222222;
+    font-size: 20px;
+}
+
+footer {
+    color: #ffffff;
+    background-color: #6667AB;
+    font-size: 15px;
+    margin-top: 60px;
+    padding: 20px 40px;
+}
+
 div.vis {
     width: 100%;
     text-align: center;
