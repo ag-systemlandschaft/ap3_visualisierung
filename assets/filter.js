@@ -36,16 +36,18 @@ function applyFilter() {
 
     globalDataExchanges.forEach(exchange => {
         exchange.processes.forEach(process => {
-            let processActive = false;
+            let processActive = true;
 
             selectedFilters.forEach((selectedOptions, filterId) => {
+                if (selectedOptions.length === 0) return;
+
                 const filterProperties = process.properties[filterId];
 
-                if (filterProperties && filterProperties.some(option => selectedOptions.includes(option))) {
-                    processActive = true;
+                if (!filterProperties || !filterProperties.some(option => selectedOptions.includes(option))) {
+                    processActive = false;
                 }
             });
-
+            
             process.active = processActive;
         });
     });
