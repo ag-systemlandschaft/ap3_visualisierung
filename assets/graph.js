@@ -24,18 +24,62 @@ function initGraph(svg, systems, dataExchanges, filters) {
         .attr("fill", dataExchangeColor)
         .attr("d", "M0,-5L10,0L0,5");
 
+    const dataExchange = createDataExchange(svg, dataExchanges);
+
+    const system = createSystem(svg, systems, simulation);
+
+    simulation.on("tick", () => {
+        dataExchange.attr("d", linkArc);
+        system.attr("transform", d => `translate(${d.x},${d.y})`);
+    });
+
+    addTooltip(svg, system, dataExchange);
+    addClickHandler(svg, system, dataExchange, filters);
+}
+
+// Calculate link arcs
+function linkArc(d) {
+    const r = Math.hypot(d.target.x - d.source.x, d.target.y - d.source.y);
+    const targetRadius = 1.5 * d.target.numberProcesses;
+    const sourceRadius = 1.5 * d.source.numberProcesses;
+
+    const dx = d.target.x - d.source.x;
+    const dy = d.target.y - d.source.y;
+    const length = Math.sqrt(dx * dx + dy * dy);
+
+    // Adjust source and target points to account for circle radius
+    const sourceX = d.source.x + (dx / length) * sourceRadius;
+    const sourceY = d.source.y + (dy / length) * sourceRadius;
+    const targetX = d.target.x - (dx / length) * targetRadius;
+    const targetY = d.target.y - (dy / length) * targetRadius;
+
+    return `M${sourceX},${sourceY} A${r},${r} 0 0,1 ${targetX},${targetY}`;
+}
+
+function createDataExchange(svg, dataExchanges) {
     const dataExchange = svg.select("g")
         .append("g")
         .attr("fill", "none")
         .selectAll("path")
         .data(dataExchanges)
         .join("path")
-        .attr("group-id", d => d.group)
+        .attr("id", (d, i) => i)
         .attr("stroke", dataExchangeColor)
         .attr("marker-end", function (d) {
             return "url(#arrow-link-" + d.index + ")";
         });
 
+    svg.append("text")
+        .attr("id", "hoverText")
+        .attr("fill", hoverColor)
+        .attr("stroke", "white")
+        .attr("stroke-width", 10)
+        .attr("paint-order", "stroke")
+        .attr("display", "none");
+    return dataExchange;
+}
+
+function createSystem(svg, systems, simulation) {
     const system = svg.select("g")
         .append("g")
         .attr("fill", "currentColor")
@@ -44,7 +88,6 @@ function initGraph(svg, systems, dataExchanges, filters) {
         .selectAll("g")
         .data(systems)
         .join("g")
-        .attr("group-id", d => d.group)
         .attr("fill", systemColor)
         .call(drag(simulation));
 
@@ -62,102 +105,13 @@ function initGraph(svg, systems, dataExchanges, filters) {
         .attr("stroke", "white")
         .attr("stroke-width", 7);
 
-    simulation.on("tick", () => {
-        dataExchange.attr("d", linkArc);
-        system.attr("transform", d => `translate(${d.x},${d.y})`);
-    });
-
-    addTooltip(svg, system, dataExchange);
-    addClickHandler(svg, system, dataExchange, filters);
-}
-
-// Calculate link arcs
-function linkArc(d) {
-    const r = Math.hypot(d.target.x - d.source.x, d.target.y - d.source.y);
-    return `
-      M${d.source.x},${d.source.y}
-      A${r},${r} 0 0,1 ${d.target.x},${d.target.y}
-    `;
-}
-
-function addTooltip(svg, system, dataExchange) {
-    let hoverTimeout;
-    system.on("mouseover", (event, d) => {
-        const [x, y] = d3.pointer(event, svg.node());
-        clearTimeout(hoverTimeout);
-        svg.append("text")
-            .attr("x", x)
-            .attr("y", y)
-            .attr("id", "hoverText")
-            .attr("fill", systemColor)
-            .attr("stroke", "white")
-            .attr("stroke-width", 5)
-            .attr("paint-order", "stroke")
-            .text(d.name);
-    })
-        .on("mouseout", () => {
-            hoverTimeout = setTimeout(() => {
-                d3.select("#hoverText").remove();
-            }, 5);
-        });
-
-    dataExchange.on("mouseover", (event, d) => {
-        const [x, y] = d3.pointer(event, svg.node());
-        const text = svg.append("text")
-            .attr("x", x)
-            .attr("y", y)
-            .attr("id", "hoverText")
-            .attr("fill", dataExchangeColor)
-            .attr("stroke", "white")
-            .attr("stroke-width", 5)
-            .attr("paint-order", "stroke");
-
-        // Split your text into multiple lines
-        const lines = d.processes.map(p => `- ${p.name}`);
-
-        // Append each line as a separate `tspan`
-        lines.forEach((line, i) => {
-            text.append("tspan")
-                .attr("x", x + 15) // Set x position for each line
-                .attr("dy", i === 0 ? 0 : 15) // Adjust y position for each line
-                .text(line);
-        });
-    })
-        .on("mouseout", () => {
-            d3.select("#hoverText").remove();
-        });
-}
-
-function addClickHandler(svg, system, dataExchange, filters) {
-    function resetColors() {
-        dataExchange.attr("stroke", dataExchangeColor);
-        system.attr("fill", systemColor);
-    }
-
-    system.on("click", (event, d) => {
-        addSystemInfo(d)
-
-        resetColors();
-        d3.select(event.currentTarget)
-            .attr("fill", selectedColor);
-
-        const transform = event.target.parentElement.getAttribute('transform');
-        const translateMatch = transform.match(/translate\(([^,]+),([^)]+)\)/);
-        if (translateMatch) {
-            const translateX = parseFloat(translateMatch[1]);
-            const translateY = parseFloat(translateMatch[2]);
-
-            g.transition()
-                .duration(500)
-                .attr("transform", `translate(${-translateX},${-translateY})`);
-        }
-    })
-
-    dataExchange.on("click", (event, d) => {
-        addDataExchangeInfo(d, filters)
-
-        resetColors();
-        d3.select(event.currentTarget)
-            .attr("stroke", selectedColor);
-    })
+    system.append("text")
+        .attr("class", "hoverText")
+        .attr("fill", hoverColor)
+        .attr("stroke", "white")
+        .attr("stroke-width", 10)
+        .attr("paint-order", "stroke")
+        .attr("display", "none")
+        .text(d => d.name);
+    return system;
 }

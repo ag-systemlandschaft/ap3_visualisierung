@@ -1,9 +1,10 @@
 // Load data
 d3.json("/data/data.json").then(init);
 
-const systemColor = "black";
+const systemColor = "#6667ab";
 const selectedColor = "darkviolet";
-const dataExchangeColor = "#6667ab";
+const dataExchangeColor = "black";
+const hoverColor = "darkblue";
 
 // Initialize the visualization
 function init(data) {
