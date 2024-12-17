@@ -1,42 +1,43 @@
-function initInfoText(infoText) {
-    d3.select(".infoText")
-        .selectAll("span")
-        .data(infoText)
-        .enter()
-        .append("span")
-        .attr("class", "infoTextSpan")
-        .attr("info-id", d => d.id === undefined ? d.name : d.id)
-        .html(function (d) {
-            return "<div>" + addTitle(d) +
-                d.description + "<br>" +
-                addLink(d) +
-                addGroup(d) + "<br>" +
-            "</div>";
-        });
-
-    const infoTexts = document.querySelectorAll(".infoTextSpan");
-    infoTexts.forEach(span => span.style.display = "none");
-    document.querySelector(".infoTextSpan[info-id='startupText']").style.display = "initial";
+function addSystemInfo(d) {
+    const infoText = document.querySelector(".infoText");
+    infoText.innerHTML = `
+        <b style="color: black">${d.name} (${d.shortName})</b>
+        <p style="color: black">Betreiber: ${d.provider}<br></p>
+        <hr style="margin: 0">
+        ${d.description}<br>
+        ${addHTMLLink("Link zu weiteren Informationen", d.link)}
+        ${d.group}<br>   
+    `
 }
 
-function addTitle(d) {
-    if(d.name === undefined) {
+function addDataExchangeInfo(d, filters) {
+    const infoText = document.querySelector(".infoText");
+    infoText.innerHTML = d.processes.map(d => `
+        <details>
+        <summary><b style="color: black">${d.name}</b></summary>
+        <hr style="margin: 0">
+        ${d.description}<br>
+        ${addHTMLLink("Link zu weiteren Informationen", d.link)}
+        ${addHTMLLink("Link zur Schnittstelle", d.interfaceLink)}
+        ${addProperties(d.properties, filters)}
+        <br>
+        </details>
+    `).join("\n");
+}
+
+function addHTMLLink(text, value) {
+    if (value === undefined) {
         return "";
     }
-    const mainHeader = d.name + (d.shortName !== undefined ? " (" + d.shortName + ")" : "");
-    const subHeader = d.provider !== undefined ? "Betreiber: " + d.provider + "<br>" : "";
-    return "<b style='color: " + systemColor + "'>" + mainHeader + "</b>" +
-        "<p style='color: " + systemColor + "'>" + subHeader + "</p>" +
-        "<hr style='margin: 0'/>";
+    return `${text}: <a href="${value}" target="_blank">${value}</a><br>`;
 }
 
-function addLink(d) {
-    if (d.link === undefined) {
-        return "";
-    }
-    return "<a>" + d.link + "</a>" + "<br>";
-}
-
-function addGroup(d) {
-    return d.group !== undefined ? d.group : "";
+function addProperties(properties, filters) {
+    return filters.map(filter => `
+        <details>
+            <summary>${filter.name}</summary>
+            <hr style="margin: 0">
+            ${properties[filter.id]}
+        </details>
+    `).join("\n");
 }

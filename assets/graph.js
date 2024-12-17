@@ -1,4 +1,4 @@
-function initGraph(svg, systems, dataExchanges) {
+function initGraph(svg, systems, dataExchanges, filters) {
     const simulation = d3.forceSimulation(systems)
         .force("link", d3.forceLink(dataExchanges).id(d => d.id).distance(40))
         .force("charge", d3.forceManyBody().strength(-1000))
@@ -68,7 +68,7 @@ function initGraph(svg, systems, dataExchanges) {
     });
 
     addTooltip(svg, system, dataExchange);
-    addClickHandler(svg, system, dataExchange);
+    addClickHandler(svg, system, dataExchange, filters);
 }
 
 // Calculate link arcs
@@ -128,16 +128,14 @@ function addTooltip(svg, system, dataExchange) {
         });
 }
 
-function addClickHandler(svg, system, dataExchange) {
+function addClickHandler(svg, system, dataExchange, filters) {
     function resetColors() {
         dataExchange.attr("stroke", dataExchangeColor);
         system.attr("fill", systemColor);
     }
 
     system.on("click", (event, d) => {
-        const infoTexts = document.querySelectorAll(".infoTextSpan");
-        infoTexts.forEach(span => span.style.display = "none");
-        document.querySelector(".infoTextSpan[info-id='" + d.shortName + "']").style.display = "initial";
+        addSystemInfo(d)
 
         resetColors();
         d3.select(event.currentTarget)
@@ -156,10 +154,7 @@ function addClickHandler(svg, system, dataExchange) {
     })
 
     dataExchange.on("click", (event, d) => {
-        const linkids = d.processes.map(d => d.name);
-        const infoTexts = document.querySelectorAll(".infoTextSpan");
-        infoTexts.forEach(span => span.style.display = "none");
-        linkids.forEach(id => document.querySelector(".infoTextSpan[info-id='" + id + "']").style.display = "initial");
+        addDataExchangeInfo(d, filters)
 
         resetColors();
         d3.select(event.currentTarget)
