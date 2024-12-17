@@ -27,14 +27,30 @@ function initGraph(svg, systems, dataExchanges, filters) {
     const dataExchange = svg.select("g")
         .append("g")
         .attr("fill", "none")
-        .selectAll("path")
+        .selectAll("g")
         .data(dataExchanges)
-        .join("path")
-        .attr("group-id", d => d.group)
+        .join("g");
+
+    dataExchange
+        .append("path")
+        .attr("id", (d,i) => i)
         .attr("stroke", dataExchangeColor)
         .attr("marker-end", function (d) {
             return "url(#arrow-link-" + d.index + ")";
         });
+
+    dataExchange.append("text")
+        .attr("class", "hoverText")
+        .attr("fill", "orange")
+        .attr("stroke", "white")
+        .attr("stroke-width", 5)
+        .attr("paint-order", "stroke")
+        .attr("display", "none")
+        .selectAll("tspan")
+        .data(d => d.processes)
+        .join("tspan")
+        .attr("dy", (d, i) => i === 0 ? 0 : 15)
+        .text(p => `- ${p.name}`);
 
     const system = svg.select("g")
         .append("g")
@@ -44,7 +60,6 @@ function initGraph(svg, systems, dataExchanges, filters) {
         .selectAll("g")
         .data(systems)
         .join("g")
-        .attr("group-id", d => d.group)
         .attr("fill", systemColor)
         .call(drag(simulation));
 
@@ -62,8 +77,17 @@ function initGraph(svg, systems, dataExchanges, filters) {
         .attr("stroke", "white")
         .attr("stroke-width", 7);
 
+    system.append("text")
+        .attr("class", "hoverText")
+        .attr("fill", "black")
+        .attr("stroke", "white")
+        .attr("stroke-width", 5)
+        .attr("paint-order", "stroke")
+        .attr("display", "none")
+        .text(d => d.name);
+
     simulation.on("tick", () => {
-        dataExchange.attr("d", linkArc);
+        dataExchange.select("path").attr("d", linkArc);
         system.attr("transform", d => `translate(${d.x},${d.y})`);
     });
 
@@ -81,56 +105,36 @@ function linkArc(d) {
 }
 
 function addTooltip(svg, system, dataExchange) {
-    let hoverTimeout;
-    system.on("mouseover", (event, d) => {
-        const [x, y] = d3.pointer(event, svg.node());
-        clearTimeout(hoverTimeout);
-        svg.append("text")
-            .attr("x", x)
-            .attr("y", y)
-            .attr("id", "hoverText")
-            .attr("fill", systemColor)
-            .attr("stroke", "white")
-            .attr("stroke-width", 5)
-            .attr("paint-order", "stroke")
-            .text(d.name);
+    system.on("mouseover", function () {
+        const g = d3.select(this)
+        g.raise()
+        g.select(".hoverText")
+            .attr("display", "initial")
     })
-        .on("mouseout", () => {
-            hoverTimeout = setTimeout(() => {
-                d3.select("#hoverText").remove();
-            }, 5);
+        .on("mouseout", function () {
+            const g = d3.select(this)
+            g.select(".hoverText").attr("display", "none");
         });
 
-    dataExchange.on("mouseover", (event, d) => {
+    dataExchange.on("mouseover", function () {
         const [x, y] = d3.pointer(event, svg.node());
-        const text = svg.append("text")
+        const path = d3.select(this)
+        path.raise()
+        path.select(".hoverText")
+            .attr("display", "initial")
+            .selectAll("tspan")
             .attr("x", x)
             .attr("y", y)
-            .attr("id", "hoverText")
-            .attr("fill", dataExchangeColor)
-            .attr("stroke", "white")
-            .attr("stroke-width", 5)
-            .attr("paint-order", "stroke");
-
-        // Split your text into multiple lines
-        const lines = d.processes.map(p => `- ${p.name}`);
-
-        // Append each line as a separate `tspan`
-        lines.forEach((line, i) => {
-            text.append("tspan")
-                .attr("x", x + 15) // Set x position for each line
-                .attr("dy", i === 0 ? 0 : 15) // Adjust y position for each line
-                .text(line);
-        });
     })
-        .on("mouseout", () => {
-            d3.select("#hoverText").remove();
+        .on("mouseout", function () {
+            const path = d3.select(this)
+            path.select(".hoverText").attr("display", "none");
         });
 }
 
 function addClickHandler(svg, system, dataExchange, filters) {
     function resetColors() {
-        dataExchange.attr("stroke", dataExchangeColor);
+        dataExchange.select("path").attr("stroke", dataExchangeColor);
         system.attr("fill", systemColor);
     }
 
@@ -157,7 +161,7 @@ function addClickHandler(svg, system, dataExchange, filters) {
         addDataExchangeInfo(d, filters)
 
         resetColors();
-        d3.select(event.currentTarget)
+        d3.select(event.currentTarget).select("path")
             .attr("stroke", selectedColor);
     })
 }
