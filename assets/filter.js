@@ -1,16 +1,24 @@
-function setFilters(filters) {
-    //Filters without effect
-    let filterContainer = document.querySelector(".filters");
-    filters.forEach(filter => filterContainer.innerHTML +=
-        "<label>"+filter.name+"</label><br>"+
-        "<select name='"+filter.name+"' id='"+filter.id+"'>"+
-        optionsFor(filter) +
-        "</select><br>"
-    );
+function setFilters(filters, dataExchanges) {
+    const filterContainer = document.querySelector(".filters");
+    filterContainer.innerHTML = filters.map(filter => `
+        <details style="background-color: ${filterBackgroundColor}">
+            <summary>${filter.name}</summary>
+            <hr style="margin: 0; background-color: ${systemColor}">
+            ${optionsFor(filter, dataExchanges)}
+        </details><br>
+    `).join("");
 }
 
-function optionsFor(filter) {
-    let options = ""
-    filter.options.forEach(option => options +="<option value='"+option+"'>"+option+"</option>")
-    return options
+function optionsFor(filter, dataExchanges) {
+    return filter.options.map(option => {
+        const count = dataExchanges
+            .flatMap(exchange => exchange.processes)
+            .filter(processe => processe.properties[filter.id] !== undefined ? processe.properties[filter.id].includes(option) : false)
+            .length;
+        return `
+            <input type="checkbox" name="${filter.id}" value="${option}" style="margin-left: 15px">
+            ${option} (${count})
+            <br>
+        `
+    }).join("\n");
 }

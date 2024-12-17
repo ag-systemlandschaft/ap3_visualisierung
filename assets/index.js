@@ -5,6 +5,7 @@ const systemColor = "#6667ab";
 const selectedColor = "darkviolet";
 const dataExchangeColor = "black";
 const hoverColor = "darkblue";
+const filterBackgroundColor = "#e9e9e9";
 
 // Initialize the visualization
 function init(data) {
@@ -25,5 +26,5 @@ function init(data) {
     const svg = d3.select("svg");
     initGraph(svg, systems, dataExchanges, filters);
 
-    setFilters(filters);
+    setFilters(filters, dataExchanges);
 }
