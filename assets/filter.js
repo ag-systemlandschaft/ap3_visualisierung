@@ -4,22 +4,18 @@ function setFilters(filters, dataExchanges) {
         <details style="background-color: ${filterBackgroundColor}">
             <summary>${filter.name}</summary>
             <hr style="margin: 0; background-color: ${systemColor}">
-            ${optionsFor(filter, dataExchanges)}
+            ${optionsFor(filter)}
         </details><br>
     `).join("");
+    updateOptionCounts(dataExchanges)
     filterContainer.innerHTML += `<button onclick="applyFilter()">Apply Filter</button>`;
 }
 
-function optionsFor(filter, dataExchanges) {
+function optionsFor(filter) {
     return filter.options.map(option => {
-        const count = dataExchanges
-            .flatMap(exchange => exchange.processes)
-            .filter(process => process.active)
-            .filter(process => process.properties[filter.id] !== undefined ? process.properties[filter.id].includes(option) : false)
-            .length;
         return `
             <input type="checkbox" name="${filter.id}" value="${option}" style="margin-left: 15px">
-            <label for="${filter.id}" id="${option}">${option} (${count})</label>
+            <label for="${filter.id}" id="${option}"></label>
             <br>
         `
     }).join("\n");
