@@ -40,8 +40,8 @@ function initGraph(svg, systems, dataExchanges, filters) {
 // Calculate link arcs
 function linkArc(d) {
     const r = Math.hypot(d.target.x - d.source.x, d.target.y - d.source.y);
-    const targetRadius = 1.5 * d.target.numberProcesses;
-    const sourceRadius = 1.5 * d.source.numberProcesses;
+    const targetRadius = getRadius(d.target);
+    const sourceRadius = getRadius(d.source);
 
     const dx = d.target.x - d.source.x;
     const dy = d.target.y - d.source.y;
@@ -79,6 +79,10 @@ function createDataExchange(svg, dataExchanges) {
     return dataExchange;
 }
 
+function getRadius(d) {
+    return 5 + (1 * d.numberProcesses);
+}
+
 function createSystem(svg, systems, simulation) {
     const system = svg.select("g")
         .append("g")
@@ -94,10 +98,10 @@ function createSystem(svg, systems, simulation) {
     system.append("circle")
         .attr("stroke", "white")
         .attr("stroke-width", 1.5)
-        .attr("r", d => 1.5 * d.numberProcesses);
+        .attr("r", d => getRadius(d));
 
     system.append("text")
-        .attr("x", d => 1.5 * d.numberProcesses + 14)
+        .attr("x", d => getRadius(d) + 14)
         .attr("y", "0.61em")
         .text(d => d.id)
         .clone(true).lower()
