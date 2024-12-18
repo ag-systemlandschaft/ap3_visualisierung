@@ -31,7 +31,5 @@ function init(data) {
     const svg = d3.select("svg");
     addZoom(svg);
     initGraph(svg, systems, dataExchanges, filters);
-
-
-    setFilters(filters, dataExchanges);
+    setFilters(filters, dataExchanges, svg);
 }

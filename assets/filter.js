@@ -1,4 +1,4 @@
-function setFilters(filters, dataExchanges) {
+function setFilters(filters, dataExchanges, svg) {
     const filterContainer = document.querySelector(".filters");
     filterContainer.innerHTML = filters.map(filter => `
         <details style="background-color: ${filterBackgroundColor}; border-radius: 5px; padding: 10px">
@@ -11,14 +11,14 @@ function setFilters(filters, dataExchanges) {
 
     const filterButton = document.createElement("button");
     filterButton.appendChild(document.createTextNode("Filtern"));
-    filterButton.addEventListener("click", () => {applyFilter(filters, dataExchanges)});
+    filterButton.addEventListener("click", () => {applyFilter(filters, dataExchanges, svg)});
     filterButton.classList.add("filter-button");
     filterContainer.appendChild(filterButton);
 
     const resetButton = document.createElement("button");
     resetButton.appendChild(document.createTextNode("Zurücksetzen"));
     resetButton.classList.add("filter-button");
-    resetButton.addEventListener("click", () => {resetFilter(filters, dataExchanges)});
+    resetButton.addEventListener("click", () => {resetFilter(filters, dataExchanges, svg)});
     filterContainer.appendChild(resetButton);
 }
 
@@ -30,7 +30,7 @@ function optionsFor(filter) {
     `).join("\n");
 }
 
-function applyFilter(filters, dataExchanges) {
+function applyFilter(filters, dataExchanges, svg) {
     const selectedFilters = new Map();
     filters.forEach(filter => {
         const filterId = filter.id;
@@ -59,11 +59,11 @@ function applyFilter(filters, dataExchanges) {
         });
     });
 
-    filterDataExchange(dataExchanges);
+    filterDataExchange(dataExchanges, svg);
     updateOptionCounts(filters, dataExchanges);
 }
 
-function resetFilter(filters, dataExchanges) {
+function resetFilter(filters, dataExchanges, svg) {
     filters.forEach(filter => {
         const filterId = filter.id;
         document.querySelectorAll(`input[name="${filterId}"]:checked`).forEach(checkbox => {
@@ -77,7 +77,7 @@ function resetFilter(filters, dataExchanges) {
         });
     });
 
-    filterDataExchange(dataExchanges);
+    filterDataExchange(dataExchanges, svg);
     updateOptionCounts(filters, dataExchanges);
 }
 

@@ -119,7 +119,7 @@ function createSystem(svg, systems, simulation) {
     return system;
 }
 
-function filterDataExchange(dataExchanges) {
+function filterDataExchange(dataExchanges, svg) {
     svg.select("g")
         .select("g")
         .selectAll("path")
