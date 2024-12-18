@@ -7,22 +7,30 @@ function setFilters(filters, dataExchanges) {
             ${optionsFor(filter)}
         </details><br>
     `).join("");
-    updateOptionCounts(dataExchanges);
-    filterContainer.innerHTML += `<button class="filter-button" onclick="applyFilter()">Filtern</button>`;
-    filterContainer.innerHTML += `<button class="filter-button" onclick="resetFilter()">Zurücksetzen</button>`;
+    updateOptionCounts(filters, dataExchanges);
+
+    const filterButton = document.createElement("button");
+    filterButton.appendChild(document.createTextNode("Filtern"));
+    filterButton.addEventListener("click", () => {applyFilter(filters, dataExchanges)});
+    filterButton.classList.add("filter-button");
+    filterContainer.appendChild(filterButton);
+
+    const resetButton = document.createElement("button");
+    resetButton.appendChild(document.createTextNode("Zurücksetzen"));
+    resetButton.classList.add("filter-button");
+    resetButton.addEventListener("click", () => {resetFilter(filters, dataExchanges)});
+    filterContainer.appendChild(resetButton);
 }
 
 function optionsFor(filter) {
-    return filter.options.map(option => {
-        return `
-            <input type="checkbox" name="${filter.id}" value="${option}" style="margin-left: 15px">
-            <label for="${filter.id}" id="${option}"></label>
-            <br>
-        `
-    }).join("\n");
+    return filter.options.map(option => `
+        <input type="checkbox" name="${filter.id}" value="${option}" style="margin-left: 15px">
+        <label for="${filter.id}" id="${option}"></label>
+        <br>
+    `).join("\n");
 }
 
-function applyFilter() {
+function applyFilter(filters, dataExchanges) {
     const selectedFilters = new Map();
     filters.forEach(filter => {
         const filterId = filter.id;
@@ -31,12 +39,14 @@ function applyFilter() {
         selectedFilters.set(filterId, selectedOptions);
     });
 
-    globalDataExchanges.forEach(exchange => {
+    dataExchanges.forEach(exchange => {
         exchange.processes.forEach(process => {
             let processActive = true;
 
             selectedFilters.forEach((selectedOptions, filterId) => {
-                if (selectedOptions.length === 0) return;
+                if (selectedOptions.length === 0) {
+                    return;
+                }
 
                 const filterProperties = process.properties[filterId];
 
@@ -49,11 +59,11 @@ function applyFilter() {
         });
     });
 
-    filterDateExchange(globalDataExchanges);
-    updateOptionCounts(globalDataExchanges);
+    filterDataExchange(dataExchanges);
+    updateOptionCounts(filters, dataExchanges);
 }
 
-function resetFilter() {
+function resetFilter(filters, dataExchanges) {
     filters.forEach(filter => {
         const filterId = filter.id;
         document.querySelectorAll(`input[name="${filterId}"]:checked`).forEach(checkbox => {
@@ -61,17 +71,17 @@ function resetFilter() {
         });
     });
 
-    globalDataExchanges.forEach(exchange => {
+    dataExchanges.forEach(exchange => {
         exchange.processes.forEach(process => {
             process.active = true;
         });
     });
 
-    filterDateExchange(globalDataExchanges);
-    updateOptionCounts(globalDataExchanges);
+    filterDataExchange(dataExchanges);
+    updateOptionCounts(filters, dataExchanges);
 }
 
-function updateOptionCounts(dataExchanges) {
+function updateOptionCounts(filters, dataExchanges) {
     filters.forEach(filter => {
         filter.options.forEach(option => {
             const count = dataExchanges

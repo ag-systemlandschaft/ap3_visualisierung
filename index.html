@@ -10,68 +10,71 @@
 </head>
 
 <body>
-  <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand p-2">
-      <a href="https://ag-systemlandschaft.de">
-        <img class="logo" src="https://ag-systemlandschaft.de/app/uploads/2022/12/Logo-AGS-1.png" alt="Logo der AG Systemlandschaft E-Ressourcen">
-      </a>
-    </div>
-
-    <div class="navbar-menu">
-      <div class="navbar-end">
-        <a class="navbar-item" href="https://ag-systemlandschaft.de">Information</a>
-        <a class="navbar-item" href="https://ag-systemlandschaft.de/ziele/">Ziele</a>
+  <div class="is-fluid" style="height: 100%">
+    <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand p-2">
+        <a href="https://ag-systemlandschaft.de">
+          <img class="logo" src="https://ag-systemlandschaft.de/app/uploads/2022/12/Logo-AGS-1.png" alt="Logo der AG Systemlandschaft E-Ressourcen">
+        </a>
       </div>
-    </div>
-  </nav>
 
-  <div class="container">
-    <div class="mt-6">
-      <h1 class="title">Systemlandschaft E-Ressourcen (im Aufbau)</h1>
-      <h2 class="subtitle">Visualisierung bibliothekarischer Infrastruktur zur Verwaltung elektronischer Ressourcen im deutschsprachigen Raum</h2>
-    </div>
-
-    <div class="columns">
-      <div class="vis column is-three-quarters">
-        <svg width="100%" height="100%" viewBox="-480 -300 960 600"></svg>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="https://ag-systemlandschaft.de">Information</a>
+          <a class="navbar-item" href="https://ag-systemlandschaft.de/ziele/">Ziele</a>
+        </div>
       </div>
-      <div class="sidebar column" style="width: 1500px;">
-        <div class="box">
-          <div class="block">
-            <h3 class="title is-5 mb-2">Legende</h3>
-            <ul class="legend">
-              <li class="pb-2">
-                <i class="fa-solid fa-paint-roller pr-2"></i><strong>Farbe</strong>
-                <br>Farbe der Kategorie
-              </li>
-              <li class="pb-2">
-                <i class="fa-solid fa-arrows-left-right pr-2"></i><strong>Breite</strong>
-                <br>Frequenz des Austausch. Je breiter, desto häufiger.
-              </li>
-            </ul>
+    </nav>
+
+    <div class="container is-fluid">
+      <div class="header-container has-text-centered">
+        <h1 class="title">Systemlandschaft E-Ressourcen (im Aufbau)</h1>
+        <h2 class="subtitle">Visualisierung bibliothekarischer Infrastruktur zur Verwaltung elektronischer Ressourcen im deutschsprachigen Raum</h2>
+      </div>
+
+      <div class="columns is-gapless">
+        <div class="sidebar column" style="width: 300px; flex: none;">
+          <div class="box">
+            <div class="block">
+              <h3 class="title is-5 mb-2">Information</h3>
+              <div class="infoText">
+              </div>
+            </div>
           </div>
         </div>
-        <div class="box">
-          <div class="block">
-            <h3 class="title is-5 mb-2">Filter</h3>
-            <div class="filters mt-1"></div>
-          </div>
+        <div class="vis column">
+          <svg width="100%" height="100%" viewBox="-480 -300 960 550"></svg>
         </div>
-        <div class="box">
-          <div class="block">
-            <h3 class="title is-5 mb-2">Information</h3>
-            <div class="infoText">
+        <div class="sidebar column" style="width: 600px; flex: none;">
+          <div class="box">
+            <div class="block">
+              <h3 class="title is-5 mb-2">Legende</h3>
+              <ul class="legend">
+                <li class="pb-2">
+                  <i class="fa-solid fa-paint-roller pr-2"></i><strong>Farbe</strong>
+                  <br>Farbe der Kategorie
+                </li>
+                <li class="pb-2">
+                  <i class="fa-solid fa-arrows-left-right pr-2"></i><strong>Breite</strong>
+                  <br>Frequenz des Austausch. Je breiter, desto häufiger.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="box">
+            <div class="block">
+              <h3 class="title is-5 mb-2">Filter</h3>
+              <div class="filters mt-1"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <footer class="has-text-centered">
+      <p>© 2024 AG Systemlandschaft E-Ressourcen</p>
+    </footer>
   </div>
-
-  <footer class="has-text-centered">
-    <p>© 2024 AG Systemlandschaft E-Ressourcen</p>
-  </footer>
-
 </body>
 
 <script src="assets/external/fontawesome.min.js"></script>

@@ -32,15 +32,18 @@ footer {
     color: #ffffff;
     background-color: #6667AB;
     font-size: 15px;
-    margin-top: 60px;
     padding: 20px 40px;
+    flex-shrink: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
 }
 
 div.vis {
-    min-width: 100%;
     text-align: center;
     flex-grow: 1;
-    display: flex;
 }
 
 svg g text {
@@ -78,21 +81,6 @@ summary::marker {
     font-size: 1.2em;
 }
 
-.container {
-    width: 100%;
-    margin-left: 10%;
-}
-
-.columns {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-.sidebar {
-    min-width: 600px;
-}
-
 a {
     word-wrap: break-word;
     word-break: break-word;
@@ -117,4 +105,8 @@ summary.property::before {
 
 details[open] > summary.property::before {
     content: '-';
+}
+
+.header-container {
+    margin: 20px;
 }

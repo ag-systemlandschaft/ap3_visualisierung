@@ -29,7 +29,7 @@ function initGraph(svg, systems, dataExchanges, filters) {
     const system = createSystem(svg, systems, simulation);
 
     simulation.on("tick", () => {
-        dataExchange.attr("d", linkArc);
+        dataExchange.attr("d", calculateLinkArc);
         system.attr("transform", d => `translate(${d.x},${d.y})`);
     });
 
@@ -37,8 +37,7 @@ function initGraph(svg, systems, dataExchanges, filters) {
     addClickHandler(svg, system, dataExchange, filters);
 }
 
-// Calculate link arcs
-function linkArc(d) {
+function calculateLinkArc(d) {
     const r = Math.hypot(d.target.x - d.source.x, d.target.y - d.source.y);
     const targetRadius = getRadius(d.target);
     const sourceRadius = getRadius(d.source);
@@ -93,7 +92,7 @@ function createSystem(svg, systems, simulation) {
         .data(systems)
         .join("g")
         .attr("fill", systemColor)
-        .call(drag(simulation));
+        .call(addDrag(simulation));
 
     system.append("circle")
         .attr("stroke", "white")
@@ -120,6 +119,12 @@ function createSystem(svg, systems, simulation) {
     return system;
 }
 
-function filterDateExchange(dataExchanges) {
-    svg.select("g").select("g").selectAll("path").data(dataExchanges).attr("display", d => d.processes.some(process => process.active) ? "inital" : "none");
+function filterDataExchange(dataExchanges) {
+    svg.select("g")
+        .select("g")
+        .selectAll("path")
+        .data(dataExchanges)
+        .attr("display", d =>
+            d.processes.some(process => process.active) ? "initial" : "none"
+        );
 }
