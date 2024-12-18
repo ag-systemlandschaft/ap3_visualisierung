@@ -1,22 +1,26 @@
+let globalDataExchanges
+let filters
 // Load data
 d3.json("/data/data.json").then(init);
 
 const systemColor = "#6667ab";
 const selectedColor = "darkviolet";
-const dataExchangeColor = "black";
+const dataExchangeColor = "#434343";
 const hoverColor = "darkblue";
 const filterBackgroundColor = "#e9e9e9";
 
 // Initialize the visualization
 function init(data) {
-    const dataExchanges = data.dataExchange,
-        systems = data.systems,
-        filters = data.propertyCategories
+    const systems = data.systems;
+    filters = data.propertyCategories;
+    globalDataExchanges = data.dataExchange;
 
     filters.sort((a, b) => a.name.localeCompare(b.name))
 
     //d3 Simulation search for id. Check if another tag can be defined as identifier
-    systems.forEach(d => {d.id = d.shortName});
+    systems.forEach(d => d.id = d.shortName);
+
+    globalDataExchanges.forEach(d => d.processes.forEach(process => process.active = true))
 
     const infoText = document.querySelector(".infoText");
     infoText.innerHTML = `
@@ -24,7 +28,7 @@ function init(data) {
     `
 
     const svg = d3.select("svg");
-    initGraph(svg, systems, dataExchanges, filters);
+    initGraph(svg, systems, globalDataExchanges, filters);
 
-    setFilters(filters, dataExchanges);
+    setFilters(filters, globalDataExchanges);
 }
