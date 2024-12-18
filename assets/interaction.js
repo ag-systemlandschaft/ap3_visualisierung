@@ -53,7 +53,7 @@ function addTooltip(svg, system, dataExchange) {
             .attr("y", y);
 
         hoverText.selectAll("tspan")
-            .data(d.processes.map(p => `- ${p.name}`))
+            .data(d.processes.filter(process => process.active).map(p => `- ${p.name}`))
             .join("tspan")
             .attr("x", x + 20)
             .attr("dy", (d, i) => (i === 0 ? 0 : 20))

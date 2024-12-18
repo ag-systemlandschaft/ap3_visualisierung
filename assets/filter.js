@@ -1,9 +1,9 @@
 function setFilters(filters, dataExchanges) {
     const filterContainer = document.querySelector(".filters");
     filterContainer.innerHTML = filters.map(filter => `
-        <details style="background-color: ${filterBackgroundColor}">
+        <details style="background-color: ${filterBackgroundColor}; border-radius: 5px; padding: 10px">
             <summary>${filter.name}</summary>
-            <hr style="margin: 0; background-color: ${systemColor}">
+            <hr>
             ${optionsFor(filter)}
         </details><br>
     `).join("");

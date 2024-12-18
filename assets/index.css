@@ -97,3 +97,24 @@ a {
     word-wrap: break-word;
     word-break: break-word;
 }
+
+hr {
+    margin: 0;
+    background-color: #6667ab
+}
+
+summary.property {
+    list-style: none;
+    position: relative;
+    padding-left: 1.5em;
+}
+
+summary.property::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+}
+
+details[open] > summary.property::before {
+    content: '-';
+}

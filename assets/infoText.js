@@ -12,16 +12,18 @@ function addSystemInfo(d) {
 
 function addDataExchangeInfo(d, filters) {
     const infoText = document.querySelector(".infoText");
-    infoText.innerHTML = d.processes.map(d => `
-        <details>
-        <summary><b style="color: black">${d.name}</b></summary>
-        <hr style="margin: 0">
-        ${d.description}<br>
-        ${addHTMLLink("Link zu weiteren Informationen", d.link)}
-        ${addHTMLLink("Link zur Schnittstelle", d.interfaceLink)}
-        ${addProperties(d.properties, filters)}
-        <br>
-        </details>
+    infoText.innerHTML = d.processes
+        .filter(process => process.active)
+        .map(d => `
+            <details>
+                <summary><b style="color: black">${d.name}</b></summary>
+                <hr style="margin: 0">
+                ${d.description}<br>
+                ${addHTMLLink("Link zu weiteren Informationen", d.link)}
+                ${addHTMLLink("Link zur Schnittstelle", d.interfaceLink)}
+                ${addProperties(d.properties, filters)}
+                <br>
+            </details>
     `).join("\n");
 }
 
@@ -35,8 +37,7 @@ function addHTMLLink(text, value) {
 function addProperties(properties, filters) {
     return filters.map(filter => `
         <details>
-            <summary>${filter.name}</summary>
-            <hr style="margin: 0">
+            <summary class="property">${filter.name}</summary>
             ${properties[filter.id] ? properties[filter.id] : "keine Angaben"}
         </details>
     `).join("\n");
