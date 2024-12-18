@@ -7,8 +7,9 @@ function setFilters(filters, dataExchanges) {
             ${optionsFor(filter)}
         </details><br>
     `).join("");
-    updateOptionCounts(dataExchanges)
+    updateOptionCounts(dataExchanges);
     filterContainer.innerHTML += `<button class="filter-button" onclick="applyFilter()">Apply Filter</button>`;
+    filterContainer.innerHTML += `<button class="filter-button" onclick="resetFilter()">Reset Filter</button>`;
 }
 
 function optionsFor(filter) {
@@ -45,6 +46,24 @@ function applyFilter() {
             });
             
             process.active = processActive;
+        });
+    });
+
+    filterDateExchange(globalDataExchanges);
+    updateOptionCounts(globalDataExchanges);
+}
+
+function resetFilter() {
+    filters.forEach(filter => {
+        const filterId = filter.id;
+        document.querySelectorAll(`input[name="${filterId}"]:checked`).forEach(checkbox => {
+            checkbox.checked = false;
+        });
+    });
+
+    globalDataExchanges.forEach(exchange => {
+        exchange.processes.forEach(process => {
+            process.active = true;
         });
     });
 
