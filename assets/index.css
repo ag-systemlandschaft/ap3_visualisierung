@@ -37,8 +37,10 @@ footer {
 }
 
 div.vis {
-    width: 100%;
+    min-width: 100%;
     text-align: center;
+    flex-grow: 1;
+    display: flex;
 }
 
 svg g text {
@@ -69,4 +71,29 @@ img.logo {
 
 .filter-button:hover {
     background-color: #4c4e87;
+}
+
+summary::marker {
+    color: #6667ab;
+    font-size: 1.2em;
+}
+
+.container {
+    width: 100%;
+    margin-left: 10%;
+}
+
+.columns {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    min-width: 600px;
+}
+
+a {
+    word-wrap: break-word;
+    word-break: break-word;
 }

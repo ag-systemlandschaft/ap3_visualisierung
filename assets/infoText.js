@@ -37,7 +37,7 @@ function addProperties(properties, filters) {
         <details>
             <summary>${filter.name}</summary>
             <hr style="margin: 0">
-            ${properties[filter.id]}
+            ${properties[filter.id] ? properties[filter.id] : "keine Angaben"}
         </details>
     `).join("\n");
 }
