@@ -68,6 +68,10 @@ function updateOptionCounts(dataExchanges) {
             const optionElement = document.querySelector(`label[for="${filter.id}"][id="${option}"]`);
             if (optionElement) {
                 optionElement.innerHTML = `${option} (${count})`;
+                optionElement.style.color = "black";
+                if(count === 0){
+                    optionElement.style.color = "gray";
+                }
             }
         })
     });
