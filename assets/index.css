@@ -32,13 +32,18 @@ footer {
     color: #ffffff;
     background-color: #6667AB;
     font-size: 15px;
-    margin-top: 60px;
     padding: 20px 40px;
+    flex-shrink: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
 }
 
 div.vis {
-    width: 100%;
     text-align: center;
+    flex-grow: 1;
 }
 
 svg g text {
@@ -69,4 +74,39 @@ img.logo {
 
 .filter-button:hover {
     background-color: #4c4e87;
+}
+
+summary::marker {
+    color: #6667ab;
+    font-size: 1.2em;
+}
+
+a {
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+hr {
+    margin: 0;
+    background-color: #6667ab
+}
+
+summary.property {
+    list-style: none;
+    position: relative;
+    padding-left: 1.5em;
+}
+
+summary.property::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+}
+
+details[open] > summary.property::before {
+    content: '-';
+}
+
+.header-container {
+    margin: 20px;
 }
