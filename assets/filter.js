@@ -8,7 +8,7 @@ function setFilters(filters, dataExchanges) {
         </details><br>
     `).join("");
     updateOptionCounts(dataExchanges)
-    filterContainer.innerHTML += `<button onclick="applyFilter()">Apply Filter</button>`;
+    filterContainer.innerHTML += `<button class="filter-button" onclick="applyFilter()">Apply Filter</button>`;
 }
 
 function optionsFor(filter) {

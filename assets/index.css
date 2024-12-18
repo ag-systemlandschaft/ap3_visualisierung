@@ -53,3 +53,19 @@ img.logo {
     height: 4em;
     width: auto;
 }
+
+.filter-button {
+    background-color: #6667ab;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background-color: #4c4e87;
+}
