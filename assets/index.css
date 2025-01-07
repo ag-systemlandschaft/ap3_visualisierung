@@ -110,3 +110,8 @@ details[open] > summary.property::before {
 .header-container {
     margin: 20px;
 }
+
+.infoText {
+    word-wrap: break-word;
+    word-break: break-word;
+}

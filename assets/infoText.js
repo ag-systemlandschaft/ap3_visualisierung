@@ -38,7 +38,7 @@ function addProperties(properties, filters) {
     return filters.map(filter => `
         <details>
             <summary class="property">${filter.name}</summary>
-            ${properties[filter.id] ? properties[filter.id] : "keine Angaben"}
+            ${properties[filter.id] ? properties[filter.id].join(", ") : "keine Angaben"}
         </details>
     `).join("\n");
 }
