@@ -1,7 +1,7 @@
 let globalDataExchanges
 let filters
 // Load data
-d3.json("/data/data.json").then(init);
+d3.json("data/data.json").then(init);
 
 const systemColor = "#6667ab";
 const selectedColor = "darkviolet";
