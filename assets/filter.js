@@ -1,28 +1,36 @@
-function setFilters(filters, dataExchanges) {
+function setFilters(filters, dataExchanges, svg) {
     const filterContainer = document.querySelector(".filters");
     filterContainer.innerHTML = filters.map(filter => `
-        <details style="background-color: ${filterBackgroundColor}">
+        <details style="background-color: ${filterBackgroundColor}; border-radius: 5px; padding: 10px">
             <summary>${filter.name}</summary>
-            <hr style="margin: 0; background-color: ${systemColor}">
+            <hr>
             ${optionsFor(filter)}
         </details><br>
     `).join("");
-    updateOptionCounts(dataExchanges);
-    filterContainer.innerHTML += `<button class="filter-button" onclick="applyFilter()">Apply Filter</button>`;
-    filterContainer.innerHTML += `<button class="filter-button" onclick="resetFilter()">Reset Filter</button>`;
+    updateOptionCounts(filters, dataExchanges);
+
+    const filterButton = document.createElement("button");
+    filterButton.appendChild(document.createTextNode("Filtern"));
+    filterButton.addEventListener("click", () => {applyFilter(filters, dataExchanges, svg)});
+    filterButton.classList.add("filter-button");
+    filterContainer.appendChild(filterButton);
+
+    const resetButton = document.createElement("button");
+    resetButton.appendChild(document.createTextNode("Zurücksetzen"));
+    resetButton.classList.add("filter-button");
+    resetButton.addEventListener("click", () => {resetFilter(filters, dataExchanges, svg)});
+    filterContainer.appendChild(resetButton);
 }
 
 function optionsFor(filter) {
-    return filter.options.map(option => {
-        return `
-            <input type="checkbox" name="${filter.id}" value="${option}" style="margin-left: 15px">
-            <label for="${filter.id}" id="${option}"></label>
-            <br>
-        `
-    }).join("\n");
+    return filter.options.map(option => `
+        <input type="checkbox" name="${filter.id}" value="${option}" style="margin-left: 15px">
+        <label for="${filter.id}" id="${option}"></label>
+        <br>
+    `).join("\n");
 }
 
-function applyFilter() {
+function applyFilter(filters, dataExchanges, svg) {
     const selectedFilters = new Map();
     filters.forEach(filter => {
         const filterId = filter.id;
@@ -31,12 +39,14 @@ function applyFilter() {
         selectedFilters.set(filterId, selectedOptions);
     });
 
-    globalDataExchanges.forEach(exchange => {
+    dataExchanges.forEach(exchange => {
         exchange.processes.forEach(process => {
             let processActive = true;
 
             selectedFilters.forEach((selectedOptions, filterId) => {
-                if (selectedOptions.length === 0) return;
+                if (selectedOptions.length === 0) {
+                    return;
+                }
 
                 const filterProperties = process.properties[filterId];
 
@@ -49,11 +59,11 @@ function applyFilter() {
         });
     });
 
-    filterDateExchange(globalDataExchanges);
-    updateOptionCounts(globalDataExchanges);
+    filterDataExchange(dataExchanges, svg);
+    updateOptionCounts(filters, dataExchanges);
 }
 
-function resetFilter() {
+function resetFilter(filters, dataExchanges, svg) {
     filters.forEach(filter => {
         const filterId = filter.id;
         document.querySelectorAll(`input[name="${filterId}"]:checked`).forEach(checkbox => {
@@ -61,17 +71,17 @@ function resetFilter() {
         });
     });
 
-    globalDataExchanges.forEach(exchange => {
+    dataExchanges.forEach(exchange => {
         exchange.processes.forEach(process => {
             process.active = true;
         });
     });
 
-    filterDateExchange(globalDataExchanges);
-    updateOptionCounts(globalDataExchanges);
+    filterDataExchange(dataExchanges, svg);
+    updateOptionCounts(filters, dataExchanges);
 }
 
-function updateOptionCounts(dataExchanges) {
+function updateOptionCounts(filters, dataExchanges) {
     filters.forEach(filter => {
         filter.options.forEach(option => {
             const count = dataExchanges
