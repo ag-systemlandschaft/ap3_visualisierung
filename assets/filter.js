@@ -23,7 +23,7 @@ function setFilters(filters, dataExchanges, svg) {
 }
 
 function optionsFor(filter) {
-    return filter.options.map(option => `
+    return filter.options.sort().map(option => `
         <input type="checkbox" name="${filter.id}" value="${option}" style="margin-left: 15px">
         <label for="${filter.id}" id="${option}"></label>
         <br>
