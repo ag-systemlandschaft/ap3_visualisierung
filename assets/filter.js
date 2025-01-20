@@ -93,11 +93,14 @@ function updateOptionCounts(filters, dataExchanges) {
                 .length;
 
             const optionElement = document.querySelector(`label[for="${filter.id}"][id="${option}"]`);
+            const optionCheckbox = document.querySelector(`input[name="${filter.id}"][value^="${option}"]`);
             if (optionElement) {
                 optionElement.innerHTML = `${option} (${count})`;
                 optionElement.style.color = "#434343";
+                optionCheckbox.disabled = false;
                 if(count === 0){
                     optionElement.style.color = "gray";
+                    optionCheckbox.disabled = true;
                 }
             }
         })
