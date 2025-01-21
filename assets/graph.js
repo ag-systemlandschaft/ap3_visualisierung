@@ -120,6 +120,8 @@ function createSystem(svg, systems, simulation) {
         .attr("stroke-width", 7);
 
     system.append("text")
+        .attr("y", "-10px")
+        .attr("x", d => getRadius(d) + 14)
         .attr("class", "hoverText")
         .attr("fill", "var(--hover-color)")
         .attr("stroke", "white")
