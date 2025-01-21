@@ -2,8 +2,8 @@ function setFilters(filters, dataExchanges, svg) {
     const filterContainer = document.querySelector(".filters");
     filterContainer.innerHTML = filters.map(filter => `
         <details class="filter">
-            <summary>${filter.name}</summary>
-            <hr>
+            <summary class="filter">${filter.name}</summary>
+            <hr class="filter">
             ${optionsFor(filter)}
         </details><br>
     `).join("");

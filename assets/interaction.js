@@ -93,9 +93,11 @@ function addClickHandler(svg, system, dataExchange, filters) {
             const translateY = parseFloat(translateMatch[2]);
 
             const g = d3.select("g");
+            const transform = d3.zoomTransform(g.node());
+            const newTransform = transform.translate(-translateX, -translateY);
             g.transition()
                 .duration(500)
-                .attr("transform", `translate(${-translateX},${-translateY})`);
+                .attr("transform", newTransform);
         }
     })
 

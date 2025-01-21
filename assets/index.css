@@ -1,9 +1,11 @@
 :root {
     --system-color: #6667ab;
-    --exchange-color: #434343;
-    --selected-color: darkviolet;
-    --hover-color: darkblue;
+    --exchange-color: #A7AB55;
+    --selected-color: #8F6FAB;
+    --hover-color: #AB9778;
     --filter-bg-color: #e9e9e9;
+    --exchange-bg-color: #d3d4bc;
+    --system-bg-color: #cdcedd;
 }
 
 body {
@@ -84,14 +86,37 @@ img.logo {
     background-color: #4c4e87;
 }
 
-details.filter {
-    background-color: var(--filter-bg-color);
+details {
     border-radius: 5px;
     padding: 10px;
 }
 
-summary::marker {
+details.filter {
+    background-color: var(--filter-bg-color);
+}
+
+details.dataExchange {
+    background-color: var(--exchange-bg-color);
+}
+
+div.system {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--system-bg-color);
+}
+
+summary.filter::marker {
     color: #6667ab;
+    font-size: 1.2em;
+}
+
+summary.system::marker {
+    color: #6667ab;
+    font-size: 1.2em;
+}
+
+summary.dataExchange::marker {
+    color: #A7AB55;
     font-size: 1.2em;
 }
 
@@ -100,9 +125,19 @@ a {
     word-break: break-word;
 }
 
-hr {
+hr.filter{
     margin: 0;
     background-color: #6667ab
+}
+
+hr.system{
+    margin: 0;
+    background-color: #6667ab
+}
+
+hr.dataExchange{
+    margin: 0;
+    background-color: #A7AB55
 }
 
 summary.property {
