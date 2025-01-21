@@ -41,7 +41,7 @@ function initGraph(svg, systems, dataExchanges, filters) {
 }
 
 function calculateLinkArc(d) {
-    const r = Math.hypot(d.target.x - d.source.x, d.target.y - d.source.y);
+    const r = exchangeArc.straightness * Math.hypot(d.target.x - d.source.x, d.target.y - d.source.y);
     const targetRadius = getRadius(d.target);
     const sourceRadius = getRadius(d.source);
 
@@ -95,7 +95,7 @@ function createDataExchange(svg, dataExchanges) {
 }
 
 function getRadius(d) {
-    return exchangeArc.baseCurvature + (exchangeArc.curvatureScaling * d.numberProcesses);
+    return systemNode.radiusMin + (systemNode.radiusScaling * d.numberProcesses);
 }
 
 function createSystem(svg, systems, simulation) {
