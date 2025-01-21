@@ -6,6 +6,7 @@
     --filter-bg-color: #e9e9e9;
     --exchange-bg-color: #d3d4bc;
     --system-bg-color: #cdcedd;
+    --control-color: #5e88ab;
 
     --something-else-selected-opacity: 0.3;
 }
@@ -184,3 +185,76 @@ g.something-selected > g.adjacent-to-selected > path.actual-exchange {
 marker.adjacent-to-selected > path {
     fill: var(--selected-color) !important;
 }
+
+.graph {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.controls {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.zoom {
+    left: 20px;
+    top: 15px;
+}
+
+div.move {
+    left: 70px;
+    top: 0;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.horizontal-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow, button.zoom {
+    background-color: var(--control-color);
+    height: 30px;
+    width: 30px;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    margin: 2px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.arrow:hover, button.zoom:hover {
+    background-color: #4b6c88;
+}
+
+.center {
+    background-color: var(--system-color);;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.center:hover {
+    background-color: #515288;
+}
+
