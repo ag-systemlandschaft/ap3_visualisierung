@@ -36,7 +36,7 @@
       <div class="columns is-gapless">
         <div class="sidebar column" style="width: 300px; flex: none;">
           <div class="box">
-            <div class="block" style="position: relative; height: 700px;">
+            <div class="block" style="position: relative; height: 650px;">
               <h3 class="title is-5 mb-2">Filter</h3>
               <div class="filters mt-1" style="overflow-y: auto; height: calc(100% - 90px);"></div>
               <div class="buttons" style="position: absolute; bottom: 10px; left: 10px;"></div>
@@ -58,8 +58,28 @@
             </div>
           </div>
         </div>
-        <div class="vis column" style="min-width: 500px">
-          <svg width="100%" height="90%" viewBox="-480 -300 960 550"></svg>
+        <div class="graph">
+          <div class="vis column" style="min-width: 500px">
+            <svg width="100%" height="90%" viewBox="-480 -300 960 550"></svg>
+          </div>
+          <div class="controls zoom">
+            <div class="button-container">
+              <button id="zoom-in" class="zoom">+</button>
+              <button id="zoom-out" class="zoom">−</button>
+            </div>
+          </div>
+          <div class="controls move">
+            <div class="button-container">
+              <button id="pan-up" class="arrow up">▲</button>
+              <div class="horizontal-buttons">
+                <button id="pan-left" class="arrow left">◀</button>
+                <button id="reset" class="center">⟳</button>
+                <button id="pan-right" class="arrow right">▶</button>
+              </div>
+              <button id="pan-down" class="arrow down">▼</button>
+              <br>
+            </div>
+          </div>
         </div>
         <div class="sidebar column" style="width: 300px; flex: none;">
           <div class="box">

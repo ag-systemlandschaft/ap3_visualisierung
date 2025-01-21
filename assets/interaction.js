@@ -6,6 +6,36 @@ function addZoom(svg) {
             g.attr('transform', event.transform);
         });
     svg.call(zoom);
+
+    const zoomBy = (scaleFactor) => {
+        const svgNode = svg.node();
+        const transform = d3.zoomTransform(svgNode);
+
+        const newScale = transform.k * scaleFactor;
+        const center = [svg.attr("width") / 2, svg.attr("height") / 2];
+
+        const newTransform = d3.zoomIdentity
+            .translate(transform.x, transform.y)
+            .scale(newScale);
+
+        svg.call(zoom.transform, newTransform, center);
+    };
+
+    const panBy = (dx, dy) => {
+        const transform = d3.zoomTransform(svg.node());
+        svg.transition().call(
+            zoom.transform,
+            d3.zoomIdentity.translate(transform.x + dx, transform.y + dy).scale(transform.k)
+        );
+    };
+
+    d3.select("#zoom-in").on("click", () => zoomBy(1.2)); // Zoom in by 20%
+    d3.select("#zoom-out").on("click", () => zoomBy(1 / 1.2)); // Zoom out by 20%
+    d3.select("#reset").on("click", () => svg.transition().call(zoom.transform, d3.zoomIdentity)); // Reset view
+    d3.select("#pan-left").on("click", () => panBy(-50, 0)); // Pan left
+    d3.select("#pan-right").on("click", () => panBy(50, 0)); // Pan right
+    d3.select("#pan-up").on("click", () => panBy(0, -50)); // Pan up
+    d3.select("#pan-down").on("click", () => panBy(0, 50));
 }
 
 function addDrag(simulation) {
