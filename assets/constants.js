@@ -1,5 +1,6 @@
+// for other styling constants like colors, see index.css
 
-const exchange = Object.freeze({
+const exchangeArc = Object.freeze({
     baseCurvature: 5,
     curvatureScaling: 1,
 

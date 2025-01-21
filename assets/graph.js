@@ -21,7 +21,7 @@ function initGraph(svg, systems, dataExchanges, filters) {
         .attr("markerUnits", "userSpaceOnUse")
         .attr("orient", "auto")
         .append("path")
-        .attr("fill", dataExchangeColor)
+        .attr("fill", "var(--exchange-color)")
         .attr("d", "M0,-5L10,0L0,5");
 
     const dataExchange = createDataExchange(svg, dataExchanges);
@@ -70,18 +70,18 @@ function createDataExchange(svg, dataExchanges) {
         .classed("tolerance-layer", true)
         .attr("pointer-events", "all")
         .attr("stroke-opacity", 0)
-        .attr("stroke-width", exchange.tolerance);
+        .attr("stroke-width", exchangeArc.tolerance);
     dataExchange
         .append("path")
-        .attr("stroke", dataExchangeColor)
-        .attr("stroke-width", exchange.thickness)
+        .attr("stroke", "var(--exchange-color)")
+        .attr("stroke-width", exchangeArc.thickness)
         .attr("marker-end", function (d) {
             return "url(#arrow-link-" + d.index + ")";
         });
 
     svg.append("text")
         .attr("id", "hoverText")
-        .attr("fill", hoverColor)
+        .attr("fill", "var(--hover-color)")
         .attr("stroke", "white")
         .attr("stroke-width", 10)
         .attr("paint-order", "stroke")
@@ -90,7 +90,7 @@ function createDataExchange(svg, dataExchanges) {
 }
 
 function getRadius(d) {
-    return 5 + (1 * d.numberProcesses);
+    return exchangeArc.baseCurvature + (exchangeArc.curvatureScaling * d.numberProcesses);
 }
 
 function createSystem(svg, systems, simulation) {
@@ -102,7 +102,7 @@ function createSystem(svg, systems, simulation) {
         .selectAll("g")
         .data(systems)
         .join("g")
-        .attr("fill", systemColor)
+        .attr("fill", "var(--system-color)")
         .call(addDrag(simulation));
 
     system.append("circle")
@@ -121,7 +121,7 @@ function createSystem(svg, systems, simulation) {
 
     system.append("text")
         .attr("class", "hoverText")
-        .attr("fill", hoverColor)
+        .attr("fill", "var(--hover-color)")
         .attr("stroke", "white")
         .attr("stroke-width", 10)
         .attr("paint-order", "stroke")
