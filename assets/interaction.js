@@ -75,7 +75,16 @@ function addTooltip(svg, system, dataExchange) {
 
 function addClickHandler(svg, system, dataExchange, filters) {
     function resetColors() {
-        dataExchange.attr("stroke", "var(--exchange-color)");
+        dataExchange.selectAll("path")
+            .filter(function() {
+                return !this.classList.contains("tolerance-layer");
+            })
+            .attr("stroke", "var(--exchange-color)");
+
+        d3.selectAll("marker")
+            .selectAll("path")
+            .attr("fill", "var(--exchange-color)");
+
         system.attr("fill", "var(--system-color)");
     }
 
@@ -105,7 +114,19 @@ function addClickHandler(svg, system, dataExchange, filters) {
         addDataExchangeInfo(d, filters);
 
         resetColors();
-        d3.select(event.currentTarget)
-            .attr("stroke", "var(--selected-color)");
+        const path = d3.select(event.currentTarget)
+            .selectAll("path")
+            .filter(function() {
+                return !this.classList.contains("tolerance-layer");
+            });
+        path.attr("stroke", "var(--selected-color)");
+        const markerEndUrl = path.attr("marker-end");
+        const markerId = markerEndUrl.match(/#(.*)\)/)?.[1];
+
+        if (markerId) {
+            d3.select(`#${markerId}`)
+                .select("path") // Select the <path> inside the marker
+                .attr("fill", "var(--selected-color)"); // Match the color with the path
+        }
     })
 }

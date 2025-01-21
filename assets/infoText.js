@@ -15,8 +15,6 @@ function addSystemInfo(d) {
 function addDataExchangeInfo(d, filters) {
     const infoText = document.querySelector(".infoText");
     const single = d.processes.filter(process => process.active).length <= 1;
-    console.log(d.processes.filter(process => process.active));
-    console.log(d);
     infoText.innerHTML = `<h3 class='title is-5 mb-2'>Datenaustausch<br>${d.source.shortName} > ${d.target.shortName}</h3>` +
         d.processes
             .filter(process => process.active)
