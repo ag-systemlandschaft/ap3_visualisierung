@@ -7,3 +7,10 @@ const exchangeArc = Object.freeze({
     thickness: 1,
     tolerance: 10,
 });
+
+const physics = Object.freeze({
+    baseDistance: 60,
+    repulsion: 1000,
+    velocityDecay: 0.3,
+    collideRadius: 30,
+});

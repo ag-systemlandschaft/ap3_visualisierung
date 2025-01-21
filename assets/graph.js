@@ -1,9 +1,12 @@
 function initGraph(svg, systems, dataExchanges, filters) {
     const simulation = d3.forceSimulation(systems)
-        .force("link", d3.forceLink(dataExchanges).id(d => d.id).distance(50))
-        .force("charge", d3.forceManyBody().strength(-1000))
+        .force("link", d3.forceLink(dataExchanges).id(d => d.id).distance(physics.baseDistance))
+        .force("charge", d3.forceManyBody().strength(-physics.repulsion))
+        .force("collide", d3.forceCollide().radius(physics.collideRadius))
         .force("x", d3.forceX())
-        .force("y", d3.forceY());
+        .force("y", d3.forceY())
+        .velocityDecay(physics.velocityDecay)
+    ;
 
     svg.select("g")
         .append("defs")
