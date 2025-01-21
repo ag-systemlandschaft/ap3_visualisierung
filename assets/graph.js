@@ -58,6 +58,7 @@ function calculateLinkArc(d) {
 function createDataExchange(svg, dataExchanges) {
     const dataExchange = svg.select("g")
         .append("g")
+        .attr("id", "data-exchanges")
         .attr("fill", "none")
         .selectAll("path")
         .data(dataExchanges)
@@ -73,6 +74,7 @@ function createDataExchange(svg, dataExchanges) {
         .attr("stroke-width", exchangeArc.tolerance);
     dataExchange
         .append("path")
+        .classed("actual-exchange", true)
         .attr("stroke", "var(--exchange-color)")
         .attr("stroke-width", exchangeArc.thickness)
         .attr("marker-end", function (d) {
@@ -96,6 +98,7 @@ function getRadius(d) {
 function createSystem(svg, systems, simulation) {
     const system = svg.select("g")
         .append("g")
+        .attr("id", "systems")
         .attr("fill", "currentColor")
         .attr("stroke-linecap", "round")
         .attr("stroke-linejoin", "round")

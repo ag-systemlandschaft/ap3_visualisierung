@@ -6,6 +6,8 @@
     --filter-bg-color: #e9e9e9;
     --exchange-bg-color: #d3d4bc;
     --system-bg-color: #cdcedd;
+
+    --something-else-selected-opacity: 0.3;
 }
 
 body {
@@ -165,3 +167,15 @@ details[open] > summary.property::before {
     word-break: break-word;
 }
 
+g.some-system-selected path.actual-exchange {
+    stroke-opacity: var(--something-else-selected-opacity);
+}
+
+g.some-system-selected > g.adjacent-to-selected > path.actual-exchange {
+    stroke: var(--selected-color);
+    stroke-opacity: 1;
+}
+
+marker.adjacent-to-selected > path {
+    fill: var(--selected-color) !important;
+}
