@@ -7,6 +7,8 @@
     --exchange-bg-color: #d3d4bc;
     --system-bg-color: #cdcedd;
     --control-color: #5e88ab;
+
+    --something-else-selected-opacity: 0.3;
 }
 
 body {
@@ -164,6 +166,24 @@ details[open] > summary.property::before {
 .infoText {
     word-wrap: break-word;
     word-break: break-word;
+}
+
+g.something-selected path.actual-exchange {
+    stroke-opacity: var(--something-else-selected-opacity);
+}
+
+g.something-selected path.actual-exchange.selected {
+    stroke: var(--selected-color);
+    stroke-opacity: 1;
+}
+
+g.something-selected > g.adjacent-to-selected > path.actual-exchange {
+    stroke: var(--selected-color);
+    stroke-opacity: 1;
+}
+
+marker.adjacent-to-selected > path {
+    fill: var(--selected-color) !important;
 }
 
 .graph {

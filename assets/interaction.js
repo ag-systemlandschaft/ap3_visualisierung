@@ -104,26 +104,20 @@ function addTooltip(svg, system, dataExchange) {
 }
 
 function addClickHandler(svg, system, dataExchange, filters) {
-    function resetColors() {
-        dataExchange.selectAll("path")
-            .filter(function() {
-                return !this.classList.contains("tolerance-layer");
-            })
-            .attr("stroke", "var(--exchange-color)");
+    system.on("click", (event, node) => {
+        addSystemInfo(node);
 
-        d3.selectAll("marker")
-            .selectAll("path")
-            .attr("fill", "var(--exchange-color)");
-
-        system.attr("fill", "var(--system-color)");
-    }
-
-    system.on("click", (event, d) => {
-        addSystemInfo(d);
-
-        resetColors();
+        resetColors(system, true);
         d3.select(event.currentTarget)
             .attr("fill", "var(--selected-color)");
+
+        const adjacent = findAdjacents(dataExchange, node);
+        adjacent.exchanges.classed("adjacent-to-selected", true);
+        d3.selectAll("marker")
+            .classed(
+                "adjacent-to-selected",
+                (_, index, nodes) => adjacent.markerIds.includes(nodes[index].id)
+            );
 
         const transform = event.target.parentElement.getAttribute('transform');
         const translateMatch = transform.match(/translate\(([^,]+),([^)]+)\)/);
@@ -138,25 +132,69 @@ function addClickHandler(svg, system, dataExchange, filters) {
                 .duration(500)
                 .attr("transform", newTransform);
         }
-    })
+
+        event.stopPropagation();
+    });
 
     dataExchange.on("click", (event, d) => {
         addDataExchangeInfo(d, filters);
 
-        resetColors();
-        const path = d3.select(event.currentTarget)
-            .selectAll("path")
-            .filter(function() {
-                return !this.classList.contains("tolerance-layer");
-            });
-        path.attr("stroke", "var(--selected-color)");
-        const markerEndUrl = path.attr("marker-end");
-        const markerId = markerEndUrl.match(/#(.*)\)/)?.[1];
+        resetColors(system, true);
+        const paths = actualExchangePaths(event.currentTarget);
+        paths.classed("selected", true)
 
+        const markerEndUrl = paths.attr("marker-end");
+        const markerId = markerEndUrl.match(/#(.*)\)/)?.[1];
         if (markerId) {
             d3.select(`#${markerId}`)
                 .select("path") // Select the <path> inside the marker
                 .attr("fill", "var(--selected-color)"); // Match the color with the path
         }
-    })
+
+        event.stopPropagation();
+    });
+
+    svg.on("click", () => {
+        // due to the event.stopPropagation() in the other handlers, this means "click elsewhere"
+        resetColors(system, false);
+    });
+}
+
+function actualExchangePaths(element) {
+    const parent = !element ? d3 : d3.select(element);
+    return parent
+        .selectAll("path")
+        .filter(".actual-exchange");
+}
+
+function resetColors(system, somethingSelected = true) {
+    d3.select("#data-exchanges")
+        .classed("something-selected", somethingSelected);
+
+    actualExchangePaths()
+        .classed("selected", false);
+
+    d3.selectAll("g")
+        .classed("adjacent-to-selected", false)
+
+    d3.selectAll("marker")
+        .classed("adjacent-to-selected", false)
+        .selectAll("path")
+        .attr("fill", "var(--exchange-color)");
+
+    system.attr("fill", "var(--system-color)");
+}
+
+function findAdjacents(dataExchange, systemNode) {
+    const adjacentExchanges = dataExchange
+        .filter(e =>
+            [e.source.id, e.target.id].includes(systemNode.id)
+        );
+    const adjacentMarkerIds = adjacentExchanges
+        .nodes()
+        .map(e => `arrow-link-${e.id}`);
+    return {
+        exchanges: adjacentExchanges,
+        markerIds: adjacentMarkerIds
+    };
 }

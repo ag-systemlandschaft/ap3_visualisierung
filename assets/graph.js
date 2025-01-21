@@ -1,9 +1,12 @@
 function initGraph(svg, systems, dataExchanges, filters) {
     const simulation = d3.forceSimulation(systems)
-        .force("link", d3.forceLink(dataExchanges).id(d => d.id).distance(50))
-        .force("charge", d3.forceManyBody().strength(-1000))
+        .force("link", d3.forceLink(dataExchanges).id(d => d.id).distance(physics.baseDistance))
+        .force("charge", d3.forceManyBody().strength(-physics.repulsion))
+        .force("collide", d3.forceCollide().radius(physics.collideRadius))
         .force("x", d3.forceX())
-        .force("y", d3.forceY());
+        .force("y", d3.forceY())
+        .velocityDecay(physics.velocityDecay)
+    ;
 
     svg.select("g")
         .append("defs")
@@ -58,6 +61,7 @@ function calculateLinkArc(d) {
 function createDataExchange(svg, dataExchanges) {
     const dataExchange = svg.select("g")
         .append("g")
+        .attr("id", "data-exchanges")
         .attr("fill", "none")
         .selectAll("path")
         .data(dataExchanges)
@@ -73,6 +77,7 @@ function createDataExchange(svg, dataExchanges) {
         .attr("stroke-width", exchangeArc.tolerance);
     dataExchange
         .append("path")
+        .classed("actual-exchange", true)
         .attr("stroke", "var(--exchange-color)")
         .attr("stroke-width", exchangeArc.thickness)
         .attr("marker-end", function (d) {
@@ -96,6 +101,7 @@ function getRadius(d) {
 function createSystem(svg, systems, simulation) {
     const system = svg.select("g")
         .append("g")
+        .attr("id", "systems")
         .attr("fill", "currentColor")
         .attr("stroke-linecap", "round")
         .attr("stroke-linejoin", "round")
