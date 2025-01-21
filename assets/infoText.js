@@ -5,7 +5,7 @@ function addSystemInfo(d) {
             <h3 class="title is-5 mb-2">${d.shortName}</h3>
             <hr style="margin: 0" class="system">
             Betreiber: ${d.provider}<br><br>
-            ${d.description}<br><br>
+            Kurzbeschreibung: ${d.description}<br><br>
             ${addHTMLLink("Link zu weiteren Informationen", d.link)}<br>
             ${d.group}<br>  
         </div> 
@@ -15,18 +15,23 @@ function addSystemInfo(d) {
 function addDataExchangeInfo(d, filters) {
     const infoText = document.querySelector(".infoText");
     const single = d.processes.filter(process => process.active).length <= 1;
-    infoText.innerHTML = `<h3 class='title is-5 mb-2'>Datenaustausch<br>${d.source.shortName} > ${d.target.shortName}</h3>` +
+    infoText.innerHTML = `<h3 class='title is-5 mb-2' style="padding-bottom: 15px">Datenaustausch<br>${d.source.shortName} > ${d.target.shortName}</h3>` +
         d.processes
             .filter(process => process.active)
             .map(d => `
                 <details class="dataExchange" ${single ? 'open' : ''}>
-                    <summary class="dataExchange"><b style="color: black">${d.name}</b></summary>
+                    <summary class="dataExchange">${d.name}</summary>
                     <hr style="margin: 0;" class="dataExchange">
-                    ${d.description}<br>
-                    ${addHTMLLink("Link zu weiteren Informationen", d.link)}
-                    ${addHTMLLink("Link zur Schnittstelle", d.interfaceLink)}
+                    <details>
+                        <summary class="property">Kurzbeschreibung</summary>
+                        ${d.description}
+                    </details>
                     ${addProperties(d.properties, filters)}
-                    <br>
+                    <details>
+                        <summary class="property">Links</summary>
+                        ${addHTMLLink("Link zu weiteren Informationen", d.link)}
+                        ${addHTMLLink("Link zur Schnittstelle", d.interfaceLink)}
+                    </details>
                 </details>
         `).join("<br>\n");
 }
