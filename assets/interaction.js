@@ -89,8 +89,6 @@ function addClickHandler(svg, system, dataExchange, filters) {
                 (_, index, nodes) => adjacent.markerIds.includes(nodes[index].id)
             );
 
-        console.log("click system", event, node, system, dataExchange, adjacent);
-
         const transform = event.target.parentElement.getAttribute('transform');
         const translateMatch = transform.match(/translate\(([^,]+),([^)]+)\)/);
         if (translateMatch) {
@@ -111,11 +109,11 @@ function addClickHandler(svg, system, dataExchange, filters) {
     dataExchange.on("click", (event, d) => {
         addDataExchangeInfo(d, filters);
 
-        resetColors(system);
-        actualExchangePaths(event.currentTarget)
-            .attr("stroke", "var(--selected-color)");
+        resetColors(system, true);
+        const paths = actualExchangePaths(event.currentTarget);
+        paths.classed("selected", true)
 
-        const markerEndUrl = path.attr("marker-end");
+        const markerEndUrl = paths.attr("marker-end");
         const markerId = markerEndUrl.match(/#(.*)\)/)?.[1];
         if (markerId) {
             d3.select(`#${markerId}`)
@@ -128,7 +126,7 @@ function addClickHandler(svg, system, dataExchange, filters) {
 
     svg.on("click", () => {
         // due to the event.stopPropagation() in the other handlers, this means "click elsewhere"
-        resetColors(system);
+        resetColors(system, false);
     });
 }
 
@@ -139,12 +137,12 @@ function actualExchangePaths(element) {
         .filter(".actual-exchange");
 }
 
-function resetColors(system, someSelected = false) {
+function resetColors(system, somethingSelected = true) {
     d3.select("#data-exchanges")
-        .classed("some-system-selected", someSelected);
+        .classed("something-selected", somethingSelected);
 
     actualExchangePaths()
-        .attr("stroke", "var(--exchange-color)");
+        .classed("selected", false);
 
     d3.selectAll("g")
         .classed("adjacent-to-selected", false)

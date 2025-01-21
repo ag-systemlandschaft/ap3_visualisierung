@@ -167,11 +167,16 @@ details[open] > summary.property::before {
     word-break: break-word;
 }
 
-g.some-system-selected path.actual-exchange {
+g.something-selected path.actual-exchange {
     stroke-opacity: var(--something-else-selected-opacity);
 }
 
-g.some-system-selected > g.adjacent-to-selected > path.actual-exchange {
+g.something-selected path.actual-exchange.selected {
+    stroke: var(--selected-color);
+    stroke-opacity: 1;
+}
+
+g.something-selected > g.adjacent-to-selected > path.actual-exchange {
     stroke: var(--selected-color);
     stroke-opacity: 1;
 }
