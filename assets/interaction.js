@@ -75,8 +75,8 @@ function addTooltip(svg, system, dataExchange) {
 
 function addClickHandler(svg, system, dataExchange, filters) {
     function resetColors() {
-        dataExchange.attr("stroke", dataExchangeColor);
-        system.attr("fill", systemColor);
+        dataExchange.attr("stroke", "var(--exchange-color)");
+        system.attr("fill", "var(--system-color)");
     }
 
     system.on("click", (event, d) => {
@@ -84,7 +84,7 @@ function addClickHandler(svg, system, dataExchange, filters) {
 
         resetColors();
         d3.select(event.currentTarget)
-            .attr("fill", selectedColor);
+            .attr("fill", "var(--selected-color)");
 
         const transform = event.target.parentElement.getAttribute('transform');
         const translateMatch = transform.match(/translate\(([^,]+),([^)]+)\)/);
@@ -104,6 +104,6 @@ function addClickHandler(svg, system, dataExchange, filters) {
 
         resetColors();
         d3.select(event.currentTarget)
-            .attr("stroke", selectedColor);
+            .attr("stroke", "var(--selected-color)");
     })
 }
