@@ -9,24 +9,26 @@ function setFilters(filters, dataExchanges, svg) {
     `).join("");
     updateOptionCounts(filters, dataExchanges);
 
+    const buttonsContainer = document.querySelector(".buttons");
     const filterButton = document.createElement("button");
     filterButton.appendChild(document.createTextNode("Filtern"));
     filterButton.addEventListener("click", () => {applyFilter(filters, dataExchanges, svg)});
     filterButton.classList.add("filter-button");
-    filterContainer.appendChild(filterButton);
+    buttonsContainer.appendChild(filterButton);
 
     const resetButton = document.createElement("button");
     resetButton.appendChild(document.createTextNode("Zurücksetzen"));
     resetButton.classList.add("filter-button");
     resetButton.addEventListener("click", () => {resetFilter(filters, dataExchanges, svg)});
-    filterContainer.appendChild(resetButton);
+    buttonsContainer.appendChild(resetButton);
 }
 
 function optionsFor(filter) {
     return filter.options.sort().map(option => `
-        <input type="checkbox" name="${filter.id}" value="${option}" style="margin-left: 15px">
-        <label for="${filter.id}" id="${option}"></label>
-        <br>
+        <div style="display: flex; align-items: flex-start; gap: 10px;">
+            <input type="checkbox" name="${filter.id}" value="${option}" style="margin-left: 15px; margin-top: 5px">
+            <label for="${filter.id}" id="${option}" style="display: block;"></label>
+        </div>
     `).join("\n");
 }
 
@@ -91,11 +93,14 @@ function updateOptionCounts(filters, dataExchanges) {
                 .length;
 
             const optionElement = document.querySelector(`label[for="${filter.id}"][id="${option}"]`);
+            const optionCheckbox = document.querySelector(`input[name="${filter.id}"][value^="${option}"]`);
             if (optionElement) {
                 optionElement.innerHTML = `${option} (${count})`;
                 optionElement.style.color = "#434343";
+                optionCheckbox.disabled = false;
                 if(count === 0){
                     optionElement.style.color = "gray";
+                    optionCheckbox.disabled = true;
                 }
             }
         })
