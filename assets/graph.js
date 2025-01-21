@@ -25,11 +25,11 @@ function initGraph(svg, systems, dataExchanges, filters) {
         .attr("d", "M0,-5L10,0L0,5");
 
     const dataExchange = createDataExchange(svg, dataExchanges);
-
+    const dataExchangePaths = dataExchange.selectAll("path");
     const system = createSystem(svg, systems, simulation);
 
     simulation.on("tick", () => {
-        dataExchange.attr("d", calculateLinkArc);
+        dataExchangePaths.attr("d", calculateLinkArc);
         system.attr("transform", d => `translate(${d.x},${d.y})`);
     });
 
@@ -61,9 +61,20 @@ function createDataExchange(svg, dataExchanges) {
         .attr("fill", "none")
         .selectAll("path")
         .data(dataExchanges)
-        .join("path")
-        .attr("id", (d, i) => i)
+        .join("g")
+        .attr("id", (d, i) => i);
+
+    // each dataExchange consists of two paths, one visible and one to allow for more tolerant interactions
+    dataExchange
+        .append("path")
+        .classed("tolerance-layer", true)
+        .attr("pointer-events", "all")
+        .attr("stroke-opacity", 0)
+        .attr("stroke-width", exchange.tolerance);
+    dataExchange
+        .append("path")
         .attr("stroke", dataExchangeColor)
+        .attr("stroke-width", exchange.thickness)
         .attr("marker-end", function (d) {
             return "url(#arrow-link-" + d.index + ")";
         });
