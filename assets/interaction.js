@@ -32,10 +32,10 @@ function addZoom(svg) {
     d3.select("#zoom-in").on("click", () => zoomBy(1.2)); // Zoom in by 20%
     d3.select("#zoom-out").on("click", () => zoomBy(1 / 1.2)); // Zoom out by 20%
     d3.select("#reset").on("click", () => svg.transition().call(zoom.transform, d3.zoomIdentity)); // Reset view
-    d3.select("#pan-left").on("click", () => panBy(-50, 0)); // Pan left
-    d3.select("#pan-right").on("click", () => panBy(50, 0)); // Pan right
-    d3.select("#pan-up").on("click", () => panBy(0, -50)); // Pan up
-    d3.select("#pan-down").on("click", () => panBy(0, 50));
+    d3.select("#pan-left").on("click", () => panBy(50, 0)); // Pan left
+    d3.select("#pan-right").on("click", () => panBy(-50, 0)); // Pan right
+    d3.select("#pan-up").on("click", () => panBy(0, 50)); // Pan up
+    d3.select("#pan-down").on("click", () => panBy(0, -50));
 }
 
 function addDrag(simulation) {
