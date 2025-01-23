@@ -83,14 +83,6 @@ function createDataExchange(svg, dataExchanges) {
         .attr("marker-end", function (d) {
             return "url(#arrow-link-" + d.index + ")";
         });
-
-    svg.append("text")
-        .attr("id", "hoverText")
-        .attr("fill", "var(--hover-color)")
-        .attr("stroke", "white")
-        .attr("stroke-width", 10)
-        .attr("paint-order", "stroke")
-        .attr("display", "none");
     return dataExchange;
 }
 

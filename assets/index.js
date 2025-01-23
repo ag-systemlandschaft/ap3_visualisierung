@@ -27,6 +27,13 @@ function init(data) {
     `));
 
     const svg = d3.select("svg");
+    svg.append("text")
+        .attr("id", "hoverText")
+        .attr("fill", "var(--hover-color)")
+        .attr("stroke", "white")
+        .attr("stroke-width", 10)
+        .attr("paint-order", "stroke")
+        .attr("display", "none");
     addZoom(svg);
     initGraph(svg, systems, dataExchanges, filters);
     setFilters(filters, dataExchanges, svg);

@@ -1,9 +1,11 @@
 function addZoom(svg) {
     let g = svg.append("g");
+    let hover = d3.select("#hoverText");
     let zoom = d3.zoom()
         .scaleExtent([0.2, 5])
         .on('zoom', function(event) {
             g.attr('transform', event.transform);
+            hover.attr('transform', event.transform);
         });
     svg.call(zoom);
 
