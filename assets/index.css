@@ -271,3 +271,11 @@ div.move {
     background-color: #515288;
 }
 
+input[type='checkbox'] {
+    cursor: pointer;
+}
+
+input[type='checkbox']:disabled {
+    cursor: default;
+}
+
