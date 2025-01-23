@@ -89,6 +89,11 @@ img.logo {
     background-color: #4c4e87;
 }
 
+summary.filter {
+    cursor: pointer;
+    user-select: none;
+}
+
 details {
     border-radius: 5px;
     padding: 10px;
@@ -96,6 +101,7 @@ details {
 
 details.filter {
     background-color: var(--filter-bg-color);
+    margin: 15px;
 }
 
 details.dataExchange {
@@ -118,6 +124,11 @@ summary.system::marker {
     font-size: 1.2em;
 }
 
+summary.dataExchange {
+    cursor: pointer;
+    user-select: none;
+}
+
 summary.dataExchange::marker {
     color: #A7AB55;
     font-size: 1.2em;
@@ -129,7 +140,7 @@ a {
 }
 
 hr.filter{
-    margin: 0;
+    margin: 3px 0 10px 0;
     background-color: #6667ab
 }
 
@@ -144,9 +155,11 @@ hr.dataExchange{
 }
 
 summary.property {
+    cursor: pointer;
     list-style: none;
     position: relative;
     padding-left: 1.5em;
+    user-select: none;
 }
 
 summary.property::before {
@@ -156,7 +169,7 @@ summary.property::before {
 }
 
 details[open] > summary.property::before {
-    content: '-';
+    content: '–';
 }
 
 .header-container {

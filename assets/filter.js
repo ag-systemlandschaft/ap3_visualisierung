@@ -5,7 +5,7 @@ function setFilters(filters, dataExchanges, svg) {
             <summary class="filter">${filter.name}</summary>
             <hr class="filter">
             ${optionsFor(filter)}
-        </details><br>
+        </details>
     `).join("");
     updateOptionCounts(filters, dataExchanges);
 
