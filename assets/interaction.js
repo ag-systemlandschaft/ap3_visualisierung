@@ -160,6 +160,7 @@ function addClickHandler(svg, system, dataExchange, filters) {
     svg.on("click", () => {
         // due to the event.stopPropagation() in the other handlers, this means "click elsewhere"
         resetColors(system, false);
+        setDefaultInfoText();
     });
 }
 

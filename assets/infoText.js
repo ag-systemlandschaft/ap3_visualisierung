@@ -51,3 +51,18 @@ function addProperties(properties, filters) {
         </details>
     `).join("\n");
 }
+
+function setDefaultInfoText() {
+    const infoText = document.querySelector(".infoText");
+    infoText.innerHTML = "";
+    const heading = document.createElement('h3');
+    heading.className = 'title is-5 mb-2';
+    heading.textContent = 'Information';
+    infoText.appendChild(heading);
+    infoText.appendChild(document.createTextNode(`
+        Diese Visualisierung zeigt Importdatenflüsse auf Basis von Echtdaten der ersten Fragerunde. 
+        Für die erste prototypische Visualisierung wurde nur ein Bruchteil der vorhandenen Daten ausgewertet. 
+        Aufgrund der High-Level-Darstellung gibt die Visualisierung aktuell keine Auskunft über potentielle Doppellieferungen. 
+        Die Umsetzung des im AG-Kontext erarbeiteten Visualisierungskonzepts ist aktuell noch in Arbeit.
+    `));
+}
