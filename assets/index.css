@@ -1,7 +1,8 @@
 :root {
     --system-color: #6667ab;
     --exchange-color: #A7AB55;
-    --selected-color: #8F6FAB;
+    --system-selected-color: #8F6FAB;
+    --exchange-selected-color: #8F6FAB;
     --hover-color: #AB9778;
     --filter-bg-color: #e9e9e9;
     --exchange-bg-color: #d3d4bc;
@@ -188,17 +189,17 @@ g.something-selected path.actual-exchange {
 }
 
 g.something-selected path.actual-exchange.selected {
-    stroke: var(--selected-color);
+    stroke: var(--exchange-selected-color);
     stroke-opacity: 1;
 }
 
 g.something-selected > g.adjacent-to-selected > path.actual-exchange {
-    stroke: var(--selected-color);
+    stroke: var(--exchange-selected-color);
     stroke-opacity: 1;
 }
 
 marker.adjacent-to-selected > path {
-    fill: var(--selected-color) !important;
+    fill: var(--exchange-selected-color) !important;
 }
 
 .graph {
