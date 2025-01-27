@@ -134,8 +134,9 @@ function filterDataExchange(dataExchanges, svg) {
     svg.select("g")
         .select("g")
         .selectAll("path")
-        .data(dataExchanges)
-        .attr("display", d =>
-            d.processes.some(process => process.active) ? "initial" : "none"
+        .attr("display", d =>{
+            const actual = dataExchanges.filter(exchange => exchange.source.shortName === d.source.shortName && exchange.target.shortName === d.target.shortName)[0];
+            return actual.processes.some(process => process.active) ? "initial" : "none";
+        }
         );
 }
