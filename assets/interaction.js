@@ -111,7 +111,7 @@ function addClickHandler(svg, system, dataExchange, filters) {
 
         resetColors(system, true);
         d3.select(event.currentTarget)
-            .attr("fill", "var(--selected-color)");
+            .attr("fill", "var(--system-selected-color)");
 
         const adjacent = findAdjacents(dataExchange, node);
         adjacent.exchanges.classed("adjacent-to-selected", true);
@@ -150,7 +150,7 @@ function addClickHandler(svg, system, dataExchange, filters) {
         if (markerId) {
             d3.select(`#${markerId}`)
                 .select("path") // Select the <path> inside the marker
-                .attr("fill", "var(--selected-color)"); // Match the color with the path
+                .attr("fill", "var(--exchange-selected-color)"); // Match the color with the path
         }
 
         event.stopPropagation();
