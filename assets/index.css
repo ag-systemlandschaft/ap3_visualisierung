@@ -9,12 +9,14 @@
     --control-color: #5e88ab;
 
     --something-else-selected-opacity: 0.3;
+
+    --font-family: "Source Sans Pro";
 }
 
 body {
     background-color: #ffffff;
     color: #434343;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: var(--font-family), sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;

@@ -28,6 +28,7 @@ function init(data) {
 
     const svg = d3.select("svg");
     svg.append("text")
+        .style("font-family", "var(--font-family), sans-serif")
         .attr("id", "hoverText")
         .attr("fill", "var(--hover-color)")
         .attr("stroke", "white")
