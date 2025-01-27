@@ -27,7 +27,7 @@ function addDataExchangeInfo(d, filters) {
                         ${d.description}
                     </details>
                     ${addProperties(d.properties, filters)}
-                    <details>
+                    <details style="visibility: ${d.link || d.interfaceLink ? 'visible' : 'collapse'}">
                         <summary class="property">Links</summary>
                         ${addHTMLLink("Link zu weiteren Informationen", d.link)}
                         ${addHTMLLink("Link zur Schnittstelle", d.interfaceLink)}
