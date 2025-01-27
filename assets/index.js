@@ -7,7 +7,7 @@ function init(data) {
     const filters = data.propertyCategories;
     const dataExchanges = data.dataExchange;
 
-    filters.sort((a, b) => a.name.localeCompare(b.name));
+    filters.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
 
     //d3 Simulation search for id. Check if another tag can be defined as identifier
     systems.forEach(d => d.id = d.shortName);

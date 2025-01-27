@@ -26,7 +26,7 @@ function setFilters(filters, dataExchanges, svg) {
 const optionId = (filter, option) => [filter.id, option].join('-');
 
 function optionsFor(filter) {
-    return filter.options.sort().map(option => {
+    return filter.options.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' })).map(option => {
         const inputId = optionId(filter, option);
         return `
             <div style="display: flex; align-items: baseline; gap: 10px;">
