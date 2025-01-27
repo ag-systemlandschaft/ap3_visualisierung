@@ -109,6 +109,7 @@ function createSystem(svg, systems, simulation) {
         .attr("r", d => getRadius(d));
 
     system.append("text")
+        .style("font-family", "var(--font-family), sans-serif")
         .attr("x", d => getRadius(d) + 14)
         .attr("y", "0.61em")
         .text(d => d.id)
@@ -118,6 +119,7 @@ function createSystem(svg, systems, simulation) {
         .attr("stroke-width", 7);
 
     system.append("text")
+        .style("font-family", "var(--font-family), sans-serif")
         .attr("y", "-10px")
         .attr("x", d => getRadius(d) + 14)
         .attr("class", "hoverText")
