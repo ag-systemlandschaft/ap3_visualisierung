@@ -1,0 +1,31 @@
+/*
+    we self-host "Source Sans Pro" in order to be independent from the Google API.
+
+    If you need more fonts, they must also be added here.
+
+    "Source Pro Sans" is currently taken from https://fontsource.org/fonts/source-sans-pro in version 5.1.0
+ */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url('webfonts/source-sans-pro-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    src: url('webfonts/source-sans-pro-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: url('webfonts/source-sans-pro-latin-700-normal.woff2') format('woff2');
+}
