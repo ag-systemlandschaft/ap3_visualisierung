@@ -71,15 +71,17 @@ function addDrag(simulation) {
 
 function addTooltip(svg, system, dataExchange) {
     system
-        .on("mouseover", function () {
-            const g = d3.select(this)
-            g.raise()
+        .on("mouseover", function (event, d) {
+            const g = d3.select(this);
+            g.raise();
             g.select(".hoverText")
-                .attr("display", "initial")
+                .attr("display", "initial");
+            d3.select(event.currentTarget).classed("hovered", true)
         })
-        .on("mouseout", function () {
+        .on("mouseout", function (event, d) {
             const g = d3.select(this)
             g.select(".hoverText").attr("display", "none");
+            d3.select(event.currentTarget).classed("hovered", false)
         });
 
     dataExchange
@@ -100,10 +102,35 @@ function addTooltip(svg, system, dataExchange) {
                 .attr("x", x + 20)
                 .attr("dy", (d, i) => (i === 0 ? 0 : 20))
                 .text(d => d);
+            const paths = actualExchangePaths(event.currentTarget);
+            paths.classed("hovered", true)
+
+            const markerEndUrl = paths.attr("marker-end");
+            const markerId = markerEndUrl.match(/#(.*)\)/)?.[1];
+            if (markerId) {
+                d3.select(`#${markerId}`)
+                    .select("path")
+                    .classed("hovered", true)
+                    .classed("marker", true);
+            }
+
+            event.stopPropagation();
         })
-        .on("mouseout", function () {
+        .on("mouseout", function (event, d) {
             const hoverText = d3.select("#hoverText");
             hoverText.attr("display", "none");
+            const paths = actualExchangePaths(event.currentTarget);
+            paths
+                .classed("hovered", false)
+
+            const markerEndUrl = paths.attr("marker-end");
+            const markerId = markerEndUrl.match(/#(.*)\)/)?.[1];
+            if (markerId) {
+                d3.select(`#${markerId}`)
+                    .select("path")
+                    .classed("hovered", false)
+                    .classed("marker", false);
+            }
         });
 }
 

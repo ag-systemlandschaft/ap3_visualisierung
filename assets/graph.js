@@ -123,7 +123,7 @@ function createSystem(svg, systems, simulation) {
         .attr("y", "-10px")
         .attr("x", d => getRadius(d) + 14)
         .attr("class", "hoverText")
-        .attr("fill", "var(--hover-color)")
+        .attr("fill", "var(--system-hover-color)")
         .attr("stroke", "white")
         .attr("stroke-width", 10)
         .attr("paint-order", "stroke")

@@ -3,7 +3,8 @@
     --exchange-color: #5E88AB;
     --system-selected-color: #1E2159;
     --exchange-selected-color: #105084;
-    --hover-color: #276b4f;
+    --system-hover-color: #276b4f;
+    --exchange-hover-color: #276b4f;
     --filter-bg-color: #e9e9e9;
     --exchange-bg-color: #E3EBF1;
     --system-bg-color: #e9e9f3;
@@ -200,6 +201,21 @@ g.something-selected > g.adjacent-to-selected > path.actual-exchange {
 
 marker.adjacent-to-selected > path {
     fill: var(--exchange-selected-color) !important;
+}
+
+path.actual-exchange.hovered {
+    stroke: var(--exchange-hover-color) !important;
+    stroke-opacity: 1;
+}
+
+path.hovered.marker {
+    fill: var(--exchange-hover-color) !important;
+    stroke-opacity: 1;
+}
+
+g.hovered {
+    fill: var(--system-hover-color);
+    stroke-opacity: 1;
 }
 
 .graph {
