@@ -19,7 +19,7 @@ function init(data) {
     svg.append("text")
         .style("font-family", "var(--font-family), sans-serif")
         .attr("id", "hoverText")
-        .attr("fill", "var(--hover-color)")
+        .attr("fill", "var(--exchange-hover-color)")
         .attr("stroke", "white")
         .attr("stroke-width", 10)
         .attr("paint-order", "stroke")
