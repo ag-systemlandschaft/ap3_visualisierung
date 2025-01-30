@@ -113,7 +113,7 @@ function addClickHandler(svg, system, dataExchange, filters) {
         resetColors(system, true);
         d3.select(event.currentTarget)
             .attr("fill", "var(--system-selected-color)");
-
+        console.log(event.currentTarget);
         const adjacent = findAdjacents(dataExchange, node);
         adjacent.exchanges.classed("adjacent-to-selected", true);
         d3.selectAll("marker")
@@ -122,20 +122,26 @@ function addClickHandler(svg, system, dataExchange, filters) {
                 (_, index, nodes) => adjacent.markerIds.includes(nodes[index].id)
             );
 
+        const globalTransform = event.target.parentElement.parentElement.parentElement.getAttribute('transform');
+        let globalTranslateMatch = ["0.0", "0.0"];
+        if(globalTransform) {
+            globalTranslateMatch = globalTransform.match(/translate\(([^,]+),([^)]+)\)/);
+        }
+
         const transform = event.target.parentElement.getAttribute('transform');
         const translateMatch = transform.match(/translate\(([^,]+),([^)]+)\)/);
         if (translateMatch) {
+            const globalTranslateX = parseFloat(globalTranslateMatch[1]) || 0;
+            const globalTranslateY = parseFloat(globalTranslateMatch[2]) || 0;
             const translateX = parseFloat(translateMatch[1]);
             const translateY = parseFloat(translateMatch[2]);
-
             const g = d3.select("g");
             const transform = d3.zoomTransform(g.node());
-            const newTransform = transform.translate(-translateX, -translateY);
+            const newTransform = transform.translate(-(translateX+globalTranslateX), -(translateY+globalTranslateY));
             g.transition()
                 .duration(500)
                 .attr("transform", newTransform);
         }
-
         event.stopPropagation();
     });
 
