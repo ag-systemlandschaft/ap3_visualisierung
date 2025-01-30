@@ -24,13 +24,17 @@ function addDataExchangeInfo(d, filters) {
                     <hr style="margin: 0;" class="dataExchange">
                     <details>
                         <summary class="property">Kurzbeschreibung</summary>
-                        ${d.description}
+                        <div class="summaryContent">
+                            ${d.description}
+                        </div>
                     </details>
                     ${addProperties(d.properties, filters)}
                     <details style="visibility: ${d.link || d.interfaceLink ? 'visible' : 'collapse'}">
                         <summary class="property">Links</summary>
-                        ${addHTMLLink("Link zu weiteren Informationen", d.link)}
-                        ${addHTMLLink("Link zur Schnittstelle", d.interfaceLink)}
+                        <div class="summaryContent">
+                            ${addHTMLLink("Link zu weiteren Informationen", d.link)}
+                            ${addHTMLLink("Link zur Schnittstelle", d.interfaceLink)}
+                        </div>
                     </details>
                 </details>
         `).join("<br>\n");
@@ -47,7 +51,9 @@ function addProperties(properties, filters) {
     return filters.map(filter => `
         <details>
             <summary class="property">${filter.name}</summary>
-            ${properties[filter.id] ? properties[filter.id].join(", ") : "keine Angaben"}
+            <div class="summaryContent">
+                ${properties[filter.id] ? properties[filter.id].join(", ") : "keine Angaben"}
+            </div>
         </details>
     `).join("\n");
 }
