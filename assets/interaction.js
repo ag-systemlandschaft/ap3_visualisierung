@@ -84,7 +84,8 @@ function addTooltip(svg, system, dataExchange) {
 
     dataExchange
         .on("mouseover", function (event, d) {
-            const [x, y] = d3.pointer(event, svg.node());
+            const transform = d3.zoomTransform(svg.node());
+            const [x, y] = transform.invert(d3.pointer(event, svg.node()));
             const hoverText = d3.select("#hoverText");
             hoverText.raise()
             hoverText
