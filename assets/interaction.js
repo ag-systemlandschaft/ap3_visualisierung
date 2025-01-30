@@ -140,15 +140,9 @@ function addClickHandler(svg, system, dataExchange, filters) {
 
         resetColors(system, true);
         d3.select(event.currentTarget)
-            .attr("fill", "var(--system-selected-color)");
+            .classed("selected", true);
 
-        const adjacent = findAdjacents(dataExchange, node);
-        adjacent.exchanges.classed("adjacent-to-selected", true);
-        d3.selectAll("marker")
-            .classed(
-                "adjacent-to-selected",
-                (_, index, nodes) => adjacent.markerIds.includes(nodes[index].id)
-            );
+        markAdjacentElements(dataExchange, system, node);
 
         const globalTransform = event.target.parentElement.parentElement.parentElement.getAttribute('transform');
         let globalTranslateMatch = ["0.0", "0.0"];
@@ -181,12 +175,18 @@ function addClickHandler(svg, system, dataExchange, filters) {
         const paths = actualExchangePaths(event.currentTarget);
         paths.classed("selected", true)
 
+        system.classed(
+            "adjacent-to-selected",
+            (_, index) =>
+                [d.source.index, d.target.index].includes(index)
+        )
+
         const markerEndUrl = paths.attr("marker-end");
         const markerId = markerEndUrl.match(/#(.*)\)/)?.[1];
         if (markerId) {
             d3.select(`#${markerId}`)
-                .select("path") // Select the <path> inside the marker
-                .attr("fill", "var(--exchange-selected-color)"); // Match the color with the path
+                .select("path")
+                .attr("fill", "var(--exchange-selected-color)");
         }
 
         event.stopPropagation();
@@ -221,7 +221,29 @@ function resetColors(system, somethingSelected = true) {
         .selectAll("path")
         .attr("fill", "var(--exchange-color)");
 
-    system.attr("fill", "var(--system-color)");
+    d3.select("#systems")
+        .classed("something-selected", somethingSelected);
+
+    system
+        .classed("selected", false);
+}
+
+function markAdjacentElements(dataExchange, allSystems, selectedSystem) {
+    const adjacent = findAdjacents(dataExchange, selectedSystem);
+    adjacent.exchanges
+        .classed("adjacent-to-selected", true);
+    d3.selectAll("marker")
+        .classed(
+            "adjacent-to-selected",
+            (_, index, nodes) =>
+                adjacent.markerIds.includes(nodes[index].id)
+        );
+    allSystems
+        .classed(
+            "adjacent-to-selected",
+            (_, index) =>
+                adjacent.nodeIndices.includes(index)
+        );
 }
 
 function findAdjacents(dataExchange, systemNode) {
@@ -232,8 +254,16 @@ function findAdjacents(dataExchange, systemNode) {
     const adjacentMarkerIds = adjacentExchanges
         .nodes()
         .map(e => `arrow-link-${e.id}`);
+    const adjacentNodeIndices = adjacentExchanges
+        .data()
+        .map(exchange =>
+            exchange.source.index === systemNode.index
+                ? exchange.target.index
+                : exchange.source.index
+        );
     return {
         exchanges: adjacentExchanges,
-        markerIds: adjacentMarkerIds
+        markerIds: adjacentMarkerIds,
+        nodeIndices: adjacentNodeIndices,
     };
 }

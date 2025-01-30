@@ -10,7 +10,8 @@
     --system-bg-color: #e9e9f3;
     --control-color: #5e88ab;
 
-    --something-else-selected-opacity: 0.3;
+    --exchange-opacity-when-unimportant: 30%;
+    --system-opacity-when-unimportant: 40%;
 
     --font-family: "Source Sans Pro";
 }
@@ -185,8 +186,28 @@ details[open] > summary.property::before {
     word-break: break-word;
 }
 
+#systems g {
+    fill: var(--system-color);
+}
+
+#systems g.selected {
+    fill: var(--system-selected-color);
+}
+
+#systems.something-selected g.adjacent-to-selected {
+    fill: var(--system-selected-color);
+}
+
+/*
+  we need that color mix because opacity would show the arrow lines beneath
+  note that for color-mix(), opacity has to be given as percentage e,g 50%, not decimal 0.5
+*/
+#systems.something-selected g:not(.selected):not(.adjacent-to-selected) {
+    fill: color-mix(in srgb, var(--system-color) var(--system-opacity-when-unimportant), white);
+}
+
 g.something-selected path.actual-exchange {
-    stroke-opacity: var(--something-else-selected-opacity);
+    stroke-opacity: var(--exchange-opacity-when-unimportant);
 }
 
 g.something-selected path.actual-exchange.selected {

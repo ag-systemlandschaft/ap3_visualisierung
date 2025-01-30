@@ -17,7 +17,10 @@ function initGraph(svg, systems, dataExchanges, filters) {
             return "arrow-link-" + d.index;
         })
         .attr("viewBox", "0 -5 10 10")
-        .attr("refX", 12)
+        .attr("refX", (d) => {
+            // fixes where the arrow ends, still pointing to the circle center
+            return 9 + 1.2 * getRadius(d.target);
+        })
         .attr("refY", -0.5)
         .attr("markerWidth", 9)
         .attr("markerHeight", 9)
@@ -50,10 +53,10 @@ function calculateLinkArc(d) {
     const length = Math.sqrt(dx * dx + dy * dy);
 
     // Adjust source and target points to account for circle radius
-    const sourceX = d.source.x + (dx / length) * sourceRadius;
-    const sourceY = d.source.y + (dy / length) * sourceRadius;
-    const targetX = d.target.x - (dx / length) * targetRadius;
-    const targetY = d.target.y - (dy / length) * targetRadius;
+    const sourceX = d.source.x;
+    const sourceY = d.source.y;
+    const targetX = d.target.x;
+    const targetY = d.target.y;
 
     return `M${sourceX},${sourceY} A${r},${r} 0 0,1 ${targetX},${targetY}`;
 }
@@ -100,13 +103,12 @@ function createSystem(svg, systems, simulation) {
         .selectAll("g")
         .data(systems)
         .join("g")
-        .attr("fill", "var(--system-color)")
         .call(addDrag(simulation));
 
     system.append("circle")
         .attr("stroke", "white")
         .attr("stroke-width", 1.5)
-        .attr("r", d => getRadius(d));
+        .attr("r", getRadius);
 
     system.append("text")
         .style("font-family", "var(--font-family), sans-serif")
