@@ -125,7 +125,7 @@ function createSystem(svg, systems, simulation) {
         .attr("class", "hoverText")
         .attr("fill", "var(--system-hover-color)")
         .attr("stroke", "white")
-        .attr("stroke-width", 10)
+        .attr("stroke-width", 20)
         .attr("paint-order", "stroke")
         .attr("display", "none")
         .text(d => d.name);
