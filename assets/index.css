@@ -235,7 +235,7 @@ path.hovered.marker {
 }
 
 g.hovered {
-    fill: var(--system-hover-color);
+    fill: var(--system-hover-color) !important;
     stroke-opacity: 1;
 }
 

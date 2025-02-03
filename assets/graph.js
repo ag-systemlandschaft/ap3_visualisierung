@@ -122,7 +122,7 @@ function createSystem(svg, systems, simulation) {
 
     system.append("text")
         .style("font-family", "var(--font-family), sans-serif")
-        .attr("y", "-10px")
+        .attr("y", "-12px")
         .attr("x", d => getRadius(d) + 14)
         .attr("class", "hoverText")
         .attr("fill", "var(--system-hover-color)")
