@@ -101,18 +101,21 @@ function resetFilter(filters, dataExchanges, svg) {
 function updateOptionCounts(filters, dataExchanges) {
     filters.forEach(filter => {
         filter.options.forEach(option => {
-            const count = dataExchanges
+            const allProcesses = dataExchanges
                 .flatMap(exchange => exchange.processes)
+                .filter(process => process.properties[filter.id] !== undefined ? process.properties[filter.id].includes(option) : false);
+            const countAll = allProcesses
+                .length;
+            const count = allProcesses
                 .filter(process => process.active)
-                .filter(process => process.properties[filter.id] !== undefined ? process.properties[filter.id].includes(option) : false)
                 .length;
 
             const id = optionId(filter, option);
             const optionElement = document.querySelector(`label[for="${id}"]`);
             const optionCheckbox = document.querySelector(`input[name="${filter.id}"][value^="${option}"]`);
             if (optionElement) {
-                optionElement.innerHTML = `${option} (${count})`;
-                optionCheckbox.disabled = count === 0;
+                optionElement.innerHTML = `${option} (${count} von ${countAll})`;
+                optionCheckbox.disabled = countAll === 0;
                 if (optionCheckbox.disabled) {
                     optionElement.style.color = "gray";
                 } else {
