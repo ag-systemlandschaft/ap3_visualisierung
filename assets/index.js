@@ -21,7 +21,7 @@ function init(data) {
         .attr("id", "hoverText")
         .attr("fill", "var(--exchange-hover-color)")
         .attr("stroke", "white")
-        .attr("stroke-width", 20)
+        .attr("stroke-width", 13)
         .attr("paint-order", "stroke")
         .attr("display", "none");
     addZoom(svg);
