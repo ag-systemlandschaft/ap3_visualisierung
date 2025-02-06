@@ -1,5 +1,5 @@
 // for other styling constants like colors, see index.css
-
+// Anpassung erfolgt durch EZB
 const systemNode = Object.freeze({
     radiusMin: 5,
     radiusScaling: 0.7,

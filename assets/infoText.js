@@ -65,6 +65,7 @@ function setDefaultInfoText() {
     heading.className = 'title is-5 mb-2';
     heading.textContent = 'Information';
     infoText.appendChild(heading);
+    // Anpassung erfolgt durch EZB
     infoText.appendChild(document.createTextNode(`
         Diese Visualisierung zeigt Importdatenflüsse auf Basis von Echtdaten der ersten Fragerunde. 
         Für die erste prototypische Visualisierung wurde nur ein Bruchteil der vorhandenen Daten ausgewertet. 
