@@ -16,15 +16,11 @@ function init(data) {
     setDefaultInfoText();
 
     const svg = d3.select("svg");
-    svg.append("text")
-        .style("font-family", "var(--font-family), sans-serif")
-        .attr("id", "hoverText")
-        .attr("fill", "var(--exchange-hover-color)")
-        .attr("stroke", "white")
-        .attr("stroke-width", 13)
-        .attr("paint-order", "stroke")
-        .attr("display", "none");
+    svg.append("g").attr("id", "baseGraph");
+
+    addTooltipElement(svg);
     addZoom(svg);
     initGraph(svg, systems, dataExchanges, filters);
+
     setFilters(filters, dataExchanges, svg);
 }

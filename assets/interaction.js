@@ -1,10 +1,10 @@
 function addZoom(svg) {
-    let g = svg.append("g");
-    let hover = d3.select("#hoverText");
-    let zoom = d3.zoom()
+    const baseGraph = svg.select("#baseGraph");
+    const hover = d3.select("#hoverInfo");
+    const zoom = d3.zoom()
         .scaleExtent([0.2, 5])
         .on('zoom', function(event) {
-            g.attr('transform', event.transform);
+            baseGraph.attr('transform', event.transform);
             hover.attr('transform', event.transform);
         });
     svg.call(zoom);
@@ -69,18 +69,18 @@ function addDrag(simulation) {
         .on("end", dragended);
 }
 
-function addTooltip(svg, system, dataExchange) {
+function addTooltipInteraction(svg, system, dataExchange) {
     system
         .on("mouseover", function (event, d) {
             const g = d3.select(this);
             g.raise();
-            g.select(".hoverText")
+            svg.select("#hoverInfo")
                 .attr("display", "initial");
             d3.select(event.currentTarget).classed("hovered", true)
         })
         .on("mouseout", function (event, d) {
             const g = d3.select(this)
-            g.select(".hoverText").attr("display", "none");
+            svg.select("#hoverInfo").attr("display", "none");
             d3.select(event.currentTarget).classed("hovered", false)
         });
 
@@ -88,20 +88,31 @@ function addTooltip(svg, system, dataExchange) {
         .on("mouseover", function (event, d) {
             const transform = d3.zoomTransform(svg.node());
             const [x, y] = transform.invert(d3.pointer(event, svg.node()));
+            const hoverInfo = d3.select("#hoverInfo");
             const hoverText = d3.select("#hoverText");
-            hoverText.raise()
-            hoverText
+            hoverInfo.raise()
                 .attr("display", "initial")
-                .attr("y", y);
+            // we don't apply transform the the #hoverInfo because of conflict with zooming
+            const translate = `translate(${x + 20}, ${y})`;
+            hoverText.attr("transform", translate);
             hoverText.selectAll("tspan")
                 .data(d.processes
                     .filter(process => process.active)
                     .map(p => `${p.name}`)
                 )
                 .join("tspan")
-                .attr("x", x + 20)
+                .attr("x", 0)
                 .attr("dy", (d, i) => (i === 0 ? 0 : 20))
                 .text(d => d);
+
+            const bbox = hoverText.node().getBBox();
+            hoverInfo.select("#hoverFrame")
+                .attr("x", bbox.x - padding.tooltip.x)
+                .attr("y", bbox.y - padding.tooltip.y)
+                .attr("width", bbox.width + 2 * padding.tooltip.x)
+                .attr("height", bbox.height + 2 * padding.tooltip.y)
+                .attr("transform", translate);
+
             const paths = actualExchangePaths(event.currentTarget);
             paths.classed("hovered", true)
 
@@ -117,7 +128,8 @@ function addTooltip(svg, system, dataExchange) {
             event.stopPropagation();
         })
         .on("mouseout", function (event, d) {
-            const hoverText = d3.select("#hoverText");
+            return;
+            const hoverText = d3.select("#hoverInfo");
             hoverText.attr("display", "none");
             const paths = actualExchangePaths(event.currentTarget);
             paths
