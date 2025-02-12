@@ -1,4 +1,20 @@
+
+const style = getComputedStyle(document.documentElement);
+
+const padding = {
+    tooltip: {
+        x: parseFloat(style.getPropertyValue('--tooltip-padding-x')),
+        y: parseFloat(style.getPropertyValue('--tooltip-padding-y')),
+    },
+    systemLabel: {
+        x: parseFloat(style.getPropertyValue('--system-label-padding-x')),
+        y: parseFloat(style.getPropertyValue('--system-label-padding-y')),
+    }
+};
+
+
 function initGraph(svg, systems, dataExchanges, filters) {
+
     const simulation = d3.forceSimulation(systems)
         .force("link", d3.forceLink(dataExchanges).id(d => d.id).distance(physics.baseDistance))
         .force("charge", d3.forceManyBody().strength(-physics.repulsion))
@@ -8,7 +24,7 @@ function initGraph(svg, systems, dataExchanges, filters) {
         .velocityDecay(physics.velocityDecay)
     ;
 
-    svg.select("g")
+    svg.select("#baseGraph")
         .append("defs")
         .selectAll("marker")
         .data(dataExchanges)
@@ -39,7 +55,7 @@ function initGraph(svg, systems, dataExchanges, filters) {
         system.attr("transform", d => `translate(${d.x},${d.y})`);
     });
 
-    addTooltip(svg, system, dataExchange);
+    addTooltipInteraction(svg, system, dataExchange);
     addClickHandler(svg, system, dataExchange, filters);
 }
 
@@ -62,7 +78,7 @@ function calculateLinkArc(d) {
 }
 
 function createDataExchange(svg, dataExchanges) {
-    const dataExchange = svg.select("g")
+    const dataExchange = svg.select("#baseGraph")
         .append("g")
         .attr("id", "data-exchanges")
         .attr("fill", "none")
@@ -94,7 +110,7 @@ function getRadius(d) {
 }
 
 function createSystem(svg, systems, simulation) {
-    const system = svg.select("g")
+    const system = svg.select("#baseGraph")
         .append("g")
         .attr("id", "systems")
         .attr("fill", "currentColor")
@@ -115,10 +131,20 @@ function createSystem(svg, systems, simulation) {
         .attr("x", d => getRadius(d) + 14)
         .attr("y", "0.61em")
         .text(d => d.id)
-        .clone(true).lower()
-        .attr("fill", "none")
-        .attr("stroke", "white")
-        .attr("stroke-width", 7);
+        .each(function () {
+            const bbox = this.getBBox();
+            d3.select(this.parentNode)
+                .append("rect")
+                .attr("x", bbox.x - padding.systemLabel.x)
+                .attr("y", bbox.y - padding.systemLabel.y + 2)
+                .attr("width", bbox.width + 2 * padding.systemLabel.x)
+                .attr("height", bbox.height + 2 * padding.systemLabel.y - 1)
+                .attr("fill", "var(--system-label-background-color)")
+                .attr("stroke", "var(--system-label-stroke-color)")
+                .attr("stroke-width", "var(--system-label-stroke-width)")
+                .classed("system-label", true)
+                .lower();
+        })
 
     system.append("text")
         .style("font-family", "var(--font-family), sans-serif")
@@ -135,7 +161,7 @@ function createSystem(svg, systems, simulation) {
 }
 
 function filterDataExchange(dataExchanges, svg) {
-    svg.select("g")
+    svg.select("#baseGraph")
         .select("g")
         .selectAll("path")
         .attr("display", d =>{
@@ -143,4 +169,15 @@ function filterDataExchange(dataExchanges, svg) {
             return actual.processes.some(process => process.active) ? "initial" : "none";
         }
         );
+}
+
+
+function addTooltipElement(svg) {
+    const hoverInfo = svg.append("g")
+        .attr("id", "hoverInfo")
+        .attr("display", "none");
+    hoverInfo.append("rect")
+        .attr("id", "hoverFrame");
+    hoverInfo.append("text")
+        .attr("id", "hoverText");
 }

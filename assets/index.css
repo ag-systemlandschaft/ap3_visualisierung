@@ -19,6 +19,18 @@
     --sidebar-width: 300px;
     --graph-min-width: 500px;
     --dynamic-breakpoint: 1100px;  /* This should be min 2*sidebar-width + graph-min-width */
+
+    --tooltip-background-color: white;
+    --tooltip-padding-x: 5px;
+    --tooltip-padding-y: 2px;
+    --tooltip-stroke-color: lightgrey;
+    --tooltip-stroke-width: 1px;
+
+    --system-label-background-color: white;
+    --system-label-padding-x: 0px;
+    --system-label-padding-y: 0px;
+    --system-label-stroke-color: white;
+    --system-label-stroke-width: 1px;
 }
 
 body {
@@ -367,4 +379,29 @@ div.filters.mt-1{
     position: absolute;
     bottom: 10px;
     left: 10px;
+}
+
+#hoverInfo {
+    paint-order: stroke;
+    pointer-events: none;
+}
+
+#hoverFrame {
+    fill: var(--tooltip-background-color);
+    stroke: var(--tooltip-stroke-color);
+    stroke-width: var(--tooltip-stroke-width);
+
+    /* example of more detailed tooltip styling */
+    filter: drop-shadow(1px 1px 0px #0001);
+}
+
+#hoverText {
+    font-family: var(--font-family), sans-serif;
+    fill: var(--exchange-hover-color);
+    stroke: white;
+    stroke-width: 0;
+}
+
+.system-label {
+    /* additional styles for the labels around the nodes go here */
 }
