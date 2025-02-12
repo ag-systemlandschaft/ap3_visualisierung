@@ -3,6 +3,8 @@
 const systemNode = Object.freeze({
     radiusMin: 5,
     radiusScaling: 0.7,
+    textXOffset: 11,
+    textYOffset: 5,
 })
 
 const exchangeArc = Object.freeze({
@@ -16,4 +18,6 @@ const physics = Object.freeze({
     repulsion: 1000,
     velocityDecay: 0.3,
     collideRadius: 30,
+    collideIterations: 100,
+    collideTextScaling: 8,
 });

@@ -18,7 +18,10 @@ function initGraph(svg, systems, dataExchanges, filters) {
     const simulation = d3.forceSimulation(systems)
         .force("link", d3.forceLink(dataExchanges).id(d => d.id).distance(physics.baseDistance))
         .force("charge", d3.forceManyBody().strength(-physics.repulsion))
-        .force("collide", d3.forceCollide().radius(physics.collideRadius))
+        .force("collide", d3.forceCollide()
+            .radius(d => physics.collideRadius + physics.collideTextScaling * d.shortName.length)
+            .iterations(physics.collideIterations)
+        )
         .force("x", d3.forceX())
         .force("y", d3.forceY())
         .velocityDecay(physics.velocityDecay)
@@ -128,8 +131,8 @@ function createSystem(svg, systems, simulation) {
 
     system.append("text")
         .style("font-family", "var(--font-family), sans-serif")
-        .attr("x", d => getRadius(d) + 14)
-        .attr("y", "0.61em")
+        .attr("x", d => getRadius(d) + systemNode.textXOffset)
+        .attr("y", d => getRadius(d) + systemNode.textYOffset)
         .text(d => d.id)
         .each(function () {
             const bbox = this.getBBox();
