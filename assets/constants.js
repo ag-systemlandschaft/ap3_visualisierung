@@ -18,6 +18,6 @@ const physics = Object.freeze({
     repulsion: 1000,
     velocityDecay: 0.3,
     collideRadius: 30,
-    collideIterations: 10,
-    collideTextScaling: 5,
+    collideIterations: 100,
+    collideTextScaling: 8,
 });
