@@ -128,7 +128,6 @@ function addTooltipInteraction(svg, system, dataExchange) {
             event.stopPropagation();
         })
         .on("mouseout", function (event, d) {
-            return;
             const hoverText = d3.select("#hoverInfo");
             hoverText.attr("display", "none");
             const paths = actualExchangePaths(event.currentTarget);

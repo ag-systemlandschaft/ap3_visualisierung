@@ -220,7 +220,7 @@ details[open] > summary.property::before {
 }
 
 #systems.something-selected g.adjacent-to-selected {
-    fill: var(--system-selected-color);
+    fill: var(--system-color);
 }
 
 /*
