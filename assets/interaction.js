@@ -74,13 +74,18 @@ function addTooltipInteraction(svg, system, dataExchange) {
         .on("mouseover", function (event, d) {
             const g = d3.select(this);
             g.raise();
-            svg.select("#hoverInfo")
+            g.select(".hover-text")
+                .attr("display", "initial");
+            g.select(".hover-frame")
                 .attr("display", "initial");
             d3.select(event.currentTarget).classed("hovered", true)
         })
         .on("mouseout", function (event, d) {
             const g = d3.select(this)
-            svg.select("#hoverInfo").attr("display", "none");
+            g.select(".hover-text")
+                .attr("display", "none");
+            g.select(".hover-frame")
+                .attr("display", "none");
             d3.select(event.currentTarget).classed("hovered", false)
         });
 

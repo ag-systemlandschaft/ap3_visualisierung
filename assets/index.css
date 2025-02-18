@@ -402,6 +402,15 @@ div.filters.mt-1{
     stroke-width: 0;
 }
 
+.hover-frame {
+    fill: var(--tooltip-background-color);
+    stroke: var(--tooltip-stroke-color);
+    stroke-width: var(--tooltip-stroke-width);
+
+    /* example of more detailed tooltip styling */
+    filter: drop-shadow(1px 1px 0px #0001);
+}
+
 .system-label {
     /* additional styles for the labels around the nodes go here */
 }

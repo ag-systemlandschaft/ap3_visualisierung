@@ -151,15 +151,26 @@ function createSystem(svg, systems, simulation) {
 
     system.append("text")
         .style("font-family", "var(--font-family), sans-serif")
-        .attr("y", "-12px")
+        .attr("y", "-15px")
         .attr("x", d => getRadius(d) + 14)
-        .attr("class", "hoverText")
+        .attr("class", "hover-text")
         .attr("fill", "var(--system-hover-color)")
-        .attr("stroke", "white")
-        .attr("stroke-width", 13)
         .attr("paint-order", "stroke")
-        .attr("display", "none")
-        .text(d => d.name);
+        .text(d => d.name)
+        .each(function () {
+            const bbox = this.getBBox();
+            d3.select(this.parentNode)
+                .append("rect")
+                .attr("x", bbox.x - padding.tooltip.x)
+                .attr("y", bbox.y - padding.tooltip.y + 2)
+                .attr("width", bbox.width + 2 * padding.tooltip.x)
+                .attr("height", bbox.height + 2 * padding.tooltip.y - 1)
+                .attr("class", "hover-frame")
+                .attr("display", "none")
+                .lower();
+        })
+        .attr("display", "none");
+
     return system;
 }
 
