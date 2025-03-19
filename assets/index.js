@@ -2,7 +2,9 @@
 d3.json("data/data.json").then(init);
 
 // Initialize the visualization
-function init(data) {
+async function init(data) {
+    //await checkAccess();
+
     const systems = data.systems;
     const filters = data.propertyCategories;
     const dataExchanges = data.dataExchange;
