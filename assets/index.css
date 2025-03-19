@@ -75,8 +75,32 @@ footer {
     color: #ffffff;
     background-color: #6667AB;
     font-size: 15px;
+    text-align: center;
+}
+
+.inside-site-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px 40px;
-    flex-shrink: 0;
+}
+
+footer a {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+.footer-bar .widget_nav_menu li {
+    margin: 0 10px;
+    padding: 0;
+}
+
+
+.footer-bar .widget_nav_menu>div>ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 400px;
 }
 
 .container {
