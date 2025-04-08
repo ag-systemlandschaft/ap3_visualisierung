@@ -9,7 +9,7 @@ const systemNode = Object.freeze({
 
 const exchangeArc = Object.freeze({
     thickness: 1.5,
-    tolerance: 10,
+    tolerance: 1.5,
     straightness: 1,
 });
 

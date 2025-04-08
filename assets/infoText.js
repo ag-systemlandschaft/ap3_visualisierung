@@ -67,9 +67,9 @@ function setDefaultInfoText() {
     infoText.appendChild(heading);
     // Anpassung erfolgt durch EZB
     infoText.appendChild(document.createTextNode(`
-        Diese Visualisierung zeigt Importdatenflüsse auf Basis von Echtdaten der ersten Fragerunde. 
-        Für die erste prototypische Visualisierung wurde nur ein Bruchteil der vorhandenen Daten ausgewertet. 
-        Aufgrund der High-Level-Darstellung gibt die Visualisierung aktuell keine Auskunft über potentielle Doppellieferungen. 
-        Die Umsetzung des im AG-Kontext erarbeiteten Visualisierungskonzepts ist aktuell noch in Arbeit.
+        Diese Visualisierung wurde durch die AG Systemlandschaft E-Ressourcen erstellt.
+        Sie basiert auf 23 Fragebögen. Aktuell werden Informationen zu 76 Systemen und 190 Datenflüssen angezeigt.<p>
+        Weitere relevante Daten für unsere Systemlandkarte können über den <a href="https://ag-systemlandschaft.de/material/" target="blank">Fragebogen</a> eingereicht werden.
+        
     `));
 }
