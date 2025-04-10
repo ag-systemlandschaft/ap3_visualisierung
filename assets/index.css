@@ -2,8 +2,10 @@
     /* Anpassung erfolgt durch EZB */
     --system-color: #6667AB;
     --exchange-color: #5E88AB;
-    --system-selected-color: #1E2159;
-    --exchange-selected-color: #105084;
+    /* --system-selected-color: #1E2159;
+    --exchange-selected-color: #105084;*/
+    --system-selected-color: #a0452f;
+    --exchange-selected-color: #a0452f;
     --system-hover-color: #a0452f;
     --exchange-hover-color: #a0452f;
     --filter-bg-color: #e9e9e9;

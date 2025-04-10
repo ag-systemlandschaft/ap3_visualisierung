@@ -16,7 +16,7 @@
       "options": [
         "Aleph",
         "Alma",
-        "Alma (Exlibris-KB)",
+        "Alma CZ | SFX KB (Ex Libris)",
         "Alma (OBSGV)",
         "Alma (KOBV)",
         "Alma (Swisscovery)",
@@ -30,21 +30,20 @@
         "Empfänger unbekannt",
         "BSB",
         "BVB",
-        "CrossRef",
+        "Crossref",
         "DBIS",
         "DeepGreen",
-        "DFG-Nationallizenzen",
+        "DFG-Nationallizenzen (NL CMS)",
         "digibib",
         "Divibib",
         "DNB",
         "DOAJ",
-        "EBP",
         "EBSCO",
         "EconBIZ",
         "EconStor",
         "EDS",
         "E-Pflicht-Portal BW",
-        "ExLibris",
+        "Ex Libris",
         "EZB",
         "FIDs",
         "FIDELIO",
@@ -52,14 +51,12 @@
         "FOLIO (UB TUM)",
         "FOLIO (VZG|GBV)",
         "GBV",
-        "GBV / BSZ",
         "GND",
         "GOKB",
         "GVI",
         "hbz",
         "HDS",
         "hebis",
-        "hebis Zentralsystem",
         "ISIL-Agentur",
         "JournalTOCs",
         "K10plus",
@@ -72,8 +69,7 @@
         "LIVIVO",
         "lobid.org",
         "Lokalsystem (UB Erlangen-Nürnberg)",
-        "Mirabel",
-        "Nationallizenzen-CMS",
+        "Mir@bel",
         "NatStat",
         "OBVSG",
         "OCLC LBS (VZG|GBV)",
@@ -89,7 +85,7 @@
         "TIB",
         "oa.finder",
         "openAPC",
-        "Open policy finder",
+        "Open policy finder (ehemals Sherpa Romeo)",
         "Unpaywall",
         "VZG",
         "we:kb",
@@ -162,12 +158,12 @@
     {
       "name": "Übermittlungsart",
       "options": [
-        "Download per FileShare/SFTP",
-        "Download per HTTPS",
+        "FileShare/FTP/SFTP",
+        "HTTPS",
         "OAI-PMH",
         "Z39.50",
         "SRU",
-        "Representational State Transfer (REST)",
+        "REST",
         "E-Mail",
         "Weitere"
       ],
@@ -182,7 +178,7 @@
         "MARC 21 (beliebige Variante)",
         "RDF (beliebige Variante)",
         "PICA (beliebige Variante)",
-        "ONIX for Books",
+        "ONIX (beliebige Variante)",
         "Dublin Core",
         "Weitere"
       ],
@@ -196,7 +192,8 @@
       "provider": "Ex Libris",
       "numberProcesses": 1,
       "description": "Das integrierte Bibliothekssystem Aleph® bietet akademischen, forschenden und nationalen Bibliotheken die effiziente, benutzerfreundliche Werkzeuge und Workflow-Unterstützung, die sie benötigen, um die steigenden Anforderungen der Branche heute und in Zukunft zu erfüllen.",
-      "link": "https://exlibrisgroup.com/products/aleph-integrated-library-system/"
+      "link": "https://exlibrisgroup.com/products/aleph-integrated-library-system/",
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Alma",
@@ -204,25 +201,29 @@
       "provider": "Ex Libris",
       "numberProcesses": 4,
       "description": "Ein Bibliotheksverwaltungssystem oder LMS, wie Alma, umfasst eine Reihe von Funktionalitäten, die darauf abzielen, den Bibliotheksbetrieb effizient zu verwalten. Es umfasst oft Funktionen wie Katalogisierung und Klassifizierung für die Organisation von Materialien, Such- und Entdeckungstools für den einfachen Zugriff auf Bibliotheksressourcen, digitales Ressourcenmanagement zur Überwachung von Online-Sammlungen, Reporting und Analyse für informierte Entscheidungen und Integration mit anderen Bibliothekssystemen und Plattformen zur nahtlosen Workflow-Koordination.",
-      "link": "https://exlibrisgroup.com/products/alma-library-services-platform/"
+      "link": "https://exlibrisgroup.com/products/alma-library-services-platform/",
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Alma CZ | SFX KB (Ex Libris)",
       "name": "Alma Community Zone | SFX Knowledge Base",
       "provider": "Ex Libris",
-      "numberProcesses": 1
+      "numberProcesses": 1,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Alma (OBSGV)",
       "name": "Alma Österreichische Bibliothekenverbund und Service GmbH (OBVSG)",
       "provider": "Ex Libris",
-      "numberProcesses": 1
+      "numberProcesses": 1,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Alma (KOBV)",
       "name": "Alma (KOBV)",
       "provider": "Ex Libris",
-      "numberProcesses": 3
+      "numberProcesses": 3,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Alma (Swisscovery)",
@@ -234,7 +235,8 @@
       "shortName": "Anbieter",
       "name": "Firma, Institution mit Vertrieb von Metadaten, Verlage",
       "provider": "keine Angabe",
-      "numberProcesses": 16
+      "numberProcesses": 16,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "B3Kat",
@@ -250,17 +252,20 @@
       "provider": "Universitätsbibliothek Bielefeld",
       "numberProcesses": 2,
       "description": "BASE ist eine Suchmaschine, die weltweit wissenschaftliche Dokumentenserver aggregiert und für die Suche zur Verfügung stellt. ",
-      "link": "https://www.base-search.net/"
+      "link": "https://www.base-search.net/",
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Bibliothek",
       "name": "Bibliothek",
-      "numberProcesses": 4
+      "numberProcesses": 4,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Bibliotheken (Schweiz)",
       "name": "Schweizer Bibliotheken",
-      "numberProcesses": 2
+      "numberProcesses": 2,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Culturegraph",
@@ -268,24 +273,28 @@
       "provider": "Deutsche Nationabibliothek (DNB)",
       "numberProcesses": 2,
       "description": "Culturegraph ist eine von der Deutschen Nationalbibliothek bereitgestellte, kooperative Plattform, auf der die bibliografischen Metadaten aller deutschen Bibliotheksverbünde, der Deutschen Nationalbibliothek sowie des Österreichischen Bibliothekenverbunds (OBVSG) gebündelt werden.",
-      "link": "https://www.dnb.de/DE/Professionell/Metadatendienste/Metadaten/Culturegraph/culturegraph_node.html"
+      "link": "https://www.dnb.de/DE/Professionell/Metadatendienste/Metadaten/Culturegraph/culturegraph_node.html",
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Empfänger Österreich",
       "name": "Empfänger, vornehmlich aus Österreich",
-      "numberProcesses": 3
+      "numberProcesses": 3,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Empfänger unbekannt",
       "name": "Potentiell jeder mit Internetzugang kann dieser Empfänger sein",
       "numberProcesses": 13,
-      "description": "Dieses System wird als Empfänger für Daten offener Schnittstellen verwendet."
+      "description": "Dieses System wird als Empfänger für Daten offener Schnittstellen verwendet.",
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "BSB",
       "name": "Bayerische Staatsbibliothek",
       "provider": "Bayerische Staatsbibliothek",
-      "numberProcesses": 3
+      "numberProcesses": 3,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "BVB",
@@ -303,7 +312,7 @@
       "numberProcesses": 2,
       "description": "Crossref betreibt offene Infrastruktur, um Forschungsobjekte, Entitäten und Handlungen zu verknüpfen, wodurch eine dauerhafte und wiederverwendbare wissenschaftliche Aufzeichnung entsteht.",
       "link": "https://www.crossref.org/",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "DBIS",
@@ -311,14 +320,14 @@
       "provider": "Universitätsbibliothek Regensburg",
       "numberProcesses": 5,
       "description": "Das Datenbank-Infosystem (DBIS) ist eines der umfangreichsten Verzeichnisse an wissenschaftlichen Datenbanken. Mehrere Hundert Bibliotheken und Forschungseinrichtungen nutzen die DBIS zur Verwaltung von Zugangs- und Lizenzinformationen von Datenbanken. Für Nutzende ist DBIS ein Recherchetool für Datenbanken.",
-      "link": "https://dbis.ur.de",
-      "group": "Gruppierung"
+      "link": "https://dbis.ur.de"
     },
     {
       "shortName": "DeepGreen",
       "name": "DeepGreen",
       "provider": "KOBV",
-      "numberProcesses": 3
+      "numberProcesses": 3,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "DFG-Nationallizenzen (NL CMS)",
@@ -327,13 +336,14 @@
       "numberProcesses": 5,
       "description": "Zugang zu digitalen Publikationen im DFG-System der überregionalen Literaturversorgung und im Kontext der Schwerpunktinitiative „Digitale Information“ der Allianz der deutschen Wissenschaftsorganisationen.",
       "link": "https://www.nationallizenzen.de/",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "digibib",
       "name": "digibib",
       "provider": "hbz",
-      "numberProcesses": 3
+      "numberProcesses": 3,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Divibib",
@@ -342,7 +352,7 @@
       "numberProcesses": 2,
       "description": "Die divibib vertreibt das Onleihe-Portal und entsprechend lizenzierte Medien an öffentliche Bibliotheken.",
       "link": "https://www.divibib.com/",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "DNB",
@@ -351,7 +361,7 @@
       "numberProcesses": 2,
       "description": "Die Deutsche Nationalbibliothek (DNB) ist die zentrale Archivbibliothek Deutschlands und mit dem Deutschen Buch- und Schriftmuseum, dem Deutschen Exilarchiv 1933–1945 und dem Deutschen Musikarchiv zugleich Archiv und Museum. ",
       "link": "https://www.dnb.de/",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "DOAJ",
@@ -360,20 +370,21 @@
       "numberProcesses": 4,
       "description": "DOAJ (Directory of Open Access Journals) ist ein Verzeichnis von qualitätsgeprüften Fachzeitschriften, die bei der Auswahl ihrer Beiträge ein peer review Verfahren einsetzen und open access zur Verfügung stehen.",
       "link": "https://doaj.org/",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "EBSCO",
       "name": "EBSCO",
       "provider": "keine Angabe",
       "numberProcesses": 2,
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "EconBIZ",
       "name": "EconBIZ",
       "provider": "ZBW",
-      "numberProcesses": 2
+      "numberProcesses": 2,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "EconStor",
@@ -382,7 +393,7 @@
       "numberProcesses": 1,
       "description": "EconStor ist ein Publikationsserver für wirtschaftswissenschaftliche Fachliteratur.",
       "link": "https://www.econstor.eu/",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "EDS",
@@ -390,7 +401,7 @@
       "provider": "keine Angabe",
       "numberProcesses": 2,
       "description": "EBSCO Discovery Service ist eine umfassende Suchlösung, die eine einfache und tiefgreifende Recherche ermöglicht.",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "E-Pflicht-Portal BW",
@@ -399,13 +410,14 @@
       "numberProcesses": 2,
       "description": "Diese Website dient Einzelpersonen und Kleinverlagen zur gesetzlich vorgeschriebenen Ablieferung von einzelnen Elektronischen Publikationen an die Badische Landesbibliothek Karlsruhe (BLB) und an die Württembergische Landesbibliothek (WLB):",
       "link": "https://www.epflicht-bw.de/",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Ex Libris",
       "name": "Ex Libris",
       "provider": "Clarivate",
-      "numberProcesses": 4
+      "numberProcesses": 4,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "EZB",
@@ -413,8 +425,7 @@
       "provider": "Universitätsbibliothek Regensburg",
       "numberProcesses": 49,
       "description": "Die Elektronische Zeitschriftenbibliothek (EZB) ist eines der größten Verzeichnisse wissenschaftlicher elektronischer Zeitschriften und bietet vielfältige Services für die effiziente Nutzung wissenschaftlicher Volltexte im Internet. Seit vielen Jahren tragen mehrere Hundert Bibliotheken und Forschungseinrichtungen weltweit zur Sammlung und Pflege der hochwertigen Zeitschriftendaten bei. Darüber hinaus nutzen diese Institutionen die EZB zur Verwaltung von Zugangs- und Lizenzinformationen ihrer Zeitschriften. Zudem stellt die EZB zahlreiche Schnittstellen und Dienste zur freien Nachnutzung bereit.",
-      "link": "https://ezb.ur.de",
-      "group": "Gruppierung"
+      "link": "https://ezb.ur.de"
     },
     {
       "shortName": "FIDs",
@@ -422,7 +433,8 @@
       "provider": "Unterschiedliche wissenschaftliche Bibliotheken, gefördert von der DFG",
       "numberProcesses": 4,
       "description": "Als forschungsunterstützende Infrastrukturen bieten Fachinformationsdienste eine am Spezialbedarf der wissenschaftlichen Fächer orientierte, vorrangig digitale und standortunabhängige Informationsversorgung an. Fachinformationsdienste ergänzen die Angebote der lokalen Informationsinfrastrukturen der Hochschulen und Forschungseinrichtungen.",
-      "link": "https://www.dfg.de/de/foerderung/foerdermoeglichkeiten/programme/infrastruktur/lis/lis-foerderangebote/fachinfodienste-wissenschaft"
+      "link": "https://www.dfg.de/de/foerderung/foerdermoeglichkeiten/programme/infrastruktur/lis/lis-foerderangebote/fachinfodienste-wissenschaft",
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "FIDELIO",
@@ -430,8 +442,7 @@
       "provider": "KfL (VZG)",
       "numberProcesses": 3,
       "description": "FIDELIO (FID-Lizenzen-OPAC) wird als Zentraler Nachweis für FID-Lizenzen vom Kompetenzzentrum für Lizenzierung zusammengestellt und enthält Nachweise der elektronischen Ressourcen, für die im Rahmen der Fachinformationsdienste für die Wissenschaft eine FID-Lizenz verhandelt wurde.",
-      "link": "https://kxp.k10plus.de/DB=1.84/",
-      "group": "Gruppierung"
+      "link": "https://kxp.k10plus.de/DB=1.84/"
     },
     {
       "shortName": "FOLIO (UBR)",
@@ -439,8 +450,7 @@
       "provider": "BVB / LRZ / UB Regensburg",
       "numberProcesses": 7,
       "description": "FOLIO ist eine Zusammenarbeit von Bibliotheken, Entwicklern und Anbietern, die eine Open-Source-Bibliotheksdienstplattform aufbauen. Es ist eine moderne Plattform, die Innovationen inspiriert und sowohl neue als auch traditionelle Ressourcenmanagement-Funktionen bietet.",
-      "link": "https://folio.org/",
-      "group": "Gruppierung"
+      "link": "https://folio.org/"
     },
     {
       "shortName": "FOLIO (UB TUM)",
@@ -448,8 +458,7 @@
       "provider": "BVB / LRZ / UB TU München",
       "numberProcesses": 5,
       "description": "FOLIO ist eine Zusammenarbeit von Bibliotheken, Entwicklern und Anbietern, die eine Open-Source-Bibliotheksdienstplattform aufbauen. Es ist eine moderne Plattform, die Innovationen inspiriert und sowohl neue als auch traditionelle Ressourcenmanagement-Funktionen bietet.",
-      "link": "https://folio.org/",
-      "group": "Gruppierung"
+      "link": "https://folio.org/"
     },
     {
       "shortName": "FOLIO (VZG|GBV)",
@@ -458,7 +467,7 @@
       "numberProcesses": 3,
       "description": "FOLIO ist eine Zusammenarbeit von Bibliotheken, Entwicklern und Anbietern, die eine Open-Source-Bibliotheksdienstplattform aufbauen. Es ist eine moderne Plattform, die Innovationen inspiriert und sowohl neue als auch traditionelle Ressourcenmanagement-Funktionen bietet.",
       "link": "https://folio.org/",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "GBV",
@@ -467,7 +476,7 @@
       "numberProcesses": 7,
       "description": "Gemeinsamen Bibliotheksverbundes (GBV) der Länder Bremen, Hamburg, Mecklenburg-Vorpommern, Niedersachsen, Sachsen-Anhalt, Schleswig-Holstein, Thüringen und der Stiftung Preußischer Kulturbesitz",
       "link": "https://www.gbv.de/",
-      "group": "Der GBV gehört zu den Bibliotheksverbünden Deutschland, weitere Informationen unter: <a href=\"https://bibliotheksportal.de/informationen/bibliothekslandschaft/bibliotheksverbuende/\">https://bibliotheksportal.de</a>"
+      "group": "Der GBV gehört zu den Bibliotheksverbünden Deutschland, weitere Informationen unter: <a href=\"https://bibliotheksportal.de/informationen/bibliothekslandschaft/bibliotheksverbuende/\">https://bibliotheksportal.de</a> Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "GND",
@@ -476,7 +485,7 @@
       "numberProcesses": 2,
       "description": "Die GND (Gemeinsame Normdatei) ist die größte Normdatensammlung für Kultur- und Forschungsdaten im deutschsprachigen Raum. ",
       "link": "https://gnd.network/",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "GOKB",
@@ -484,8 +493,7 @@
       "provider": "Verbundzentrale des GBV (VZG)",
       "numberProcesses": 13,
       "description": "Die GOKb ist eine globale Austauschplattform für Metadaten von elektronischen Ressourcen. Die elektronischen Ressourcen sind in der GOKb in Paketen organisiert. Die Inhalte werden von einer Community kooperativ verwaltet. Die ZDB übernimmt dabei die Redaktion und unterstützt teilnehmende Einrichtungen bei der Pflege der Inhalte. Die Verbundzentrale des Gemeinsamen Bibliotheksverbundes (VZG) betreibt das System, ihr obliegt die technische Leitung. Das Hochschulbibliothekszentrum NRW (hbz) agiert als Product Owner.",
-      "link": "https://gokb.org",
-      "group": "Gruppierung"
+      "link": "https://gokb.org"
     },
     {
       "shortName": "GVI",
@@ -493,8 +501,7 @@
       "provider": "Entwicklung durch Verbünde BSZ, hebis, KOBV, Betrieb unter dem Dach der AG Verbundsysteme",
       "numberProcesses": 11,
       "description": "Der Gemeinsame Verbündeindex (GVI) ist ein uniformer Suchindex über die Bestände der sechs deutschen Verbundsysteme sowie der DNB und der ZDB.",
-      "link": "https://www.agv-gvi.de/ https://gvi-status.site24x7statusiq.com/",
-      "group": "Gruppierung"
+      "link": "https://www.agv-gvi.de/ https://gvi-status.site24x7statusiq.com/"
     },
     {
       "shortName": "hbz",
@@ -503,7 +510,7 @@
       "numberProcesses": 10,
       "description": "Das Hochschulbibliothekszentrum des Landes Nordrhein-Westfalen (hbz) ist eine zentrale Dienstleistungs- und Entwicklungseinrichtung für die Hochschulbibliotheken in Nordrhein-Westfalen und Rheinland-Pfalz.",
       "link": "http://okeanos-www.hbz-nrw.de/F/",
-      "group": "Das hbz gehört zu den Bibliotheksverbünden Deutschland, weitere Informationen unter: <a href=\"https://bibliotheksportal.de/informationen/bibliothekslandschaft/bibliotheksverbuende/\">https://bibliotheksportal.de</a>"
+      "group": "Das hbz gehört zu den Bibliotheksverbünden Deutschland, weitere Informationen unter: <a href=\"https://bibliotheksportal.de/informationen/bibliothekslandschaft/bibliotheksverbuende/\">https://bibliotheksportal.de</a> Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "HDS",
@@ -512,7 +519,7 @@
       "numberProcesses": 3,
       "description": "Das hebis Discovery System (HDS) basiert auf der OpenSource-​Software  VuFind und bietet als Service für Mitgliedsbibliotheken des hebis-​Verbundes eine gemeinsame Oberfläche für den Online-​Bibliothekskatalog (Web-​OPAC) und den EBSCO Discovery Service (EDS).",
       "link": "http://hds.hebis.de",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "hebis",
@@ -529,15 +536,14 @@
       "provider": "Staatsbibliothek zu Berlin",
       "numberProcesses": 13,
       "description": "In der ISIL-Agentur sind Informationen zu Einrichtungen im deutschsprachigen Raum verzeichnet, für die ein international standardisierten Identifier, das ISIL,vergeben wurde.",
-      "link": "https://sigel.staatsbibliothek-berlin.de/suche",
-      "group": "Gruppierung"
+      "link": "https://sigel.staatsbibliothek-berlin.de/suche"
     },
     {
       "shortName": "JournalTOCs",
       "name": "JournalTOCs",
       "provider": "keine Angabe",
       "numberProcesses": 2,
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "K10plus",
@@ -545,8 +551,7 @@
       "provider": "BSZ/VZG",
       "numberProcesses": 12,
       "description": "Unter dem Namen K10plus betreiben BSZ und VZG eine gemeinsame Datenbank mit etwa 200 Millionen Bestandsnachweisen. Hinter K10plus stehen die Bibliotheksdaten der Mehrzahl der deutschen staatlichen Universitäten und Hochschulen. Hinzu kommen renommierte Forschungseinrichtungen wie Leibniz-Institute, Helmholtz-Zentren, Max-Planck-Institute etc. Seit Produktionsstart am 25.03.2019 katalogisieren die angeschlossenen Bibliotheken ihre Bestände in diesem Datenpool und beziehen von dort Metadaten für ihre Systeme.",
-      "link": "https://wiki.k10plus.de/",
-      "group": "Gruppierung"
+      "link": "https://wiki.k10plus.de/"
     },
     {
       "shortName": "K10plus E-Book-Pool",
@@ -563,7 +568,7 @@
       "numberProcesses": 2,
       "description": "Die Swiss Library Service Platform (SLSP) ist Dienstleisterin für Bibliotheken und betreibt mit diesen zusammen die nationale Bibliotheksplattform swisscovery, die wissenschaftliche Informationen aus aktuell 500 Bibliotheken aus der Schweiz bündelt und einfach zugänglich und leicht auffindbar macht.",
       "link": "https://swisscovery.slsp.ch",
-      "group": "Die Swiss Library Service Platform gehört zu den Bibliotheksverbünden der Schweiz."
+      "group": "Die Swiss Library Service Platform gehört zu den Bibliotheksverbünden der Schweiz. Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "KOBV",
@@ -580,14 +585,14 @@
       "provider": "hbz",
       "numberProcesses": 4,
       "description": "LAS:eR ist ein System zur Verwaltung von elektronischen Ressourcen auf lokaler, regionaler und nationaler Ebene. Es handelt sich hierbei primär um ein Arbeitsinstrument, bei dem Pakete als Verkaufseinheit mit ihrer Historie im Mittelpunkt stehen. Als Datenbasis nutzt LAS:eR die we:kb.",
-      "link": "https://laser.hbz.nrw.de",
-      "group": "Gruppierung"
+      "link": "https://laser.hbz.nrw.de"
     },
     {
       "shortName": "libconnect",
       "name": "libconnect",
       "provider": "SUB Hamburg",
-      "numberProcesses": 2
+      "numberProcesses": 2,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "LINA",
@@ -596,30 +601,33 @@
       "numberProcesses": 1,
       "description": "Der Archivserver LINA (Lizenzen Allianz und National), betrieben von der hebis-Verbundzentrale, stellt lizenzierte Materialien mit Archivrechten für Bibliotheken und ihre Nutzer bereit. Gehostet werden National- und Allianzlizenzen, konsortiale Lizenzen des hebis Konsortiums sowie lokale Lizenzen der hebis-Bibliotheken und den jeweils berechtigten Nutzern zur Verfügung gestellt.",
       "link": "http://linatest.hebis-services.de/",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "LIVIVO",
       "name": "LIVIVO",
       "provider": "ZB MED",
-      "numberProcesses": 2
+      "numberProcesses": 2,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "lobid.org",
       "name": "lobid.org",
-      "numberProcesses": 2
+      "numberProcesses": 2,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Lokalsystem (UB Erlangen-Nürnberg)",
       "name": "Lokalsystem (UB Erlangen-Nürnberg)",
       "provider": "keine Angabe",
       "numberProcesses": 1,
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Mir@bel",
       "name": "Mir@bel",
-      "numberProcesses": 2
+      "numberProcesses": 2,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "NatStat",
@@ -627,8 +635,7 @@
       "provider": "keine Angabe",
       "numberProcesses": 17,
       "description": "Mit dem Statistikserver werden die beteiligten Einrichtungen beim Prozess der Lizenzierung und Nutzung von National-, Allianz- und Konsortiallizenzen durch die zentrale Bereitstellung von Nutzungsdaten unterstützt.",
-      "link": "https://statistik.hebis.de",
-      "group": "Gruppierung"
+      "link": "https://statistik.hebis.de"
     },
     {
       "shortName": "OBVSG",
@@ -636,8 +643,7 @@
       "provider": "keine Angabe",
       "numberProcesses": 7,
       "description": "Die Österreichische Bibliothekenverbund und Service GmbH (OBVSG) agiert als die Dienstleistungs- und operative Leitungseinrichtung des Österreichischen Bibliothekenverbundes (OBV).",
-      "link": "https://search.obvsg.at/primo-explore/search?vid=OBV",
-      "group": "Gruppierung"
+      "link": "https://search.obvsg.at/primo-explore/search?vid=OBV"
     },
     {
       "shortName": "OCLC LBS (VZG|GBV)",
@@ -646,13 +652,14 @@
       "numberProcesses": 2,
       "description": "Das OCLC LBS (ursprünglich: Lokaal Bibliotheek Systeem) ist ein bewährtes, webbasiertes Bibliotheksverwaltungssystem, mit dem die Informationen für über 200 Hochschulbibliotheken in Deutschland und den Niederlanden flexibel verwaltet werden.",
       "link": "https://www.oclc.org/de/lbs.html",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "OCLS Registry",
       "name": "OCLS Registry",
       "provider": "OCLC",
-      "numberProcesses": 3
+      "numberProcesses": 3,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Primo (SGBN)",
@@ -666,18 +673,21 @@
     {
       "shortName": "ProQuest",
       "name": "ProQuest",
-      "numberProcesses": 2
+      "numberProcesses": 2,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "ReDI",
       "name": "ReDI",
       "provider": "Universitätsbibliothek Freiburg",
-      "numberProcesses": 2
+      "numberProcesses": 2,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "RERO",
       "name": "Westschweizer Bibliotheksverbund (RERO)",
-      "numberProcesses": 2
+      "numberProcesses": 2,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "RVK",
@@ -686,19 +696,20 @@
       "numberProcesses": 10,
       "description": "Die Regensburger Verbundklassifikation ist eine Verbundklassifikation für Wissenschaftliche Bibliotheken. Der Regensburger Klassifikationsverbund ist der größte Klassifikationsverbund im deutschsprachigen Raum.",
       "link": "https://rvk.ur.de",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Sbt",
       "name": "Sistema bibliotecario ticinese (Sbt) ",
       "numberProcesses": 2,
-      "group": "Sistema bibliotecario ticinese gehört zu den Bibliotheksverbünden der Schweiz."
+      "group": "Sistema bibliotecario ticinese gehört zu den Bibliotheksverbünden der Schweiz. Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "subito",
       "name": "subito",
       "provider": "subito",
-      "numberProcesses": 6
+      "numberProcesses": 6,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "SWB",
@@ -707,25 +718,28 @@
       "numberProcesses": 7,
       "description": "Im Südwestdeutschen Bibliotheksverbund (SWB) erschließen zahlreiche Bibliotheken aus Baden-Württemberg, dem Saarland und Sachsen (Südwestdeutscher Bibliotheksverbund) gemeinsam mit den Bibliotheken des Gemeinsamen Bibliotheksverbund (GBV) ihre Medien in der K10plus-Verbunddatenbank. ",
       "link": "https://swb.bsz-bw.de/",
-      "group": "Der SWB gehört zu den Bibliotheksverbünden Deutschland, weitere Informationen unter: <a href=\"https://bibliotheksportal.de/informationen/bibliothekslandschaft/bibliotheksverbuende/\">https://bibliotheksportal.de</a>"
+      "group": "Der SWB gehört zu den Bibliotheksverbünden Deutschland, weitere Informationen unter: <a href=\"https://bibliotheksportal.de/informationen/bibliothekslandschaft/bibliotheksverbuende/\">https://bibliotheksportal.de</a> Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "TIB",
       "name": "TIB",
       "provider": "TIB",
-      "numberProcesses": 2
+      "numberProcesses": 2,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "oa.finder",
       "name": "oa.finder",
       "provider": "Universitätsbibliothek Bielefeld",
-      "numberProcesses": 2
+      "numberProcesses": 2,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "openAPC",
       "name": "openAPC",
       "provider": "Universitätsbibliothek Bielefeld",
-      "numberProcesses": 2
+      "numberProcesses": 2,
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Open policy finder (ehemals Sherpa Romeo)",
@@ -734,7 +748,7 @@
       "numberProcesses": 2,
       "description": "Open Policy Finder ist eine Plattform, die die Open-Access-Richtlinien von Verlagen aus der ganzen Welt sammelt und analysiert und Zusammenfassungen der Urheberrechts- und Open-Access-Archivierungsrichtlinien von Verlagen auf der Basis einzelner Zeitschriften bereitstellt.",
       "link": "https://openpolicyfinder.jisc.ac.uk/",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "Unpaywall",
@@ -742,7 +756,7 @@
       "provider": "keine Angabe",
       "numberProcesses": 2,
       "link": "https://unpaywall.org/",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "we:kb",
@@ -751,7 +765,7 @@
       "numberProcesses": 2,
       "description": "Die we:kb ist eine offene Datenbank, die Informationen zu Anbietern, ihren Plattformen sowie den auf diesen Plattformen verfügbaren Inhalten enthält. Die Inhalte der we:kb werden durch die Anbieter selbst aktuell gehalten.",
       "link": "https://wekb.hbz-nrw.de",
-      "group": "Gruppierung"
+      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
       "shortName": "WorldCat",
@@ -759,8 +773,7 @@
       "provider": "OCLC",
       "numberProcesses": 7,
       "description": "https://de.wikipedia.org/wiki/WorldCat",
-      "link": "https://search.worldcat.org/",
-      "group": "Gruppierung"
+      "link": "https://search.worldcat.org/"
     },
     {
       "shortName": "ZDB",
@@ -768,8 +781,7 @@
       "provider": "SBB/DNB",
       "numberProcesses": 43,
       "description": "Die Zeitschriftendatenbank (ZDB) dient im deutschsprachigen Raum als Erschließungsinstrument für periodisch erscheinende – gedruckte oder elektronische – Publikationen. Die ZDB ist ein kooperatives Verbundsystem, an dem sich rund 3.700 Institutionen beteiligen. Neben Bibliotheken aus Deutschland und Österreich beteiligen sich auch Archive und Museen an der ZDB. Die ZDB ist zudem eine Datenbanken für den Nachweis von Zeitschriften, Zeitungen, Schriftenreihen und anderen periodisch erscheinenden Veröffentlichungen.",
-      "link": "https://zeitschriftendatenbank.de",
-      "group": "Gruppierung"
+      "link": "https://zeitschriftendatenbank.de"
     }
   ],
   "dataExchange": [
@@ -803,7 +815,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "KBART"
@@ -869,6 +881,7 @@
           "name": "SRU-Schnittstelle / Z39.50-Schnittstelle",
           "description": "SRU-Schnittstelle / Z39.50-Schnittstelle",
           "mass": "5",
+          "link": "https://www.bib-bvb.de/web/b3kat/z39.50",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -915,6 +928,8 @@
           "name": "OAI-Schnittstelle und Open-Data-Dump",
           "description": "OAI-Schnittstelle und Open-Data-Dump",
           "mass": "5",
+          "link": "https://www.bib-bvb.de/web/b3kat/open-data",
+          "interfaceLink": "http://bvbr.bib-bvb.de:8991/aleph-cgi/oai/oai_opendata.pl",
           "properties": {
             "frequency": [
               "Echtzeit",
@@ -950,7 +965,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS",
+              "HTTPS",
               "OAI-PMH"
             ],
             "transmissionFormat": [
@@ -1411,8 +1426,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -1568,8 +1583,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -1587,6 +1602,7 @@
           "name": "XML-Ausgabe",
           "description": "DBIS-Unterseiten lassen sich über einen URL-Parameter in XML ausgeben. Die Ausgabe wird häufig dazu verwendet, die Daten aus DBIS in eine komplett eigene und von DBIS unabhängige Homepage zu integrieren. Es ist aber auch möglich, dass der XML-Output genutzt wird, um DBIS-Daten in andere Services einzubinden. ",
           "mass": "5",
+          "link": "https://dbis.ur.de/dbinfo/admindoc/DBIS_Hilfe.pdf",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -1615,7 +1631,7 @@
               "Weitere"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "Weitere"
@@ -1698,7 +1714,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -1810,7 +1826,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -1888,7 +1904,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "KBART"
@@ -1933,7 +1949,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "KBART"
@@ -1971,7 +1987,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "Weitere"
@@ -2013,7 +2029,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres JSON"
@@ -2054,7 +2070,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -2096,7 +2112,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -2136,7 +2152,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres JSON"
@@ -2175,7 +2191,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -2213,7 +2229,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -2230,6 +2246,8 @@
           "name": "EZB-Linkingdienst via XML/HTML/ICON-Ausgabe (inkl. JOP)",
           "description": "Der EZB-Linkingdienst ist ein Linkresolver auf Basis von OpenURL, der die Verfügbarkeit von elektronischen Zeitschriften anhand der in der EZB hinterlegten Lizenzdaten prüft und - sofern möglich - einen Link zum gesuchten Inhalt bietet. Anhand der Schnittstellen können die Verfügbarkeiten für Zeitschriften und deren Artikel in die jeweiligen Umgebungen eingebunden werden, z.B. Katalog",
           "mass": "5",
+          "link": "http://ezb.ur.de/services/linkingdienst",
+          "interfaceLink": "https://ezb.ur.de/vascoda/openURL.phtml?sid=test&lang=de&genre=article&issn=1091-6490&date=2002&volume=99&issue=1&spage=529&id=doi:10.1073/pnas.012611199&bibid=UBR",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -2282,6 +2300,8 @@
           "name": "EZB-Linkingdienst via XML/HTML/ICON-Ausgabe (inkl. JOP)",
           "description": "Der EZB-Linkingdienst ist ein Linkresolver auf Basis von OpenURL, der die Verfügbarkeit von elektronischen Zeitschriften anhand der in der EZB hinterlegten Lizenzdaten prüft und - sofern möglich - einen Link zum gesuchten Inhalt bietet. Anhand der Schnittstellen können die Verfügbarkeiten für Zeitschriften und deren Artikel in die jeweiligen Umgebungen eingebunden werden, z.B. Katalog",
           "mass": "5",
+          "link": "http://ezb.ur.de/services/linkingdienst",
+          "interfaceLink": "https://ezb.ur.de/vascoda/openURL.phtml?sid=test&lang=de&genre=article&issn=1091-6490&date=2002&volume=99&issue=1&spage=529&id=doi:10.1073/pnas.012611199&bibid=UBR",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -2334,6 +2354,8 @@
           "name": "EZB-Linkingdienst via XML/HTML/ICON-Ausgabe (inkl. JOP)",
           "description": "Der EZB-Linkingdienst ist ein Linkresolver auf Basis von OpenURL, der die Verfügbarkeit von elektronischen Zeitschriften anhand der in der EZB hinterlegten Lizenzdaten prüft und - sofern möglich - einen Link zum gesuchten Inhalt bietet. Anhand der Schnittstellen können die Verfügbarkeiten für Zeitschriften und deren Artikel in die jeweiligen Umgebungen eingebunden werden, z.B. Katalog",
           "mass": "5",
+          "link": "http://ezb.ur.de/services/linkingdienst",
+          "interfaceLink": "https://ezb.ur.de/vascoda/openURL.phtml?sid=test&lang=de&genre=article&issn=1091-6490&date=2002&volume=99&issue=1&spage=529&id=doi:10.1073/pnas.012611199&bibid=UBR",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -2386,6 +2408,8 @@
           "name": "EZB-Linkingdienst via XML/HTML/ICON-Ausgabe (inkl. JOP)",
           "description": "Der EZB-Linkingdienst ist ein Linkresolver auf Basis von OpenURL, der die Verfügbarkeit von elektronischen Zeitschriften anhand der in der EZB hinterlegten Lizenzdaten prüft und - sofern möglich - einen Link zum gesuchten Inhalt bietet. Anhand der Schnittstellen können die Verfügbarkeiten für Zeitschriften und deren Artikel in die jeweiligen Umgebungen eingebunden werden, z.B. Katalog",
           "mass": "5",
+          "link": "http://ezb.ur.de/services/linkingdienst",
+          "interfaceLink": "https://ezb.ur.de/vascoda/openURL.phtml?sid=test&lang=de&genre=article&issn=1091-6490&date=2002&volume=99&issue=1&spage=529&id=doi:10.1073/pnas.012611199&bibid=UBR",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -2432,6 +2456,8 @@
           "name": "IP-Bereiche der EZB-Einrichtungen via XML",
           "description": "Über die IP-Bereiche-Schnittstelle können die IP-Adressbereiche der EZB-Teilnehmereinrichtungen abgefragt werden, die diese Information zuvor zur Nachnutzung freigegeben haben.",
           "mass": "5",
+          "link": "http://ezb.ur.de/services/ip_ranges",
+          "interfaceLink": "https://ezb-api.ur.de/ip_ranges",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -2459,7 +2485,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -2470,6 +2496,8 @@
           "name": "EZB-Exporte für Bibliotheken ",
           "description": "EZB-Anwenderbibliotheken können  ihre EZB-Lizenzdaten in den verschiedensten Formaten beziehen und nachnutzen.",
           "mass": "5",
+          "link": "https://rzbezb2.uni-regensburg.de/ezb/export/index.php",
+          "interfaceLink": "https://rzbezb2.uni-regensburg.de/ezb/export/index.php",
           "properties": {
             "frequency": [
               "Unregelmäßig"
@@ -2502,7 +2530,7 @@
               "Manuell"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "Weitere",
@@ -2514,6 +2542,8 @@
           "name": "EZB-Rest-API",
           "description": "Über diese Schnittstelle können EZB-Informationen zu den verschiedensten Aspekten abgerufen werden.",
           "mass": "5",
+          "link": "https://ezb-api.ur.de/",
+          "interfaceLink": "https://ezb-api.ur.de/",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -2537,7 +2567,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres JSON"
@@ -2548,6 +2578,8 @@
           "name": "ViFa-Listen in der EZB via XML",
           "description": "Über diese Schnittstelle können Listen zu virtuellen Fachbibliotheken abgeufen werden.",
           "mass": "5",
+          "link": "https://ezb.ur.de/",
+          "interfaceLink": "https://ezb.ur.de/",
           "properties": {
             "frequency": [
               "Unregelmäßig",
@@ -2575,7 +2607,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -2592,6 +2624,8 @@
           "name": "EZB-Lizenzdaten via OAI",
           "description": "Über diesen Dienst können die gesamten sowie die geänderten EZB-Lizenzeinträge zu Zeitschriften von den EZB-Teilnehmereinrichtungen bezogen werden, die dieser Datenweitergabe zugestimmt haben.",
           "mass": "5",
+          "link": "http://ezb.ur.de/services",
+          "interfaceLink": "https://ezb-oai.ur.de/zdb/oai2.php",
           "properties": {
             "frequency": [
               "Täglich"
@@ -2639,6 +2673,8 @@
           "name": "EZB-Lizenzdaten via OAI",
           "description": "Über diesen Dienst können die gesamten sowie die geänderten EZB-Lizenzeinträge zu Zeitschriften von den EZB-Teilnehmereinrichtungen bezogen werden, die dieser Datenweitergabe zugestimmt haben.",
           "mass": "5",
+          "link": "http://ezb.ur.de/services",
+          "interfaceLink": "https://ezb-oai.ur.de/zdb/oai2.php",
           "properties": {
             "frequency": [
               "Täglich"
@@ -2709,7 +2745,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -2726,6 +2762,8 @@
           "name": "EZB-Lizenzdaten via OAI",
           "description": "Über diesen Dienst können die gesamten sowie die geänderten EZB-Lizenzeinträge zu Zeitschriften von den EZB-Teilnehmereinrichtungen bezogen werden, die dieser Datenweitergabe zugestimmt haben.",
           "mass": "5",
+          "link": "http://ezb.ur.de/services",
+          "interfaceLink": "https://ezb-oai.ur.de/zdb/oai2.php",
           "properties": {
             "frequency": [
               "Täglich"
@@ -2800,7 +2838,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "Weitere",
@@ -2845,7 +2883,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "Weitere",
@@ -2857,6 +2895,8 @@
           "name": "EZB-Fernleih-Webservice",
           "description": "Über diesen Dienst werden die Fernleihinformationen zu Zeitschriften von EZB-Teilnehmereinrichtungen bezogen.",
           "mass": "5",
+          "link": "https://rzbezb2.uni-regensburg.de/flr/",
+          "interfaceLink": "https://rzbezb2.uni-regensburg.de/flr/by_zdbid/2006421-4",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -2883,7 +2923,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "Weitere",
@@ -2929,7 +2969,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "Weitere",
@@ -2947,6 +2987,8 @@
           "name": "EZB-Fernleih-Webservice",
           "description": "Über diesen Dienst werden die Fernleihinformationen zu Zeitschriften von EZB-Teilnehmereinrichtungen bezogen.",
           "mass": "5",
+          "link": "https://rzbezb2.uni-regensburg.de/flr/",
+          "interfaceLink": "https://rzbezb2.uni-regensburg.de/flr/by_zdbid/2006421-4",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -2973,7 +3015,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "Weitere",
@@ -2991,6 +3033,8 @@
           "name": "EZB-Fernleih-Webservice",
           "description": "Über diesen Dienst werden die Fernleihinformationen zu Zeitschriften von EZB-Teilnehmereinrichtungen bezogen.",
           "mass": "5",
+          "link": "https://rzbezb2.uni-regensburg.de/flr/",
+          "interfaceLink": "https://rzbezb2.uni-regensburg.de/flr/by_zdbid/2006421-4",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -3017,7 +3061,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "Weitere",
@@ -3035,6 +3079,8 @@
           "name": "EZB-Pakete und -Kollektionen via JSON",
           "description": "Die EZB enthält einige Arten verschiedener Kollektionen, z.B. aus Allianz- und Konsortiallizenzen oder frei zugänglich. In dieser Schnittstelle werden alle EZB-Kollektionen gelistet mit allen Informationen (z.B. IDs, Namen, Anchor...), die die EZB dazu hat.",
           "mass": "5",
+          "link": "https://ezb.ur.de/services/collections-api",
+          "interfaceLink": "https://ezb-api.ur.de/collections",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -3061,7 +3107,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres JSON"
@@ -3072,6 +3118,8 @@
           "name": "Titellisten aus EZB-Kollektionen via KBART",
           "description": "Bereitstellung freigegebener Titellisen von EZB-Kollektionen (Stand vom Vortag)",
           "mass": "5",
+          "link": "http://ezb.uni-regensburg.de/services/collections",
+          "interfaceLink": "http://ezb.uni-regensburg.de/services/titlelist.phtml?collection_id=EZB-FREE-01817&title_split=1",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -3098,7 +3146,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "KBART"
@@ -3131,7 +3179,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -3148,6 +3196,8 @@
           "name": "Titellisten aus EZB-Kollektionen via KBART",
           "description": "Bereitstellung freigegebener Titellisen von EZB-Kollektionen (Stand vom Vortag)",
           "mass": "5",
+          "link": "http://ezb.uni-regensburg.de/services/collections",
+          "interfaceLink": "http://ezb.uni-regensburg.de/services/titlelist.phtml?collection_id=EZB-FREE-01817&title_split=1",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -3174,7 +3224,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "KBART"
@@ -3191,6 +3241,8 @@
           "name": "Titellisten aus EZB-Kollektionen via KBART",
           "description": "Bereitstellung freigegebener Titellisen von EZB-Kollektionen (Stand vom Vortag)",
           "mass": "5",
+          "link": "http://ezb.uni-regensburg.de/services/collections",
+          "interfaceLink": "http://ezb.uni-regensburg.de/services/titlelist.phtml?collection_id=EZB-FREE-01817&title_split=1",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -3217,7 +3269,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "KBART"
@@ -3234,6 +3286,8 @@
           "name": "OA-EZB-Schnittstelle",
           "description": "Über diese Schnittstelle werden die OA-Rechte aus Allianz, National- und Konsortiallizenzen bereitgestellt, die in der EZB von Paketverwaltern hinterlegt wurden. Über die Schnittstelle wird zudem geprüft, ob für bestimmte Artikel in einer bestimmten EZB-Anwendereinrichtung OA-Rechte aus Allianz, National- und Konsortiallizenzen vorhanden sind.",
           "mass": "5",
+          "link": "http://ezb.ur.de/services/oa-ezb",
+          "interfaceLink": "https://ezb.ur.de/api/oa_rights?bibid=UBR&issn=1938-2650&year=2013&format=application/json",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -3262,7 +3316,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "proprietäres XML",
@@ -3274,6 +3328,8 @@
           "name": "Konsortiale Teilnehmerlisten aus der EZB",
           "description": "Über diese Schnittstelle können die konsortialen Teilnehmer aus der EZB abgerufen werden.",
           "mass": "5",
+          "link": "https://ezb-api.ur.de/",
+          "interfaceLink": "https://ezb-api.ur.de/participants?collection_id=EZB-WIDEA-01707",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -3298,7 +3354,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres JSON"
@@ -3315,6 +3371,8 @@
           "name": "EZB-Daten via XML-Schnittstelle",
           "description": "Das XML-Ausgabeformat der EZB ermöglicht es, das Angebot der EZB auf eine beliebige Website einzubinden, Inhalte im eigenen Layout darzustellen und automatisiert abzurufen. ",
           "mass": "5",
+          "link": "https://ezb.ur.de/services/xmloutput",
+          "interfaceLink": "https://ezb.ur.de?xmloutput=1",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -3348,7 +3406,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -3365,6 +3423,8 @@
           "name": "EZB-Daten via XML-Schnittstelle",
           "description": "Das XML-Ausgabeformat der EZB ermöglicht es, das Angebot der EZB auf eine beliebige Website einzubinden, Inhalte im eigenen Layout darzustellen und automatisiert abzurufen. ",
           "mass": "5",
+          "link": "https://ezb.ur.de/services/xmloutput",
+          "interfaceLink": "https://ezb.ur.de?xmloutput=1",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -3398,7 +3458,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -3415,6 +3475,8 @@
           "name": "EZB-Zeitschriftendaten",
           "description": "Über diese Schnittstelle können beschreibende Daten zu Zeitschiften bezogen und nachgenutzt werden.",
           "mass": "5",
+          "link": "https://ezb.ur.de/",
+          "interfaceLink": "https://ezb.ur.de/",
           "properties": {
             "frequency": [
               "Unregelmäßig",
@@ -3439,7 +3501,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "KBART",
@@ -3458,6 +3520,8 @@
           "name": "EZB-Zeitschriftendaten",
           "description": "Über diese Schnittstelle können beschreibende Daten zu Zeitschiften bezogen und nachgenutzt werden.",
           "mass": "5",
+          "link": "https://ezb.ur.de/",
+          "interfaceLink": "https://ezb.ur.de/",
           "properties": {
             "frequency": [
               "Unregelmäßig",
@@ -3482,7 +3546,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "KBART",
@@ -3501,6 +3565,8 @@
           "name": "Pay-per-View-Angebote von Verlagen in der EZB",
           "description": "Über diese Schnittstelle können Pay-per-View-Angebote von Verlagen in der EZB abgerufen werden",
           "mass": "5",
+          "link": "https://ezb.ur.de/ppVabout.phtml",
+          "interfaceLink": "https://ezb.ur.de/ppVabout.phtml",
           "properties": {
             "frequency": [
               "Unregelmäßig"
@@ -3525,7 +3591,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -3542,6 +3608,7 @@
           "name": "Bereitstellung durch Schnittstellen",
           "description": "Über verschiede Schnittstellen (SRU, Z39.50, UnAPI) können die Fachinformationsdieste, Teilnehmer:innen und sonstige Interessenten auf die Daten zugreifen und diese Nachnutzen. Die Weboberfläche erlaubt eine Nachnutzung von ca. 100 Treffern, bei größeren Datensets empfiehlt sich die Nutzung der Schnittstellen.",
           "mass": "5",
+          "link": "https://wiki.k10plus.de/display/K10PLUS/SRU",
           "properties": {
             "frequency": [
               "Weitere",
@@ -3685,7 +3752,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres JSON"
@@ -3723,7 +3790,7 @@
               "Manuell"
             ],
             "transmissionType": [
-              "Download per HTTPS",
+              "HTTPS",
               "E-Mail",
               "Weitere",
               "Weitere Infos: Bezugswege beim Anbieter unterschiedlich"
@@ -3761,7 +3828,7 @@
               "Manuell"
             ],
             "transmissionType": [
-              "Download per HTTPS",
+              "HTTPS",
               "E-Mail"
             ],
             "transmissionFormat": [
@@ -3909,7 +3976,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres JSON"
@@ -3947,7 +4014,7 @@
               "Manuell"
             ],
             "transmissionType": [
-              "Download per HTTPS",
+              "HTTPS",
               "E-Mail",
               "Weitere",
               "Weitere Infos: Bezugswege beim Anbieter unterschiedlich"
@@ -3985,7 +4052,7 @@
               "Manuell"
             ],
             "transmissionType": [
-              "Download per HTTPS",
+              "HTTPS",
               "E-Mail"
             ],
             "transmissionFormat": [
@@ -4003,6 +4070,8 @@
           "name": "OAI-PMH-Schnittstelle(n)",
           "description": "Über OAI-PMH werden detaillierte Paket-Metadaten, Paketinhalte und Titelinformationen angeboten",
           "mass": "5",
+          "link": "https://github.com/openlibraryenvironment/gokb/wiki/OAI-Interfaces-for-Synchronization",
+          "interfaceLink": "https://gokb.org/gokb/oai/packages?verb=ListRecords&metadataPrefix=gokb",
           "properties": {
             "frequency": [
               "Täglich",
@@ -4051,6 +4120,8 @@
           "name": "Volltext-API",
           "description": "Die Schnittstelle bietet eine Volltextsuche sowie einen Scroll-Endpunkt, der für den Export größerer Mengen an Titeln optimiert ist.",
           "mass": "5",
+          "link": "https://github.com/openlibraryenvironment/gokb/wiki/Opensearch-API",
+          "interfaceLink": "https://gokb.org/gokb/api/scroll",
           "properties": {
             "frequency": [],
             "resourceType": [
@@ -4098,6 +4169,8 @@
           "name": "Volltext-API",
           "description": "Die Schnittstelle bietet eine Volltextsuche sowie einen Scroll-Endpunkt, der für den Export größerer Mengen an Titeln optimiert ist.",
           "mass": "5",
+          "link": "https://github.com/openlibraryenvironment/gokb/wiki/Opensearch-API",
+          "interfaceLink": "https://gokb.org/gokb/api/scroll",
           "properties": {
             "frequency": [],
             "resourceType": [
@@ -4145,6 +4218,7 @@
           "name": "REST-API",
           "description": "Metadaten zu Paketen, Titeln und Anbietern können abgefragt werden",
           "mass": "5",
+          "interfaceLink": "https://gokb.org/gokb/rest/titles",
           "properties": {
             "frequency": [],
             "resourceType": [
@@ -4184,6 +4258,7 @@
           "name": "KBART-Export",
           "description": "Pakete werden über ihre ID als KBART exportiert.",
           "mass": "5",
+          "interfaceLink": "https://gokb.org/gokb/packages/kbart/<GOKb-Paket-UID>",
           "properties": {
             "frequency": [],
             "resourceType": [
@@ -4215,7 +4290,7 @@
               "Manuell"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "KBART"
@@ -4272,6 +4347,8 @@
           "name": "Anbindung an GVI verschiedene Systeme über SOLR, Z39.50 oder SRU",
           "description": "Daten der deutschen Verbünde, ÖBV und ZDB werden zusammengeführt und als SOLR-Index zur Verfügung gestellt. Genutzt wird der Index von Recherchesystemen, mit Schwerpunkt in der Fernleihe, FIDs, Culturegraph",
           "mass": "5",
+          "link": "https://www.agv-gvi.de/",
+          "interfaceLink": "siehe https://www.agv-gvi.de/nutzung/",
           "properties": {
             "frequency": [
               "Echtzeit",
@@ -4311,10 +4388,10 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "Z39.50",
               "SRU",
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -4332,6 +4409,8 @@
           "name": "Anbindung an GVI verschiedene Systeme über SOLR, Z39.50 oder SRU",
           "description": "Daten der deutschen Verbünde, ÖBV und ZDB werden zusammengeführt und als SOLR-Index zur Verfügung gestellt. Genutzt wird der Index von Recherchesystemen, mit Schwerpunkt in der Fernleihe, FIDs, Culturegraph",
           "mass": "5",
+          "link": "https://www.agv-gvi.de/",
+          "interfaceLink": "siehe https://www.agv-gvi.de/nutzung/",
           "properties": {
             "frequency": [
               "Echtzeit",
@@ -4371,10 +4450,10 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "Z39.50",
               "SRU",
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -4392,6 +4471,8 @@
           "name": "Anbindung an GVI verschiedene Systeme über SOLR, Z39.50 oder SRU",
           "description": "Daten der deutschen Verbünde, ÖBV und ZDB werden zusammengeführt und als SOLR-Index zur Verfügung gestellt. Genutzt wird der Index von Recherchesystemen, mit Schwerpunkt in der Fernleihe, FIDs, Culturegraph",
           "mass": "5",
+          "link": "https://www.agv-gvi.de/",
+          "interfaceLink": "siehe https://www.agv-gvi.de/nutzung/",
           "properties": {
             "frequency": [
               "Echtzeit",
@@ -4431,10 +4512,10 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "Z39.50",
               "SRU",
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -4485,7 +4566,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -4536,7 +4617,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -4587,7 +4668,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -4638,7 +4719,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -4689,7 +4770,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -4740,7 +4821,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -4788,7 +4869,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML",
@@ -4805,6 +4886,8 @@
         {
           "name": "Exporte in den GVI (vgl separate Leistungsbeschreibung)",
           "mass": "5",
+          "link": "https://www.agv-gvi.de/",
+          "interfaceLink": "siehe https://www.agv-gvi.de/nutzung/",
           "properties": {
             "frequency": [
               "Echtzeit",
@@ -4843,10 +4926,10 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "Z39.50",
               "SRU",
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -4900,7 +4983,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -4955,7 +5038,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -5004,8 +5087,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS",
+              "FileShare/FTP/SFTP",
+              "HTTPS",
               "E-Mail"
             ],
             "transmissionFormat": [
@@ -5047,7 +5130,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -5181,7 +5264,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -5229,7 +5312,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -5277,7 +5360,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -5325,7 +5408,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -5373,7 +5456,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -5421,7 +5504,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -5481,6 +5564,8 @@
           "name": "Einrichtungs- und Adressdaten der ISIL-Agentur via OAI",
           "description": "Neue, geänderte oder deaktivierte ISIL-Daten",
           "mass": "5",
+          "link": "https://www.dnb.de/oai",
+          "interfaceLink": "https://services.dnb.de/oai/repository?verb=ListSets",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -5517,6 +5602,8 @@
         {
           "name": "Einrichtungs- und Adressdaten der ISIL-Agentur im halbjährlichen Gesamtabzug",
           "mass": "5",
+          "link": "https://www.dnb.de/gesamtabzuege",
+          "interfaceLink": "https://data.dnb.de/opendata/",
           "properties": {
             "frequency": [
               "Weitere",
@@ -5543,7 +5630,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per HTTPS"
+              "HTTPS"
             ],
             "transmissionFormat": [
               "RDF (beliebige Variante)",
@@ -5561,6 +5648,8 @@
           "name": "Einrichtungs- und Adressdaten der ISIL-Agentur via OAI",
           "description": "Neue, geänderte oder deaktivierte ISIL-Daten",
           "mass": "5",
+          "link": "https://www.dnb.de/oai",
+          "interfaceLink": "https://services.dnb.de/oai/repository?verb=ListSets",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -5645,6 +5734,8 @@
           "name": "Übernahme E-Book-Pool zu K10plus",
           "description": "Aus dem E-Book-Pool werden Metadaten Anbieterbezogen bzw. Paketbezogen in den K10plus übernommen (nach Bedarf der Bibliotheken, ausgelöst durch Metadatenbestellungen im EBM-Tool https://www.ebmtool.de/)",
           "mass": "5",
+          "link": "-",
+          "interfaceLink": "-",
           "properties": {
             "frequency": [
               "Jährlich",
@@ -5701,6 +5792,8 @@
           "name": "MARC-Export E-Book-Pool",
           "description": "Aus dem E-Book-Pool werden Paketweise (Identifikation durch Paketsigel und Lizenzjahr) bibliographische E-Book-Metadaten als MARC-Export zur Verfügung gestellt. Ausgelöst wird die Lieferung durch Metadatenbestellungen im EBM-Tool (https://www.ebmtool.de/).",
           "mass": "5",
+          "link": "https://wiki.k10plus.de/display/K10PLUS/E-Book-Pool#EBookPool-MARC-ExportausdemE-Book-Pool",
+          "interfaceLink": "-",
           "properties": {
             "frequency": [
               "Jährlich",
@@ -5735,7 +5828,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "Weitere",
               "Weitere Infos: Bereitstellung über Nextcloud incl. automatisierter E-Mail-Benachrichtigung, wenn Abzug bereitsteht."
             ],
@@ -5755,6 +5848,8 @@
           "name": "MARC-Export E-Book-Pool",
           "description": "Aus dem E-Book-Pool werden Paketweise (Identifikation durch Paketsigel und Lizenzjahr) bibliographische E-Book-Metadaten als MARC-Export zur Verfügung gestellt. Ausgelöst wird die Lieferung durch Metadatenbestellungen im EBM-Tool (https://www.ebmtool.de/).",
           "mass": "5",
+          "link": "https://wiki.k10plus.de/display/K10PLUS/E-Book-Pool#EBookPool-MARC-ExportausdemE-Book-Pool",
+          "interfaceLink": "-",
           "properties": {
             "frequency": [
               "Jährlich",
@@ -5789,7 +5884,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "Weitere",
               "Weitere Infos: Bereitstellung über Nextcloud incl. automatisierter E-Mail-Benachrichtigung, wenn Abzug bereitsteht."
             ],
@@ -5809,6 +5904,8 @@
           "name": "MARC-Export E-Book-Pool",
           "description": "Aus dem E-Book-Pool werden Paketweise (Identifikation durch Paketsigel und Lizenzjahr) bibliographische E-Book-Metadaten als MARC-Export zur Verfügung gestellt. Ausgelöst wird die Lieferung durch Metadatenbestellungen im EBM-Tool (https://www.ebmtool.de/).",
           "mass": "5",
+          "link": "https://wiki.k10plus.de/display/K10PLUS/E-Book-Pool#EBookPool-MARC-ExportausdemE-Book-Pool",
+          "interfaceLink": "-",
           "properties": {
             "frequency": [
               "Jährlich",
@@ -5843,7 +5940,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "Weitere",
               "Weitere Infos: Bereitstellung über Nextcloud incl. automatisierter E-Mail-Benachrichtigung, wenn Abzug bereitsteht."
             ],
@@ -5863,6 +5960,8 @@
           "name": "MARC-Export E-Book-Pool",
           "description": "Aus dem E-Book-Pool werden Paketweise (Identifikation durch Paketsigel und Lizenzjahr) bibliographische E-Book-Metadaten als MARC-Export zur Verfügung gestellt. Ausgelöst wird die Lieferung durch Metadatenbestellungen im EBM-Tool (https://www.ebmtool.de/).",
           "mass": "5",
+          "link": "https://wiki.k10plus.de/display/K10PLUS/E-Book-Pool#EBookPool-MARC-ExportausdemE-Book-Pool",
+          "interfaceLink": "-",
           "properties": {
             "frequency": [
               "Jährlich",
@@ -5897,7 +5996,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "Weitere",
               "Weitere Infos: Bereitstellung über Nextcloud incl. automatisierter E-Mail-Benachrichtigung, wenn Abzug bereitsteht."
             ],
@@ -5917,6 +6016,8 @@
           "name": "offene SRU-Schnittstelle",
           "description": "SRU-Schnittstelle zum E-Book-Pool",
           "mass": "5",
+          "link": "https://wiki.k10plus.de/display/K10PLUS/SRU",
+          "interfaceLink": "https://sru.k10plus.de/ebooks",
           "properties": {
             "frequency": [
               "Unregelmäßig"
@@ -5965,6 +6066,8 @@
           "name": "offene Z39.50-Schnittstelle",
           "description": "Z39.50-Schnittstelle zum E-Book-Pool",
           "mass": "5",
+          "link": "https://wiki.k10plus.de/display/K10PLUS/Z39.50",
+          "interfaceLink": "z3950.k10plus.de/ebooks",
           "properties": {
             "frequency": [
               "Unregelmäßig"
@@ -6010,6 +6113,8 @@
           "name": "offene UNAPI",
           "description": "Export von einzelnen Datensätzen per REST-API aus dem E-Book-Pool",
           "mass": "5",
+          "link": "https://wiki.k10plus.de/display/K10PLUS/UnAPI",
+          "interfaceLink": "http://unapi.k10plus.de/?id=ebooks:ppn:PPN&format=pp",
           "properties": {
             "frequency": [
               "Unregelmäßig"
@@ -6041,7 +6146,7 @@
               "Weitere Infos: Der Automatisierungsgrad hängt eher vom Abnehmer ab. "
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -6096,11 +6201,11 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS",
+              "FileShare/FTP/SFTP",
+              "HTTPS",
               "OAI-PMH",
               "SRU",
-              "Representational State Transfer (REST)",
+              "REST",
               "E-Mail"
             ],
             "transmissionFormat": [
@@ -6108,7 +6213,7 @@
               "MARC 21 (beliebige Variante)",
               "RDF (beliebige Variante)",
               "PICA (beliebige Variante)",
-              "ONIX for Books",
+              "ONIX (beliebige Variante)",
               "Dublin Core"
             ]
           }
@@ -6152,7 +6257,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -6170,6 +6275,8 @@
           "name": "Crossref MARC21 Datenaufbereitung",
           "description": "Aufereitung des monatlichen Crossref Datenabzugs ins MARC21 Format, incl. ZDB Bestznachnweise ausgewähler Bibliotheken",
           "mass": "5",
+          "link": "www.kobv.de",
+          "interfaceLink": "sftp.kobv.de",
           "properties": {
             "frequency": [
               "Monatlich"
@@ -6197,7 +6304,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -6215,6 +6322,8 @@
           "name": "Crossref MARC21 Datenaufbereitung",
           "description": "Aufereitung des monatlichen Crossref Datenabzugs ins MARC21 Format, incl. ZDB Bestznachnweise ausgewähler Bibliotheken",
           "mass": "5",
+          "link": "www.kobv.de",
+          "interfaceLink": "sftp.kobv.de",
           "properties": {
             "frequency": [
               "Monatlich"
@@ -6242,7 +6351,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -6260,6 +6369,8 @@
           "name": "Crossref MARC21 Datenaufbereitung",
           "description": "Aufereitung des monatlichen Crossref Datenabzugs ins MARC21 Format, incl. ZDB Bestznachnweise ausgewähler Bibliotheken",
           "mass": "5",
+          "link": "www.kobv.de",
+          "interfaceLink": "sftp.kobv.de",
           "properties": {
             "frequency": [
               "Monatlich"
@@ -6287,7 +6398,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -6305,6 +6416,8 @@
           "name": "Crossref MARC21 Datenaufbereitung",
           "description": "Aufereitung des monatlichen Crossref Datenabzugs ins MARC21 Format, incl. ZDB Bestznachnweise ausgewähler Bibliotheken",
           "mass": "5",
+          "link": "www.kobv.de",
+          "interfaceLink": "sftp.kobv.de",
           "properties": {
             "frequency": [
               "Monatlich"
@@ -6332,7 +6445,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -6350,6 +6463,8 @@
           "name": "DeepGreen Publication Router",
           "description": "Lieferung von Dokumenten und Metatadtaen an Partner-Repositorien",
           "mass": "5",
+          "link": "info.oa.deepgreen.de",
+          "interfaceLink": "www.oa-deepgreen.de",
           "properties": {
             "frequency": [
               "Unregelmäßig",
@@ -6382,7 +6497,7 @@
             ],
             "transmissionType": [
               "OAI-PMH",
-              "Representational State Transfer (REST)",
+              "REST",
               "Weitere"
             ],
             "transmissionFormat": [
@@ -6523,7 +6638,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres JSON"
@@ -6560,7 +6675,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -6592,7 +6707,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres JSON"
@@ -6628,7 +6743,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -6668,7 +6783,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -6703,7 +6818,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -6776,7 +6891,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -6822,7 +6937,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -6868,7 +6983,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -6936,6 +7051,8 @@
           "name": "COUNTER Release 4 SUSHI-Lite-Server",
           "description": "API zum Abrufen von COUNTER Release 4 Statistiken",
           "mass": "5",
+          "link": "https://niso.org/standards-committees/sushi/sushi-lite",
+          "interfaceLink": "https://statistik.hebis.de/stats/sushiservice",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -6969,7 +7086,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -6980,6 +7097,8 @@
           "name": "COUNTER Release 5 SUSHI-Server",
           "description": "API zum Abrufen von COUNTER Release 5 Statistiken",
           "mass": "5",
+          "link": "https://cop5.projectcounter.org/",
+          "interfaceLink": "Noch nicht freigegeben.",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -7014,7 +7133,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres JSON"
@@ -7031,6 +7150,8 @@
           "name": "COUNTER Release 4 SUSHI-Lite-Server",
           "description": "API zum Abrufen von COUNTER Release 4 Statistiken",
           "mass": "5",
+          "link": "https://niso.org/standards-committees/sushi/sushi-lite",
+          "interfaceLink": "https://statistik.hebis.de/stats/sushiservice",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -7064,7 +7185,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -7075,6 +7196,8 @@
           "name": "COUNTER Release 5 SUSHI-Server",
           "description": "API zum Abrufen von COUNTER Release 5 Statistiken",
           "mass": "5",
+          "link": "https://cop5.projectcounter.org/",
+          "interfaceLink": "Noch nicht freigegeben.",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -7109,7 +7232,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "proprietäres JSON"
@@ -7162,7 +7285,7 @@
             ],
             "transmissionType": [
               "OAI-PMH",
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -7211,7 +7334,7 @@
             ],
             "transmissionType": [
               "OAI-PMH",
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -7266,10 +7389,10 @@
               "Manuell"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "OAI-PMH",
               "SRU",
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -7307,9 +7430,9 @@
             ],
             "automation": [],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "OAI-PMH",
-              "Representational State Transfer (REST)"
+              "REST"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -7348,7 +7471,7 @@
               "Automatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "proprietäres XML"
@@ -7416,7 +7539,7 @@
             ],
             "automation": [],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -7454,7 +7577,7 @@
             ],
             "automation": [],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -7492,7 +7615,7 @@
             ],
             "automation": [],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -7530,7 +7653,7 @@
             ],
             "automation": [],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -7568,7 +7691,7 @@
             ],
             "automation": [],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -7606,7 +7729,7 @@
             ],
             "automation": [],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -7644,7 +7767,7 @@
             ],
             "automation": [],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -7682,7 +7805,7 @@
             ],
             "automation": [],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -7730,7 +7853,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "Weitere"
             ],
             "transmissionFormat": [
@@ -7779,7 +7902,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "Weitere"
             ],
             "transmissionFormat": [
@@ -7828,7 +7951,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "Weitere"
             ],
             "transmissionFormat": [
@@ -7877,7 +8000,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
+              "FileShare/FTP/SFTP",
               "Weitere"
             ],
             "transmissionFormat": [
@@ -7896,6 +8019,7 @@
           "name": "WorldCat MARC-Daten zu eMedien-Kollektionen in der WorldCat Knowledge Base ",
           "description": "Der GBV übernimmt WorldCat MARC-Daten zu selektierten eMedien-Kollektionen aus der WorldCat Knowledge Base, die unsererseits automatisiert, regelmäßig zur Verfügung gestellt werden. Dazu wird der sogenannte Collection Manager genutzt.",
           "mass": "5",
+          "link": "OCLC liefert auf Wunsch für eine ganze Reihe von Providern (EBSCO, JSTOR, Springer Nature, Taylor & Francis, etc.) Metadaten zu eMedien über den kostenfreien Zugriff mit dem Collection Manager aus (weitere Informationen hierzu sind hier zu finden: https://help.oclc.org/Metadata_Services/WorldShare_Collection_Manager/Use_Collection_Manager_for_content_from_a_specific_provider/OCLC_cataloged_collections), mit einer WorldCat Cataloging Subscription können dann für alle Kollektionen in unserer Knowledge Base Daten (seien es MARC-Daten oder KBART Kollektionendaten) übernommen werden.",
           "properties": {
             "frequency": [
               "Wöchentlich"
@@ -7922,8 +8046,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -7971,7 +8095,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8019,7 +8143,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8067,7 +8191,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8115,7 +8239,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8175,6 +8299,8 @@
           "name": "ZDB-Titeldaten via OAI",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/oai",
+          "interfaceLink": "https://services.dnb.de/oai/repository?verb=ListSets",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -8224,6 +8350,8 @@
           "name": "ZDB-Titeldaten wöchentlicher Änderungsdienst",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://zeitschriftendatenbank.de/services/datendienste",
+          "interfaceLink": "https://data.dnb.de/ZDBlfdMarc21xml/",
           "properties": {
             "frequency": [
               "Wöchentlich"
@@ -8259,8 +8387,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8273,6 +8401,8 @@
           "name": "ZDB-Titeldaten halbjährlichlicher Gesamtabzug ",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/gesamtabzuege",
+          "interfaceLink": "https://data.dnb.de/opendata/ und https://data.dnb.de/ZDB/",
           "properties": {
             "frequency": [
               "Weitere",
@@ -8309,8 +8439,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8329,6 +8459,8 @@
           "name": "ZDB-Titeldaten via OAI",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/oai",
+          "interfaceLink": "https://services.dnb.de/oai/repository?verb=ListSets",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -8378,6 +8510,8 @@
           "name": "ZDB-Bestands- und Lizenzdaten via OAI",
           "description": "Neue, geänderte oder gelöschte Bestandsdaten werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/oai",
+          "interfaceLink": "https://services.dnb.de/oai/repository?verb=ListSets",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -8419,6 +8553,8 @@
           "name": "ZDB-Titeldaten wöchentlicher Änderungsdienst",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://zeitschriftendatenbank.de/services/datendienste",
+          "interfaceLink": "https://data.dnb.de/ZDBlfdMarc21xml/",
           "properties": {
             "frequency": [
               "Wöchentlich"
@@ -8454,8 +8590,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8468,6 +8604,8 @@
           "name": "ZDB-Bestands- und Lizenzdaten wöchentlicher Änderungsdienst",
           "description": "Neue, geänderte oder gelöschte Bestandsdaten werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://zeitschriftendatenbank.de/services/datendienste",
+          "interfaceLink": "https://data.dnb.de/ZDBlfdMarc21xml/",
           "properties": {
             "frequency": [
               "Wöchentlich"
@@ -8496,8 +8634,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8509,6 +8647,8 @@
           "name": "ZDB-Titeldaten halbjährlichlicher Gesamtabzug ",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/gesamtabzuege",
+          "interfaceLink": "https://data.dnb.de/opendata/ und https://data.dnb.de/ZDB/",
           "properties": {
             "frequency": [
               "Weitere",
@@ -8545,8 +8685,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8559,6 +8699,8 @@
           "name": "ZDB-Bestands- und Lizenzdaten halbjährlichlicher Gesamtabzug ",
           "description": "Neue, geänderte oder gelöschte Bestandsdaten werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/gesamtabzuege",
+          "interfaceLink": "https://data.dnb.de/opendata/ und https://data.dnb.de/ZDB/",
           "properties": {
             "frequency": [
               "Weitere",
@@ -8588,8 +8730,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8607,6 +8749,8 @@
           "name": "ZDB-Titeldaten via OAI",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/oai",
+          "interfaceLink": "https://services.dnb.de/oai/repository?verb=ListSets",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -8656,6 +8800,8 @@
           "name": "ZDB-Bestands- und Lizenzdaten via OAI",
           "description": "Neue, geänderte oder gelöschte Bestandsdaten werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/oai",
+          "interfaceLink": "https://services.dnb.de/oai/repository?verb=ListSets",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -8697,6 +8843,8 @@
           "name": "ZDB-Titeldaten wöchentlicher Änderungsdienst",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://zeitschriftendatenbank.de/services/datendienste",
+          "interfaceLink": "https://data.dnb.de/ZDBlfdMarc21xml/",
           "properties": {
             "frequency": [
               "Wöchentlich"
@@ -8732,8 +8880,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8746,6 +8894,8 @@
           "name": "ZDB-Bestands- und Lizenzdaten wöchentlicher Änderungsdienst",
           "description": "Neue, geänderte oder gelöschte Bestandsdaten werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://zeitschriftendatenbank.de/services/datendienste",
+          "interfaceLink": "https://data.dnb.de/ZDBlfdMarc21xml/",
           "properties": {
             "frequency": [
               "Wöchentlich"
@@ -8774,8 +8924,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8787,6 +8937,8 @@
           "name": "ZDB-Titeldaten halbjährlichlicher Gesamtabzug ",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/gesamtabzuege",
+          "interfaceLink": "https://data.dnb.de/opendata/ und https://data.dnb.de/ZDB/",
           "properties": {
             "frequency": [
               "Weitere",
@@ -8823,8 +8975,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8837,6 +8989,8 @@
           "name": "ZDB-Bestands- und Lizenzdaten halbjährlichlicher Gesamtabzug ",
           "description": "Neue, geänderte oder gelöschte Bestandsdaten werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/gesamtabzuege",
+          "interfaceLink": "https://data.dnb.de/opendata/ und https://data.dnb.de/ZDB/",
           "properties": {
             "frequency": [
               "Weitere",
@@ -8866,8 +9020,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8885,6 +9039,8 @@
           "name": "ZDB-Titeldaten via OAI",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/oai",
+          "interfaceLink": "https://services.dnb.de/oai/repository?verb=ListSets",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -8934,6 +9090,8 @@
           "name": "ZDB-Titeldaten wöchentlicher Änderungsdienst",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://zeitschriftendatenbank.de/services/datendienste",
+          "interfaceLink": "https://data.dnb.de/ZDBlfdMarc21xml/",
           "properties": {
             "frequency": [
               "Wöchentlich"
@@ -8969,8 +9127,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -8983,6 +9141,8 @@
           "name": "ZDB-Titeldaten halbjährlichlicher Gesamtabzug ",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/gesamtabzuege",
+          "interfaceLink": "https://data.dnb.de/opendata/ und https://data.dnb.de/ZDB/",
           "properties": {
             "frequency": [
               "Weitere",
@@ -9019,8 +9179,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -9039,6 +9199,8 @@
           "name": "ZDB-Bestands- und Lizenzdaten via OAI",
           "description": "Neue, geänderte oder gelöschte Bestandsdaten werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/oai",
+          "interfaceLink": "https://services.dnb.de/oai/repository?verb=ListSets",
           "properties": {
             "frequency": [
               "Echtzeit"
@@ -9080,6 +9242,8 @@
           "name": "ZDB-Bestands- und Lizenzdaten wöchentlicher Änderungsdienst",
           "description": "Neue, geänderte oder gelöschte Bestandsdaten werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://zeitschriftendatenbank.de/services/datendienste",
+          "interfaceLink": "https://data.dnb.de/ZDBlfdMarc21xml/",
           "properties": {
             "frequency": [
               "Wöchentlich"
@@ -9108,8 +9272,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -9121,6 +9285,8 @@
           "name": "ZDB-Bestands- und Lizenzdaten halbjährlichlicher Gesamtabzug ",
           "description": "Neue, geänderte oder gelöschte Bestandsdaten werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/gesamtabzuege",
+          "interfaceLink": "https://data.dnb.de/opendata/ und https://data.dnb.de/ZDB/",
           "properties": {
             "frequency": [
               "Weitere",
@@ -9150,8 +9316,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -9169,6 +9335,8 @@
           "name": "ZDB-Titeldaten wöchentlicher Änderungsdienst",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://zeitschriftendatenbank.de/services/datendienste",
+          "interfaceLink": "https://data.dnb.de/ZDBlfdMarc21xml/",
           "properties": {
             "frequency": [
               "Wöchentlich"
@@ -9204,8 +9372,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -9218,6 +9386,8 @@
           "name": "ZDB-Bestands- und Lizenzdaten wöchentlicher Änderungsdienst",
           "description": "Neue, geänderte oder gelöschte Bestandsdaten werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://zeitschriftendatenbank.de/services/datendienste",
+          "interfaceLink": "https://data.dnb.de/ZDBlfdMarc21xml/",
           "properties": {
             "frequency": [
               "Wöchentlich"
@@ -9246,8 +9416,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -9259,6 +9429,8 @@
           "name": "ZDB-Titeldaten halbjährlichlicher Gesamtabzug ",
           "description": "Neue, geänderte oder gelöschte Titel werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/gesamtabzuege",
+          "interfaceLink": "https://data.dnb.de/opendata/ und https://data.dnb.de/ZDB/",
           "properties": {
             "frequency": [
               "Weitere",
@@ -9295,8 +9467,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -9309,6 +9481,8 @@
           "name": "ZDB-Bestands- und Lizenzdaten halbjährlichlicher Gesamtabzug ",
           "description": "Neue, geänderte oder gelöschte Bestandsdaten werden in die Verbundsysteme repliziert",
           "mass": "5",
+          "link": "https://www.dnb.de/gesamtabzuege",
+          "interfaceLink": "https://data.dnb.de/opendata/ und https://data.dnb.de/ZDB/",
           "properties": {
             "frequency": [
               "Weitere",
@@ -9338,8 +9512,8 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP",
-              "Download per HTTPS"
+              "FileShare/FTP/SFTP",
+              "HTTPS"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -9391,7 +9565,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
@@ -9443,7 +9617,7 @@
               "Teilautomatisiert"
             ],
             "transmissionType": [
-              "Download per FileShare/SFTP"
+              "FileShare/FTP/SFTP"
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
