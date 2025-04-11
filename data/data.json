@@ -14,10 +14,7 @@
     {
       "name": "Systeme",
       "options": [
-        "Aleph",
         "Alma",
-        "Alma CZ | SFX KB (Ex Libris)",
-        "Alma (OBSGV)",
         "Alma (KOBV)",
         "Alma (Swisscovery)",
         "Anbieter",
@@ -40,7 +37,6 @@
         "DOAJ",
         "EBSCO",
         "EconBIZ",
-        "EconStor",
         "EDS",
         "E-Pflicht-Portal BW",
         "Ex Libris",
@@ -65,10 +61,8 @@
         "KOBV",
         "LAS:eR",
         "libconnect",
-        "LINA",
         "LIVIVO",
         "lobid.org",
-        "Lokalsystem (UB Erlangen-Nürnberg)",
         "Mir@bel",
         "NatStat",
         "OBVSG",
@@ -186,35 +180,12 @@
   ],
   "systems": [
     {
-      "shortName": "Aleph",
-      "name": "Aleph Integrated Library System",
-      "provider": "Ex Libris",
-      "numberProcesses": 1,
-      "description": "Das integrierte Bibliothekssystem Aleph® bietet akademischen, forschenden und nationalen Bibliotheken die effiziente, benutzerfreundliche Werkzeuge und Workflow-Unterstützung, die sie benötigen, um die steigenden Anforderungen der Branche heute und in Zukunft zu erfüllen.",
-      "link": "https://exlibrisgroup.com/products/aleph-integrated-library-system/",
-      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
-    },
-    {
       "shortName": "Alma",
       "name": "Alma Library Service Platform",
       "provider": "Ex Libris",
       "numberProcesses": 4,
       "description": "Ein Bibliotheksverwaltungssystem oder LMS, wie Alma, umfasst eine Reihe von Funktionalitäten, die darauf abzielen, den Bibliotheksbetrieb effizient zu verwalten. Es umfasst oft Funktionen wie Katalogisierung und Klassifizierung für die Organisation von Materialien, Such- und Entdeckungstools für den einfachen Zugriff auf Bibliotheksressourcen, digitales Ressourcenmanagement zur Überwachung von Online-Sammlungen, Reporting und Analyse für informierte Entscheidungen und Integration mit anderen Bibliothekssystemen und Plattformen zur nahtlosen Workflow-Koordination.",
       "link": "https://exlibrisgroup.com/products/alma-library-services-platform/",
-      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
-    },
-    {
-      "shortName": "Alma CZ | SFX KB (Ex Libris)",
-      "name": "Alma Community Zone | SFX Knowledge Base",
-      "provider": "Ex Libris",
-      "numberProcesses": 1,
-      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
-    },
-    {
-      "shortName": "Alma (OBSGV)",
-      "name": "Alma Österreichische Bibliothekenverbund und Service GmbH (OBVSG)",
-      "provider": "Ex Libris",
-      "numberProcesses": 1,
       "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
@@ -383,15 +354,6 @@
       "name": "EconBIZ",
       "provider": "ZBW",
       "numberProcesses": 2,
-      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
-    },
-    {
-      "shortName": "EconStor",
-      "name": "EconStor",
-      "provider": "ZBW",
-      "numberProcesses": 1,
-      "description": "EconStor ist ein Publikationsserver für wirtschaftswissenschaftliche Fachliteratur.",
-      "link": "https://www.econstor.eu/",
       "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
@@ -594,15 +556,6 @@
       "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
-      "shortName": "LINA",
-      "name": "Lizenzen Allianz und National (LINA)",
-      "provider": "keine Angabe",
-      "numberProcesses": 1,
-      "description": "Der Archivserver LINA (Lizenzen Allianz und National), betrieben von der hebis-Verbundzentrale, stellt lizenzierte Materialien mit Archivrechten für Bibliotheken und ihre Nutzer bereit. Gehostet werden National- und Allianzlizenzen, konsortiale Lizenzen des hebis Konsortiums sowie lokale Lizenzen der hebis-Bibliotheken und den jeweils berechtigten Nutzern zur Verfügung gestellt.",
-      "link": "http://linatest.hebis-services.de/",
-      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
-    },
-    {
       "shortName": "LIVIVO",
       "name": "LIVIVO",
       "provider": "ZB MED",
@@ -613,13 +566,6 @@
       "shortName": "lobid.org",
       "name": "lobid.org",
       "numberProcesses": 2,
-      "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
-    },
-    {
-      "shortName": "Lokalsystem (UB Erlangen-Nürnberg)",
-      "name": "Lokalsystem (UB Erlangen-Nürnberg)",
-      "provider": "keine Angabe",
-      "numberProcesses": 1,
       "group": "Zu diesem System liegt uns kein eigener Fragebogen vor. Die gezeigten Informationen sind ggf. nicht vollständig."
     },
     {
