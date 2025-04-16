@@ -3,7 +3,7 @@ d3.json("data/data.json").then(init);
 
 // Initialize the visualization
 async function init(data) {
-    //await checkAccess();
+    // await checkAccess();
 
     const systems = data.systems;
     const filters = data.propertyCategories;
@@ -25,4 +25,6 @@ async function init(data) {
     initGraph(svg, systems, dataExchanges, filters);
 
     setFilters(filters, dataExchanges, svg);
+    addSidebarToggle("sidebar-toggle-left", "sidebar-left", true)
+    addSidebarToggle("sidebar-toggle-right", "sidebar-right", false)
 }

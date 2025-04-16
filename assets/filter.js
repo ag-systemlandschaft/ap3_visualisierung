@@ -126,3 +126,21 @@ function updateOptionCounts(filters, dataExchanges) {
         })
     });
 }
+
+function addSidebarToggle(toggleButtonId, sidebarId, isLeftSide) {
+    const toggleBtn = document.getElementById(toggleButtonId);
+    const sidebar = document.getElementById(sidebarId);
+
+    toggleBtn.addEventListener("click", () => {
+        const isHidden = sidebar.style.display === "none" || sidebar.style.display === "";
+        sidebar.style.display = isHidden ? "block" : "none";
+        const arrowLeft = isLeftSide ? isHidden : !isHidden;
+        toggleBtn.textContent = arrowLeft ? "«" : "»";
+        if (isLeftSide) {
+            const zoomMoveControls = document.getElementById("zoom-move-controls");
+            zoomMoveControls.classList.toggle("indented");
+        }
+    });
+
+    sidebar.style.display = "block";
+}

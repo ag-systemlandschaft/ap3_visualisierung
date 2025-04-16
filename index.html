@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  <!-- <div class="is-fluid" id="protected-content" style="display: none"> -->
   <div class="is-fluid" id="protected-content">
     <nav class="navbar has-shadow" role="navigation" aria-label="main navigation" style="text-align:center;">
       <div class="navbar-brand p-2" style="margin-left: 15%; margin-right: 5%">
@@ -39,10 +40,11 @@
       </div>
 
       <div class="columns is-gapless">
-        <div class="sidebar column">
+        <span class="sidebar-toggle" id="sidebar-toggle-left" title="Filter und Legende ein-/ausblenden">«</span>
+        <div class="sidebar column" id="sidebar-left">
           <div class="box">
             <div class="block filter">
-              <h3 class="title is-5 mb-2">Filter</h3>
+              <h3 class="title is-5 mb-2" style="margin-left: 50px">Filter</h3>
               <div class="filters mt-1"></div>
               <div class="buttons"></div>
             </div>
@@ -64,29 +66,32 @@
           </div>-->
         </div>
         <div class="graph">
-          <div class="vis column">
+          <div class="vis column" style="height: 100%">
             <svg viewBox="-480 -300 960 550"></svg>
           </div>
-          <div class="controls zoom">
-            <div class="button-container">
-              <button id="zoom-in" class="zoom">+</button>
-              <button id="zoom-out" class="zoom">−</button>
-            </div>
-          </div>
-          <div class="controls move">
-            <div class="button-container">
-              <button id="pan-up" class="arrow up">▲</button>
-              <div class="horizontal-buttons">
-                <button id="pan-left" class="arrow left">◀</button>
-                <button id="reset" class="center">⟳</button>
-                <button id="pan-right" class="arrow right">▶</button>
+          <div id="zoom-move-controls">
+            <div class="controls zoom">
+              <div class="button-container">
+                <button id="zoom-in" class="zoom">+</button>
+                <button id="zoom-out" class="zoom">−</button>
               </div>
-              <button id="pan-down" class="arrow down">▼</button>
-              <br>
+            </div>
+            <div class="controls move">
+              <div class="button-container">
+                <button id="pan-up" class="arrow up">▲</button>
+                <div class="horizontal-buttons">
+                  <button id="pan-left" class="arrow left">◀</button>
+                  <button id="reset" class="center">⟳</button>
+                  <button id="pan-right" class="arrow right">▶</button>
+                </div>
+                <button id="pan-down" class="arrow down">▼</button>
+                <br>
+              </div>
             </div>
           </div>
         </div>
-        <div class="sidebar column">
+        <span class="sidebar-toggle" id="sidebar-toggle-right" title="Information ein-/ausblenden">»</span>
+        <div class="sidebar column" id="sidebar-right">
           <div class="box">
             <div class="block">
               <div class="infoText">

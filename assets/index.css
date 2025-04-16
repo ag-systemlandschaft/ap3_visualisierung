@@ -18,7 +18,7 @@
 
     --font-family: "Source Sans Pro";
 
-    --sidebar-width: 300px;
+    --sidebar-width: 330px;
     --graph-min-width: 500px;
     --dynamic-breakpoint: 1100px;  /* This should be min 2*sidebar-width + graph-min-width */
 
@@ -42,10 +42,10 @@ body {
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
-}
 
-h1 {
-    color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .sidebar {
@@ -54,6 +54,35 @@ h1 {
     max-width: var(--sidebar-width);
     min-width: var(--sidebar-width);
     flex: 1 1 var(--sidebar-width);
+}
+
+.sidebar-toggle {
+    background-color: white;
+    cursor: pointer;
+    display: block;
+    font-size: 28pt;
+    font-weight: bold;
+    height: 35px;
+    position: relative;
+    text-align: center;
+    user-select: none;
+    width: 35px;
+    z-index: 1000;
+}
+
+.sidebar-toggle:hover {
+    background-color: var(--filter-bg-color);
+}
+
+#sidebar-toggle-left {
+    top: 15px;
+    left: 65px;
+}
+
+#sidebar-toggle-right {
+    position: absolute;
+    top: 148px;
+    right: 40px;
 }
 
 .subtitle {
@@ -113,6 +142,12 @@ footer a {
 div.vis {
     text-align: center;
     flex-grow: 1;
+    height: 100%;
+}
+
+svg {
+    height: 100%;
+    width: 100%;
 }
 
 svg g text {
@@ -297,19 +332,18 @@ g.hovered {
 }
 
 .controls {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
 }
 
 div.zoom {
+    display: inline-block;
     left: 20px;
     top: 15px;
 }
 
 div.move {
-    left: 70px;
+    display: inline-block;
+    left: 25px;
     top: 0;
 }
 
@@ -439,4 +473,21 @@ div.filters.mt-1{
 
 .system-label {
     /* additional styles for the labels around the nodes go here */
+}
+
+.hidden {
+    display: none;
+}
+
+.container.is-fluid {
+    padding-left: 0;
+}
+
+#zoom-move-controls {
+    position: absolute;
+    top: 0;
+}
+
+.indented {
+    margin-left: 70px;
 }

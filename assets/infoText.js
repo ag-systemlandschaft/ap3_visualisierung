@@ -65,11 +65,12 @@ function setDefaultInfoText() {
     heading.className = 'title is-5 mb-2';
     heading.textContent = 'Information';
     infoText.appendChild(heading);
+    const textBody = document.createElement("div");
     // Anpassung erfolgt durch EZB
-    infoText.appendChild(document.createTextNode(`
+    textBody.innerHTML = `
         Diese Visualisierung wurde durch die AG Systemlandschaft E-Ressourcen erstellt.
         Sie basiert auf 23 Fragebögen. Aktuell werden Informationen zu 76 Systemen und 190 Datenflüssen angezeigt.<p>
         Weitere relevante Daten für unsere Systemlandkarte können über den <a href="https://ag-systemlandschaft.de/material/" target="blank">Fragebogen</a> eingereicht werden.
-        
-    `));
+`;
+    infoText.appendChild(textBody);
 }
