@@ -91,12 +91,12 @@ function createDataExchange(svg, dataExchanges) {
         .attr("id", (d, i) => i);
 
     // each dataExchange consists of two paths, one visible and one to allow for more tolerant interactions
-    dataExchange
-        .append("path")
-        .classed("tolerance-layer", true)
-        .attr("pointer-events", "all")
-        .attr("stroke-opacity", 0)
-        .attr("stroke-width", exchangeArc.tolerance);
+    //dataExchange
+    //    .append("path")
+    //    .classed("tolerance-layer", true)
+    //    .attr("pointer-events", "all")
+    //    .attr("stroke-opacity", 0)
+    //    .attr("stroke-width", exchangeArc.tolerance);
     dataExchange
         .append("path")
         .classed("actual-exchange", true)
