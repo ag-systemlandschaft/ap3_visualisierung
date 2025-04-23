@@ -7,7 +7,7 @@ function addSystemInfo(d) {
             Betreiber: ${d.provider}<br><br>
             Kurzbeschreibung: ${d.description}<br><br>
             ${addHTMLLink("Link zu weiteren Informationen", d.link)}<br>
-            ${d.group}<br>  
+            ${d.group ?? ''}<br>  
         </div> 
     `
 }
