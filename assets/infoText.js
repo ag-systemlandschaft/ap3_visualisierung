@@ -69,8 +69,8 @@ function setDefaultInfoText() {
     // Anpassung erfolgt durch EZB
     textBody.innerHTML = `
         Diese Visualisierung wurde durch die AG Systemlandschaft E-Ressourcen erstellt.
-        Sie basiert auf 23 Fragebögen. Aktuell werden Informationen zu 76 Systemen und 190 Datenflüssen angezeigt. Zeitraum der Datenerhebung: 09/2023 bis 03/2025</br></br></br>
-        Weitere relevante Daten für unsere Systemlandkarte können über den <a href="https://ag-systemlandschaft.de/material/" target="blank">Fragebogen</a> eingereicht werden.
+        Sie basiert auf 26 Fragebögen, die zwischen 03/2023 und 08/2025 der AG zugestellt wurden. Aktuell werden Informationen zu 71 Systemen und 164 Datenflüssen angezeigt.<p>
+        Weitere relevante Daten für unsere Systemlandkarte können über den <a href="https://ag-systemlandschaft.de/material/" target="blank">Fragebogen</a> eingereicht werden
 `;
     infoText.appendChild(textBody);
 }
