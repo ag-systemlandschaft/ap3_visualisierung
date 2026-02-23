@@ -16,3 +16,7 @@ The assets/constants.js file contains configuration options for the visualizatio
 
 ### assets/index.css
 Finally, the assets/index.css file contains predefined variables for visual styling at the top of the file. These variables, such as colors, font families, and the opacity of unselected elements, are already defined but can be modified to customize the design as needed.
+
+# License
+This project is licensed under the Creative Commons Attribution 4.0 International License - see the [LICENSE](LICENSE) file for details.
+[![CC BY 4.0](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
