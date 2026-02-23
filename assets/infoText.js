@@ -66,7 +66,7 @@ function setDefaultInfoText() {
     heading.textContent = 'Information';
     infoText.appendChild(heading);
     const textBody = document.createElement("div");
-    // Anpassung erfolgt durch EZB
+    // Change text in default box
     textBody.innerHTML = `
         Diese Visualisierung wurde durch die AG Systemlandschaft E-Ressourcen erstellt.
         Sie basiert auf 26 Fragebögen, die zwischen 03/2023 und 08/2025 der AG zugestellt wurden. Aktuell werden Informationen zu 71 Systemen und 164 Datenflüssen angezeigt.<p>
