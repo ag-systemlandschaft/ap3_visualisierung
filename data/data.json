@@ -10,7 +10,9 @@
         "Unregelmäßig",
         "Echtzeit",
         "Weitere",
-        "Stündlich"
+        "Stündlich",
+        "Vierteljährlich",
+        "Halbjährlich"
       ],
       "id": "frequency"
     },
@@ -39,7 +41,12 @@
         "ID des Anbieters/Verlags",
         "Weitere",
         "we:kb-UUID",
-        "GOKB-UUID"
+        "GOKB-UUID",
+        "GND-ID",
+        "ORCID",
+        "CKB-ID",
+        "OCLC Number",
+        "EKI"
       ],
       "id": "identifier"
     },
@@ -50,11 +57,11 @@
         "Alma Community Zone",
         "Alma Network Zone (OBV)",
         "Alma Network Zone (Swisscovery)",
-        "Anbieter",
+        "Anbieter-Datenbanken",
         "B3Kat",
         "BASE",
         "BSZ-Fernleih-Portal",
-        "Crossref",
+        "Crossref Services",
         "Culturegraph",
         "DataCite",
         "DB Deutsche ISIL-Agentur",
@@ -69,7 +76,7 @@
         "EBSCO FTF",
         "EconBiz",
         "E-Pflicht-Portal BW",
-        "Europäische Zentralbank",
+        "Datenportal der EZB",
         "Europe PMC",
         "ExLibris-KB",
         "EZB",
@@ -82,7 +89,7 @@
         "GND",
         "GOKB",
         "GVI",
-        "hbz-Verbunddatenbank",
+        "hbz-Verbundkatalog",
         "hebis Discovery system (HDS)",
         "hebis Zentralsystem",
         "International ISBN Agency",
@@ -92,7 +99,7 @@
         "K10plus",
         "K10plus E-Book-Pool",
         "LAS:eR",
-        "LBS4 (GBV)",
+        "LBS-Service (GBV/VZG)",
         "LIVIVO",
         "lobid",
         "lokale OPAC-Indexe (BVB)",
@@ -118,7 +125,14 @@
         "we:kb",
         "WorldCat",
         "WorldCat-Registry",
-        "ZDB"
+        "ZDB",
+        "Open Library",
+        "buchhandel.de",
+        "Alma Network Zone (hbz)",
+        "OERSI",
+        "PUBLISSO",
+        "edoweb",
+        "DigiBib-IntrOX"
       ],
       "id": "involvedSystems"
     },
@@ -191,7 +205,7 @@
       "name": "ALBERT – Library Search Engine",
       "provider": "KOBV",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegt kein Fragebogen vor. Die Informationen sind ggf. nicht vollständig.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://waesearch.kobv.de/"
     },
     {
@@ -199,56 +213,74 @@
       "name": "Alma Community Zone",
       "provider": "ExLibris",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegt kein Fragebogen vor. Die Informationen sind ggf. nicht vollständig."
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig."
+    },
+    {
+      "shortName": "Alma Network Zone (hbz)",
+      "name": "Alma Network Zone des hbz-Verbundes",
+      "provider": "Hochschulbibliothekszentrum des Landes Nordrhein-Westfalen",
+      "description": "Die Alma-Netzwerkzone unterstützt die hbz-Verbundbibliotheken darin, ihr Angebot zu erschließen und ihren Nutzerinnen und Nutzern zur Verfügung zu stellen. Dabei profitieren die Bibliotheken in starkem Maße von Synergie-Effekten der gemeinsamen Erschließung und den Metadaten-Dienstleistungen des hbz.\n\nStand der letzten Datenerhebung: 04/2026",
+      "link": "https://hbz-network.alma.exlibrisgroup.com",
+      "numberProcesses": 15
     },
     {
       "shortName": "Alma Network Zone (OBV)",
       "name": "Alma Network Zone des OBV",
       "provider": "ExLibris, OBVSG",
       "numberProcesses": 15,
-      "description": "Es liegen keine Detailinformationen zum System vor."
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig."
     },
     {
       "shortName": "Alma Network Zone (Swisscovery)",
       "name": "Alma Network Zone von Swisscovery",
       "provider": "ExLibris, Swisscovery",
       "numberProcesses": 15,
-      "description": "Es liegen keine Detailinformationen zum System vor."
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig."
     },
     {
-      "shortName": "Anbieter",
-      "name": "Verlage, Aggregatoren, Dienstleister",
-      "numberProcesses": 15
+      "shortName": "Anbieter-Datenbanken",
+      "name": "Anbieter-Datenbanken",
+      "numberProcesses": 20,
+      "provider": "Verlage, Aggregatoren, Dienstleister",
+      "description": "Zusammenfassender Systemknoten zur Repräsentation kommerzieller Datenanbieter und ihrer proprietären Datenhaltungssysteme. Der Knoten aggregiert sämtliche externen, i.d.R. nicht öffentlich zugänglichen Datenbanken und Plattformen, die Daten an die betrachteten öffentlichen ERM-Systeme liefern oder von diesen empfangen."
     },
     {
       "shortName": "B3Kat",
       "name": "Gemeinsamer Verbundkatalog von BVB und KOBV",
       "provider": "BVB Verbundzentrale, KOBV - Verbundzentrale des Kooperativen Bibliotheksverbundes Berlin-Brandenburg",
-      "numberProcesses": 17,
-      "description": "Der B3Kat ist die gemeinsame Katalogisierungsplattform der Bibliotheksverbünde BVB und KOBV. Katalogisierende Institutionen sind die Universitäts- und Hochschulbibliotheken der drei Bundesländer Bayern, Berlin und Brandenburg, die Bayerische Staatsbibliothek sowie zahlreiche wissenschaftliche Spezialbibliotheken.",
+      "numberProcesses": 15,
+      "description": "Der B3Kat ist die gemeinsame Katalogisierungsplattform der Bibliotheksverbünde BVB und KOBV. Katalogisierende Institutionen sind die Universitäts- und Hochschulbibliotheken der drei Bundesländer Bayern, Berlin und Brandenburg, die Bayerische Staatsbibliothek sowie zahlreiche wissenschaftliche Spezialbibliotheken.\n\nStand der letzten Datenerhebung: 11/2023",
       "link": "https://www.b3kat.de"
     },
     {
       "shortName": "BASE",
-      "name": "BASE (Bielefeld Academic Search Engine) ist eine der weltweit größten Suchmaschinen für wissenschaftliche Web-Dokumente. ",
+      "name": "BASE (Bielefeld Academic Search Engine)",
       "provider": "Universitätsbibliothek Bielefeld",
       "numberProcesses": 15,
-      "description": "BASE ist eine Suchmaschine, die weltweit wissenschaftliche Dokumentenserver aggregiert und für die Suche zur Verfügung stellt.",
+      "description": "BASE ist eine Suchmaschine, die weltweit wissenschaftliche Dokumentenserver aggregiert und für die Suche zur Verfügung stellt.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig. ",
       "link": "https://www.base-search.net/"
     },
     {
       "shortName": "BSZ-Fernleih-Portal",
       "name": "BSZ-Fernleih-Portal",
       "provider": "BSZ",
-      "description": "Es liegen keine Detailinformationen zum System vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig. ",
       "numberProcesses": 15
     },
     {
-      "shortName": "Crossref",
-      "name": "Crossref",
+      "shortName": "buchhandel.de",
+      "name": "buchhandel.de",
+      "provider": "Verzeichnis Lieferbarer Bücher (VLB)",
+      "description": "buchhandel.de ist die öffentliche Rechercheplattform des Verzeichnis Lieferbarer Bücher (VLB).\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig. ",
+      "link": "https://buchhandel.de/",
+      "numberProcesses": 15
+    },
+    {
+      "shortName": "Crossref Services",
+      "name": "Crossref Services",
       "provider": "Crossref",
       "numberProcesses": 15,
-      "description": "Crossref betreibt offene Infrastruktur, um Forschungsobjekte, Entitäten und Handlungen zu verknüpfen, wodurch eine dauerhafte und wiederverwendbare wissenschaftliche Aufzeichnung entsteht.",
+      "description": "Crossref betreibt offene Infrastruktur, um Forschungsobjekte, Entitäten und Handlungen zu verknüpfen, wodurch eine dauerhafte und wiederverwendbare wissenschaftliche Aufzeichnung entsteht.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.crossref.org/"
     },
     {
@@ -256,23 +288,31 @@
       "name": "Culturegraph",
       "provider": "Deutsche Nationalbibliothek (DNB)",
       "numberProcesses": 15,
-      "description": "Culturegraph ist eine von der Deutschen Nationalbibliothek bereitgestellte, kooperative Plattform, auf der die bibliografischen Metadaten aller deutschen Bibliotheksverbünde, der Deutschen Nationalbibliothek sowie des Österreichischen Bibliothekenverbunds (OBVSG) gebündelt werden. Durch diese Aggregation ermöglicht Culturegraph neben Datenanalysen und Datenabgleichen die weitergehende Vernetzung der Bibliotheksbestände.",
+      "description": "Culturegraph ist eine von der Deutschen Nationalbibliothek bereitgestellte, kooperative Plattform, auf der die bibliografischen Metadaten aller deutschen Bibliotheksverbünde, der Deutschen Nationalbibliothek sowie des Österreichischen Bibliothekenverbunds (OBVSG) gebündelt werden. Durch diese Aggregation ermöglicht Culturegraph neben Datenanalysen und Datenabgleichen die weitergehende Vernetzung der Bibliotheksbestände.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig. ",
       "link": "https://www.dnb.de/DE/Professionell/Metadatendienste/Metadaten/Culturegraph/culturegraph_node.html"
     },
     {
       "shortName": "DataCite",
       "name": "DataCite",
       "provider": " Technische Informationsbibliothek (TIB), Deutsche Zentralbibliothek für Medizin (ZB MED), GESIS – Leibniz-Institut für Sozialwissenschaften, Deutsche Zentralbibliothek für Wirtschaftswissenschaften (ZBW) und weitere internationale Partner",
-      "description": "DataCite ist ein internationales Konsortium und eine DOI-Registrierungsagentur für Forschungsdaten.",
+      "description": "DataCite ist ein internationales Konsortium und eine DOI-Registrierungsagentur für Forschungsdaten.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig. ",
       "link": "https://datacite.org/",
       "numberProcesses": 15
+    },
+    {
+      "shortName": "Datenportal der EZB",
+      "name": "Datenportal der Europäischen Zentralbank",
+      "numberProcesses": 15,
+      "description": "Die Europäische Zentralbank bietet verschiedene Service an, u.a. aktuelle Referenzkurse für den Euro.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
+      "link": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+      "provider": "Europäische Zentralbank"
     },
     {
       "shortName": "DB Deutsche ISIL-Agentur",
       "name": "Datenbank der Deutschen ISIL-Agentur",
       "provider": "Staatsbibliothek zu Berlin, Deutsche Nationalbibliothek",
       "numberProcesses": 15,
-      "description": "Die Metadaten der Deutschen ISIL-Agentur werden im Datenbanksystem der Deutschen Nationalbibliothek gehalten. Es handelt sich um Adressdaten von Gedächtniseinrichtungen in Deutschland und Informationen über Pakete elektronischer Ressourcen (virtuelle Bibliothek), für die ein international standardisierter Identifier, das ISIL, vergeben wurde.",
+      "description": "Die Metadaten der Deutschen ISIL-Agentur werden im Datenbanksystem der Deutschen Nationalbibliothek gehalten. Es handelt sich um Adressdaten von Gedächtniseinrichtungen in Deutschland und Informationen über Pakete elektronischer Ressourcen (virtuelle Bibliothek), für die ein international standardisierter Identifier, das ISIL, vergeben wurde.\n\nStand der letzten Datenerhebung: 09/2023",
       "link": "https://isil.staatsbibliothek-berlin.de/"
     },
     {
@@ -280,7 +320,7 @@
       "name": "Datenbanksystem mit Metadaten der Deutschen Nationalbibliothek",
       "provider": "Deutsche Nationalbibliothek (DNB)",
       "numberProcesses": 15,
-      "description": "Das Datenbanksystem der Deutschen Nationalbibliothek enthält Metadaten der Deutschen Nationalbibliothek (DNB), des Deutschen Musikarchivs (DMA), des Deutschen Buch- und Schriftmuseums (DBSM) sowie des Deutschen Exilarchivs 1933-1945 (DEA).",
+      "description": "Das Datenbanksystem der Deutschen Nationalbibliothek enthält Metadaten der Deutschen Nationalbibliothek (DNB), des Deutschen Musikarchivs (DMA), des Deutschen Buch- und Schriftmuseums (DBSM) sowie des Deutschen Exilarchivs 1933-1945 (DEA).\n\nStand der letzten Datenerhebung: 04/2026",
       "link": "https://www.dnb.de/"
     },
     {
@@ -288,7 +328,7 @@
       "name": "Datenbank-Infosystem (DBIS)",
       "provider": "UB Regensburg",
       "numberProcesses": 15,
-      "description": "Das Datenbank-Infosystem (DBIS) ist eines der umfangreichsten Verzeichnisse an wissenschaftlichen Datenbanken. Mehrere Hundert Bibliotheken und Forschungseinrichtungen nutzen die DBIS zur Verwaltung von Zugangs- und Lizenzinformationen von Datenbanken. Für Nutzende ist DBIS ein Recherchetool für Datenbanken.",
+      "description": "Das Datenbank-Infosystem (DBIS) ist eines der umfangreichsten Verzeichnisse an wissenschaftlichen Datenbanken. Mehrere Hundert Bibliotheken und Forschungseinrichtungen nutzen die DBIS zur Verwaltung von Zugangs- und Lizenzinformationen von Datenbanken. Für Nutzende ist DBIS ein Recherchetool für Datenbanken.\n\nStand der letzten Datenerhebung: 09/2023",
       "link": "https://dbis.ur.de/"
     },
     {
@@ -296,7 +336,7 @@
       "name": "Deutsche Digitale Bibliothek",
       "provider": "Deutsche Nationalbibliothek (DNB)",
       "numberProcesses": 15,
-      "description": "Die Deutsche Digitale Bibliothek ist das zentrale Portal für Kultur und Wissen. Sie macht das kulturelle Erbe der Bundesrepublik über das Internet zugänglich.",
+      "description": "Die Deutsche Digitale Bibliothek ist das zentrale Portal für Kultur und Wissen. Sie macht das kulturelle Erbe der Bundesrepublik über das Internet zugänglich.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.deutsche-digitale-bibliothek.de/"
     },
     {
@@ -304,7 +344,7 @@
       "name": "DeepGreen",
       "provider": "KOBV - Verbundzentrale des Kooperativen Bibliotheksverbundes Berlin-Brandenburg",
       "numberProcesses": 15,
-      "description": "DeepGreen ist ein Lieferdienst für Open-Access-Artikel.",
+      "description": "DeepGreen ist ein Lieferdienst für Open-Access-Artikel.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://info.oa-deepgreen.de/"
     },
     {
@@ -312,20 +352,31 @@
       "name": "Nationallizenzen der Deutschen Forschungsgemeinschaft (DFG)",
       "provider": "Verbundzentrale des GBV (VZG)",
       "numberProcesses": 15,
-      "description": "Zugang zu digitalen Publikationen im DFG-System der überregionalen Literaturversorgung und im Kontext der Schwerpunktinitiative „Digitale Information“ der Allianz der deutschen Wissenschaftsorganisationen.",
+      "description": "Zugang zu digitalen Publikationen im DFG-System der überregionalen Literaturversorgung und im Kontext der Schwerpunktinitiative „Digitale Information“ der Allianz der deutschen Wissenschaftsorganisationen.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.nationallizenzen.de/"
+    },
+    {
+      "shortName": "DigiBib-IntrOX",
+      "name": "DigiBib-IntrOX",
+      "provider": "Hochschulbibliothekszentrum des Landes Nordrhein-Westfalen (hbz)",
+      "description": "DigiBib IntrOX - vom hbz selbst programmiertes und gehostetes Discovery-System, welches von 22 Bibliotheken (Stand April 2026) als Discovery-System genutzt wird. s.a. https://www.hbz-nrw.de/de/digibib-introx\n\nStand der letzten Datenerhebung: 04/2026",
+      "link": "jede Bibliothek hat einen eigenen Link z.B. https://fub-hagen.digibib.net/ oder https://thb-koeln.digibib.net/",
+      "numberProcesses": 15
     },
     {
       "shortName": "Divibib",
       "numberProcesses": 15,
-      "description": "Die divibib vertreibt das Onleihe-Portal und entsprechend lizenzierte Medien an öffentliche Bibliotheken."
+      "description": "Die divibib vertreibt das Onleihe-Portal und entsprechend lizenzierte Medien an öffentliche Bibliotheken.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
+      "name": "Divibib",
+      "provider": "divibib GmbH, ekz-Gruppe",
+      "link": "https://www.divibib.com/"
     },
     {
       "shortName": "DOAJ",
       "name": "Directory of Open Access Journals",
       "provider": "Infrastructure Services for Open Access (IS4OA)",
       "numberProcesses": 15,
-      "description": "DOAJ (Directory of Open Access Journals) ist ein Verzeichnis von qualitätsgeprüften Fachzeitschriften, die bei der Auswahl ihrer Beiträge ein peer review Verfahren einsetzen und open access zur Verfügung stehen.",
+      "description": "DOAJ (Directory of Open Access Journals) ist ein Verzeichnis von qualitätsgeprüften Fachzeitschriften, die bei der Auswahl ihrer Beiträge ein peer review Verfahren einsetzen und open access zur Verfügung stehen.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://doaj.org/"
     },
     {
@@ -333,7 +384,7 @@
       "name": "E-Pflicht-Portal BW",
       "provider": "Badische Landesbibliothek Karlsruhe (BLB) und Württembergische Landesbibliothek (WLB)",
       "numberProcesses": 15,
-      "description": "Das Portal dient Einzelpersonen und Kleinverlagen zur gesetzlich vorgeschriebenen Ablieferung von einzelnen Elektronischen Publikationen an die Badische Landesbibliothek Karlsruhe (BLB) und an die Württembergische Landesbibliothek (WLB)",
+      "description": "Das Portal dient Einzelpersonen und Kleinverlagen zur gesetzlich vorgeschriebenen Ablieferung von einzelnen Elektronischen Publikationen an die Badische Landesbibliothek Karlsruhe (BLB) und an die Württembergische Landesbibliothek (WLB)\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.epflicht-bw.de/"
     },
     {
@@ -341,14 +392,14 @@
       "name": "EBSCO Discovery Service",
       "provider": "EBSCO",
       "numberProcesses": 15,
-      "description": "Es liegen keine Detailinformationen zum System vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://about.ebsco.com/de-de/produkte/ebsco-discovery-service"
     },
     {
       "shortName": "EBSCO FTF",
       "name": "EBSCO Full Text Finder (FTF)",
       "provider": "EBSCO",
-      "description": "EBSCO Full Text Finder (FTF) ist ein Tool zur Verwaltung und Suche von E-Ressourcen, welches den Zugriff auf elektronische und gedruckte Bestände in Bibliotheken durch eine zentrale Wissensdatenbank, Link-Resolver und Publikationsfinder optimiert.",
+      "description": "EBSCO Full Text Finder (FTF) ist ein Tool zur Verwaltung und Suche von E-Ressourcen, welches den Zugriff auf elektronische und gedruckte Bestände in Bibliotheken durch eine zentrale Wissensdatenbank, Link-Resolver und Publikationsfinder optimiert.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "",
       "numberProcesses": 15
     },
@@ -357,35 +408,39 @@
       "name": "EconBiz - Find Economic Literature",
       "provider": "ZBW - Leibniz-Informationszentrum Wirtschaft",
       "numberProcesses": 15,
-      "description": "Seit Ende der 1990er Jahre förderte die Deutsche Forschungsgemeinschaft (DFG) so genannte Virtuelle Fachbibliotheken in unterschiedlichen Fächern. EconBiz ging 2002 als Virtuelle Fachbibliothek Wirtschaftswissenschaften online. EconBiz wird seit 2013 in alleiniger Verantwortung durch die ZBW geführt.",
+      "description": "Seit Ende der 1990er Jahre förderte die Deutsche Forschungsgemeinschaft (DFG) so genannte Virtuelle Fachbibliotheken in unterschiedlichen Fächern. EconBiz ging 2002 als Virtuelle Fachbibliothek Wirtschaftswissenschaften online. EconBiz wird seit 2013 in alleiniger Verantwortung durch die ZBW geführt.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.econbiz.de/"
     },
     {
-      "shortName": "Europäische Zentralbank",
-      "name": "Europäische Zentralbank",
-      "numberProcesses": 15,
-      "description": "Es liegen keine Detailinformationen zum System vor.",
-      "link": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
+      "shortName": "edoweb",
+      "name": "edoweb",
+      "provider": "Landesbibliothekszentrum Rheinland-Pfalz (LBZ), Hochschulbibliothekszentrum des Landes Nordrhein-Westfalen (hbz)",
+      "description": "edowb ist ein Archivserver, der seit 2003 betrieben wird. Dort werden in Fortschreibung des landeskundlichen Sammelauftrags u.A. thematische Websites über Rheinland-Pfalz oder repräsentierende Websites von Landesinstitutionen gesammelt.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
+      "link": "https://edoweb-test2.hbz-nrw.de/",
+      "numberProcesses": 15
     },
     {
       "shortName": "Europe PMC",
       "name": "Europe PMC",
       "provider": "EMBL-EBI, National Library of Medicine (NLM), PubMed Central International",
       "numberProcesses": 15,
-      "description": "Es liegen keine Detailinformationen zum System vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://europepmc.org/"
     },
     {
       "shortName": "ExLibris-KB",
       "numberProcesses": 15,
-      "description": "Es liegen keine Detailinformationen zum System vor."
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
+      "name": "ExLibris-KnowledgeBase",
+      "provider": "ExLibris",
+      "link": "https://knowledge.exlibrisgroup.com/"
     },
     {
       "shortName": "EZB",
       "name": "Elektronische Zeitschriftenbibliothek",
       "provider": "Universitätsbibliothek Regensburg",
       "numberProcesses": 40,
-      "description": "Die Elektronische Zeitschriftenbibliothek (EZB) ist eines der umfangreichsten Verzeichnisse an wissenschaftlichen elektronischen Zeitschriften. Mehrere Hundert Bibliotheken und Forschungseinrichtungen nutzen die EZB zur Verwaltung von Zugangs- und Lizenzinformationen von elektronischen Zeitschriften auf lokaler, regionaler und nationaler Ebene. Für Nutzende ist die EZB ein Recherchetool für elektronische Zeitschriften sowie über den EZB-Linkingdienst zur Verfügbarkeitsanzeige wissenschaftlicher Publikationen.",
+      "description": "Die Elektronische Zeitschriftenbibliothek (EZB) ist eines der umfangreichsten Verzeichnisse an wissenschaftlichen elektronischen Zeitschriften. Mehrere Hundert Bibliotheken und Forschungseinrichtungen nutzen die EZB zur Verwaltung von Zugangs- und Lizenzinformationen von elektronischen Zeitschriften auf lokaler, regionaler und nationaler Ebene. Für Nutzende ist die EZB ein Recherchetool für elektronische Zeitschriften sowie über den EZB-Linkingdienst zur Verfügbarkeitsanzeige wissenschaftlicher Publikationen.\n\nStand der letzten Datenerhebung: 09/2025",
       "link": "https://ezb.ur.de"
     },
     {
@@ -393,7 +448,7 @@
       "name": "hebis Fernleihportal",
       "provider": "hebis",
       "numberProcesses": 15,
-      "description": "Es liegen keine Detailinformationen zum System vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.hebis.de/dienste/fernleihportal/"
     },
     {
@@ -401,7 +456,7 @@
       "name": "Fernleihsystem des BVB",
       "provider": "BVB",
       "numberProcesses": 15,
-      "description": "Es liegen keine Detailinformationen zum System vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.bib-bvb.de/web/online-fernleihe/fuer-bibliotheken"
     },
     {
@@ -409,7 +464,7 @@
       "name": "FIDELIO - Zentraler Nachweis für FID-Lizenzen",
       "provider": "Verbundzentrale des GBV (VZG), Niedersächsische Staats- und Universitätsbibliothek Göttingen (SUB Göttingen), Bayerische Staatsbibliothek München (BSB)",
       "numberProcesses": 15,
-      "description": "Es liegen keine Detailinformationen zum System vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://kxp.k10plus.de/DB=1.84/"
     },
     {
@@ -417,28 +472,28 @@
       "name": "Fachinformationsdienste für die Wissenschaft (FID)",
       "provider": "Unterschiedliche wissenschaftliche Bibliotheken, gefördert von der DFG",
       "numberProcesses": 15,
-      "description": "Es liegen keine Detailinformationen zum System vor."
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig."
     },
     {
       "shortName": "FOLIO (BVB)",
       "name": "The Future of Libraries is Open (FOLIO) im BVB",
       "provider": "BVB, LRZ, UB Regensburg, UB TU München",
       "numberProcesses": 15,
-      "description": "FOLIO ist eine Zusammenarbeit von Bibliotheken, Entwicklern und Anbietern, die eine Open-Source-Bibliotheksdienstplattform aufbauen. Es ist eine moderne Plattform, die Innovationen inspiriert und sowohl neue als auch traditionelle Ressourcenmanagement-Funktionen bietet."
+      "description": "FOLIO ist eine Zusammenarbeit von Bibliotheken, Entwicklern und Anbietern, die eine Open-Source-Bibliotheksdienstplattform aufbauen. Es ist eine moderne Plattform, die Innovationen inspiriert und sowohl neue als auch traditionelle Ressourcenmanagement-Funktionen bietet.\n\nStand der letzten Datenerhebung: 09/2025"
     },
     {
       "shortName": "FOLIO (GBV)",
       "name": "The Future of Libraries is Open (FOLIO) im GBV",
       "provider": "GBV",
       "numberProcesses": 15,
-      "description": "FOLIO ist eine Zusammenarbeit von Bibliotheken, Entwicklern und Anbietern, die eine Open-Source-Bibliotheksdienstplattform aufbauen. Es ist eine moderne Plattform, die Innovationen inspiriert und sowohl neue als auch traditionelle Ressourcenmanagement-Funktionen bietet."
+      "description": "FOLIO ist eine Zusammenarbeit von Bibliotheken, Entwicklern und Anbietern, die eine Open-Source-Bibliotheksdienstplattform aufbauen. Es ist eine moderne Plattform, die Innovationen inspiriert und sowohl neue als auch traditionelle Ressourcenmanagement-Funktionen bietet.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig."
     },
     {
       "shortName": "GND",
       "name": "Gemeinsame Normdatei",
       "provider": "DNB, GBV, KOBV, BVB, BSZ, hbz, hebis",
       "numberProcesses": 15,
-      "description": "Die GND (Gemeinsame Normdatei) ist die größte Normdatensammlung für Kultur- und Forschungsdaten im deutschsprachigen Raum.",
+      "description": "Die GND (Gemeinsame Normdatei) ist die größte Normdatensammlung für Kultur- und Forschungsdaten im deutschsprachigen Raum.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://gnd.network/"
     },
     {
@@ -446,7 +501,7 @@
       "name": "Global Open Knowledgebase (GOKB)",
       "provider": "Hochschulbibliothekszentrum des Landes NRW (hbz) / Verbundzentrale des GBV (VZG) / Zeitschriftendatenbank (ZDB)",
       "numberProcesses": 15,
-      "description": "Die Global Open Knowledge Base (GOKB) ist eine von der Community verwaltete, offene Datenplattform, die Informationen über elektronische Ressourcen bereitstellt. Die Daten werden automatisch angereichert, validiert und verarbeitet und sind über unsere Web-App und offene APIs frei zugänglich.",
+      "description": "Die Global Open Knowledge Base (GOKB) ist eine von der Community verwaltete, offene Datenplattform, die Informationen über elektronische Ressourcen bereitstellt. Die Daten werden automatisch angereichert, validiert und verarbeitet und sind über unsere Web-App und offene APIs frei zugänglich.\n\nStand der letzten Datenerhebung: 01/2026",
       "link": "https://gokb.org"
     },
     {
@@ -454,15 +509,15 @@
       "name": "Gemeinsamer Verbündeindex",
       "provider": "BSZ, hebis und KOBV",
       "numberProcesses": 15,
-      "description": "Der Gemeinsame Verbündeindex (GVI) ist ein uniformer Suchindex über die Bestände der sechs deutschen Bibliotheks-Verbundsysteme sowie der Deutschen Nationalbibliothek (DNB), der Zeitschriftendatenbank (ZDB) und des Österreichischen Verbundes.",
+      "description": "Der Gemeinsame Verbündeindex (GVI) ist ein uniformer Suchindex über die Bestände der sechs deutschen Bibliotheks-Verbundsysteme sowie der Deutschen Nationalbibliothek (DNB), der Zeitschriftendatenbank (ZDB) und des Österreichischen Verbundes.\n\nStand der letzten Datenerhebung: 11/2023",
       "link": "https://www.agv-gvi.de/"
     },
     {
-      "shortName": "hbz-Verbunddatenbank",
-      "name": "hbz-Verbunddatenbank",
+      "shortName": "hbz-Verbundkatalog",
+      "name": "hbz-Verbundkatalog",
       "provider": "Hochschulbibliothekszentrum des Landes Nordrhein-Westfalen",
       "numberProcesses": 15,
-      "description": "Die hbz-Verbunddatenbank ist das Erschließungssystem für die Bestände der Bibliotheken aus Nordrhein-Westfalen und aus großen Teilen von Rheinland-Pfalz. Sie bildet die Grundlage für diverse lokale und zentrale Endnutzeranwendungen wie Kataloge, Suchmaschinen und die Fernleihe.",
+      "description": "Im hbz-Verbundkatalog finden sich die Daten aller hbz-Verbundteilnehmer, die Ihre Daten im hbz-Verbundkatalog katalogisieren.\n\nStand der letzten Datenerhebung: 04/2026",
       "link": "https://nrw.digibib.net/"
     },
     {
@@ -470,53 +525,55 @@
       "name": "hebis Discovery System (HDS)",
       "provider": "hebis Verbundzentrale",
       "numberProcesses": 15,
-      "link": "http://hds.hebis.de"
+      "link": "http://hds.hebis.de",
+      "description": "Das hebis Discovery System (HDS) basiert auf der OpenSource-​Software  VuFind und bietet als Service für Mitgliedsbibliotheken des hebis-​Verbundes eine gemeinsame Oberfläche für den Online-​Bibliothekskatalog (Web-​OPAC) und den EBSCO Discovery Service (EDS). HDS ist eine innovative Portallösung für bibliothekseigene Katalogdaten mit Resource Discovery Service (RDS) und separatem Index (Solr/Lucene).\n\nStand der letzten Datenerhebung: 11/2023"
     },
     {
       "shortName": "hebis Zentralsystem",
       "name": "Hessisches Bibliotheks-Informationssystem (hebis) ",
       "provider": "hebis Verbundzentrale",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Informationen vor.",
+      "description": "Das Hessische Bibliotheksinformationssystem hebis ist der Informations-​ und Dienstleistungsverbund der rund 60 vorwiegend wissenschaftlichen Bibliotheken aus Hessen und Teilen von Rheinland-​​​Pfalz. Durch gemeinsame Nutzung zentraler Ressourcen werden bedarfsgerechte Service-​Lösungen für Bibliotheken und ihre Nutzer*innen entwickelt.\n\nStand der letzten Datenerhebung: 11/2023",
       "link": "http://cbsopac.rz.uni-frankfurt.de/LNG=DU/DB=2.1/"
     },
     {
       "shortName": "International ISBN Agency",
       "name": "International ISBN Agency",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Informationen vor.",
-      "link": "https://www.isbn-international.org/"
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
+      "link": "https://www.isbn-international.org/",
+      "provider": "Internationale ISBN-Agentur"
     },
     {
       "shortName": "ISSN Portal",
       "name": "ISSN Portal",
       "provider": "ISSN Centre",
       "numberProcesses": 15,
-      "description": "Das ISSN-Portal ist eine internationale Datenbank, die vom ISSN International Centre herausgegeben wird. Es listet alle ISSNs auf, die fortlaufenden Veröffentlichungen zugewiesen wurden. Es ist die weltweit umfassendste Referenzquelle für die Identifizierung von fortlaufenden Veröffentlichungen.",
+      "description": "Das ISSN-Portal ist eine internationale Datenbank, die vom ISSN International Centre herausgegeben wird. Es listet alle ISSNs auf, die fortlaufenden Veröffentlichungen zugewiesen wurden. Es ist die weltweit umfassendste Referenzquelle für die Identifizierung von fortlaufenden Veröffentlichungen.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://portal.issn.org/"
     },
     {
       "shortName": "JOIN2",
       "name": "JOIN2 Langname",
       "provider": "Forschungszentrum Jülich, Deutsches Elektronen-Synchrotron DESY",
-      "description": "JOIN2 ist eine kollaborative Repositorienplattform zur zentralen Erfassung und Bereitstellung von relevanten Publikationen, wie z.B. Artikel, Reports, Konferenzbeiträgen, Bücher, etc. JOIN2 umfasst mehrere Instanzen (Repositorien), die den wissenschaftlichen Kommunikationsprozesse unterstützen und als Bibliotheksinformationssystem für interne und externe Benutzer dienen können. JOIN2 unterstützt damit Wissenschafler*innen in den Zentren und den umliegenden Wissenschaftsgemeinschaften.",
+      "description": "JOIN2 ist eine kollaborative Repositorienplattform zur zentralen Erfassung und Bereitstellung von relevanten Publikationen, wie z.B. Artikel, Reports, Konferenzbeiträgen, Bücher, etc. JOIN2 umfasst mehrere Instanzen (Repositorien), die den wissenschaftlichen Kommunikationsprozesse unterstützen und als Bibliotheksinformationssystem für interne und externe Benutzer dienen können. JOIN2 unterstützt damit Wissenschafler*innen in den Zentren und den umliegenden Wissenschaftsgemeinschaften.\n\nStand der letzten Datenerhebung: 01/2026",
       "link": "https://join2.de",
       "numberProcesses": 15
     },
     {
       "shortName": "JournalTOCs",
       "name": "JournalTOCs",
-      "provider": "Heriot-Watt University",
+      "provider": "School of Mathematical and Computer Sciences, Heriot-Watt University",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Informationen vor.",
+      "description": "JournalTOCs ist ein Current-Awareness-Service (CAS), über den man neue Artikel direkt von Verlagen entdecken kann, sobald diese online veröffentlicht wurden.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.journaltocs.ac.uk/"
     },
     {
       "shortName": "K10plus",
       "name": "Katalog für zehn Bundesländer, die Stiftung Preußischer Kulturbesitz und weitere Einrichtungen (K10plus)",
       "provider": "BSZ/Verbundzentrale des GBV (VZG)",
-      "numberProcesses": 23,
-      "description": "Unter dem Namen K10plus betreiben BSZ und VZG eine gemeinsame Datenbank mit etwa 200 Millionen Bestandsnachweisen. Hinter K10plus stehen die Bibliotheksdaten der Mehrzahl der deutschen staatlichen Universitäten und Hochschulen. Hinzu kommen renommierte Forschungseinrichtungen wie Leibniz-Institute, Helmholtz-Zentren, Max-Planck-Institute etc. Seit Produktionsstart am 25.03.2019 katalogisieren die angeschlossenen Bibliotheken ihre Bestände in diesem Datenpool und beziehen von dort Metadaten für ihre Systeme.",
+      "numberProcesses": 22,
+      "description": "Unter dem Namen K10plus betreiben BSZ und VZG eine gemeinsame Datenbank mit etwa 200 Millionen Bestandsnachweisen. Hinter K10plus stehen die Bibliotheksdaten der Mehrzahl der deutschen staatlichen Universitäten und Hochschulen. Hinzu kommen renommierte Forschungseinrichtungen wie Leibniz-Institute, Helmholtz-Zentren, Max-Planck-Institute etc. Seit Produktionsstart am 25.03.2019 katalogisieren die angeschlossenen Bibliotheken ihre Bestände in diesem Datenpool und beziehen von dort Metadaten für ihre Systeme.\n\nStand der letzten Datenerhebung: 11/2023",
       "link": "https://wiki.k10plus.de/"
     },
     {
@@ -524,7 +581,7 @@
       "name": "K10plus E-Book-Pool (EBP)",
       "provider": "BSZ/Verbundzentrale des GBV (VZG)",
       "numberProcesses": 15,
-      "description": "Der E-Book-Pool dient im K10plus als Referenzdatenbank für alle durch Verlage gelieferten bibliografischen Metadaten für E-Books. In den E-Book-Pool werden Daten durch die beiden Verbundzentralen VZG und BSZ maschinell eingespielt. Die Pflege obliegt den Verbundzentralen. (siehe https://wiki.k10plus.de/display/K10PLUS/Informationen+zu+Datenlieferanten+und+Plattformen)",
+      "description": "Der E-Book-Pool dient im K10plus als Referenzdatenbank für alle durch Verlage gelieferten bibliografischen Metadaten für E-Books. In den E-Book-Pool werden Daten durch die beiden Verbundzentralen VZG und BSZ maschinell eingespielt. Die Pflege obliegt den Verbundzentralen. (siehe https://wiki.k10plus.de/display/K10PLUS/Informationen+zu+Datenlieferanten+und+Plattformen)\n\nStand der letzten Datenerhebung: 11/2023",
       "link": "https://ebooks.k10plus.de/"
     },
     {
@@ -532,14 +589,14 @@
       "name": "Lizenz Administrationssystem für eRessourcen (LAS:eR)",
       "provider": "hbz",
       "numberProcesses": 15,
-      "description": "LAS:eR ist ein System zur Verwaltung von elektronischen Ressourcen auf lokaler, regionaler und nationaler Ebene. Es handelt sich hierbei primär um ein Arbeitsinstrument, bei dem Pakete als Verkaufseinheit mit ihrer Historie im Mittelpunkt stehen. Als Datenbasis nutzt LAS:eR die we:kb.",
+      "description": "LAS:eR ist ein System zur Verwaltung von elektronischen Ressourcen auf lokaler, regionaler und nationaler Ebene. Es handelt sich hierbei primär um ein Arbeitsinstrument, bei dem Pakete als Verkaufseinheit mit ihrer Historie im Mittelpunkt stehen. Als Datenbasis nutzt LAS:eR die we:kb.\n\nStand der letzten Datenerhebung: 11/2023",
       "link": "https://laser.hbz.nrw.de"
     },
     {
-      "shortName": "LBS4 (GBV)",
-      "name": "LBSV des GBV",
+      "shortName": "LBS-Service (GBV/VZG)",
+      "name": "LBS-Service der Verbundzentrale",
       "provider": "OCLC, Verbundzentrale des GBV (VZG)",
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "Für kleine bis mittlere Bibliotheken bietet die VZG die Nutzung von OCLC LBS4 (OPAC und wahlweise Erwerbungs- und/oder Ausleihsystem) als in der VZG gehosteten SaaS-Service an.\n\nStand der letzten Datenerhebung: 04/2026",
       "numberProcesses": 15
     },
     {
@@ -547,7 +604,7 @@
       "name": "LIVIVO - Das Suchportal für Lebenswissenschaften",
       "provider": "ZB MED",
       "numberProcesses": 15,
-      "description": "LIVIVO ist die interdisziplinäre Suchmaschine für Literatur und Informationen zu den Lebenswissenschaften und wird bereitgestellt von ZB MED - Informationszentrum Lebenswissenschaften.",
+      "description": "LIVIVO ist die interdisziplinäre Suchmaschine für Literatur und Informationen zu den Lebenswissenschaften und wird bereitgestellt von ZB MED - Informationszentrum Lebenswissenschaften.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig. ",
       "link": "https://www.livivo.de/"
     },
     {
@@ -555,14 +612,14 @@
       "name": "lobid — Dateninfrastruktur für Bibliotheken",
       "provider": "hbz - Hochschulbibliothekszentrum des Landes NRW",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://lobid.org/"
     },
     {
       "shortName": "lokale OPAC-Indexe (BVB)",
       "name": "lokale OPAC-Indexe im BVB",
       "provider": "BVB",
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "numberProcesses": 15
     },
     {
@@ -570,21 +627,21 @@
       "name": "Mir@bel",
       "provider": "Sciences Po Lyon, Sciences Po Grenoble, la MSH Dijon/RNMSH und l'ENTPE",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "Mir@bel ist eine französische Rechercheplattform für wissenschaftliche elektronische Zeitschriften.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig. ",
       "link": "https://reseau-mirabel.info/"
     },
     {
       "shortName": "NatStat",
       "name": "Nationaler Statistikserver (NatStat)",
       "provider": "hebis",
-      "numberProcesses": 18,
-      "description":"Mit dem Statistikserver werden die beteiligten Einrichtungen beim Prozess der Lizenzierung und Nutzung von National-, Allianz- und Konsortiallizenzen durch die zentrale Bereitstellung von Nutzungsdaten unterstützt.",
+      "numberProcesses": 17,
+      "description": "Mit dem Statistikserver werden die beteiligten Einrichtungen beim Prozess der Lizenzierung und Nutzung von National-, Allianz- und Konsortiallizenzen durch die zentrale Bereitstellung von Nutzungsdaten unterstützt.\n\nStand der letzten Datenerhebung: 09/2023",
       "link": "https://statistik.hebis.de"
     },
     {
       "shortName": "oa.finder",
       "name": "oa.finder – Recherchetool für wissenschaftliche Publikationsorgane",
-      "provider": "Universitätsbibliothek Bielefeld",
+      "provider": "open-access.network, Universitätsbibliothek Bielefeld",
       "numberProcesses": 15,
       "description": "Mit dem oa.finder recherchieren Forschende das passende Publikationsorgan für ihren wissenschaftlichen Text – egal ob Artikel oder Buch. Der oa.finder enthält Informationen zu rund 57.000 internationalen Zeitschriften, filterbar nach Open-Access-Status, Impact, Fachgebiet oder Höhe der Publikationsgebühren (Article Processing Charges – APCs). Für Buchpublikationen finden Forschende Angaben zu derzeit 85 Wissenschaftsverlagen in Deutschland, Österreich und der Schweiz, die Open-Access-Bücher herstellen und verbreiten. Recherchieren nach Programmprofil, Publikationstyp oder Publikationskosten (Book Processing Charges – BPCs) sind möglich. Außerdem gibt es verlinkte Übersichten zu Open Access an 700 Wissenschaftseinrichtung sowie Informationen über Transformationsverträge und Publikationsfonds.",
       "link": "https://finder.open-access.network/"
@@ -594,23 +651,39 @@
       "name": "Open Access Monitor",
       "provider": "Forschungszentrums Jülich",
       "numberProcesses": 15,
-      "description": "Mit dem Open Access Monitor wird ein Tool für Datenanalysen zum Publikationsaufkommen deutscher wissenschaftlicher Einrichtungen bereitgestellt, das Unterstützung bei der Transformation in den Open-Access bietet. Informationen aus bestehenden Datenquellen werden zusammengefasst, erweitert und offen nutzbar gemacht.",
+      "description": "Mit dem Open Access Monitor wird ein Tool für Datenanalysen zum Publikationsaufkommen deutscher wissenschaftlicher Einrichtungen bereitgestellt, das Unterstützung bei der Transformation in den Open-Access bietet. Informationen aus bestehenden Datenquellen werden zusammengefasst, erweitert und offen nutzbar gemacht.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://open-access-monitor.de/"
+    },
+    {
+      "shortName": "OERSI",
+      "name": "OER Search Index",
+      "provider": "Leibniz-Informationszentrum Technik und Naturwissenschaften (TIB), Hochschulbibliothekszentrum des Landes Nordrhein-Westfalen (hbz)",
+      "description": "OERSI, der Open Educational Resources Search Index, ist eine Suchmaschine für offene Bildungsmaterialien in der Hochschulbildung, die seit 2020 gemeinsam vom Hochschulbibliothekszentrum des Landes Nordrhein-Westfalen (hbz) und der Technischen Informationsbibliothek (TIB) angeboten wird.\n\nStand der letzten Datenerhebung: 03/2026",
+      "link": "https://oersi.org",
+      "numberProcesses": 15
     },
     {
       "shortName": "Online-Fernleihe (hbz)",
       "name": "Online-Fernleihe des hbz",
       "provider": "hbz",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.hbz-nrw.de/produkte/fernleihe"
     },
     {
+      "shortName": "Open Library",
+      "name": "Open Library",
+      "provider": "Internet Archive",
+      "description": "Open Library ist ein universeller Katalog für Buchmetadaten, der vom Internet Archive, einer gemeinnützigen Bibliothek im US-Bundesstaat Kalifornien, betrieben wird.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
+      "link": "https://openlibrary.org/",
+      "numberProcesses": 15
+    },
+    {
       "shortName": "Open policy finder",
-      "name": "Jisc Open policy finder",
+      "name": "Open policy finder",
       "provider": "JISC",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://openpolicyfinder.jisc.ac.uk/"
     },
     {
@@ -618,7 +691,7 @@
       "name": "OpenAlex: The open catalog to the global research system",
       "provider": "OurResearch",
       "numberProcesses": 15,
-      "description": "OpenAlex enthält die Metadaten von wissenschaftlichen Publikationen, Zeitschriften, Autoren und Institutionen und arbeitet nach den Prinzipien von Open Data. OpenAlex wurde am 3. Januar 2022 gestartet und bietet eine Alternative zu kommerziellen Datenbanken wie Scopus oder Web of Science.",
+      "description": "OpenAlex enthält die Metadaten von wissenschaftlichen Publikationen, Zeitschriften, Autoren und Institutionen und arbeitet nach den Prinzipien von Open Data. OpenAlex wurde am 3. Januar 2022 gestartet und bietet eine Alternative zu kommerziellen Datenbanken wie Scopus oder Web of Science.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://openalex.org/"
     },
     {
@@ -626,7 +699,7 @@
       "name": "OpenAPC",
       "provider": "Universitätsbibliothek Bielefeld",
       "numberProcesses": 15,
-      "description": "OpenAPC sammelt und kuratiert Daten zum kostenpflichtigen Open-Access-Publizieren und veröffentlicht diese unter einer freien Lizenz (Open Data). Die Kostendaten werden von teilnehmenden Einrichtungen oder Aggregatoren weltweit auf freiwilliger Basis zur Verfügung gestellt. Gesammelt werden Kosten zum OA-Publizieren von Zeitschriftenartikeln (APCs), Büchern/Monographien (BPCs) sowie zu OA-Transformationsverträgen.",
+      "description": "OpenAPC sammelt und kuratiert Daten zum kostenpflichtigen Open-Access-Publizieren und veröffentlicht diese unter einer freien Lizenz (Open Data). Die Kostendaten werden von teilnehmenden Einrichtungen oder Aggregatoren weltweit auf freiwilliger Basis zur Verfügung gestellt. Gesammelt werden Kosten zum OA-Publizieren von Zeitschriftenartikeln (APCs), Büchern/Monographien (BPCs) sowie zu OA-Transformationsverträgen.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.openapc.net/"
     },
     {
@@ -634,7 +707,7 @@
       "name": "OpenAPC-Treemaps",
       "provider": "Universitätsbibliothek Bielefeld",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "OpenAPC-Treemaps veranschaulicht Kostendaten zu Open-Access-Zeitschriftenartikeln (APCs).\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://treemaps.openapc.net/apcdata/openapc/"
     },
     {
@@ -642,14 +715,23 @@
       "name": "Primo Discovery Service der SGBN",
       "provider": "ExLibris, SGBN",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor."
+      "description": "Das Suchmaschinenprodukt Primo der Firma Ex Libris findet in Österreich großflächigen Einsatz und wird seit 2009 produktiv, mit stetig erweitertem Leistungs- und Funktionsumfang sowie wachsendem Datenbestand von immer mehr Institutionen eingesetzt. Technische und organisatorische Grundlage aller Primo-Sucheinstiege ist eine konsortiale Primo-Instanz, angesiedelt an der OBVSG.\n\nStand der letzten Datenerhebung: 06/2024",
+      "link": "https://www.obvsg.at/services/primo/primo-im-obv"
+    },
+    {
+      "shortName": "PUBLISSO",
+      "name": "PUBLISSO",
+      "provider": "ZB MED – Informationszentrum Lebenswissenschaften",
+      "description": "PUBLISSO ist das Open-Access-Publikationsportal für die Lebens­wissen­schaften von ZB MED, dem Infrastruktur- und Forschungszentrum für lebenswissenschaftliche Informationen und Daten.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
+      "link": "https://www.publisso.de/",
+      "numberProcesses": 15
     },
     {
       "shortName": "ReDI",
       "name": "Regionale Datenbank-Information des Konsortiums Baden-Württemberg",
       "provider": "Universitätsbibliothek Freiburg",
       "numberProcesses": 15,
-      "description": "ReDI ist die gemeinsame Betriebseinrichtung des Konsortiums Baden-Württemberg, gefördert durch das Ministerium für Wissenschaft, Forschung und Kunst Baden-Württemberg",
+      "description": "ReDI ist die gemeinsame Betriebseinrichtung des Konsortiums Baden-Württemberg, gefördert durch das Ministerium für Wissenschaft, Forschung und Kunst Baden-Württemberg.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.ub.uni-freiburg.de/ihre-ub/bibliotheksprofil/struktur/dezernate/it/redi/"
     },
     {
@@ -657,7 +739,7 @@
       "name": "Research Organization Registry (ROR)",
       "provider": "ROR",
       "numberProcesses": 15,
-      "description": "ROR is a global, community-led registry of open persistent identifiers for research organizations",
+      "description": "ROR ist ein globales, Community betriebenes Register offener, dauerhafter Identifikatoren für Forschungseinrichtungen.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://ror.org/"
     },
     {
@@ -665,7 +747,7 @@
       "name": "Regensburger Verbundklassifikation (RVK)",
       "provider": "UB Regensburg",
       "numberProcesses": 15,
-      "description": "Die Regensburger Verbundklassifikation (RVK) ist eine Klassifikation zur systematischen Erschließung von Beständen an wissenschaftlichen Bibliotheken und Institutionen.",
+      "description": "Die Regensburger Verbundklassifikation (RVK) ist eine Klassifikation zur systematischen Erschließung von Beständen an wissenschaftlichen Bibliotheken und Institutionen.\n\nStand der letzten Datenerhebung: 11/2023",
       "link": "https://rvk.ur.de/"
     },
     {
@@ -673,7 +755,7 @@
       "name": "SFX (Linkresolver) im BVB",
       "provider": "ExLibris, BVB",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.bib-bvb.de/web/sfx/infos-fuer-bibliotheken"
     },
     {
@@ -681,7 +763,7 @@
       "name": "SFX-Service der VZG",
       "provider": "ExLibris",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.gbv.de/informationen/Verbundzentrale/serviceangebote/sfx"
     },
     {
@@ -689,7 +771,7 @@
       "name": "Subito - Dokumentlieferdienst",
       "provider": "subito. Dokumente aus Bibliotheken e.V.",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "subito ist ein Dokumentenlieferdienst wissenschaftlicher Bibliotheken.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.subito-doc.de/"
     },
     {
@@ -697,7 +779,7 @@
       "name": "Unpaywall",
       "provider": "OurResearch",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "Unpaywall ist ein Projekt von OurResearch, einer gemeinnützigen Organisation, die Tools entwickelt, um wissenschaftliche Forschung offener, vernetzter und wiederverwendbarer zu machen.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://unpaywall.org/"
     },
     {
@@ -705,7 +787,7 @@
       "name": "Verbundkatalog der OBV",
       "provider": "OBVSG",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "Stand der letzten Datenerhebung: 11/2023",
       "link": "https://www.obvsg.at/kataloge/verbundkataloge"
     },
     {
@@ -713,7 +795,7 @@
       "name": "Visual Library ",
       "provider": "OBVSG",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://www.obvsg.at/services/visual-library"
     },
     {
@@ -721,7 +803,7 @@
       "name": "we:kb",
       "provider": "hbz",
       "numberProcesses": 15,
-      "description": "Die we:kb ist eine offene Datenbank, die Informationen zu Anbietern, ihren Plattformen sowie den auf diesen Plattformen verfügbaren Inhalten enthält. Die Inhalte der we:kb werden durch die Anbieter selbst aktuell gehalten.",
+      "description": "Die we:kb ist eine offene Datenbank, die Informationen zu Anbietern, ihren Plattformen sowie den auf diesen Plattformen verfügbaren Inhalten enthält. Die Inhalte der we:kb werden durch die Anbieter selbst aktuell gehalten.\n\nZu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://wekb.hbz-nrw.de"
     },
     {
@@ -729,7 +811,7 @@
       "name": "WorldCat Knowledge Base",
       "provider": "OCLC",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://search.worldcat.org/"
     },
     {
@@ -737,19 +819,280 @@
       "name": "WorldCat-Registry",
       "provider": "OCLC",
       "numberProcesses": 15,
-      "description": "Zu diesem System liegen keine Detailinformationen vor.",
+      "description": "Zu diesem System liegen keine Detailinformationen von den Betreibern vor. Die Informationen und Prozesse sind ggf. nicht vollständig.",
       "link": "https://registry.worldcat.org/"
     },
     {
       "shortName": "ZDB",
       "name": "Zeitschriftendatenbank",
       "provider": "Staatsbibliothek zu Berlin, Deutsche Nationalbibliothek",
-      "numberProcesses": 42,
-      "description": "Die Metadaten der Zeitschriftendatenbank werden im Datenbanksystem der Deutschen Nationalbibliothek gehalten. Die Zeitschriftendatenbank (ZDB) dient im deutschsprachigen Raum als Erschließungs- und Nachweisinstrument für periodisch erscheinende – gedruckte oder elektronische – Publikationen. Neben Bibliotheken aus Deutschland und Österreich beteiligen sich auch Archive und Museen an der ZDB.",
+      "numberProcesses": 38,
+      "description": "Die Metadaten der Zeitschriftendatenbank werden im Datenbanksystem der Deutschen Nationalbibliothek gehalten. Die Zeitschriftendatenbank (ZDB) dient im deutschsprachigen Raum als Erschließungs- und Nachweisinstrument für periodisch erscheinende – gedruckte oder elektronische – Publikationen. Neben Bibliotheken aus Deutschland und Österreich beteiligen sich auch Archive und Museen an der ZDB.\n\nStand der letzten Datenerhebung: 04/2026",
       "link": "https://zeitschriftendatenbank.de "
     }
   ],
   "dataExchange": [
+    {
+      "source": "Alma Community Zone",
+      "target": "hbz-Verbundkatalog",
+      "processes": [
+        {
+          "name": "Publishing der Metadaten aus der Alma CZ des hbz",
+          "description": "Lieferung aller Metadaten aus der Alma CZ des hbz",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Täglich"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "ID eines Bibliothekssystems",
+              "Weitere"
+            ],
+            "involvedSystems": [
+              "Alma Community Zone",
+              "hbz-Verbundkatalog"
+            ],
+            "dataType": [
+              "Bibliographische Daten",
+              "Lizenzinformationen: Lizenzzeitraum",
+              "Lizenzinformationen: Lizenzbedingungen",
+              "OA-Informationen: freie Zugänglichkeit"
+            ],
+            "resourceType": [
+              "E-Zeitschriften",
+              "E-Books"
+            ],
+            "transmissionType": [
+              "FileShare/FTP/SFTP"
+            ],
+            "transmissionFormat": [
+              "Proprietäres XML",
+              "MARC 21 (beliebige Variante)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "Alma Network Zone (hbz)",
+      "target": "DigiBib-IntrOX",
+      "processes": [
+        {
+          "name": "Publishing für DigiBib IntrOX",
+          "description": "Bereitstellung von Daten zur Einspielung in die lokalen DigiBib IntrOX-Discoveries der Bibliotheken",
+          "mass": 1,
+          "link": "https://www.hbz-nrw.de/de/digibib-introx/",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Täglich"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "ISSN",
+              "ISBN",
+              "ZDB-ID",
+              "DOI",
+              "URN/Handle",
+              "Sigel/ISIL",
+              "ID eines Bibliothekssystems",
+              "CKB-ID",
+              "OCLC Number",
+              "EKI"
+            ],
+            "involvedSystems": [
+              "DigiBib-IntrOX",
+              "Alma Network Zone (hbz)"
+            ],
+            "dataType": [
+              "Bibliographische Daten",
+              "Bestandsinformationen: Zugangsinformationen",
+              "OA-Informationen: freie Zugänglichkeit"
+            ],
+            "resourceType": [
+              "E-Zeitschriften",
+              "E-Books",
+              "Datenbanken",
+              "Enthaltene Teilwerke",
+              "Weitere"
+            ],
+            "transmissionType": [
+              "FileShare/FTP/SFTP"
+            ],
+            "transmissionFormat": [
+              "Proprietäres XML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "Alma Network Zone (hbz)",
+      "target": "GVI",
+      "processes": [
+        {
+          "name": "Publishing für GVI",
+          "description": "Bereitstellung von Daten zur Einspielung in den GVI",
+          "mass": 1,
+          "link": "https://www.agv-gvi.de/",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Täglich"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "ISSN",
+              "ISBN",
+              "ZDB-ID",
+              "DOI",
+              "URN/Handle",
+              "Sigel/ISIL",
+              "ID eines Bibliothekssystems",
+              "CKB-ID",
+              "OCLC Number",
+              "EKI",
+              "Weitere"
+            ],
+            "involvedSystems": [
+              "Alma Network Zone (hbz)",
+              "GVI"
+            ],
+            "dataType": [
+              "Bibliographische Daten",
+              "Bestandsinformationen: Zugangsinformationen",
+              "Bestandsinformationen: Fernleihinformationen",
+              "OA-Informationen: freie Zugänglichkeit"
+            ],
+            "resourceType": [
+              "E-Zeitschriften",
+              "E-Books",
+              "Datenbanken",
+              "Enthaltene Teilwerke",
+              "Weitere"
+            ],
+            "transmissionType": [
+              "FileShare/FTP/SFTP"
+            ],
+            "transmissionFormat": [
+              "Proprietäres XML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "Alma Network Zone (hbz)",
+      "target": "hbz-Verbundkatalog",
+      "processes": [
+        {
+          "name": "Publishing der Metadaten aus der Alma NZ des hbz",
+          "description": "Lieferung aller Metadaten aus der Alma NZ des hbz",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Täglich"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "ID eines Bibliothekssystems"
+            ],
+            "involvedSystems": [
+              "Alma Network Zone (hbz)",
+              "hbz-Verbundkatalog"
+            ],
+            "dataType": [
+              "Bibliographische Daten",
+              "Bestandsinformationen: Zugangsinformationen",
+              "Lizenzinformationen: Lizenzzeitraum",
+              "Lizenzinformationen: Lizenzbedingungen",
+              "OA-Informationen: freie Zugänglichkeit"
+            ],
+            "resourceType": [
+              "E-Zeitschriften",
+              "E-Books",
+              "Enthaltene Teilwerke",
+              "Weitere"
+            ],
+            "transmissionType": [
+              "FileShare/FTP/SFTP"
+            ],
+            "transmissionFormat": [
+              "Proprietäres XML",
+              "MARC 21 (beliebige Variante)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "Alma Network Zone (hbz)",
+      "target": "lobid",
+      "processes": [
+        {
+          "name": "Publishing für lobid-resources",
+          "description": "Bereitstellung von Daten zur Einspielung in lobid-resources",
+          "mass": 1,
+          "link": "https://www.hbz-nrw.de/de/lobid-resources/",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Täglich"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "ISSN",
+              "ISBN",
+              "ZDB-ID",
+              "DOI",
+              "URN/Handle",
+              "Sigel/ISIL",
+              "ID eines Bibliothekssystems",
+              "CKB-ID",
+              "OCLC Number",
+              "EKI"
+            ],
+            "involvedSystems": [
+              "Alma Network Zone (hbz)",
+              "lobid"
+            ],
+            "dataType": [
+              "Bibliographische Daten",
+              "Bestandsinformationen: Zugangsinformationen",
+              "OA-Informationen: freie Zugänglichkeit"
+            ],
+            "resourceType": [
+              "E-Zeitschriften",
+              "E-Books",
+              "Datenbanken",
+              "Enthaltene Teilwerke",
+              "Weitere"
+            ],
+            "transmissionType": [
+              "FileShare/FTP/SFTP"
+            ],
+            "transmissionFormat": [
+              "Proprietäres XML"
+            ]
+          }
+        }
+      ]
+    },
     {
       "source": "Alma Network Zone (OBV)",
       "target": "Verbundkatalog des OBV",
@@ -799,7 +1142,117 @@
       ]
     },
     {
-      "source": "Anbieter",
+      "source": "Anbieter-Datenbanken",
+      "target": "Alma Network Zone (hbz)",
+      "processes": [
+        {
+          "name": "Datenimport E-Book-Pakete von kommerziellen Anbietern",
+          "description": "Regelmäßiger Datenimport der E-Book-Metadaten inklusive Bildung von Bestandsangaben (Portfolios) von AVA, Bloomsbury, De Gruyter, Herdt, Preselect, Springer, Statista, Thieme",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Monatlich",
+              "Halbjährlich",
+              "Vierteljährlich"
+            ],
+            "automation": [
+              "Teilautomatisiert"
+            ],
+            "identifier": [
+              "ID des Anbieters/Verlags"
+            ],
+            "involvedSystems": [
+              "Anbieter-Datenbanken",
+              "Alma Network Zone (hbz)"
+            ],
+            "dataType": [
+              "Bibliographische Daten"
+            ],
+            "resourceType": [
+              "E-Books"
+            ],
+            "transmissionType": [
+              "FileShare/FTP/SFTP"
+            ],
+            "transmissionFormat": [
+              "MARC 21 (beliebige Variante)"
+            ]
+          }
+        },
+        {
+          "name": "Datenimporte Visual Library",
+          "description": "Bereitstellung von Hochschulschriften und Digitalisaten von den Schriftenservern der Bibliotheken, die von Semantics zum Import in die Alma NZ bereitgestellt werden,  inklusive Bildung von Bestandsangaben (Portfolios).\n\nStand: 02.04.2026",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Täglich"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "ID eines Bibliothekssystems"
+            ],
+            "involvedSystems": [
+              "Alma Network Zone (hbz)",
+              "Anbieter-Datenbanken"
+            ],
+            "dataType": [
+              "Bibliographische Daten"
+            ],
+            "resourceType": [
+              "E-Books"
+            ],
+            "transmissionType": [
+              "OAI-PMH"
+            ],
+            "transmissionFormat": [
+              "MARC 21 (beliebige Variante)"
+            ]
+          }
+        },
+        {
+          "name": "De Gruyter Open Access Bücher",
+          "description": "manuelle Erfassung der Titeldaten plus regelmäßige Bildung von Bestandsangaben (Portfolios)",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Monatlich"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "ID eines Bibliothekssystems"
+            ],
+            "involvedSystems": [
+              "Alma Network Zone (hbz)",
+              "Anbieter-Datenbanken"
+            ],
+            "dataType": [
+              "Bestandsinformationen: Zugangsinformationen"
+            ],
+            "resourceType": [
+              "E-Books"
+            ],
+            "transmissionType": [
+              "Weitere"
+            ],
+            "transmissionFormat": [
+              "Weitere"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "Anbieter-Datenbanken",
       "target": "Alma Network Zone (Swisscovery)",
       "processes": [
         {
@@ -823,7 +1276,7 @@
               "OA-Informationen: freie Zugänglichkeit"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "Alma Network Zone (Swisscovery)"
             ],
             "identifier": [
@@ -861,7 +1314,7 @@
               "Paketinformationen: Titellisten"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "Alma Network Zone (Swisscovery)"
             ],
             "identifier": [
@@ -881,7 +1334,7 @@
       ]
     },
     {
-      "source": "Anbieter",
+      "source": "Anbieter-Datenbanken",
       "target": "B3Kat",
       "processes": [
         {
@@ -905,7 +1358,7 @@
               "OA-Informationen: freie Zugänglichkeit"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "B3Kat"
             ],
             "identifier": [
@@ -928,7 +1381,7 @@
       ]
     },
     {
-      "source": "Anbieter",
+      "source": "Anbieter-Datenbanken",
       "target": "EZB",
       "processes": [
         {
@@ -952,7 +1405,7 @@
               "Lizenzinformationen: Lizenzzeitraum"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "EZB"
             ],
             "identifier": [
@@ -973,7 +1426,7 @@
       ]
     },
     {
-      "source": "Anbieter",
+      "source": "Anbieter-Datenbanken",
       "target": "FIDELIO",
       "processes": [
         {
@@ -1002,7 +1455,7 @@
               "Teilnehmerdaten: beschreibende Daten"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "FIDELIO"
             ],
             "identifier": [
@@ -1032,7 +1485,7 @@
       ]
     },
     {
-      "source": "Anbieter",
+      "source": "Anbieter-Datenbanken",
       "target": "FOLIO (BVB)",
       "processes": [
         {
@@ -1053,7 +1506,7 @@
               "Nutzungsstatistiken"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "FOLIO (BVB)"
             ],
             "identifier": [
@@ -1091,7 +1544,7 @@
               "Nutzungsstatistiken"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "FOLIO (BVB)"
             ],
             "identifier": [
@@ -1132,7 +1585,7 @@
               "Nutzungsstatistiken"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "FOLIO (BVB)"
             ],
             "identifier": [
@@ -1154,7 +1607,7 @@
       ]
     },
     {
-      "source": "Anbieter",
+      "source": "Anbieter-Datenbanken",
       "target": "GOKB",
       "processes": [
         {
@@ -1170,7 +1623,7 @@
               "Datenbanken"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "GOKB"
             ],
             "dataType": [
@@ -1204,7 +1657,7 @@
       ]
     },
     {
-      "source": "Anbieter",
+      "source": "Anbieter-Datenbanken",
       "target": "hebis Zentralsystem",
       "processes": [
         {
@@ -1224,7 +1677,7 @@
               "OA-Informationen: freie Zugänglichkeit"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "hebis Zentralsystem"
             ],
             "identifier": [
@@ -1245,7 +1698,7 @@
       ]
     },
     {
-      "source": "Anbieter",
+      "source": "Anbieter-Datenbanken",
       "target": "JOIN2",
       "processes": [
         {
@@ -1272,7 +1725,7 @@
               "ID des Anbieters/Verlags"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "JOIN2"
             ],
             "dataType": [
@@ -1295,7 +1748,7 @@
       ]
     },
     {
-      "source": "Anbieter",
+      "source": "Anbieter-Datenbanken",
       "target": "K10plus E-Book-Pool",
       "processes": [
         {
@@ -1321,7 +1774,7 @@
               "Weitere Infos: Paketinformationen (Zugehörigkeit eines Titels zu einem Paket) werden von einigen Anbietern mitgeliefert, von einigen leider nicht. In diesen Fällen werden die Daten entweder ohne Paketsigel eingespielt oder anhand von anderweitig vorliegenden Titellisten per Programm während der Konvertierung oder direkt im E-Book-Pool ergänzt"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "K10plus E-Book-Pool"
             ],
             "identifier": [
@@ -1357,7 +1810,7 @@
       ]
     },
     {
-      "source": "Anbieter",
+      "source": "Anbieter-Datenbanken",
       "target": "lokale OPAC-Indexe (BVB)",
       "processes": [
         {
@@ -1378,7 +1831,7 @@
               "OA-Informationen: freie Zugänglichkeit"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "lokale OPAC-Indexe (BVB)"
             ],
             "identifier": [
@@ -1402,7 +1855,7 @@
       ]
     },
     {
-      "source": "Anbieter",
+      "source": "Anbieter-Datenbanken",
       "target": "NatStat",
       "processes": [
         {
@@ -1426,7 +1879,7 @@
               "OA-Informationen: freie Zugänglichkeit"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "NatStat"
             ],
             "identifier": [
@@ -1468,7 +1921,7 @@
               "OA-Informationen: freie Zugänglichkeit"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "NatStat"
             ],
             "identifier": [
@@ -1491,7 +1944,63 @@
       ]
     },
     {
-      "source": "Anbieter",
+      "source": "Anbieter-Datenbanken",
+      "target": "OERSI",
+      "processes": [
+        {
+          "name": "Import Metadaten",
+          "description": "OERSI sammelt Metadaten von vielen verschiedenen Datengebern ein, momentan sind es ca. 60 Quellen. Eine stets aktuelle Liste der aktuell eingebundenen Quellen gibt es unter https://oersi.org/pages/en/tags/activated/ . Die Anbindung erfolgt mittels Python- oder Metafacture-Skripten.",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Täglich"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "DOI",
+              "URN/Handle",
+              "ROR-ID",
+              "ORCID"
+            ],
+            "involvedSystems": [
+              "Anbieter-Datenbanken",
+              "OERSI"
+            ],
+            "dataType": [
+              "Bibliographische Daten",
+              "Bestandsinformationen: Zugangsinformationen",
+              "Lizenzinformationen: Lizenzbedingungen",
+              "OA-Informationen: freie Zugänglichkeit"
+            ],
+            "resourceType": [
+              "E-Books",
+              "Enthaltene Teilwerke",
+              "Weitere"
+            ],
+            "transmissionType": [
+              "HTTPS",
+              "OAI-PMH",
+              "REST",
+              "Weitere"
+            ],
+            "transmissionFormat": [
+              "Proprietäres XML",
+              "Proprietäres JSON",
+              "MARC 21 (beliebige Variante)",
+              "RDF (beliebige Variante)",
+              "Dublin Core",
+              "Weitere"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "Anbieter-Datenbanken",
       "target": "Verbundkatalog des OBV",
       "processes": [
         {
@@ -1518,7 +2027,7 @@
               "OA-Informationen: freie Zugänglichkeit"
             ],
             "involvedSystems": [
-              "Anbieter",
+              "Anbieter-Datenbanken",
               "Verbundkatalog des OBV"
             ],
             "identifier": [
@@ -1744,7 +2253,47 @@
       ]
     },
     {
-      "source": "Crossref",
+      "source": "buchhandel.de",
+      "target": "hbz-Verbundkatalog",
+      "processes": [
+        {
+          "name": "Abfrage von Cover-Abbildungen",
+          "description": "Abfrage von Cover-Abbildungen",
+          "mass": 1,
+          "link": "https://buchhandel.de/",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Echtzeit"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "ISBN"
+            ],
+            "involvedSystems": [
+              "hbz-Verbundkatalog",
+              "buchhandel.de"
+            ],
+            "dataType": [
+              "Weitere"
+            ],
+            "resourceType": [
+              "Weitere"
+            ],
+            "transmissionType": [
+              "HTTPS"
+            ],
+            "transmissionFormat": [
+              "Weitere"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "Crossref Services",
       "target": "EZB",
       "processes": [
         {
@@ -1764,7 +2313,7 @@
               "Bestandsinformationen: Zugangsinformationen"
             ],
             "involvedSystems": [
-              "Crossref",
+              "Crossref Services",
               "EZB"
             ],
             "identifier": [
@@ -1785,7 +2334,7 @@
       ]
     },
     {
-      "source": "Crossref",
+      "source": "Crossref Services",
       "target": "JOIN2",
       "processes": [
         {
@@ -1808,7 +2357,7 @@
               "URN/Handle"
             ],
             "involvedSystems": [
-              "Crossref",
+              "Crossref Services",
               "JOIN2"
             ],
             "dataType": [
@@ -1830,7 +2379,7 @@
       ]
     },
     {
-      "source": "Crossref",
+      "source": "Crossref Services",
       "target": "OpenAPC",
       "processes": [
         {
@@ -1851,7 +2400,7 @@
               "Lizenzinformationen: Lizenzbedingungen"
             ],
             "involvedSystems": [
-              "Crossref",
+              "Crossref Services",
               "OpenAPC"
             ],
             "identifier": [
@@ -1911,6 +2460,48 @@
             ],
             "transmissionFormat": [
               "Proprietäres XML"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "Datenportal der EZB",
+      "target": "OpenAPC",
+      "processes": [
+        {
+          "name": "Wechselkursbestimmung",
+          "mass": "5",
+          "properties": {
+            "frequency": [
+              "Weitere",
+              "Weitere Infos: Bei Datenanreicherungen, sofern Konvertierung erforderlich"
+            ],
+            "resourceType": [
+              "Weitere",
+              "Weitere Infos: Publikationskosten"
+            ],
+            "dataType": [
+              "Weitere",
+              "Weitere Infos: Wechselkurse"
+            ],
+            "involvedSystems": [
+              "Datenportal der EZB",
+              "OpenAPC"
+            ],
+            "identifier": [
+              "Weitere",
+              "Weitere Infos: Kalenderdaten/Zeiträume"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "transmissionType": [
+              "REST"
+            ],
+            "transmissionFormat": [
+              "Weitere",
+              "Weitere Infos: CSV-Tabelle"
             ]
           }
         }
@@ -2130,6 +2721,46 @@
     },
     {
       "source": "DB DNB-Metadaten",
+      "target": "hbz-Verbundkatalog",
+      "processes": [
+        {
+          "name": "Abfrage von Verlagstexten",
+          "description": "Abfrage von Verlagstexten vom Server der DNB",
+          "mass": 1,
+          "link": "https://www.dnb.de/DE/Professionell/Metadatendienste/Kataloganreicherung/Inhaltstexte/inhaltstexte_node.html",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Echtzeit"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "ISBN"
+            ],
+            "involvedSystems": [
+              "DB DNB-Metadaten",
+              "hbz-Verbundkatalog"
+            ],
+            "dataType": [
+              "Weitere"
+            ],
+            "resourceType": [
+              "Weitere"
+            ],
+            "transmissionType": [
+              "HTTPS"
+            ],
+            "transmissionFormat": [
+              "Weitere"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "DB DNB-Metadaten",
       "target": "hebis Zentralsystem",
       "processes": [
         {
@@ -2284,6 +2915,46 @@
             ],
             "transmissionFormat": [
               "Weitere"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "DFG-Nationallizenzen (NL CMS)",
+      "target": "Alma Network Zone (hbz)",
+      "processes": [
+        {
+          "name": "Datenimport Nationallizenz-Pakete",
+          "description": "Überwiegend einmaliger Datenimport der E-Book-Metadaten inklusive Bildung von Bestandsangaben (Portfolios), sowie Paketeinspielung jeweils auf Anforderung.",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Unregelmäßig"
+            ],
+            "automation": [
+              "Teilautomatisiert"
+            ],
+            "identifier": [
+              "ID des Anbieters/Verlags"
+            ],
+            "involvedSystems": [
+              "Alma Network Zone (hbz)",
+              "DFG-Nationallizenzen (NL CMS)"
+            ],
+            "dataType": [
+              "Bibliographische Daten"
+            ],
+            "resourceType": [
+              "E-Books"
+            ],
+            "transmissionType": [
+              "FileShare/FTP/SFTP"
+            ],
+            "transmissionFormat": [
+              "MARC 21 (beliebige Variante)"
             ]
           }
         }
@@ -2651,42 +3322,41 @@
       ]
     },
     {
-      "source": "Europäische Zentralbank",
-      "target": "OpenAPC",
+      "source": "edoweb",
+      "target": "Alma Network Zone (hbz)",
       "processes": [
         {
-          "name": "Wechselkursbestimmung",
-          "mass": "5",
+          "name": "Datenimport Langzeitarchivierung",
+          "description": "Ergänzung von URLs in bibliografischen Daten: Digitalisate; Open Access Publikationen wie elektronische Dissertationen und Habilitationen, Monografien, Kongressveröffentlichungen und weitere graue Literatur; Archivierung landeskundlicher Webseiten, Zeitschriften und Monografien. ",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
           "properties": {
             "frequency": [
-              "Weitere",
-              "Weitere Infos: Bei Datenanreicherungen, sofern Konvertierung erforderlich"
-            ],
-            "resourceType": [
-              "Weitere",
-              "Weitere Infos: Publikationskosten"
-            ],
-            "dataType": [
-              "Weitere",
-              "Weitere Infos: Wechselkurse"
-            ],
-            "involvedSystems": [
-              "Europäische Zentralbank",
-              "OpenAPC"
-            ],
-            "identifier": [
-              "Weitere",
-              "Weitere Infos: Kalenderdaten/Zeiträume"
+              "Stündlich"
             ],
             "automation": [
               "Automatisiert"
             ],
+            "identifier": [
+              "ID eines Bibliothekssystems"
+            ],
+            "involvedSystems": [
+              "edoweb",
+              "Alma Network Zone (hbz)"
+            ],
+            "dataType": [
+              "Bibliographische Daten"
+            ],
+            "resourceType": [
+              "E-Books",
+              "Weitere"
+            ],
             "transmissionType": [
-              "REST"
+              "OAI-PMH"
             ],
             "transmissionFormat": [
-              "Weitere",
-              "Weitere Infos: CSV-Tabelle"
+              "MARC 21 (beliebige Variante)"
             ]
           }
         }
@@ -3203,11 +3873,11 @@
     },
     {
       "source": "EZB",
-      "target": "hbz-Verbunddatenbank",
+      "target": "hbz-Verbundkatalog",
       "processes": [
         {
-          "name": "EZB-Änderungslieferung an hbz",
-          "description": "Über diesen Dienst werden die geänderten Bestandsinformationen zu Zeitschriften zu bestimmten EZB-Teilnehmereinrichtungen bezogen.",
+          "name": "Abfrage wissenschaftlicher elektronischer Zeitschriften",
+          "description": "Über diesen Dienst werden die geänderten Bestandsinformationen zu wissenschaftlichen elektronischen Zeitschriften abgefragt.",
           "mass": "5",
           "properties": {
             "frequency": [
@@ -3220,30 +3890,32 @@
               "Bibliographische Daten",
               "Bestandsinformationen: Zugangsinformationen",
               "Lizenzinformationen: Lizenzzeitraum",
-              "Lizenzinformationen: Lizenzbedingungen"
+              "Lizenzinformationen: Lizenzbedingungen",
+              "OA-Informationen: freie Zugänglichkeit",
+              "OA-Informationen: OA-Publikationskonditionen",
+              "OA-Informationen: OA-Rechte zur Zweitveröffentlichung"
             ],
             "involvedSystems": [
               "EZB",
-              "hbz-Verbunddatenbank"
+              "hbz-Verbundkatalog"
             ],
             "identifier": [
-              "ISSN",
-              "ZDB-ID",
               "EZB-BIBID",
-              "Weitere",
               "Weitere Infos: ZDBID, EZB-BIBID"
             ],
             "automation": [
               "Automatisiert"
             ],
             "transmissionType": [
-              "FileShare/FTP/SFTP"
+              "HTTPS"
             ],
             "transmissionFormat": [
-              "Weitere",
-              "Weitere Infos: EZB-Ausgabeformat als Liste"
+              "Weitere Infos: EZB-Ausgabeformat als Liste",
+              "Proprietäres XML"
             ]
-          }
+          },
+          "link": "https://www.ur-library.de/ezb-oai-pmh/",
+          "interfaceLink": "https://ezb-oai.ur.de/zdb/oai2.php"
         }
       ]
     },
@@ -4673,155 +5345,6 @@
       ]
     },
     {
-      "source": "hbz-Verbunddatenbank",
-      "target": "B3Kat",
-      "processes": [
-        {
-          "name": "MARC-Importe über SRU-/Z39.50-Schnittstelle",
-          "description": "Schnittstelle zur Datenübernahme bei der manuellen Katalogisierung in Aleph",
-          "mass": "5",
-          "properties": {
-            "frequency": [
-              "Weitere",
-              "Weitere Infos: nach Bedarf"
-            ],
-            "resourceType": [
-              "E-Zeitschriften",
-              "E-Books",
-              "Datenbanken",
-              "Enthaltene Teilwerke"
-            ],
-            "dataType": [
-              "Bibliographische Daten",
-              "OA-Informationen: freie Zugänglichkeit"
-            ],
-            "involvedSystems": [
-              "hbz-Verbunddatenbank",
-              "B3Kat"
-            ],
-            "identifier": [
-              "Weitere",
-              "Weitere Infos: Manuelle Übernahme durch Katalogisierung"
-            ],
-            "automation": [
-              "Teilautomatisiert",
-              "Manuell"
-            ],
-            "transmissionType": [
-              "Z39.50",
-              "SRU"
-            ],
-            "transmissionFormat": [
-              "MARC 21 (beliebige Variante)",
-              "RDF (beliebige Variante)"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "source": "hbz-Verbunddatenbank",
-      "target": "GVI",
-      "processes": [
-        {
-          "name": "Gemeinsamer Verbündeindex (GVI)",
-          "description": "Daten der deutschen Verbünde, ÖBV und ZDB werden zusammengeführt und als SOLR-Index zur Verfügung gestellt.",
-          "mass": "5",
-          "properties": {
-            "frequency": [
-              "Echtzeit"
-            ],
-            "resourceType": [
-              "E-Zeitschriften",
-              "E-Books",
-              "Datenbanken",
-              "Enthaltene Teilwerke",
-              "Weitere",
-              "Weitere Infos: alle Materialien, die die Datenquellen liefern"
-            ],
-            "dataType": [
-              "Bibliographische Daten",
-              "Bestandsinformationen: Zugangsinformationen",
-              "Bestandsinformationen: Fernleihinformationen",
-              "OA-Informationen: freie Zugänglichkeit"
-            ],
-            "involvedSystems": [
-              "hbz-Verbunddatenbank",
-              "GVI"
-            ],
-            "identifier": [
-              "ISSN",
-              "ISBN",
-              "ZDB-ID",
-              "DOI",
-              "Weitere",
-              "Weitere Infos: Identifier werden zur Clusterung verwendet"
-            ],
-            "automation": [
-              "Automatisiert"
-            ],
-            "transmissionType": [
-              "REST"
-            ],
-            "transmissionFormat": [
-              "MARC 21 (beliebige Variante)",
-              "RDF (beliebige Variante)"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "source": "hbz-Verbunddatenbank",
-      "target": "WorldCat",
-      "processes": [
-        {
-          "name": "Nachweis der Verbunddatenbanken in WorldCat",
-          "description": "Die deutschen Verbunddatenbanken werden in den WorldCat geladen, dort enthaltene Nachweise von eMedien werden dann auch in WorldCat nachgewiesen.",
-          "mass": "5",
-          "properties": {
-            "frequency": [
-              "Wöchentlich",
-              "Täglich",
-              "Echtzeit",
-              "Weitere",
-              "Weitere Infos: Bei BVB wöchentlich"
-            ],
-            "resourceType": [
-              "E-Zeitschriften",
-              "E-Books",
-              "Datenbanken"
-            ],
-            "dataType": [
-              "Bibliographische Daten"
-            ],
-            "involvedSystems": [
-              "hbz-Verbunddatenbank",
-              "WorldCat"
-            ],
-            "identifier": [
-              "ISSN",
-              "ISBN",
-              "Weitere",
-              "Weitere Infos: OCN"
-            ],
-            "automation": [
-              "Automatisiert",
-              "Teilautomatisiert"
-            ],
-            "transmissionType": [
-              "FileShare/FTP/SFTP",
-              "Weitere"
-            ],
-            "transmissionFormat": [
-              "MARC 21 (beliebige Variante)",
-              "RDF (beliebige Variante)"
-            ]
-          }
-        }
-      ]
-    },
-    {
       "source": "hebis Zentralsystem",
       "target": "B3Kat",
       "processes": [
@@ -5501,7 +6024,7 @@
     },
     {
       "source": "K10plus",
-      "target": "LBS4 (GBV)",
+      "target": "LBS-Service (GBV/VZG)",
       "processes": [
         {
           "name": "LBS4-Import",
@@ -5520,7 +6043,7 @@
             ],
             "involvedSystems": [
               "K10plus",
-              "LBS4 (GBV)"
+              "LBS-Service (GBV/VZG)"
             ],
             "identifier": [],
             "automation": [
@@ -5638,6 +6161,49 @@
     },
     {
       "source": "K10plus E-Book-Pool",
+      "target": "Alma Network Zone (hbz)",
+      "processes": [
+        {
+          "name": "Datenimport  E-Book-Pakete aus K10plus",
+          "description": "Regelmäßiger Datenimport der E-Book-Metadaten inklusive Bildung von Bestandsangaben (Portfolios) Wiso-Net, World Bank Group / Open Knowledge Repository, IGI Global - Complete collections, Digital Concert Hall, SAP Espresso Tutorials - Digitale SAP-Bibliothek / Complete, Wiso-Vidies.",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Monatlich",
+              "Vierteljährlich",
+              "Halbjährlich",
+              "Jährlich"
+            ],
+            "automation": [
+              "Teilautomatisiert"
+            ],
+            "identifier": [
+              "ID des Anbieters/Verlags"
+            ],
+            "involvedSystems": [
+              "K10plus E-Book-Pool",
+              "Alma Network Zone (hbz)"
+            ],
+            "dataType": [
+              "Bibliographische Daten"
+            ],
+            "resourceType": [
+              "E-Books"
+            ],
+            "transmissionType": [
+              "OAI-PMH"
+            ],
+            "transmissionFormat": [
+              "MARC 21 (beliebige Variante)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "K10plus E-Book-Pool",
       "target": "B3Kat",
       "processes": [
         {
@@ -5668,63 +6234,6 @@
             "involvedSystems": [
               "K10plus E-Book-Pool",
               "B3Kat"
-            ],
-            "identifier": [
-              "ISBN",
-              "DOI",
-              "URN/Handle",
-              "Sigel/ISIL",
-              "Weitere",
-              "Weitere Infos: Primäre Anbieter-ID, URL"
-            ],
-            "automation": [
-              "Automatisiert"
-            ],
-            "transmissionType": [
-              "FileShare/FTP/SFTP",
-              "Weitere",
-              "Weitere Infos: Bereitstellung über Nextcloud incl. automatisierter E-Mail-Benachrichtigung, wenn Abzug bereitsteht."
-            ],
-            "transmissionFormat": [
-              "MARC 21 (beliebige Variante)",
-              "RDF (beliebige Variante)"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "source": "K10plus E-Book-Pool",
-      "target": "hbz-Verbunddatenbank",
-      "processes": [
-        {
-          "name": "MARC-Export E-Book-Pool",
-          "description": "Aus dem E-Book-Pool werden Paketweise (Identifikation durch Paketsigel und Lizenzjahr) bibliographische E-Book-Metadaten als MARC-Export zur Verfügung gestellt. Ausgelöst wird die Lieferung durch Metadatenbestellungen im EBM-Tool (https://www.ebmtool.de/).",
-          "mass": "5",
-          "link": "https://wiki.k10plus.de/display/K10PLUS/E-Book-Pool#EBookPool-MARC-ExportausdemE-Book-Pool",
-          "interfaceLink": "-",
-          "properties": {
-            "frequency": [
-              "Jährlich",
-              "Monatlich",
-              "Weitere",
-              "Weitere Infos: quartalsweise"
-            ],
-            "resourceType": [
-              "E-Books",
-              "Enthaltene Teilwerke"
-            ],
-            "dataType": [
-              "Bibliographische Daten",
-              "Bestandsinformationen: Zugangsinformationen",
-              "Paketinformationen: Titellisten",
-              "OA-Informationen: freie Zugänglichkeit",
-              "Weitere",
-              "Weitere Infos: Im K10plus/EBP wird das Prinzip der Plattform-spezifischen Aufnahme erfolgt. Dementsprechend ist in den Titelaufnahmen auch eine oder mehrere URL enthalten, die alle zur spezifischen Frontdoor des Anbieters führen"
-            ],
-            "involvedSystems": [
-              "K10plus E-Book-Pool",
-              "hbz-Verbunddatenbank"
             ],
             "identifier": [
               "ISBN",
@@ -5954,6 +6463,46 @@
             ],
             "transmissionFormat": [
               "PICA (beliebige Variante)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "lobid",
+      "target": "hbz-Verbundkatalog",
+      "processes": [
+        {
+          "name": "Abfrage von Normdaten der GND",
+          "description": "Abfrage von Normdaten der GND via lobid",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Echtzeit"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "GND-ID"
+            ],
+            "involvedSystems": [
+              "hbz-Verbundkatalog",
+              "lobid"
+            ],
+            "dataType": [
+              "Bibliographische Daten"
+            ],
+            "resourceType": [
+              "E-Books"
+            ],
+            "transmissionType": [
+              "HTTPS"
+            ],
+            "transmissionFormat": [
+              "Proprietäres JSON"
             ]
           }
         }
@@ -6257,6 +6806,81 @@
       ]
     },
     {
+      "source": "OERSI",
+      "target": "Alma Network Zone (hbz)",
+      "processes": [
+        {
+          "name": "Datenimport E-Book-Paket OERSI",
+          "description": "Regelmäßiger Datenimport der E-Book-Metadaten inklusive Bildung von Bestandsangaben (Portfolios)",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Wöchentlich"
+            ],
+            "automation": [],
+            "identifier": [
+              "ID eines Bibliothekssystems"
+            ],
+            "involvedSystems": [
+              "OERSI",
+              "Alma Network Zone (hbz)"
+            ],
+            "dataType": [
+              "Bibliographische Daten"
+            ],
+            "resourceType": [
+              "E-Books",
+              "Weitere"
+            ],
+            "transmissionType": [],
+            "transmissionFormat": []
+          }
+        }
+      ]
+    },
+    {
+      "source": "Open Library",
+      "target": "hbz-Verbundkatalog",
+      "processes": [
+        {
+          "name": "Abfrage von Cover-Abbildungen",
+          "description": "Abfrage von Cover-Abbildungen",
+          "mass": 1,
+          "link": "https://openlibrary.org/",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Echtzeit"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "ISBN"
+            ],
+            "involvedSystems": [
+              "Open Library",
+              "hbz-Verbundkatalog"
+            ],
+            "dataType": [
+              "Weitere"
+            ],
+            "resourceType": [
+              "Weitere"
+            ],
+            "transmissionType": [
+              "HTTPS"
+            ],
+            "transmissionFormat": [
+              "Weitere"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "source": "Open policy finder",
       "target": "EZB",
       "processes": [
@@ -6520,6 +7144,47 @@
       ]
     },
     {
+      "source": "PUBLISSO",
+      "target": "Alma Network Zone (hbz)",
+      "processes": [
+        {
+          "name": "Datenimport Langzeitarchivierung",
+          "description": "Ergänzung von URLs in bibliografischen Daten: Digitalisate; Open Access Publikationen wie elektronische Dissertationen und Habilitationen, Monografien, Kongressveröffentlichungen und weitere graue Literatur; Archivierung landeskundlicher Webseiten, Zeitschriften und Monografien. ",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Stündlich"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "ID eines Bibliothekssystems"
+            ],
+            "involvedSystems": [
+              "PUBLISSO",
+              "Alma Network Zone (hbz)"
+            ],
+            "dataType": [
+              "Bibliographische Daten"
+            ],
+            "resourceType": [
+              "E-Books",
+              "Weitere"
+            ],
+            "transmissionType": [
+              "OAI-PMH"
+            ],
+            "transmissionFormat": [
+              "MARC 21 (beliebige Variante)"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "source": "ROR",
       "target": "OpenAPC",
       "processes": [
@@ -6621,44 +7286,6 @@
             "involvedSystems": [
               "RVK",
               "B3Kat"
-            ],
-            "identifier": [
-              "Weitere",
-              "Weitere Infos: RVK-ID, Notation"
-            ],
-            "automation": [],
-            "transmissionType": [
-              "FileShare/FTP/SFTP"
-            ],
-            "transmissionFormat": [
-              "MARC 21 (beliebige Variante)",
-              "RDF (beliebige Variante)"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "source": "RVK",
-      "target": "hbz-Verbunddatenbank",
-      "processes": [
-        {
-          "name": "Bereitstellung von Gesamtabzug und Updates im RVK-Portal",
-          "description": "quartalsmäßige Bereitstellung der RVK durch UBR als Gesamtabzug und als Updatelieferungen in MARCXML. Die abnehmenden Systeme holen die Abzüge ab und speichern diese ein.",
-          "mass": "5",
-          "properties": {
-            "frequency": [
-              "Weitere",
-              "Weitere Infos: vierteljährlich"
-            ],
-            "resourceType": [],
-            "dataType": [
-              "Weitere",
-              "Weitere Infos: Sacherschließungsdaten: RVK Notationen mit IDs, Bennenung, Hierarchie, evtl. Bemerkungen, Verweisen, GND-IDs"
-            ],
-            "involvedSystems": [
-              "RVK",
-              "hbz-Verbunddatenbank"
             ],
             "identifier": [
               "Weitere",
@@ -6789,6 +7416,50 @@
             ],
             "transmissionFormat": [
               "proprietäres JSON"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "Unpaywall",
+      "target": "hbz-Verbundkatalog",
+      "processes": [
+        {
+          "name": "Abfrage von OA-Verfügbarkeit",
+          "description": "Abfrage nach Open-Access-Publikationen",
+          "mass": 1,
+          "link": "https://unpaywall.org/",
+          "interfaceLink": "https://unpaywall.org/products/api",
+          "properties": {
+            "frequency": [
+              "Echtzeit"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "DOI"
+            ],
+            "involvedSystems": [
+              "hbz-Verbundkatalog",
+              "Unpaywall"
+            ],
+            "dataType": [
+              "Bibliographische Daten",
+              "Bestandsinformationen: Zugangsinformationen",
+              "OA-Informationen: freie Zugänglichkeit"
+            ],
+            "resourceType": [
+              "E-Books",
+              "Enthaltene Teilwerke"
+            ],
+            "transmissionType": [
+              "HTTPS",
+              "REST"
+            ],
+            "transmissionFormat": [
+              "Proprietäres JSON"
             ]
           }
         }
@@ -6943,6 +7614,48 @@
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
               "RDF (beliebige Variante)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "we:kb",
+      "target": "Alma Network Zone (hbz)",
+      "processes": [
+        {
+          "name": "Datenimport E-Book-Pakete aus der we:kb",
+          "description": "Regelmäßiger Datenimport der E-Book-Metadaten inklusive Bildung von Bestandsangaben (Portfolios) von Narr Francke Attempto EBS, Wiley eBooks EBA, Meiner eLibrary EBS, Wolters Kluwer Online-Flat.",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Monatlich",
+              "Vierteljährlich",
+              "Halbjährlich"
+            ],
+            "automation": [
+              "Teilautomatisiert"
+            ],
+            "identifier": [
+              "ID des Anbieters/Verlags"
+            ],
+            "involvedSystems": [
+              "Alma Network Zone (hbz)",
+              "we:kb"
+            ],
+            "dataType": [
+              "Bibliographische Daten"
+            ],
+            "resourceType": [
+              "E-Books"
+            ],
+            "transmissionType": [
+              "HTTPS"
+            ],
+            "transmissionFormat": [
+              "KBART"
             ]
           }
         }
@@ -7137,6 +7850,83 @@
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
               "RDF (beliebige Variante)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "ZDB",
+      "target": "Alma Network Zone (hbz)",
+      "processes": [
+        {
+          "name": "Datenimport ZDB für Beck online - Hochschulmodul (Integrierende Ressourcen) (ZDB-18-BOH)",
+          "description": "Die ZDB-Beck-Titeldaten werden in der ZDB erfasst und importiert. Wöchentlich werden anhand einer Selektionsabfrage  Bildung von Bestandsangaben (Portfolios)",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Wöchentlich"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "ZDB-ID",
+              "Sigel/ISIL"
+            ],
+            "involvedSystems": [
+              "ZDB",
+              "Alma Network Zone (hbz)"
+            ],
+            "dataType": [
+              "Teilnehmerdaten: beschreibende Daten",
+              "Bibliographische Daten"
+            ],
+            "resourceType": [
+              "Weitere"
+            ],
+            "transmissionType": [
+              "OAI-PMH"
+            ],
+            "transmissionFormat": [
+              "MARC 21 (beliebige Variante)"
+            ]
+          }
+        },
+        {
+          "name": "Datenimport ZDB-Titeldaten",
+          "description": "Die Titeldaten werden in der ZDB erfasst und importiert.",
+          "mass": 1,
+          "link": "",
+          "interfaceLink": "",
+          "properties": {
+            "frequency": [
+              "Stündlich"
+            ],
+            "automation": [
+              "Automatisiert"
+            ],
+            "identifier": [
+              "ZDB-ID"
+            ],
+            "involvedSystems": [
+              "Alma Network Zone (hbz)",
+              "ZDB"
+            ],
+            "dataType": [
+              "Bibliographische Daten"
+            ],
+            "resourceType": [
+              "E-Zeitschriften",
+              "Datenbanken"
+            ],
+            "transmissionType": [
+              "OAI-PMH"
+            ],
+            "transmissionFormat": [
+              "MARC 21 (beliebige Variante)"
             ]
           }
         }
@@ -7723,289 +8513,6 @@
             ],
             "transmissionFormat": [
               "MARC 21 (beliebige Variante)",
-              "RDF (beliebige Variante)"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "source": "ZDB",
-      "target": "hbz-Verbunddatenbank",
-      "processes": [
-        {
-          "name": "ZDB-Bestands- und Lizenzdaten halbjährlichlicher Gesamtabzug ",
-          "description": "Neue, geänderte oder gelöschte ZDB-Bestandsdaten werden in die Verbundsysteme repliziert",
-          "mass": "5",
-          "link": "https://www.dnb.de/gesamtabzuege",
-          "interfaceLink": "https://data.dnb.de/ZDB/",
-          "properties": {
-            "frequency": [
-              "Weitere",
-              "Weitere Infos: halbjährlich"
-            ],
-            "resourceType": [
-              "E-Zeitschriften",
-              "Datenbanken"
-            ],
-            "dataType": [
-              "Bestandsinformationen: Zugangsinformationen",
-              "Bestandsinformationen: Fernleihinformationen",
-              "Lizenzinformationen: Lizenzzeitraum",
-              "Lizenzinformationen: Lizenzbedingungen",
-              "Weitere Infos: ngaben zu Lizenzbedingungen sind nur enthalten, wenn entsprechende Bibliothek diese in ZDB hinterlegt hat"
-            ],
-            "involvedSystems": [
-              "ZDB",
-              "hbz-Verbunddatenbank"
-            ],
-            "identifier": [
-              "ZDB-ID",
-              "Sigel/ISIL",
-              "Weitere",
-              "Weitere Infos: Exemplar-ID"
-            ],
-            "automation": [
-              "Teilautomatisiert"
-            ],
-            "transmissionType": [
-              "FileShare/FTP/SFTP",
-              "HTTPS"
-            ],
-            "transmissionFormat": [
-              "MARC 21 (beliebige Variante)",
-              "RDF (beliebige Variante)"
-            ]
-          }
-        },
-        {
-          "name": "ZDB-Bestands- und Lizenzdaten via OAI",
-          "description": "Neue, geänderte oder gelöschte ZDB-Bestandsdaten werden in die Verbundsysteme repliziert",
-          "mass": "5",
-          "link": "https://zeitschriftendatenbank.de/services/schnittstellen/oai, http://www.dnb.de/oai",
-          "interfaceLink": "https://www.dnb.de/oai",
-          "properties": {
-            "frequency": [
-              "Echtzeit"
-            ],
-            "resourceType": [
-              "E-Zeitschriften",
-              "Datenbanken"
-            ],
-            "dataType": [
-              "Bestandsinformationen: Zugangsinformationen",
-              "Bestandsinformationen: Fernleihinformationen",
-              "Lizenzinformationen: Lizenzzeitraum",
-              "Lizenzinformationen: Lizenzbedingungen",
-              "Weitere Infos: Angaben zu Lizenzbedingungen sind nur enthalten, wenn entsprechende Bibliothek diese in ZDB hinterlegt hat"
-            ],
-            "involvedSystems": [
-              "ZDB",
-              "hbz-Verbunddatenbank"
-            ],
-            "identifier": [
-              "ZDB-ID",
-              "Sigel/ISIL",
-              "Weitere",
-              "Weitere Infos: Exemplar-ID"
-            ],
-            "automation": [
-              "Automatisiert"
-            ],
-            "transmissionType": [
-              "OAI-PMH"
-            ],
-            "transmissionFormat": [
-              "MARC 21 (beliebige Variante)",
-              "RDF (beliebige Variante)"
-            ]
-          }
-        },
-        {
-          "name": "ZDB-Bestands- und Lizenzdaten wöchentlicher Änderungsdienst",
-          "description": "Neue, geänderte oder gelöschte ZDB-Bestandsdaten werden in die Verbundsysteme repliziert",
-          "mass": "5",
-          "link": "https://zeitschriftendatenbank.de/services/datendienste",
-          "interfaceLink": "https://data.dnb.de/ZDBlfdMarc21xml/",
-          "properties": {
-            "frequency": [
-              "Wöchentlich"
-            ],
-            "resourceType": [
-              "E-Zeitschriften",
-              "Datenbanken"
-            ],
-            "dataType": [
-              "Bestandsinformationen: Zugangsinformationen",
-              "Bestandsinformationen: Fernleihinformationen",
-              "Lizenzinformationen: Lizenzzeitraum",
-              "Lizenzinformationen: Lizenzbedingungen",
-              "Weitere Infos: ngaben zu Lizenzbedingungen sind nur enthalten, wenn entsprechende Bibliothek diese in ZDB hinterlegt hat"
-            ],
-            "involvedSystems": [
-              "ZDB",
-              "hbz-Verbunddatenbank"
-            ],
-            "identifier": [
-              "ZDB-ID",
-              "Sigel/ISIL",
-              "Weitere",
-              "Weitere Infos: Exemplar-ID"
-            ],
-            "automation": [
-              "Teilautomatisiert"
-            ],
-            "transmissionType": [
-              "FileShare/FTP/SFTP",
-              "HTTPS"
-            ],
-            "transmissionFormat": [
-              "MARC 21 (beliebige Variante)",
-              "RDF (beliebige Variante)"
-            ]
-          }
-        },
-        {
-          "name": "ZDB-Titeldaten halbjährlichlicher Gesamtabzug ",
-          "description": "Neue, geänderte oder gelöschte ZDB-Titel werden in die Verbundsysteme repliziert",
-          "mass": "5",
-          "link": "https://www.dnb.de/gesamtabzuege",
-          "interfaceLink": "https://data.dnb.de/ZDB/",
-          "properties": {
-            "frequency": [
-              "Weitere",
-              "Weitere Infos: halbjährlich"
-            ],
-            "resourceType": [
-              "E-Zeitschriften",
-              "Datenbanken"
-            ],
-            "dataType": [
-              "Bibliographische Daten",
-              "Paketinformationen: Titellisten",
-              "Paketart",
-              "OA-Informationen: freie Zugänglichkeit"
-            ],
-            "involvedSystems": [
-              "ZDB",
-              "hbz-Verbunddatenbank"
-            ],
-            "identifier": [
-              "ISSN",
-              "ISBN",
-              "ZDB-ID",
-              "DOI",
-              "URN/Handle",
-              "Sigel/ISIL",
-              "Weitere",
-              "Weitere Infos: IDN"
-            ],
-            "automation": [
-              "Teilautomatisiert"
-            ],
-            "transmissionType": [
-              "FileShare/FTP/SFTP",
-              "HTTPS"
-            ],
-            "transmissionFormat": [
-              "MARC 21 (beliebige Variante)",
-              "RDF (beliebige Variante)",
-              "RDF (beliebige Variante)"
-            ]
-          }
-        },
-        {
-          "name": "ZDB-Titeldaten via OAI",
-          "description": "Neue, geänderte oder gelöschte ZDB-Titel werden in die Verbundsysteme repliziert",
-          "mass": "5",
-          "link": "https://zeitschriftendatenbank.de/services/schnittstellen/oai, http://www.dnb.de/oai",
-          "interfaceLink": "https://services.dnb.de/oai",
-          "properties": {
-            "frequency": [
-              "Echtzeit"
-            ],
-            "resourceType": [
-              "E-Zeitschriften",
-              "Datenbanken"
-            ],
-            "dataType": [
-              "Bibliographische Daten",
-              "Paketinformationen: Titellisten",
-              "Paketart",
-              "OA-Informationen: freie Zugänglichkeit"
-            ],
-            "involvedSystems": [
-              "ZDB",
-              "hbz-Verbunddatenbank"
-            ],
-            "identifier": [
-              "ISSN",
-              "ISBN",
-              "ZDB-ID",
-              "DOI",
-              "URN/Handle",
-              "Sigel/ISIL",
-              "Weitere",
-              "Weitere Infos: IDN"
-            ],
-            "automation": [
-              "Automatisiert"
-            ],
-            "transmissionType": [
-              "OAI-PMH"
-            ],
-            "transmissionFormat": [
-              "MARC 21 (beliebige Variante)",
-              "RDF (beliebige Variante)",
-              "RDF (beliebige Variante)",
-              "Dublin Core"
-            ]
-          }
-        },
-        {
-          "name": "ZDB-Titeldaten wöchentlicher Änderungsdienst",
-          "description": "Neue, geänderte oder gelöschte ZDB-Titel werden in die Verbundsysteme repliziert",
-          "mass": "5",
-          "link": "https://zeitschriftendatenbank.de/services/datendienste",
-          "interfaceLink": "https://data.dnb.de/ZDBlfdMarc21xml/",
-          "properties": {
-            "frequency": [
-              "Wöchentlich"
-            ],
-            "resourceType": [
-              "E-Zeitschriften",
-              "Datenbanken"
-            ],
-            "dataType": [
-              "Bibliographische Daten",
-              "Paketinformationen: Titellisten",
-              "Paketart",
-              "OA-Informationen: freie Zugänglichkeit"
-            ],
-            "involvedSystems": [
-              "ZDB",
-              "hbz-Verbunddatenbank"
-            ],
-            "identifier": [
-              "ISSN",
-              "ISBN",
-              "ZDB-ID",
-              "DOI",
-              "URN/Handle",
-              "Sigel/ISIL",
-              "Weitere",
-              "Weitere Infos: IDN"
-            ],
-            "automation": [
-              "Teilautomatisiert"
-            ],
-            "transmissionType": [
-              "FileShare/FTP/SFTP",
-              "HTTPS"
-            ],
-            "transmissionFormat": [
-              "MARC 21 (beliebige Variante)",
-              "RDF (beliebige Variante)",
               "RDF (beliebige Variante)"
             ]
           }
