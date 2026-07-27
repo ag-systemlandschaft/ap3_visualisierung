@@ -69,7 +69,7 @@ function setDefaultInfoText() {
     // Change text in default box
     textBody.innerHTML = `
         Diese Visualisierung wurde durch die AG Systemlandschaft E-Ressourcen erstellt.
-        Sie basiert auf 26 Fragebögen, die zwischen 03/2023 und 08/2025 der AG zugestellt wurden. Aktuell werden Informationen zu 71 Systemen und 164 Datenflüssen angezeigt.<p>
+        Sie basiert auf Fragebögen zu Importdatenflüssen, die von Systembetreibern ausgefüllt und der AG zugestellt wurden.<p>
         Weitere relevante Daten für unsere Systemlandkarte können über den <a href="https://ag-systemlandschaft.de/material/" target="blank">Fragebogen</a> eingereicht werden
 `;
     infoText.appendChild(textBody);
