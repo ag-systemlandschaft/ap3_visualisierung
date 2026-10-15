@@ -25,5 +25,7 @@ const physics = Object.freeze({
     velocityDecay: 0.3,
     collideRadius: 30,
     collideIterations: 100,
+    precomputeCollideIterations: 1, // collide iterations for the coarse layout before the graph is shown
+    precomputeFineTicks: 10, // last layout ticks before the graph is shown, using the full collideIterations
     collideTextScaling: 8,
 });

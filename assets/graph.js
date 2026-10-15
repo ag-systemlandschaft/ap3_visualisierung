@@ -15,22 +15,28 @@ const padding = {
 
 function initGraph(svg, systems, dataExchanges, filters) {
 
+    const collide = d3.forceCollide()
+        .radius(d => physics.collideRadius + physics.collideTextScaling * d.shortName.length)
+        .iterations(physics.collideIterations);
+
     const simulation = d3.forceSimulation(systems)
         .force("link", d3.forceLink(dataExchanges).id(d => d.id).distance(physics.baseDistance))
         .force("charge", d3.forceManyBody().strength(-physics.repulsion))
-        .force("collide", d3.forceCollide()
-            .radius(d => physics.collideRadius + physics.collideTextScaling * d.shortName.length)
-            .iterations(physics.collideIterations)
-        )
+        .force("collide", collide)
         .force("x", d3.forceX())
         .force("y", d3.forceY())
         .velocityDecay(physics.velocityDecay)
         .stop()
     ;
 
-    // pre-compute the layout, so the graph is already settled (and can be fitted into view) when it is shown
+    // pre-compute the layout, so the graph is already settled (and can be fitted into view) when it is shown.
+    // Running all ticks with the full collide iterations takes seconds, so the coarse layout is computed
+    // with a cheap collision force and only the last ticks resolve the remaining overlaps thoroughly.
     const ticks = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay()));
-    simulation.tick(ticks);
+    collide.iterations(physics.precomputeCollideIterations);
+    simulation.tick(ticks - physics.precomputeFineTicks);
+    collide.iterations(physics.collideIterations);
+    simulation.tick(physics.precomputeFineTicks);
 
     svg.select("#baseGraph")
         .append("defs")
