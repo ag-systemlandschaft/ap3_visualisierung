@@ -1,27 +1,71 @@
+let zoom;
+
+// the viewBox matches the svg's size in pixels and is centered on (0, 0), so the zoom identity centers the origin
+function updateViewBox(svg) {
+    const {width, height} = svg.node().getBoundingClientRect();
+    svg.attr("viewBox", [-width / 2, -height / 2, width, height]);
+}
+
+// bounding box (in graph coordinates) of all visible data exchanges including their systems and labels,
+// or null if no data exchange is visible
+function visibleExchangeBounds(svg) {
+    const boxes = [];
+    const systems = new Set();
+    svg.selectAll("#data-exchanges > g")
+        .filter(d => isExchangeVisible(d))
+        .each(function (d) {
+            boxes.push(d3.select(this).select(".actual-exchange").node().getBBox());
+            systems.add(d.source);
+            systems.add(d.target);
+        });
+    svg.selectAll("#systems > g")
+        .filter(d => systems.has(d))
+        .each(function (d) {
+            // a system's own bbox doesn't include its translate(x, y)
+            const box = this.getBBox();
+            boxes.push({x: box.x + d.x, y: box.y + d.y, width: box.width, height: box.height});
+        });
+    if (boxes.length === 0) {
+        return null;
+    }
+    const x0 = d3.min(boxes, b => b.x);
+    const y0 = d3.min(boxes, b => b.y);
+    const x1 = d3.max(boxes, b => b.x + b.width);
+    const y1 = d3.max(boxes, b => b.y + b.height);
+    return {x: x0, y: y0, width: x1 - x0, height: y1 - y0};
+}
+
+// zooms so that the given bounds (default: the whole graph) fill the view
+function fitToView(svg, animated = true, bounds = svg.select("#systems").node().getBBox()) {
+    const [, , width, height] = svg.attr("viewBox").split(",").map(Number);
+    if (!bounds || (!bounds.width && !bounds.height)) {
+        return;
+    }
+    const [minScale, maxScale] = zoom.scaleExtent();
+    const scale = Math.max(minScale, Math.min(maxScale,
+        (1 - 2 * zoomSettings.fitMargin) * Math.min(width / (bounds.width || 1), height / (bounds.height || 1))
+    ));
+    const transform = d3.zoomIdentity
+        .scale(scale)
+        .translate(-(bounds.x + bounds.width / 2), -(bounds.y + bounds.height / 2));
+    (animated ? svg.transition().duration(500) : svg).call(zoom.transform, transform);
+}
+
 function addZoom(svg) {
     const baseGraph = svg.select("#baseGraph");
     const hover = d3.select("#hoverInfo");
-    const zoom = d3.zoom()
-        .scaleExtent([0.2, 5])
+    updateViewBox(svg);
+    zoom = d3.zoom()
+        .scaleExtent([zoomSettings.minScale, zoomSettings.maxScale])
         .on('zoom', function(event) {
             baseGraph.attr('transform', event.transform);
             hover.attr('transform', event.transform);
         });
     svg.call(zoom);
 
-    const zoomBy = (scaleFactor) => {
-        const svgNode = svg.node();
-        const transform = d3.zoomTransform(svgNode);
+    window.addEventListener("resize", () => updateViewBox(svg));
 
-        const newScale = transform.k * scaleFactor;
-        const center = [svg.attr("width") / 2, svg.attr("height") / 2];
-
-        const newTransform = d3.zoomIdentity
-            .translate(transform.x, transform.y)
-            .scale(newScale);
-
-        svg.call(zoom.transform, newTransform, center);
-    };
+    const zoomBy = (scaleFactor) => svg.transition().duration(200).call(zoom.scaleBy, scaleFactor);
 
     const panBy = (dx, dy) => {
         const transform = d3.zoomTransform(svg.node());
@@ -33,7 +77,7 @@ function addZoom(svg) {
 
     d3.select("#zoom-in").on("click", () => zoomBy(1.2)); // Zoom in by 20%
     d3.select("#zoom-out").on("click", () => zoomBy(1 / 1.2)); // Zoom out by 20%
-    d3.select("#reset").on("click", () => svg.transition().call(zoom.transform, d3.zoomIdentity)); // Reset view
+    d3.select("#reset").on("click", () => fitToView(svg)); // Reset view: show the whole graph
     d3.select("#pan-left").on("click", () => panBy(50, 0)); // Pan left
     d3.select("#pan-right").on("click", () => panBy(-50, 0)); // Pan right
     d3.select("#pan-up").on("click", () => panBy(0, 50)); // Pan up
@@ -42,21 +86,25 @@ function addZoom(svg) {
 
 function addDrag(simulation) {
 
+    // the simulation is only restarted once the node is actually moved,
+    // so a plain click doesn't shake the graph (nodes would otherwise move away under the mouse pointer)
+    let moved = false;
+
     function dragstarted(event, d) {
-        if (!event.active) {
-            simulation.alphaTarget(0.3).restart();
-        }
-        d.fx = d.x;
-        d.fy = d.y;
+        moved = false;
     }
 
     function dragged(event, d) {
+        if (!moved) {
+            moved = true;
+            simulation.alphaTarget(0.3).restart();
+        }
         d.fx = event.x;
         d.fy = event.y;
     }
 
     function dragended(event, d) {
-        if (!event.active) {
+        if (moved) {
             simulation.alphaTarget(0);
         }
         d.fx = null;
@@ -64,29 +112,27 @@ function addDrag(simulation) {
     }
 
     return d3.drag()
+        .clickDistance(4)
         .on("start", dragstarted)
         .on("drag", dragged)
         .on("end", dragended);
 }
 
 function addTooltipInteraction(svg, system, dataExchange) {
+    // Don't raise() the node here: moving it in the DOM while hovering swallows the following click
+    // and may swallow its mouseleave. For the latter, the hover state of all nodes is cleared on enter.
     system
-        .on("mouseover", function (event, d) {
+        .on("mouseenter", function (event, d) {
+            clearSystemHover(system);
             const g = d3.select(this);
-            g.raise();
             g.select(".hover-text")
                 .attr("display", "initial");
             g.select(".hover-frame")
                 .attr("display", "initial");
-            d3.select(event.currentTarget).classed("hovered", true)
+            g.classed("hovered", true);
         })
-        .on("mouseout", function (event, d) {
-            const g = d3.select(this)
-            g.select(".hover-text")
-                .attr("display", "none");
-            g.select(".hover-frame")
-                .attr("display", "none");
-            d3.select(event.currentTarget).classed("hovered", false)
+        .on("mouseleave", function (event, d) {
+            clearSystemHover(d3.select(this));
         });
 
     dataExchange
@@ -117,6 +163,11 @@ function addTooltipInteraction(svg, system, dataExchange) {
                 .attr("width", bbox.width + 2 * padding.tooltip.x)
                 .attr("height", bbox.height + 2 * padding.tooltip.y)
                 .attr("transform", translate);
+
+            // clear a possibly stuck hover state of other exchanges first
+            d3.selectAll("#data-exchanges .hovered, marker path.hovered")
+                .classed("hovered", false)
+                .classed("marker", false);
 
             const paths = actualExchangePaths(event.currentTarget);
             paths.classed("hovered", true)
@@ -150,51 +201,49 @@ function addTooltipInteraction(svg, system, dataExchange) {
         });
 }
 
+function clearSystemHover(systems) {
+    systems.classed("hovered", false);
+    systems.selectAll(".hover-text, .hover-frame")
+        .attr("display", "none");
+}
+
+// re-applies the current selection after filtering; set in addClickHandler
+let refreshSelection = () => {};
+// removes the current selection (back to the initial state); set in addClickHandler
+let resetSelection = () => {};
+
+function isExchangeVisible(exchange) {
+    return exchange.processes.some(process => process.active);
+}
+
 function addClickHandler(svg, system, dataExchange, filters) {
-    system.on("click", (event, node) => {
+    // the clicked system or data exchange, or null if nothing is selected
+    let selection = null;
+
+    const selectSystem = (node) => {
+        selection = {system: node};
         addSystemInfo(node);
 
         resetColors(system, true);
-        d3.select(event.currentTarget)
-            .classed("selected", true);
+        system.filter(d => d === node)
+            .classed("selected", true)
+            .raise();
 
         markAdjacentElements(dataExchange, system, node);
+    };
 
-        const globalTransform = event.target.parentElement.parentElement.parentElement.getAttribute('transform');
-        let globalTranslateMatch = ["0.0", "0.0"];
-        if(globalTransform) {
-            globalTranslateMatch = globalTransform.match(/translate\(([^,]+),([^)]+)\)/);
-        }
-
-        const transform = event.target.parentElement.getAttribute('transform');
-        const translateMatch = transform.match(/translate\(([^,]+),([^)]+)\)/);
-        if (translateMatch) {
-            const globalTranslateX = parseFloat(globalTranslateMatch[1]) || 0;
-            const globalTranslateY = parseFloat(globalTranslateMatch[2]) || 0;
-            const translateX = parseFloat(translateMatch[1]);
-            const translateY = parseFloat(translateMatch[2]);
-            
-            const g = d3.select("g");
-            const transform = d3.zoomTransform(g.node());
-            const newTransform = transform.translate(-(translateX+globalTranslateX), -(translateY+globalTranslateY));
-            g.transition()
-                .duration(500)
-                .attr("transform", newTransform);
-        }
-        event.stopPropagation();
-    });
-
-    dataExchange.on("click", (event, d) => {
-        addDataExchangeInfo(d, filters);
+    const selectExchange = (exchange) => {
+        selection = {exchange: exchange};
+        addDataExchangeInfo(exchange, filters);
 
         resetColors(system, true);
-        const paths = actualExchangePaths(event.currentTarget);
+        const paths = actualExchangePaths(dataExchange.filter(d => d === exchange).node());
         paths.classed("selected", true)
 
         system.classed(
             "adjacent-to-selected",
             (_, index) =>
-                [d.source.index, d.target.index].includes(index)
+                [exchange.source.index, exchange.target.index].includes(index)
         )
 
         const markerEndUrl = paths.attr("marker-end");
@@ -204,14 +253,46 @@ function addClickHandler(svg, system, dataExchange, filters) {
                 .select("path")
                 .attr("fill", "var(--exchange-selected-color)");
         }
+    };
 
+    const clearSelection = () => {
+        selection = null;
+        resetColors(system, false);
+        setDefaultInfoText();
+    };
+    resetSelection = clearSelection;
+
+    // a selection only stays active if it is still part of the filter result,
+    // i.e. the selected system still has a visible data exchange, or the selected data exchange is still visible
+    refreshSelection = () => {
+        if (selection?.system) {
+            const stillVisible = dataExchange.data()
+                .some(e => isExchangeVisible(e) && [e.source, e.target].includes(selection.system));
+            stillVisible ? selectSystem(selection.system) : clearSelection();
+        } else if (selection?.exchange) {
+            isExchangeVisible(selection.exchange) ? selectExchange(selection.exchange) : clearSelection();
+        }
+    };
+
+    system.on("click", (event, node) => {
+        selectSystem(node);
+
+        // center the selected node via the zoom behavior, so later zooming/panning continues from here
+        svg.transition()
+            .duration(500)
+            .call(zoom.translateTo, node.x, node.y);
+
+        event.stopPropagation();
+    });
+
+    dataExchange.on("click", (event, d) => {
+        selectExchange(d);
         event.stopPropagation();
     });
 
     svg.on("click", () => {
         // due to the event.stopPropagation() in the other handlers, this means "click elsewhere"
-        resetColors(system, false);
-        setDefaultInfoText();
+        clearSelection();
     });
 }
 
@@ -265,7 +346,7 @@ function markAdjacentElements(dataExchange, allSystems, selectedSystem) {
 function findAdjacents(dataExchange, systemNode) {
     const adjacentExchanges = dataExchange
         .filter(e =>
-            [e.source.id, e.target.id].includes(systemNode.id)
+            isExchangeVisible(e) && [e.source.id, e.target.id].includes(systemNode.id)
         );
     const adjacentMarkerIds = adjacentExchanges
         .nodes()

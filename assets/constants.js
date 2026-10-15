@@ -9,8 +9,14 @@ const systemNode = Object.freeze({
 
 const exchangeArc = Object.freeze({
     thickness: 1.5,
-    tolerance: 1.5,
+    tolerance: 12, // clickable width of an exchange in screen pixels
     straightness: 1,
+});
+
+const zoomSettings = Object.freeze({
+    minScale: 0.05,
+    maxScale: 5,
+    fitMargin: 0.02, // free space around the graph when fitted into view, as a fraction of the view size
 });
 
 const physics = Object.freeze({

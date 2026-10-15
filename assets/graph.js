@@ -25,7 +25,12 @@ function initGraph(svg, systems, dataExchanges, filters) {
         .force("x", d3.forceX())
         .force("y", d3.forceY())
         .velocityDecay(physics.velocityDecay)
+        .stop()
     ;
+
+    // pre-compute the layout, so the graph is already settled (and can be fitted into view) when it is shown
+    const ticks = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay()));
+    simulation.tick(ticks);
 
     svg.select("#baseGraph")
         .append("defs")
@@ -53,10 +58,14 @@ function initGraph(svg, systems, dataExchanges, filters) {
     const dataExchangePaths = dataExchange.selectAll("path");
     const system = createSystem(svg, systems, simulation);
 
-    simulation.on("tick", () => {
+    const render = () => {
         dataExchangePaths.attr("d", calculateLinkArc);
         system.attr("transform", d => `translate(${d.x},${d.y})`);
-    });
+    };
+    render();
+    simulation.on("tick", render);
+
+    fitToView(svg, false);
 
     addTooltipInteraction(svg, system, dataExchange);
     addClickHandler(svg, system, dataExchange, filters);
@@ -91,12 +100,14 @@ function createDataExchange(svg, dataExchanges) {
         .attr("id", (d, i) => i);
 
     // each dataExchange consists of two paths, one visible and one to allow for more tolerant interactions
-    //dataExchange
-    //    .append("path")
-    //    .classed("tolerance-layer", true)
-    //    .attr("pointer-events", "all")
-    //    .attr("stroke-opacity", 0)
-    //    .attr("stroke-width", exchangeArc.tolerance);
+    // the tolerance layer keeps a constant on-screen width (non-scaling-stroke), independent of the zoom level
+    dataExchange
+        .append("path")
+        .classed("tolerance-layer", true)
+        .attr("pointer-events", "stroke")
+        .attr("stroke", "transparent")
+        .attr("stroke-width", exchangeArc.tolerance)
+        .attr("vector-effect", "non-scaling-stroke");
     dataExchange
         .append("path")
         .classed("actual-exchange", true)

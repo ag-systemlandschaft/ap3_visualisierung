@@ -78,6 +78,9 @@ function applyFilter(filters, dataExchanges, svg) {
 
     filterDataExchange(dataExchanges, svg);
     updateOptionCounts(filters, dataExchanges);
+    refreshSelection();
+    // zoom so that all remaining (active) data exchanges are visible
+    fitToView(svg, true, visibleExchangeBounds(svg));
 }
 
 function resetFilter(filters, dataExchanges, svg) {
@@ -96,6 +99,8 @@ function resetFilter(filters, dataExchanges, svg) {
 
     filterDataExchange(dataExchanges, svg);
     updateOptionCounts(filters, dataExchanges);
+    resetSelection();
+    fitToView(svg);
 }
 
 function updateOptionCounts(filters, dataExchanges) {
